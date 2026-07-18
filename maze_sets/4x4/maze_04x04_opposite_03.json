@@ -1,0 +1,618 @@
+{
+  "problem_id": "maze_04x04_opposite_03",
+  "width": 4,
+  "height": 4,
+  "wall_density": 0.7,
+  "image_size": 2048,
+  "seed": 5903038148600791715,
+  "start_cell": [
+    1,
+    0
+  ],
+  "goal_cell": [
+    2,
+    3
+  ],
+  "start_side": "N",
+  "goal_side": "S",
+  "initial_facing": "S",
+  "openings": {
+    "0,0": [
+      "E",
+      "S"
+    ],
+    "1,0": [
+      "S",
+      "W"
+    ],
+    "2,0": [
+      "E",
+      "S"
+    ],
+    "3,0": [
+      "S",
+      "W"
+    ],
+    "0,1": [
+      "N",
+      "S"
+    ],
+    "1,1": [
+      "N"
+    ],
+    "2,1": [
+      "N",
+      "S"
+    ],
+    "3,1": [
+      "N"
+    ],
+    "0,2": [
+      "N",
+      "S"
+    ],
+    "1,2": [
+      "E",
+      "S"
+    ],
+    "2,2": [
+      "N",
+      "E",
+      "W"
+    ],
+    "3,2": [
+      "S",
+      "W"
+    ],
+    "0,3": [
+      "N",
+      "E"
+    ],
+    "1,3": [
+      "N",
+      "E",
+      "W"
+    ],
+    "2,3": [
+      "E",
+      "W"
+    ],
+    "3,3": [
+      "N",
+      "W"
+    ]
+  },
+  "events": {
+    "START_OUT": {
+      "cell": "START_OUT",
+      "external": true,
+      "is_start": true,
+      "is_goal": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "GOAL_OUT": {
+      "cell": "GOAL_OUT",
+      "external": true,
+      "is_start": false,
+      "is_goal": true,
+      "open_dirs": []
+    },
+    "E0": {
+      "cell": [
+        0,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E1": {
+      "cell": [
+        1,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": true,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W",
+        "N"
+      ]
+    },
+    "E2": {
+      "cell": [
+        2,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E3": {
+      "cell": [
+        3,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E4": {
+      "cell": [
+        1,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N"
+      ]
+    },
+    "E5": {
+      "cell": [
+        3,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N"
+      ]
+    },
+    "E6": {
+      "cell": [
+        1,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E7": {
+      "cell": [
+        2,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E8": {
+      "cell": [
+        3,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E9": {
+      "cell": [
+        0,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E10": {
+      "cell": [
+        1,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E11": {
+      "cell": [
+        2,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": true,
+      "open_dirs": [
+        "E",
+        "W",
+        "S"
+      ]
+    },
+    "E12": {
+      "cell": [
+        3,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    }
+  },
+  "transitions": {
+    "START_OUT": {
+      "S": {
+        "to": "E1",
+        "steps": 1,
+        "to_cell": [
+          1,
+          0
+        ],
+        "external": true
+      }
+    },
+    "GOAL_OUT": {},
+    "E0": {
+      "E": {
+        "to": "E1",
+        "steps": 1,
+        "to_cell": [
+          1,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E9",
+        "steps": 3,
+        "to_cell": [
+          0,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E1": {
+      "S": {
+        "to": "E4",
+        "steps": 1,
+        "to_cell": [
+          1,
+          1
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E0",
+        "steps": 1,
+        "to_cell": [
+          0,
+          0
+        ],
+        "external": false
+      },
+      "N": {
+        "to": "START_OUT",
+        "steps": 1,
+        "to_cell": "START_OUT",
+        "external": true
+      }
+    },
+    "E2": {
+      "E": {
+        "to": "E3",
+        "steps": 1,
+        "to_cell": [
+          3,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E7",
+        "steps": 2,
+        "to_cell": [
+          2,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E3": {
+      "S": {
+        "to": "E5",
+        "steps": 1,
+        "to_cell": [
+          3,
+          1
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E2",
+        "steps": 1,
+        "to_cell": [
+          2,
+          0
+        ],
+        "external": false
+      }
+    },
+    "E4": {
+      "N": {
+        "to": "E1",
+        "steps": 1,
+        "to_cell": [
+          1,
+          0
+        ],
+        "external": false
+      }
+    },
+    "E5": {
+      "N": {
+        "to": "E3",
+        "steps": 1,
+        "to_cell": [
+          3,
+          0
+        ],
+        "external": false
+      }
+    },
+    "E6": {
+      "E": {
+        "to": "E7",
+        "steps": 1,
+        "to_cell": [
+          2,
+          2
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E10",
+        "steps": 1,
+        "to_cell": [
+          1,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E7": {
+      "N": {
+        "to": "E2",
+        "steps": 2,
+        "to_cell": [
+          2,
+          0
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E8",
+        "steps": 1,
+        "to_cell": [
+          3,
+          2
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E6",
+        "steps": 1,
+        "to_cell": [
+          1,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E8": {
+      "S": {
+        "to": "E12",
+        "steps": 1,
+        "to_cell": [
+          3,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E7",
+        "steps": 1,
+        "to_cell": [
+          2,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E9": {
+      "N": {
+        "to": "E0",
+        "steps": 3,
+        "to_cell": [
+          0,
+          0
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E10",
+        "steps": 1,
+        "to_cell": [
+          1,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E10": {
+      "N": {
+        "to": "E6",
+        "steps": 1,
+        "to_cell": [
+          1,
+          2
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E11",
+        "steps": 1,
+        "to_cell": [
+          2,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E9",
+        "steps": 1,
+        "to_cell": [
+          0,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E11": {
+      "E": {
+        "to": "E12",
+        "steps": 1,
+        "to_cell": [
+          3,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E10",
+        "steps": 1,
+        "to_cell": [
+          1,
+          3
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "GOAL_OUT",
+        "steps": 1,
+        "to_cell": "GOAL_OUT",
+        "external": true
+      }
+    },
+    "E12": {
+      "N": {
+        "to": "E8",
+        "steps": 1,
+        "to_cell": [
+          3,
+          2
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E11",
+        "steps": 1,
+        "to_cell": [
+          2,
+          3
+        ],
+        "external": false
+      }
+    }
+  },
+  "answer_actions": [
+    "S",
+    "R",
+    "L",
+    "L",
+    "S",
+    "R"
+  ],
+  "answer_event_path": [
+    "START_OUT",
+    "E1",
+    "E0",
+    "E9",
+    "E10",
+    "E11",
+    "GOAL_OUT"
+  ],
+  "optimal_action_count": 6,
+  "ascii_rows": [
+    "    A      ",
+    " ###.##### ",
+    " #...#...# ",
+    " #.#.#.#.# ",
+    " #.#.#.#.# ",
+    " #.###.### ",
+    " #.#.....# ",
+    " #.#.###.# ",
+    " #.......# ",
+    " #####.### ",
+    "      G    "
+  ],
+  "open_2x2_squares": []
+}

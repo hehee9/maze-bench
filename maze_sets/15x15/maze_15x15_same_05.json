@@ -1,0 +1,7262 @@
+{
+  "problem_id": "maze_15x15_same_05",
+  "width": 15,
+  "height": 15,
+  "wall_density": 0.7,
+  "image_size": 2048,
+  "seed": 14790087509240029455,
+  "start_cell": [
+    14,
+    12
+  ],
+  "goal_cell": [
+    14,
+    4
+  ],
+  "start_side": "E",
+  "goal_side": "E",
+  "initial_facing": "W",
+  "openings": {
+    "0,0": [
+      "E",
+      "S"
+    ],
+    "1,0": [
+      "S",
+      "W"
+    ],
+    "2,0": [
+      "E",
+      "S"
+    ],
+    "3,0": [
+      "E",
+      "W"
+    ],
+    "4,0": [
+      "E",
+      "W"
+    ],
+    "5,0": [
+      "E",
+      "S",
+      "W"
+    ],
+    "6,0": [
+      "E",
+      "W"
+    ],
+    "7,0": [
+      "W"
+    ],
+    "8,0": [
+      "E",
+      "S"
+    ],
+    "9,0": [
+      "E",
+      "W"
+    ],
+    "10,0": [
+      "E",
+      "W"
+    ],
+    "11,0": [
+      "E",
+      "W"
+    ],
+    "12,0": [
+      "S",
+      "W"
+    ],
+    "13,0": [
+      "S"
+    ],
+    "14,0": [
+      "S"
+    ],
+    "0,1": [
+      "N",
+      "S"
+    ],
+    "1,1": [
+      "N",
+      "E"
+    ],
+    "2,1": [
+      "N",
+      "W"
+    ],
+    "3,1": [
+      "E"
+    ],
+    "4,1": [
+      "E",
+      "S",
+      "W"
+    ],
+    "5,1": [
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "6,1": [
+      "S",
+      "W"
+    ],
+    "7,1": [
+      "S"
+    ],
+    "8,1": [
+      "N",
+      "S"
+    ],
+    "9,1": [
+      "S"
+    ],
+    "10,1": [
+      "E",
+      "S"
+    ],
+    "11,1": [
+      "W"
+    ],
+    "12,1": [
+      "N",
+      "E"
+    ],
+    "13,1": [
+      "N",
+      "S",
+      "W"
+    ],
+    "14,1": [
+      "N",
+      "S"
+    ],
+    "0,2": [
+      "N",
+      "E",
+      "S"
+    ],
+    "1,2": [
+      "W"
+    ],
+    "2,2": [
+      "E",
+      "S"
+    ],
+    "3,2": [
+      "E",
+      "W"
+    ],
+    "4,2": [
+      "N",
+      "S",
+      "W"
+    ],
+    "5,2": [
+      "N",
+      "S"
+    ],
+    "6,2": [
+      "N",
+      "S"
+    ],
+    "7,2": [
+      "N",
+      "S"
+    ],
+    "8,2": [
+      "N",
+      "E"
+    ],
+    "9,2": [
+      "N",
+      "E",
+      "W"
+    ],
+    "10,2": [
+      "N",
+      "S",
+      "W"
+    ],
+    "11,2": [
+      "S"
+    ],
+    "12,2": [
+      "E",
+      "S"
+    ],
+    "13,2": [
+      "N",
+      "E",
+      "W"
+    ],
+    "14,2": [
+      "N",
+      "S",
+      "W"
+    ],
+    "0,3": [
+      "N",
+      "E"
+    ],
+    "1,3": [
+      "S",
+      "W"
+    ],
+    "2,3": [
+      "N",
+      "E",
+      "S"
+    ],
+    "3,3": [
+      "S",
+      "W"
+    ],
+    "4,3": [
+      "N",
+      "S"
+    ],
+    "5,3": [
+      "N",
+      "E",
+      "S"
+    ],
+    "6,3": [
+      "N",
+      "W"
+    ],
+    "7,3": [
+      "N",
+      "S"
+    ],
+    "8,3": [
+      "E"
+    ],
+    "9,3": [
+      "E",
+      "W"
+    ],
+    "10,3": [
+      "N",
+      "E",
+      "W"
+    ],
+    "11,3": [
+      "N",
+      "E",
+      "W"
+    ],
+    "12,3": [
+      "N",
+      "S",
+      "W"
+    ],
+    "13,3": [
+      "E"
+    ],
+    "14,3": [
+      "N",
+      "S",
+      "W"
+    ],
+    "0,4": [
+      "E",
+      "S"
+    ],
+    "1,4": [
+      "N",
+      "W"
+    ],
+    "2,4": [
+      "N",
+      "S"
+    ],
+    "3,4": [
+      "N",
+      "S"
+    ],
+    "4,4": [
+      "N",
+      "E"
+    ],
+    "5,4": [
+      "N",
+      "W"
+    ],
+    "6,4": [
+      "E"
+    ],
+    "7,4": [
+      "N",
+      "E",
+      "W"
+    ],
+    "8,4": [
+      "E",
+      "W"
+    ],
+    "9,4": [
+      "E",
+      "S",
+      "W"
+    ],
+    "10,4": [
+      "E",
+      "W"
+    ],
+    "11,4": [
+      "E",
+      "S",
+      "W"
+    ],
+    "12,4": [
+      "N",
+      "E",
+      "W"
+    ],
+    "13,4": [
+      "E",
+      "S",
+      "W"
+    ],
+    "14,4": [
+      "N",
+      "W"
+    ],
+    "0,5": [
+      "N",
+      "S"
+    ],
+    "1,5": [
+      "E",
+      "S"
+    ],
+    "2,5": [
+      "N",
+      "W"
+    ],
+    "3,5": [
+      "N",
+      "E"
+    ],
+    "4,5": [
+      "E",
+      "W"
+    ],
+    "5,5": [
+      "S",
+      "W"
+    ],
+    "6,5": [
+      "E",
+      "S"
+    ],
+    "7,5": [
+      "E",
+      "W"
+    ],
+    "8,5": [
+      "E",
+      "W"
+    ],
+    "9,5": [
+      "N",
+      "E",
+      "W"
+    ],
+    "10,5": [
+      "E",
+      "S",
+      "W"
+    ],
+    "11,5": [
+      "N",
+      "E",
+      "W"
+    ],
+    "12,5": [
+      "E",
+      "W"
+    ],
+    "13,5": [
+      "N",
+      "E",
+      "W"
+    ],
+    "14,5": [
+      "S",
+      "W"
+    ],
+    "0,6": [
+      "N",
+      "E"
+    ],
+    "1,6": [
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "2,6": [
+      "E",
+      "S",
+      "W"
+    ],
+    "3,6": [
+      "E",
+      "S",
+      "W"
+    ],
+    "4,6": [
+      "S",
+      "W"
+    ],
+    "5,6": [
+      "N",
+      "E",
+      "S"
+    ],
+    "6,6": [
+      "N",
+      "E",
+      "W"
+    ],
+    "7,6": [
+      "W"
+    ],
+    "8,6": [
+      "E"
+    ],
+    "9,6": [
+      "E",
+      "S",
+      "W"
+    ],
+    "10,6": [
+      "N",
+      "E",
+      "W"
+    ],
+    "11,6": [
+      "E",
+      "W"
+    ],
+    "12,6": [
+      "S",
+      "W"
+    ],
+    "13,6": [
+      "E",
+      "S"
+    ],
+    "14,6": [
+      "N",
+      "S",
+      "W"
+    ],
+    "0,7": [
+      "S"
+    ],
+    "1,7": [
+      "N",
+      "S"
+    ],
+    "2,7": [
+      "N",
+      "S"
+    ],
+    "3,7": [
+      "N",
+      "S"
+    ],
+    "4,7": [
+      "N",
+      "S"
+    ],
+    "5,7": [
+      "N",
+      "E"
+    ],
+    "6,7": [
+      "E",
+      "S",
+      "W"
+    ],
+    "7,7": [
+      "S",
+      "W"
+    ],
+    "8,7": [
+      "E",
+      "S"
+    ],
+    "9,7": [
+      "N",
+      "E",
+      "W"
+    ],
+    "10,7": [
+      "S",
+      "W"
+    ],
+    "11,7": [
+      "E",
+      "S"
+    ],
+    "12,7": [
+      "N",
+      "S",
+      "W"
+    ],
+    "13,7": [
+      "N",
+      "S"
+    ],
+    "14,7": [
+      "N",
+      "S"
+    ],
+    "0,8": [
+      "N",
+      "E",
+      "S"
+    ],
+    "1,8": [
+      "N",
+      "W"
+    ],
+    "2,8": [
+      "N",
+      "E",
+      "S"
+    ],
+    "3,8": [
+      "N",
+      "W"
+    ],
+    "4,8": [
+      "N",
+      "E"
+    ],
+    "5,8": [
+      "W"
+    ],
+    "6,8": [
+      "N",
+      "S"
+    ],
+    "7,8": [
+      "N",
+      "S"
+    ],
+    "8,8": [
+      "N",
+      "S"
+    ],
+    "9,8": [
+      "S"
+    ],
+    "10,8": [
+      "N",
+      "S"
+    ],
+    "11,8": [
+      "N"
+    ],
+    "12,8": [
+      "N",
+      "S"
+    ],
+    "13,8": [
+      "N",
+      "E",
+      "S"
+    ],
+    "14,8": [
+      "N",
+      "W"
+    ],
+    "0,9": [
+      "N",
+      "E",
+      "S"
+    ],
+    "1,9": [
+      "E",
+      "W"
+    ],
+    "2,9": [
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "3,9": [
+      "E",
+      "W"
+    ],
+    "4,9": [
+      "E",
+      "W"
+    ],
+    "5,9": [
+      "E",
+      "W"
+    ],
+    "6,9": [
+      "N",
+      "W"
+    ],
+    "7,9": [
+      "N",
+      "E",
+      "S"
+    ],
+    "8,9": [
+      "N",
+      "E",
+      "W"
+    ],
+    "9,9": [
+      "N",
+      "S",
+      "W"
+    ],
+    "10,9": [
+      "N",
+      "E",
+      "S"
+    ],
+    "11,9": [
+      "E",
+      "W"
+    ],
+    "12,9": [
+      "N",
+      "E",
+      "W"
+    ],
+    "13,9": [
+      "N",
+      "E",
+      "W"
+    ],
+    "14,9": [
+      "S",
+      "W"
+    ],
+    "0,10": [
+      "N",
+      "E"
+    ],
+    "1,10": [
+      "S",
+      "W"
+    ],
+    "2,10": [
+      "N",
+      "E"
+    ],
+    "3,10": [
+      "E",
+      "S",
+      "W"
+    ],
+    "4,10": [
+      "E",
+      "W"
+    ],
+    "5,10": [
+      "E",
+      "S",
+      "W"
+    ],
+    "6,10": [
+      "E",
+      "W"
+    ],
+    "7,10": [
+      "N",
+      "E",
+      "S",
+      "W"
+    ],
+    "8,10": [
+      "S",
+      "W"
+    ],
+    "9,10": [
+      "N",
+      "S"
+    ],
+    "10,10": [
+      "N",
+      "E",
+      "S"
+    ],
+    "11,10": [
+      "S",
+      "W"
+    ],
+    "12,10": [
+      "E"
+    ],
+    "13,10": [
+      "E",
+      "S",
+      "W"
+    ],
+    "14,10": [
+      "N",
+      "W"
+    ],
+    "0,11": [
+      "S"
+    ],
+    "1,11": [
+      "N",
+      "S"
+    ],
+    "2,11": [
+      "S"
+    ],
+    "3,11": [
+      "N",
+      "E"
+    ],
+    "4,11": [
+      "E",
+      "S",
+      "W"
+    ],
+    "5,11": [
+      "N",
+      "E",
+      "W"
+    ],
+    "6,11": [
+      "W"
+    ],
+    "7,11": [
+      "N",
+      "S"
+    ],
+    "8,11": [
+      "N",
+      "S"
+    ],
+    "9,11": [
+      "N"
+    ],
+    "10,11": [
+      "N",
+      "S"
+    ],
+    "11,11": [
+      "N",
+      "E"
+    ],
+    "12,11": [
+      "S",
+      "W"
+    ],
+    "13,11": [
+      "N",
+      "S"
+    ],
+    "14,11": [
+      "S"
+    ],
+    "0,12": [
+      "N",
+      "S"
+    ],
+    "1,12": [
+      "N",
+      "E",
+      "S"
+    ],
+    "2,12": [
+      "N",
+      "E",
+      "W"
+    ],
+    "3,12": [
+      "S",
+      "W"
+    ],
+    "4,12": [
+      "N",
+      "E"
+    ],
+    "5,12": [
+      "E",
+      "S",
+      "W"
+    ],
+    "6,12": [
+      "W"
+    ],
+    "7,12": [
+      "N",
+      "E",
+      "S"
+    ],
+    "8,12": [
+      "N",
+      "E",
+      "W"
+    ],
+    "9,12": [
+      "W"
+    ],
+    "10,12": [
+      "N",
+      "E",
+      "S"
+    ],
+    "11,12": [
+      "S",
+      "W"
+    ],
+    "12,12": [
+      "N",
+      "E",
+      "S"
+    ],
+    "13,12": [
+      "N",
+      "W"
+    ],
+    "14,12": [
+      "N",
+      "S"
+    ],
+    "0,13": [
+      "N",
+      "E"
+    ],
+    "1,13": [
+      "N",
+      "W"
+    ],
+    "2,13": [
+      "E",
+      "S"
+    ],
+    "3,13": [
+      "N",
+      "W"
+    ],
+    "4,13": [
+      "E",
+      "S"
+    ],
+    "5,13": [
+      "N",
+      "E",
+      "W"
+    ],
+    "6,13": [
+      "S",
+      "W"
+    ],
+    "7,13": [
+      "N",
+      "E"
+    ],
+    "8,13": [
+      "E",
+      "W"
+    ],
+    "9,13": [
+      "E",
+      "W"
+    ],
+    "10,13": [
+      "N",
+      "W"
+    ],
+    "11,13": [
+      "N",
+      "E"
+    ],
+    "12,13": [
+      "N",
+      "E",
+      "W"
+    ],
+    "13,13": [
+      "S",
+      "W"
+    ],
+    "14,13": [
+      "N",
+      "S"
+    ],
+    "0,14": [
+      "E"
+    ],
+    "1,14": [
+      "E",
+      "W"
+    ],
+    "2,14": [
+      "N",
+      "E",
+      "W"
+    ],
+    "3,14": [
+      "E",
+      "W"
+    ],
+    "4,14": [
+      "N",
+      "W"
+    ],
+    "5,14": [
+      "E"
+    ],
+    "6,14": [
+      "N",
+      "E",
+      "W"
+    ],
+    "7,14": [
+      "E",
+      "W"
+    ],
+    "8,14": [
+      "E",
+      "W"
+    ],
+    "9,14": [
+      "E",
+      "W"
+    ],
+    "10,14": [
+      "W"
+    ],
+    "11,14": [
+      "E"
+    ],
+    "12,14": [
+      "E",
+      "W"
+    ],
+    "13,14": [
+      "N",
+      "E",
+      "W"
+    ],
+    "14,14": [
+      "N",
+      "W"
+    ]
+  },
+  "events": {
+    "START_OUT": {
+      "cell": "START_OUT",
+      "external": true,
+      "is_start": true,
+      "is_goal": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "GOAL_OUT": {
+      "cell": "GOAL_OUT",
+      "external": true,
+      "is_start": false,
+      "is_goal": true,
+      "open_dirs": []
+    },
+    "E0": {
+      "cell": [
+        0,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E1": {
+      "cell": [
+        1,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E2": {
+      "cell": [
+        2,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E3": {
+      "cell": [
+        5,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E4": {
+      "cell": [
+        7,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E5": {
+      "cell": [
+        8,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E6": {
+      "cell": [
+        12,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E7": {
+      "cell": [
+        13,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E8": {
+      "cell": [
+        14,
+        0
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E9": {
+      "cell": [
+        1,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E10": {
+      "cell": [
+        2,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E11": {
+      "cell": [
+        3,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E12": {
+      "cell": [
+        4,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E13": {
+      "cell": [
+        5,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E14": {
+      "cell": [
+        6,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E15": {
+      "cell": [
+        7,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E16": {
+      "cell": [
+        9,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E17": {
+      "cell": [
+        10,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E18": {
+      "cell": [
+        11,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E19": {
+      "cell": [
+        12,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E20": {
+      "cell": [
+        13,
+        1
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E21": {
+      "cell": [
+        0,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E22": {
+      "cell": [
+        1,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E23": {
+      "cell": [
+        2,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E24": {
+      "cell": [
+        4,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E25": {
+      "cell": [
+        8,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E26": {
+      "cell": [
+        9,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E27": {
+      "cell": [
+        10,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E28": {
+      "cell": [
+        11,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E29": {
+      "cell": [
+        12,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E30": {
+      "cell": [
+        13,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E31": {
+      "cell": [
+        14,
+        2
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E32": {
+      "cell": [
+        0,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E33": {
+      "cell": [
+        1,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E34": {
+      "cell": [
+        2,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E35": {
+      "cell": [
+        3,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E36": {
+      "cell": [
+        5,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E37": {
+      "cell": [
+        6,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E38": {
+      "cell": [
+        8,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E39": {
+      "cell": [
+        10,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E40": {
+      "cell": [
+        11,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E41": {
+      "cell": [
+        12,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E42": {
+      "cell": [
+        13,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E43": {
+      "cell": [
+        14,
+        3
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E44": {
+      "cell": [
+        0,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E45": {
+      "cell": [
+        1,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E46": {
+      "cell": [
+        4,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E47": {
+      "cell": [
+        5,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E48": {
+      "cell": [
+        6,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E49": {
+      "cell": [
+        7,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E50": {
+      "cell": [
+        9,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E51": {
+      "cell": [
+        11,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E52": {
+      "cell": [
+        12,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E53": {
+      "cell": [
+        13,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E54": {
+      "cell": [
+        14,
+        4
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": true,
+      "open_dirs": [
+        "N",
+        "W",
+        "E"
+      ]
+    },
+    "E55": {
+      "cell": [
+        1,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E56": {
+      "cell": [
+        2,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E57": {
+      "cell": [
+        3,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E58": {
+      "cell": [
+        5,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E59": {
+      "cell": [
+        6,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E60": {
+      "cell": [
+        9,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E61": {
+      "cell": [
+        10,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E62": {
+      "cell": [
+        11,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E63": {
+      "cell": [
+        13,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E64": {
+      "cell": [
+        14,
+        5
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E65": {
+      "cell": [
+        0,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E66": {
+      "cell": [
+        1,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E67": {
+      "cell": [
+        2,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E68": {
+      "cell": [
+        3,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E69": {
+      "cell": [
+        4,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E70": {
+      "cell": [
+        5,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E71": {
+      "cell": [
+        6,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E72": {
+      "cell": [
+        7,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E73": {
+      "cell": [
+        8,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E74": {
+      "cell": [
+        9,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E75": {
+      "cell": [
+        10,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E76": {
+      "cell": [
+        12,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E77": {
+      "cell": [
+        13,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E78": {
+      "cell": [
+        14,
+        6
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E79": {
+      "cell": [
+        0,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E80": {
+      "cell": [
+        5,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E81": {
+      "cell": [
+        6,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E82": {
+      "cell": [
+        7,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E83": {
+      "cell": [
+        8,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E84": {
+      "cell": [
+        9,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E85": {
+      "cell": [
+        10,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E86": {
+      "cell": [
+        11,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E87": {
+      "cell": [
+        12,
+        7
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E88": {
+      "cell": [
+        0,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E89": {
+      "cell": [
+        1,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E90": {
+      "cell": [
+        2,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E91": {
+      "cell": [
+        3,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E92": {
+      "cell": [
+        4,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E93": {
+      "cell": [
+        5,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E94": {
+      "cell": [
+        9,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E95": {
+      "cell": [
+        11,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N"
+      ]
+    },
+    "E96": {
+      "cell": [
+        13,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E97": {
+      "cell": [
+        14,
+        8
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E98": {
+      "cell": [
+        0,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E99": {
+      "cell": [
+        2,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E100": {
+      "cell": [
+        6,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E101": {
+      "cell": [
+        7,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E102": {
+      "cell": [
+        8,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E103": {
+      "cell": [
+        9,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "W"
+      ]
+    },
+    "E104": {
+      "cell": [
+        10,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E105": {
+      "cell": [
+        12,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E106": {
+      "cell": [
+        13,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E107": {
+      "cell": [
+        14,
+        9
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E108": {
+      "cell": [
+        0,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E109": {
+      "cell": [
+        1,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E110": {
+      "cell": [
+        2,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E111": {
+      "cell": [
+        3,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E112": {
+      "cell": [
+        5,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E113": {
+      "cell": [
+        7,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E114": {
+      "cell": [
+        8,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E115": {
+      "cell": [
+        10,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E116": {
+      "cell": [
+        11,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E117": {
+      "cell": [
+        12,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E118": {
+      "cell": [
+        13,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E119": {
+      "cell": [
+        14,
+        10
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E120": {
+      "cell": [
+        0,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E121": {
+      "cell": [
+        2,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E122": {
+      "cell": [
+        3,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E123": {
+      "cell": [
+        4,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E124": {
+      "cell": [
+        5,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E125": {
+      "cell": [
+        6,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E126": {
+      "cell": [
+        9,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N"
+      ]
+    },
+    "E127": {
+      "cell": [
+        11,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E128": {
+      "cell": [
+        12,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E129": {
+      "cell": [
+        14,
+        11
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S"
+      ]
+    },
+    "E130": {
+      "cell": [
+        1,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E131": {
+      "cell": [
+        2,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E132": {
+      "cell": [
+        3,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E133": {
+      "cell": [
+        4,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E134": {
+      "cell": [
+        5,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S",
+        "W"
+      ]
+    },
+    "E135": {
+      "cell": [
+        6,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E136": {
+      "cell": [
+        7,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E137": {
+      "cell": [
+        8,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E138": {
+      "cell": [
+        9,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E139": {
+      "cell": [
+        10,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E140": {
+      "cell": [
+        11,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E141": {
+      "cell": [
+        12,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "S"
+      ]
+    },
+    "E142": {
+      "cell": [
+        13,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E143": {
+      "cell": [
+        14,
+        12
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": true,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "S",
+        "E"
+      ]
+    },
+    "E144": {
+      "cell": [
+        0,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E145": {
+      "cell": [
+        1,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E146": {
+      "cell": [
+        2,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E147": {
+      "cell": [
+        3,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E148": {
+      "cell": [
+        4,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E",
+        "S"
+      ]
+    },
+    "E149": {
+      "cell": [
+        5,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E150": {
+      "cell": [
+        6,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E151": {
+      "cell": [
+        7,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E152": {
+      "cell": [
+        10,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E153": {
+      "cell": [
+        11,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E"
+      ]
+    },
+    "E154": {
+      "cell": [
+        12,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E155": {
+      "cell": [
+        13,
+        13
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "S",
+        "W"
+      ]
+    },
+    "E156": {
+      "cell": [
+        0,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E157": {
+      "cell": [
+        2,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E158": {
+      "cell": [
+        4,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    },
+    "E159": {
+      "cell": [
+        5,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E160": {
+      "cell": [
+        6,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E161": {
+      "cell": [
+        10,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "W"
+      ]
+    },
+    "E162": {
+      "cell": [
+        11,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "E"
+      ]
+    },
+    "E163": {
+      "cell": [
+        13,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "E",
+        "W"
+      ]
+    },
+    "E164": {
+      "cell": [
+        14,
+        14
+      ],
+      "external": false,
+      "is_start": false,
+      "is_goal": false,
+      "is_start_cell": false,
+      "is_goal_cell": false,
+      "open_dirs": [
+        "N",
+        "W"
+      ]
+    }
+  },
+  "transitions": {
+    "START_OUT": {
+      "W": {
+        "to": "E143",
+        "steps": 1,
+        "to_cell": [
+          14,
+          12
+        ],
+        "external": true
+      }
+    },
+    "GOAL_OUT": {},
+    "E0": {
+      "E": {
+        "to": "E1",
+        "steps": 1,
+        "to_cell": [
+          1,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E21",
+        "steps": 2,
+        "to_cell": [
+          0,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E1": {
+      "S": {
+        "to": "E9",
+        "steps": 1,
+        "to_cell": [
+          1,
+          1
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E0",
+        "steps": 1,
+        "to_cell": [
+          0,
+          0
+        ],
+        "external": false
+      }
+    },
+    "E2": {
+      "E": {
+        "to": "E3",
+        "steps": 3,
+        "to_cell": [
+          5,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E10",
+        "steps": 1,
+        "to_cell": [
+          2,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E3": {
+      "E": {
+        "to": "E4",
+        "steps": 2,
+        "to_cell": [
+          7,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E13",
+        "steps": 1,
+        "to_cell": [
+          5,
+          1
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E2",
+        "steps": 3,
+        "to_cell": [
+          2,
+          0
+        ],
+        "external": false
+      }
+    },
+    "E4": {
+      "W": {
+        "to": "E3",
+        "steps": 2,
+        "to_cell": [
+          5,
+          0
+        ],
+        "external": false
+      }
+    },
+    "E5": {
+      "E": {
+        "to": "E6",
+        "steps": 4,
+        "to_cell": [
+          12,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E25",
+        "steps": 2,
+        "to_cell": [
+          8,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E6": {
+      "S": {
+        "to": "E19",
+        "steps": 1,
+        "to_cell": [
+          12,
+          1
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E5",
+        "steps": 4,
+        "to_cell": [
+          8,
+          0
+        ],
+        "external": false
+      }
+    },
+    "E7": {
+      "S": {
+        "to": "E20",
+        "steps": 1,
+        "to_cell": [
+          13,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E8": {
+      "S": {
+        "to": "E31",
+        "steps": 2,
+        "to_cell": [
+          14,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E9": {
+      "N": {
+        "to": "E1",
+        "steps": 1,
+        "to_cell": [
+          1,
+          0
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E10",
+        "steps": 1,
+        "to_cell": [
+          2,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E10": {
+      "N": {
+        "to": "E2",
+        "steps": 1,
+        "to_cell": [
+          2,
+          0
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E9",
+        "steps": 1,
+        "to_cell": [
+          1,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E11": {
+      "E": {
+        "to": "E12",
+        "steps": 1,
+        "to_cell": [
+          4,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E12": {
+      "E": {
+        "to": "E13",
+        "steps": 1,
+        "to_cell": [
+          5,
+          1
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E24",
+        "steps": 1,
+        "to_cell": [
+          4,
+          2
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E11",
+        "steps": 1,
+        "to_cell": [
+          3,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E13": {
+      "N": {
+        "to": "E3",
+        "steps": 1,
+        "to_cell": [
+          5,
+          0
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E14",
+        "steps": 1,
+        "to_cell": [
+          6,
+          1
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E36",
+        "steps": 2,
+        "to_cell": [
+          5,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E12",
+        "steps": 1,
+        "to_cell": [
+          4,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E14": {
+      "S": {
+        "to": "E37",
+        "steps": 2,
+        "to_cell": [
+          6,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E13",
+        "steps": 1,
+        "to_cell": [
+          5,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E15": {
+      "S": {
+        "to": "E49",
+        "steps": 3,
+        "to_cell": [
+          7,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E16": {
+      "S": {
+        "to": "E26",
+        "steps": 1,
+        "to_cell": [
+          9,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E17": {
+      "E": {
+        "to": "E18",
+        "steps": 1,
+        "to_cell": [
+          11,
+          1
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E27",
+        "steps": 1,
+        "to_cell": [
+          10,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E18": {
+      "W": {
+        "to": "E17",
+        "steps": 1,
+        "to_cell": [
+          10,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E19": {
+      "N": {
+        "to": "E6",
+        "steps": 1,
+        "to_cell": [
+          12,
+          0
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E20",
+        "steps": 1,
+        "to_cell": [
+          13,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E20": {
+      "N": {
+        "to": "E7",
+        "steps": 1,
+        "to_cell": [
+          13,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E30",
+        "steps": 1,
+        "to_cell": [
+          13,
+          2
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E19",
+        "steps": 1,
+        "to_cell": [
+          12,
+          1
+        ],
+        "external": false
+      }
+    },
+    "E21": {
+      "N": {
+        "to": "E0",
+        "steps": 2,
+        "to_cell": [
+          0,
+          0
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E22",
+        "steps": 1,
+        "to_cell": [
+          1,
+          2
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E32",
+        "steps": 1,
+        "to_cell": [
+          0,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E22": {
+      "W": {
+        "to": "E21",
+        "steps": 1,
+        "to_cell": [
+          0,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E23": {
+      "E": {
+        "to": "E24",
+        "steps": 2,
+        "to_cell": [
+          4,
+          2
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E34",
+        "steps": 1,
+        "to_cell": [
+          2,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E24": {
+      "N": {
+        "to": "E12",
+        "steps": 1,
+        "to_cell": [
+          4,
+          1
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E46",
+        "steps": 2,
+        "to_cell": [
+          4,
+          4
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E23",
+        "steps": 2,
+        "to_cell": [
+          2,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E25": {
+      "N": {
+        "to": "E5",
+        "steps": 2,
+        "to_cell": [
+          8,
+          0
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E26",
+        "steps": 1,
+        "to_cell": [
+          9,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E26": {
+      "N": {
+        "to": "E16",
+        "steps": 1,
+        "to_cell": [
+          9,
+          1
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E27",
+        "steps": 1,
+        "to_cell": [
+          10,
+          2
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E25",
+        "steps": 1,
+        "to_cell": [
+          8,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E27": {
+      "N": {
+        "to": "E17",
+        "steps": 1,
+        "to_cell": [
+          10,
+          1
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E39",
+        "steps": 1,
+        "to_cell": [
+          10,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E26",
+        "steps": 1,
+        "to_cell": [
+          9,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E28": {
+      "S": {
+        "to": "E40",
+        "steps": 1,
+        "to_cell": [
+          11,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E29": {
+      "E": {
+        "to": "E30",
+        "steps": 1,
+        "to_cell": [
+          13,
+          2
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E41",
+        "steps": 1,
+        "to_cell": [
+          12,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E30": {
+      "N": {
+        "to": "E20",
+        "steps": 1,
+        "to_cell": [
+          13,
+          1
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E31",
+        "steps": 1,
+        "to_cell": [
+          14,
+          2
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E29",
+        "steps": 1,
+        "to_cell": [
+          12,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E31": {
+      "N": {
+        "to": "E8",
+        "steps": 2,
+        "to_cell": [
+          14,
+          0
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E43",
+        "steps": 1,
+        "to_cell": [
+          14,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E30",
+        "steps": 1,
+        "to_cell": [
+          13,
+          2
+        ],
+        "external": false
+      }
+    },
+    "E32": {
+      "N": {
+        "to": "E21",
+        "steps": 1,
+        "to_cell": [
+          0,
+          2
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E33",
+        "steps": 1,
+        "to_cell": [
+          1,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E33": {
+      "S": {
+        "to": "E45",
+        "steps": 1,
+        "to_cell": [
+          1,
+          4
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E32",
+        "steps": 1,
+        "to_cell": [
+          0,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E34": {
+      "N": {
+        "to": "E23",
+        "steps": 1,
+        "to_cell": [
+          2,
+          2
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E35",
+        "steps": 1,
+        "to_cell": [
+          3,
+          3
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E56",
+        "steps": 2,
+        "to_cell": [
+          2,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E35": {
+      "S": {
+        "to": "E57",
+        "steps": 2,
+        "to_cell": [
+          3,
+          5
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E34",
+        "steps": 1,
+        "to_cell": [
+          2,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E36": {
+      "N": {
+        "to": "E13",
+        "steps": 2,
+        "to_cell": [
+          5,
+          1
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E37",
+        "steps": 1,
+        "to_cell": [
+          6,
+          3
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E47",
+        "steps": 1,
+        "to_cell": [
+          5,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E37": {
+      "N": {
+        "to": "E14",
+        "steps": 2,
+        "to_cell": [
+          6,
+          1
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E36",
+        "steps": 1,
+        "to_cell": [
+          5,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E38": {
+      "E": {
+        "to": "E39",
+        "steps": 2,
+        "to_cell": [
+          10,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E39": {
+      "N": {
+        "to": "E27",
+        "steps": 1,
+        "to_cell": [
+          10,
+          2
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E40",
+        "steps": 1,
+        "to_cell": [
+          11,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E38",
+        "steps": 2,
+        "to_cell": [
+          8,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E40": {
+      "N": {
+        "to": "E28",
+        "steps": 1,
+        "to_cell": [
+          11,
+          2
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E41",
+        "steps": 1,
+        "to_cell": [
+          12,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E39",
+        "steps": 1,
+        "to_cell": [
+          10,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E41": {
+      "N": {
+        "to": "E29",
+        "steps": 1,
+        "to_cell": [
+          12,
+          2
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E52",
+        "steps": 1,
+        "to_cell": [
+          12,
+          4
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E40",
+        "steps": 1,
+        "to_cell": [
+          11,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E42": {
+      "E": {
+        "to": "E43",
+        "steps": 1,
+        "to_cell": [
+          14,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E43": {
+      "N": {
+        "to": "E31",
+        "steps": 1,
+        "to_cell": [
+          14,
+          2
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E54",
+        "steps": 1,
+        "to_cell": [
+          14,
+          4
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E42",
+        "steps": 1,
+        "to_cell": [
+          13,
+          3
+        ],
+        "external": false
+      }
+    },
+    "E44": {
+      "E": {
+        "to": "E45",
+        "steps": 1,
+        "to_cell": [
+          1,
+          4
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E65",
+        "steps": 2,
+        "to_cell": [
+          0,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E45": {
+      "N": {
+        "to": "E33",
+        "steps": 1,
+        "to_cell": [
+          1,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E44",
+        "steps": 1,
+        "to_cell": [
+          0,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E46": {
+      "N": {
+        "to": "E24",
+        "steps": 2,
+        "to_cell": [
+          4,
+          2
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E47",
+        "steps": 1,
+        "to_cell": [
+          5,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E47": {
+      "N": {
+        "to": "E36",
+        "steps": 1,
+        "to_cell": [
+          5,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E46",
+        "steps": 1,
+        "to_cell": [
+          4,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E48": {
+      "E": {
+        "to": "E49",
+        "steps": 1,
+        "to_cell": [
+          7,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E49": {
+      "N": {
+        "to": "E15",
+        "steps": 3,
+        "to_cell": [
+          7,
+          1
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E50",
+        "steps": 2,
+        "to_cell": [
+          9,
+          4
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E48",
+        "steps": 1,
+        "to_cell": [
+          6,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E50": {
+      "E": {
+        "to": "E51",
+        "steps": 2,
+        "to_cell": [
+          11,
+          4
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E60",
+        "steps": 1,
+        "to_cell": [
+          9,
+          5
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E49",
+        "steps": 2,
+        "to_cell": [
+          7,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E51": {
+      "E": {
+        "to": "E52",
+        "steps": 1,
+        "to_cell": [
+          12,
+          4
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E62",
+        "steps": 1,
+        "to_cell": [
+          11,
+          5
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E50",
+        "steps": 2,
+        "to_cell": [
+          9,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E52": {
+      "N": {
+        "to": "E41",
+        "steps": 1,
+        "to_cell": [
+          12,
+          3
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E53",
+        "steps": 1,
+        "to_cell": [
+          13,
+          4
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E51",
+        "steps": 1,
+        "to_cell": [
+          11,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E53": {
+      "E": {
+        "to": "E54",
+        "steps": 1,
+        "to_cell": [
+          14,
+          4
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E63",
+        "steps": 1,
+        "to_cell": [
+          13,
+          5
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E52",
+        "steps": 1,
+        "to_cell": [
+          12,
+          4
+        ],
+        "external": false
+      }
+    },
+    "E54": {
+      "N": {
+        "to": "E43",
+        "steps": 1,
+        "to_cell": [
+          14,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E53",
+        "steps": 1,
+        "to_cell": [
+          13,
+          4
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "GOAL_OUT",
+        "steps": 1,
+        "to_cell": "GOAL_OUT",
+        "external": true
+      }
+    },
+    "E55": {
+      "E": {
+        "to": "E56",
+        "steps": 1,
+        "to_cell": [
+          2,
+          5
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E66",
+        "steps": 1,
+        "to_cell": [
+          1,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E56": {
+      "N": {
+        "to": "E34",
+        "steps": 2,
+        "to_cell": [
+          2,
+          3
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E55",
+        "steps": 1,
+        "to_cell": [
+          1,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E57": {
+      "N": {
+        "to": "E35",
+        "steps": 2,
+        "to_cell": [
+          3,
+          3
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E58",
+        "steps": 2,
+        "to_cell": [
+          5,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E58": {
+      "S": {
+        "to": "E70",
+        "steps": 1,
+        "to_cell": [
+          5,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E57",
+        "steps": 2,
+        "to_cell": [
+          3,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E59": {
+      "E": {
+        "to": "E60",
+        "steps": 3,
+        "to_cell": [
+          9,
+          5
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E71",
+        "steps": 1,
+        "to_cell": [
+          6,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E60": {
+      "N": {
+        "to": "E50",
+        "steps": 1,
+        "to_cell": [
+          9,
+          4
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E61",
+        "steps": 1,
+        "to_cell": [
+          10,
+          5
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E59",
+        "steps": 3,
+        "to_cell": [
+          6,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E61": {
+      "E": {
+        "to": "E62",
+        "steps": 1,
+        "to_cell": [
+          11,
+          5
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E75",
+        "steps": 1,
+        "to_cell": [
+          10,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E60",
+        "steps": 1,
+        "to_cell": [
+          9,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E62": {
+      "N": {
+        "to": "E51",
+        "steps": 1,
+        "to_cell": [
+          11,
+          4
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E63",
+        "steps": 2,
+        "to_cell": [
+          13,
+          5
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E61",
+        "steps": 1,
+        "to_cell": [
+          10,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E63": {
+      "N": {
+        "to": "E53",
+        "steps": 1,
+        "to_cell": [
+          13,
+          4
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E64",
+        "steps": 1,
+        "to_cell": [
+          14,
+          5
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E62",
+        "steps": 2,
+        "to_cell": [
+          11,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E64": {
+      "S": {
+        "to": "E78",
+        "steps": 1,
+        "to_cell": [
+          14,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E63",
+        "steps": 1,
+        "to_cell": [
+          13,
+          5
+        ],
+        "external": false
+      }
+    },
+    "E65": {
+      "N": {
+        "to": "E44",
+        "steps": 2,
+        "to_cell": [
+          0,
+          4
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E66",
+        "steps": 1,
+        "to_cell": [
+          1,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E66": {
+      "N": {
+        "to": "E55",
+        "steps": 1,
+        "to_cell": [
+          1,
+          5
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E67",
+        "steps": 1,
+        "to_cell": [
+          2,
+          6
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E89",
+        "steps": 2,
+        "to_cell": [
+          1,
+          8
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E65",
+        "steps": 1,
+        "to_cell": [
+          0,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E67": {
+      "E": {
+        "to": "E68",
+        "steps": 1,
+        "to_cell": [
+          3,
+          6
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E90",
+        "steps": 2,
+        "to_cell": [
+          2,
+          8
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E66",
+        "steps": 1,
+        "to_cell": [
+          1,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E68": {
+      "E": {
+        "to": "E69",
+        "steps": 1,
+        "to_cell": [
+          4,
+          6
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E91",
+        "steps": 2,
+        "to_cell": [
+          3,
+          8
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E67",
+        "steps": 1,
+        "to_cell": [
+          2,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E69": {
+      "S": {
+        "to": "E92",
+        "steps": 2,
+        "to_cell": [
+          4,
+          8
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E68",
+        "steps": 1,
+        "to_cell": [
+          3,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E70": {
+      "N": {
+        "to": "E58",
+        "steps": 1,
+        "to_cell": [
+          5,
+          5
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E71",
+        "steps": 1,
+        "to_cell": [
+          6,
+          6
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E80",
+        "steps": 1,
+        "to_cell": [
+          5,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E71": {
+      "N": {
+        "to": "E59",
+        "steps": 1,
+        "to_cell": [
+          6,
+          5
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E72",
+        "steps": 1,
+        "to_cell": [
+          7,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E70",
+        "steps": 1,
+        "to_cell": [
+          5,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E72": {
+      "W": {
+        "to": "E71",
+        "steps": 1,
+        "to_cell": [
+          6,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E73": {
+      "E": {
+        "to": "E74",
+        "steps": 1,
+        "to_cell": [
+          9,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E74": {
+      "E": {
+        "to": "E75",
+        "steps": 1,
+        "to_cell": [
+          10,
+          6
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E84",
+        "steps": 1,
+        "to_cell": [
+          9,
+          7
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E73",
+        "steps": 1,
+        "to_cell": [
+          8,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E75": {
+      "N": {
+        "to": "E61",
+        "steps": 1,
+        "to_cell": [
+          10,
+          5
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E76",
+        "steps": 2,
+        "to_cell": [
+          12,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E74",
+        "steps": 1,
+        "to_cell": [
+          9,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E76": {
+      "S": {
+        "to": "E87",
+        "steps": 1,
+        "to_cell": [
+          12,
+          7
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E75",
+        "steps": 2,
+        "to_cell": [
+          10,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E77": {
+      "E": {
+        "to": "E78",
+        "steps": 1,
+        "to_cell": [
+          14,
+          6
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E96",
+        "steps": 2,
+        "to_cell": [
+          13,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E78": {
+      "N": {
+        "to": "E64",
+        "steps": 1,
+        "to_cell": [
+          14,
+          5
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E97",
+        "steps": 2,
+        "to_cell": [
+          14,
+          8
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E77",
+        "steps": 1,
+        "to_cell": [
+          13,
+          6
+        ],
+        "external": false
+      }
+    },
+    "E79": {
+      "S": {
+        "to": "E88",
+        "steps": 1,
+        "to_cell": [
+          0,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E80": {
+      "N": {
+        "to": "E70",
+        "steps": 1,
+        "to_cell": [
+          5,
+          6
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E81",
+        "steps": 1,
+        "to_cell": [
+          6,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E81": {
+      "E": {
+        "to": "E82",
+        "steps": 1,
+        "to_cell": [
+          7,
+          7
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E100",
+        "steps": 2,
+        "to_cell": [
+          6,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E80",
+        "steps": 1,
+        "to_cell": [
+          5,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E82": {
+      "S": {
+        "to": "E101",
+        "steps": 2,
+        "to_cell": [
+          7,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E81",
+        "steps": 1,
+        "to_cell": [
+          6,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E83": {
+      "E": {
+        "to": "E84",
+        "steps": 1,
+        "to_cell": [
+          9,
+          7
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E102",
+        "steps": 2,
+        "to_cell": [
+          8,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E84": {
+      "N": {
+        "to": "E74",
+        "steps": 1,
+        "to_cell": [
+          9,
+          6
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E85",
+        "steps": 1,
+        "to_cell": [
+          10,
+          7
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E83",
+        "steps": 1,
+        "to_cell": [
+          8,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E85": {
+      "S": {
+        "to": "E104",
+        "steps": 2,
+        "to_cell": [
+          10,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E84",
+        "steps": 1,
+        "to_cell": [
+          9,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E86": {
+      "E": {
+        "to": "E87",
+        "steps": 1,
+        "to_cell": [
+          12,
+          7
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E95",
+        "steps": 1,
+        "to_cell": [
+          11,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E87": {
+      "N": {
+        "to": "E76",
+        "steps": 1,
+        "to_cell": [
+          12,
+          6
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E105",
+        "steps": 2,
+        "to_cell": [
+          12,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E86",
+        "steps": 1,
+        "to_cell": [
+          11,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E88": {
+      "N": {
+        "to": "E79",
+        "steps": 1,
+        "to_cell": [
+          0,
+          7
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E89",
+        "steps": 1,
+        "to_cell": [
+          1,
+          8
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E98",
+        "steps": 1,
+        "to_cell": [
+          0,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E89": {
+      "N": {
+        "to": "E66",
+        "steps": 2,
+        "to_cell": [
+          1,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E88",
+        "steps": 1,
+        "to_cell": [
+          0,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E90": {
+      "N": {
+        "to": "E67",
+        "steps": 2,
+        "to_cell": [
+          2,
+          6
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E91",
+        "steps": 1,
+        "to_cell": [
+          3,
+          8
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E99",
+        "steps": 1,
+        "to_cell": [
+          2,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E91": {
+      "N": {
+        "to": "E68",
+        "steps": 2,
+        "to_cell": [
+          3,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E90",
+        "steps": 1,
+        "to_cell": [
+          2,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E92": {
+      "N": {
+        "to": "E69",
+        "steps": 2,
+        "to_cell": [
+          4,
+          6
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E93",
+        "steps": 1,
+        "to_cell": [
+          5,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E93": {
+      "W": {
+        "to": "E92",
+        "steps": 1,
+        "to_cell": [
+          4,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E94": {
+      "S": {
+        "to": "E103",
+        "steps": 1,
+        "to_cell": [
+          9,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E95": {
+      "N": {
+        "to": "E86",
+        "steps": 1,
+        "to_cell": [
+          11,
+          7
+        ],
+        "external": false
+      }
+    },
+    "E96": {
+      "N": {
+        "to": "E77",
+        "steps": 2,
+        "to_cell": [
+          13,
+          6
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E97",
+        "steps": 1,
+        "to_cell": [
+          14,
+          8
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E106",
+        "steps": 1,
+        "to_cell": [
+          13,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E97": {
+      "N": {
+        "to": "E78",
+        "steps": 2,
+        "to_cell": [
+          14,
+          6
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E96",
+        "steps": 1,
+        "to_cell": [
+          13,
+          8
+        ],
+        "external": false
+      }
+    },
+    "E98": {
+      "N": {
+        "to": "E88",
+        "steps": 1,
+        "to_cell": [
+          0,
+          8
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E99",
+        "steps": 2,
+        "to_cell": [
+          2,
+          9
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E108",
+        "steps": 1,
+        "to_cell": [
+          0,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E99": {
+      "N": {
+        "to": "E90",
+        "steps": 1,
+        "to_cell": [
+          2,
+          8
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E100",
+        "steps": 4,
+        "to_cell": [
+          6,
+          9
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E110",
+        "steps": 1,
+        "to_cell": [
+          2,
+          10
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E98",
+        "steps": 2,
+        "to_cell": [
+          0,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E100": {
+      "N": {
+        "to": "E81",
+        "steps": 2,
+        "to_cell": [
+          6,
+          7
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E99",
+        "steps": 4,
+        "to_cell": [
+          2,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E101": {
+      "N": {
+        "to": "E82",
+        "steps": 2,
+        "to_cell": [
+          7,
+          7
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E102",
+        "steps": 1,
+        "to_cell": [
+          8,
+          9
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E113",
+        "steps": 1,
+        "to_cell": [
+          7,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E102": {
+      "N": {
+        "to": "E83",
+        "steps": 2,
+        "to_cell": [
+          8,
+          7
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E103",
+        "steps": 1,
+        "to_cell": [
+          9,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E101",
+        "steps": 1,
+        "to_cell": [
+          7,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E103": {
+      "N": {
+        "to": "E94",
+        "steps": 1,
+        "to_cell": [
+          9,
+          8
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E126",
+        "steps": 2,
+        "to_cell": [
+          9,
+          11
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E102",
+        "steps": 1,
+        "to_cell": [
+          8,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E104": {
+      "N": {
+        "to": "E85",
+        "steps": 2,
+        "to_cell": [
+          10,
+          7
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E105",
+        "steps": 2,
+        "to_cell": [
+          12,
+          9
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E115",
+        "steps": 1,
+        "to_cell": [
+          10,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E105": {
+      "N": {
+        "to": "E87",
+        "steps": 2,
+        "to_cell": [
+          12,
+          7
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E106",
+        "steps": 1,
+        "to_cell": [
+          13,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E104",
+        "steps": 2,
+        "to_cell": [
+          10,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E106": {
+      "N": {
+        "to": "E96",
+        "steps": 1,
+        "to_cell": [
+          13,
+          8
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E107",
+        "steps": 1,
+        "to_cell": [
+          14,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E105",
+        "steps": 1,
+        "to_cell": [
+          12,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E107": {
+      "S": {
+        "to": "E119",
+        "steps": 1,
+        "to_cell": [
+          14,
+          10
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E106",
+        "steps": 1,
+        "to_cell": [
+          13,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E108": {
+      "N": {
+        "to": "E98",
+        "steps": 1,
+        "to_cell": [
+          0,
+          9
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E109",
+        "steps": 1,
+        "to_cell": [
+          1,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E109": {
+      "S": {
+        "to": "E130",
+        "steps": 2,
+        "to_cell": [
+          1,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E108",
+        "steps": 1,
+        "to_cell": [
+          0,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E110": {
+      "N": {
+        "to": "E99",
+        "steps": 1,
+        "to_cell": [
+          2,
+          9
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E111",
+        "steps": 1,
+        "to_cell": [
+          3,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E111": {
+      "E": {
+        "to": "E112",
+        "steps": 2,
+        "to_cell": [
+          5,
+          10
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E122",
+        "steps": 1,
+        "to_cell": [
+          3,
+          11
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E110",
+        "steps": 1,
+        "to_cell": [
+          2,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E112": {
+      "E": {
+        "to": "E113",
+        "steps": 2,
+        "to_cell": [
+          7,
+          10
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E124",
+        "steps": 1,
+        "to_cell": [
+          5,
+          11
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E111",
+        "steps": 2,
+        "to_cell": [
+          3,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E113": {
+      "N": {
+        "to": "E101",
+        "steps": 1,
+        "to_cell": [
+          7,
+          9
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E114",
+        "steps": 1,
+        "to_cell": [
+          8,
+          10
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E136",
+        "steps": 2,
+        "to_cell": [
+          7,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E112",
+        "steps": 2,
+        "to_cell": [
+          5,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E114": {
+      "S": {
+        "to": "E137",
+        "steps": 2,
+        "to_cell": [
+          8,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E113",
+        "steps": 1,
+        "to_cell": [
+          7,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E115": {
+      "N": {
+        "to": "E104",
+        "steps": 1,
+        "to_cell": [
+          10,
+          9
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E116",
+        "steps": 1,
+        "to_cell": [
+          11,
+          10
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E139",
+        "steps": 2,
+        "to_cell": [
+          10,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E116": {
+      "S": {
+        "to": "E127",
+        "steps": 1,
+        "to_cell": [
+          11,
+          11
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E115",
+        "steps": 1,
+        "to_cell": [
+          10,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E117": {
+      "E": {
+        "to": "E118",
+        "steps": 1,
+        "to_cell": [
+          13,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E118": {
+      "E": {
+        "to": "E119",
+        "steps": 1,
+        "to_cell": [
+          14,
+          10
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E142",
+        "steps": 2,
+        "to_cell": [
+          13,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E117",
+        "steps": 1,
+        "to_cell": [
+          12,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E119": {
+      "N": {
+        "to": "E107",
+        "steps": 1,
+        "to_cell": [
+          14,
+          9
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E118",
+        "steps": 1,
+        "to_cell": [
+          13,
+          10
+        ],
+        "external": false
+      }
+    },
+    "E120": {
+      "S": {
+        "to": "E144",
+        "steps": 2,
+        "to_cell": [
+          0,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E121": {
+      "S": {
+        "to": "E131",
+        "steps": 1,
+        "to_cell": [
+          2,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E122": {
+      "N": {
+        "to": "E111",
+        "steps": 1,
+        "to_cell": [
+          3,
+          10
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E123",
+        "steps": 1,
+        "to_cell": [
+          4,
+          11
+        ],
+        "external": false
+      }
+    },
+    "E123": {
+      "E": {
+        "to": "E124",
+        "steps": 1,
+        "to_cell": [
+          5,
+          11
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E133",
+        "steps": 1,
+        "to_cell": [
+          4,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E122",
+        "steps": 1,
+        "to_cell": [
+          3,
+          11
+        ],
+        "external": false
+      }
+    },
+    "E124": {
+      "N": {
+        "to": "E112",
+        "steps": 1,
+        "to_cell": [
+          5,
+          10
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E125",
+        "steps": 1,
+        "to_cell": [
+          6,
+          11
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E123",
+        "steps": 1,
+        "to_cell": [
+          4,
+          11
+        ],
+        "external": false
+      }
+    },
+    "E125": {
+      "W": {
+        "to": "E124",
+        "steps": 1,
+        "to_cell": [
+          5,
+          11
+        ],
+        "external": false
+      }
+    },
+    "E126": {
+      "N": {
+        "to": "E103",
+        "steps": 2,
+        "to_cell": [
+          9,
+          9
+        ],
+        "external": false
+      }
+    },
+    "E127": {
+      "N": {
+        "to": "E116",
+        "steps": 1,
+        "to_cell": [
+          11,
+          10
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E128",
+        "steps": 1,
+        "to_cell": [
+          12,
+          11
+        ],
+        "external": false
+      }
+    },
+    "E128": {
+      "S": {
+        "to": "E141",
+        "steps": 1,
+        "to_cell": [
+          12,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E127",
+        "steps": 1,
+        "to_cell": [
+          11,
+          11
+        ],
+        "external": false
+      }
+    },
+    "E129": {
+      "S": {
+        "to": "E143",
+        "steps": 1,
+        "to_cell": [
+          14,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E130": {
+      "N": {
+        "to": "E109",
+        "steps": 2,
+        "to_cell": [
+          1,
+          10
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E131",
+        "steps": 1,
+        "to_cell": [
+          2,
+          12
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E145",
+        "steps": 1,
+        "to_cell": [
+          1,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E131": {
+      "N": {
+        "to": "E121",
+        "steps": 1,
+        "to_cell": [
+          2,
+          11
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E132",
+        "steps": 1,
+        "to_cell": [
+          3,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E130",
+        "steps": 1,
+        "to_cell": [
+          1,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E132": {
+      "S": {
+        "to": "E147",
+        "steps": 1,
+        "to_cell": [
+          3,
+          13
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E131",
+        "steps": 1,
+        "to_cell": [
+          2,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E133": {
+      "N": {
+        "to": "E123",
+        "steps": 1,
+        "to_cell": [
+          4,
+          11
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E134",
+        "steps": 1,
+        "to_cell": [
+          5,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E134": {
+      "E": {
+        "to": "E135",
+        "steps": 1,
+        "to_cell": [
+          6,
+          12
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E149",
+        "steps": 1,
+        "to_cell": [
+          5,
+          13
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E133",
+        "steps": 1,
+        "to_cell": [
+          4,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E135": {
+      "W": {
+        "to": "E134",
+        "steps": 1,
+        "to_cell": [
+          5,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E136": {
+      "N": {
+        "to": "E113",
+        "steps": 2,
+        "to_cell": [
+          7,
+          10
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E137",
+        "steps": 1,
+        "to_cell": [
+          8,
+          12
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E151",
+        "steps": 1,
+        "to_cell": [
+          7,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E137": {
+      "N": {
+        "to": "E114",
+        "steps": 2,
+        "to_cell": [
+          8,
+          10
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E138",
+        "steps": 1,
+        "to_cell": [
+          9,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E136",
+        "steps": 1,
+        "to_cell": [
+          7,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E138": {
+      "W": {
+        "to": "E137",
+        "steps": 1,
+        "to_cell": [
+          8,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E139": {
+      "N": {
+        "to": "E115",
+        "steps": 2,
+        "to_cell": [
+          10,
+          10
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E140",
+        "steps": 1,
+        "to_cell": [
+          11,
+          12
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E152",
+        "steps": 1,
+        "to_cell": [
+          10,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E140": {
+      "S": {
+        "to": "E153",
+        "steps": 1,
+        "to_cell": [
+          11,
+          13
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E139",
+        "steps": 1,
+        "to_cell": [
+          10,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E141": {
+      "N": {
+        "to": "E128",
+        "steps": 1,
+        "to_cell": [
+          12,
+          11
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E142",
+        "steps": 1,
+        "to_cell": [
+          13,
+          12
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E154",
+        "steps": 1,
+        "to_cell": [
+          12,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E142": {
+      "N": {
+        "to": "E118",
+        "steps": 2,
+        "to_cell": [
+          13,
+          10
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E141",
+        "steps": 1,
+        "to_cell": [
+          12,
+          12
+        ],
+        "external": false
+      }
+    },
+    "E143": {
+      "N": {
+        "to": "E129",
+        "steps": 1,
+        "to_cell": [
+          14,
+          11
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E164",
+        "steps": 2,
+        "to_cell": [
+          14,
+          14
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "START_OUT",
+        "steps": 1,
+        "to_cell": "START_OUT",
+        "external": true
+      }
+    },
+    "E144": {
+      "N": {
+        "to": "E120",
+        "steps": 2,
+        "to_cell": [
+          0,
+          11
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E145",
+        "steps": 1,
+        "to_cell": [
+          1,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E145": {
+      "N": {
+        "to": "E130",
+        "steps": 1,
+        "to_cell": [
+          1,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E144",
+        "steps": 1,
+        "to_cell": [
+          0,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E146": {
+      "E": {
+        "to": "E147",
+        "steps": 1,
+        "to_cell": [
+          3,
+          13
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E157",
+        "steps": 1,
+        "to_cell": [
+          2,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E147": {
+      "N": {
+        "to": "E132",
+        "steps": 1,
+        "to_cell": [
+          3,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E146",
+        "steps": 1,
+        "to_cell": [
+          2,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E148": {
+      "E": {
+        "to": "E149",
+        "steps": 1,
+        "to_cell": [
+          5,
+          13
+        ],
+        "external": false
+      },
+      "S": {
+        "to": "E158",
+        "steps": 1,
+        "to_cell": [
+          4,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E149": {
+      "N": {
+        "to": "E134",
+        "steps": 1,
+        "to_cell": [
+          5,
+          12
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E150",
+        "steps": 1,
+        "to_cell": [
+          6,
+          13
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E148",
+        "steps": 1,
+        "to_cell": [
+          4,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E150": {
+      "S": {
+        "to": "E160",
+        "steps": 1,
+        "to_cell": [
+          6,
+          14
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E149",
+        "steps": 1,
+        "to_cell": [
+          5,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E151": {
+      "N": {
+        "to": "E136",
+        "steps": 1,
+        "to_cell": [
+          7,
+          12
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E152",
+        "steps": 3,
+        "to_cell": [
+          10,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E152": {
+      "N": {
+        "to": "E139",
+        "steps": 1,
+        "to_cell": [
+          10,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E151",
+        "steps": 3,
+        "to_cell": [
+          7,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E153": {
+      "N": {
+        "to": "E140",
+        "steps": 1,
+        "to_cell": [
+          11,
+          12
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E154",
+        "steps": 1,
+        "to_cell": [
+          12,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E154": {
+      "N": {
+        "to": "E141",
+        "steps": 1,
+        "to_cell": [
+          12,
+          12
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E155",
+        "steps": 1,
+        "to_cell": [
+          13,
+          13
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E153",
+        "steps": 1,
+        "to_cell": [
+          11,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E155": {
+      "S": {
+        "to": "E163",
+        "steps": 1,
+        "to_cell": [
+          13,
+          14
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E154",
+        "steps": 1,
+        "to_cell": [
+          12,
+          13
+        ],
+        "external": false
+      }
+    },
+    "E156": {
+      "E": {
+        "to": "E157",
+        "steps": 2,
+        "to_cell": [
+          2,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E157": {
+      "N": {
+        "to": "E146",
+        "steps": 1,
+        "to_cell": [
+          2,
+          13
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E158",
+        "steps": 2,
+        "to_cell": [
+          4,
+          14
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E156",
+        "steps": 2,
+        "to_cell": [
+          0,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E158": {
+      "N": {
+        "to": "E148",
+        "steps": 1,
+        "to_cell": [
+          4,
+          13
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E157",
+        "steps": 2,
+        "to_cell": [
+          2,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E159": {
+      "E": {
+        "to": "E160",
+        "steps": 1,
+        "to_cell": [
+          6,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E160": {
+      "N": {
+        "to": "E150",
+        "steps": 1,
+        "to_cell": [
+          6,
+          13
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E161",
+        "steps": 4,
+        "to_cell": [
+          10,
+          14
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E159",
+        "steps": 1,
+        "to_cell": [
+          5,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E161": {
+      "W": {
+        "to": "E160",
+        "steps": 4,
+        "to_cell": [
+          6,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E162": {
+      "E": {
+        "to": "E163",
+        "steps": 2,
+        "to_cell": [
+          13,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E163": {
+      "N": {
+        "to": "E155",
+        "steps": 1,
+        "to_cell": [
+          13,
+          13
+        ],
+        "external": false
+      },
+      "E": {
+        "to": "E164",
+        "steps": 1,
+        "to_cell": [
+          14,
+          14
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E162",
+        "steps": 2,
+        "to_cell": [
+          11,
+          14
+        ],
+        "external": false
+      }
+    },
+    "E164": {
+      "N": {
+        "to": "E143",
+        "steps": 2,
+        "to_cell": [
+          14,
+          12
+        ],
+        "external": false
+      },
+      "W": {
+        "to": "E163",
+        "steps": 1,
+        "to_cell": [
+          13,
+          14
+        ],
+        "external": false
+      }
+    }
+  },
+  "answer_actions": [
+    "S",
+    "L",
+    "R",
+    "R",
+    "L",
+    "R",
+    "R",
+    "L",
+    "R",
+    "L",
+    "L",
+    "R",
+    "S",
+    "R",
+    "L",
+    "L",
+    "R",
+    "R",
+    "S"
+  ],
+  "answer_event_path": [
+    "START_OUT",
+    "E143",
+    "E164",
+    "E163",
+    "E155",
+    "E154",
+    "E141",
+    "E142",
+    "E118",
+    "E119",
+    "E107",
+    "E106",
+    "E96",
+    "E77",
+    "E78",
+    "E64",
+    "E63",
+    "E53",
+    "E54",
+    "GOAL_OUT"
+  ],
+  "optimal_action_count": 19,
+  "ascii_rows": [
+    "                                 ",
+    " ############################### ",
+    " #...#...........#.........#.#.# ",
+    " #.#.#.#####.#####.#######.#.#.# ",
+    " #.#...#.......#.#.#.#...#...#.# ",
+    " #.#######.#.#.#.#.#.#.#####.#.# ",
+    " #...#.....#.#.#.#.....#.#.....# ",
+    " #.###.###.#.#.#.#####.#.#.###.# ",
+    " #...#...#.#...#.#.........#...# ",
+    " ###.#.#.#.#.###.#########.###.# ",
+    " #...#.#.#...#..................G",
+    " #.###.#.###########.###.###.### ",
+    " #.#...#.....#.................# ",
+    " #.#.#######.#.#######.#######.# ",
+    " #.........#.....#.........#...# ",
+    " ###.#.#.#.#.#######.#####.#.#.# ",
+    " #.#.#.#.#.#.....#.....#...#.#.# ",
+    " #.#.#.#.#.###.#.#.###.#.#.#.#.# ",
+    " #...#...#...#.#.#.#.#.#.#.#...# ",
+    " #.###.#######.#.#.#.#.###.#.### ",
+    " #.............#.....#.........# ",
+    " #.###.#########.###.#.#######.# ",
+    " #...#.............#.#...#.....# ",
+    " ###.###.###.###.#.#.#.#.###.### ",
+    " #.#.#.#.......#.#.#.#.#...#.#.# ",
+    " #.#.#.###.#####.#.###.###.#.#.# ",
+    " #.#.....#.....#.....#...#...#..A",
+    " #.#.###.###.###.#####.#.#.###.# ",
+    " #...#...#.....#.......#.....#.# ",
+    " #####.###.###.#############.#.# ",
+    " #.........#...........#.......# ",
+    " ############################### ",
+    "                                 "
+  ],
+  "open_2x2_squares": []
+}

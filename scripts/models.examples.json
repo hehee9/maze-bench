@@ -1,0 +1,61 @@
+{
+  "models": [
+    {
+      "name": "GPT-5.6 Sol (medium)",
+      "provider": "openai_responses",
+      "model_id": "gpt-5.6-sol",
+      "api_key_env": "OPENAI_API_KEY",
+      "max_output_tokens": 128000,
+      "rate_limit_rpm": 30,
+      "pricing": {
+        "input_per_million": 5,
+        "output_per_million": 30
+      },
+      "reasoning_effort": "medium"
+    },
+    {
+      "name": "Kimi K3 (thinking)",
+      "provider": "openai_chat",
+      "model_id": "moonshotai/kimi-k3",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "base_url": "https://openrouter.ai/api/v1",
+      "max_output_tokens": 128000,
+      "rate_limit_rpm": 30,
+      "pricing": {
+        "input_per_million": 3,
+        "output_per_million": 15
+      },
+      "extra_body": {
+        "reasoning": {
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "Gemini 3.5 Flash (medium)",
+      "provider": "google",
+      "model_id": "gemini-3.5-flash",
+      "api_key_env": "GEMINI_API_KEY",
+      "max_output_tokens": 65536,
+      "rate_limit_rpm": 30,
+      "pricing": {
+        "input_per_million": 1.5,
+        "output_per_million": 9
+      },
+      "thinking_level": "MEDIUM"
+    },
+    {
+      "name": "Claude Fable 5 (medium)",
+      "provider": "anthropic",
+      "model_id": "claude-fable-5",
+      "api_key_env": "ANTHROPIC_API_KEY",
+      "max_output_tokens": 128000,
+      "rate_limit_rpm": 30,
+      "pricing": {
+        "input_per_million": 10,
+        "output_per_million": 50
+      },
+      "reasoning_effort": "medium"
+    }
+  ]
+}

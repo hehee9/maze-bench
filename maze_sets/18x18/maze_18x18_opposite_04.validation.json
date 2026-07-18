@@ -1,0 +1,97 @@
+{
+  "valid": true,
+  "errors": [],
+  "checks": {
+    "has_START_OUT": true,
+    "has_GOAL_OUT": true,
+    "answer_starts_with_S": true,
+    "answer_path_starts_START_OUT": true,
+    "answer_path_ends_GOAL_OUT": true,
+    "stored_open_2x2_count": 0,
+    "recomputed_open_2x2_count": 0,
+    "perfect_answer_score": 100.0,
+    "perfect_answer_success": true,
+    "missing_final_exit_success": false,
+    "missing_final_exit_remaining": 1,
+    "first_non_S_results": {
+      "R": {
+        "problem_id": "maze_18x18_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at START_OUT (START_OUT): R relative to facing S means W",
+        "first_invalid_action_index": 0,
+        "optimal_action_count": 25,
+        "actual_action_count": 0,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0,
+        "score": 0.0,
+        "final_event": "START_OUT",
+        "final_cell": "START_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "R"
+        ],
+        "actions_executed": [],
+        "trajectory_events": [
+          "START_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT"
+        ]
+      },
+      "B": {
+        "problem_id": "maze_18x18_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at START_OUT (START_OUT): B relative to facing S means N",
+        "first_invalid_action_index": 0,
+        "optimal_action_count": 25,
+        "actual_action_count": 0,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0,
+        "score": 0.0,
+        "final_event": "START_OUT",
+        "final_cell": "START_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "B"
+        ],
+        "actions_executed": [],
+        "trajectory_events": [
+          "START_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT"
+        ]
+      },
+      "L": {
+        "problem_id": "maze_18x18_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at START_OUT (START_OUT): L relative to facing S means E",
+        "first_invalid_action_index": 0,
+        "optimal_action_count": 25,
+        "actual_action_count": 0,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0,
+        "score": 0.0,
+        "final_event": "START_OUT",
+        "final_cell": "START_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "L"
+        ],
+        "actions_executed": [],
+        "trajectory_events": [
+          "START_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT"
+        ]
+      }
+    }
+  }
+}

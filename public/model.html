@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title data-i18n="model.documentTitle">Maze Bench 모델 상세</title>
+  <link rel="icon" href="data:,">
+  <script src="theme.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-page model-detail-page">
+  <div id="sidebarBackdrop" class="model-sidebar-backdrop" hidden></div>
+  <aside id="rankingSidebar" class="model-ranking-sidebar" aria-label="전체 모델 순위" data-i18n-aria-label="model.sidebar">
+    <div class="ranking-sidebar-header">
+      <a
+        href="leaderboard.html"
+        class="ranking-sidebar-brand"
+        aria-label="전체 순위 보기"
+        data-i18n-aria-label="model.allRanking"
+      >
+        <span class="ranking-sidebar-kicker">MAZE BENCH</span>
+        <strong>
+          <span data-i18n="model.allRanking">전체 순위</span>
+          <span class="ranking-sidebar-arrow" aria-hidden="true">→</span>
+        </strong>
+      </a>
+      <button
+        id="rankingClose"
+        class="ranking-close"
+        type="button"
+        aria-label="모델 순위 닫기"
+        data-i18n-aria-label="model.closeRanking"
+      >×</button>
+    </div>
+    <nav id="rankingList" class="ranking-list" aria-label="모델 상세 바로가기" data-i18n-aria-label="model.detailLinks">
+      <p class="ranking-list-message" data-i18n="common.readingResults">공개 결과를 읽고 있습니다.</p>
+    </nav>
+    <div
+      id="rankingResizeHandle"
+      class="ranking-resize-handle"
+      role="separator"
+      aria-label="모델 순위 너비 조절"
+      data-i18n-aria-label="model.resizeRanking"
+      aria-orientation="vertical"
+      aria-valuemin="232"
+      aria-valuemax="420"
+      aria-valuenow="288"
+      tabindex="0"
+    ></div>
+  </aside>
+
+  <div id="modelMainStage" class="model-main-stage">
+    <main class="dashboard-shell">
+      <header class="site-header">
+        <a class="site-brand" href="leaderboard.html" aria-label="Maze Bench 리더보드" data-i18n-aria-label="leaderboard.brandLabel">
+          <p class="eyebrow">MAZE BENCH</p>
+          <h1 id="modelTitle" data-i18n="model.detail">모델 상세</h1>
+        </a>
+        <div class="header-actions">
+          <button
+            id="rankingToggle"
+            class="ranking-toggle"
+            type="button"
+            aria-controls="rankingSidebar"
+            aria-expanded="false"
+            data-i18n="model.rankingButton"
+          >순위</button>
+          <div class="language-switch" role="group" aria-label="언어 선택" data-i18n-aria-label="common.language">
+            <button type="button" data-locale="ko" aria-label="한국어로 전환" data-i18n-aria-label="common.switchKorean">KO</button>
+            <button type="button" data-locale="en" aria-label="영어로 전환" data-i18n-aria-label="common.switchEnglish">EN</button>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+            <span data-theme-icon aria-hidden="true">☾</span>
+          </button>
+          <nav class="site-nav" aria-label="페이지 이동" data-i18n-aria-label="common.pageNavigation">
+            <a href="leaderboard.html" aria-current="page" data-i18n="common.leaderboard">리더보드</a>
+            <a href="index.html" data-i18n="common.replay">리플레이</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="summary-grid" aria-label="모델 결과 요약" data-i18n-aria-label="model.summary">
+        <article class="summary-card">
+          <span data-i18n="common.score">점수</span>
+          <strong id="scoreValue">—</strong>
+        </article>
+        <article class="summary-card summary-cost-card">
+          <span data-i18n="common.totalCost">총 비용</span>
+          <strong id="costValue">—</strong>
+        </article>
+        <article class="summary-card summary-price-card">
+          <span data-i18n="model.pricePerMillion">100만 토큰당 가격</span>
+          <strong id="tokenPriceValue" data-i18n="model.priceValue">입력 — · 출력 —</strong>
+        </article>
+        <label class="summary-card summary-size-card" for="sizeSelect">
+          <span data-i18n="common.mazeSize">미로 크기</span>
+          <select id="sizeSelect" class="summary-size-select" disabled>
+            <option data-i18n="common.loading">불러오는 중</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="dashboard-content model-detail-content" aria-labelledby="resultTitle">
+        <div class="content-heading">
+          <div>
+            <h2 id="resultTitle" data-i18n="model.mazeResults">미로별 결과</h2>
+          </div>
+        </div>
+        <p id="messageBox" class="dashboard-message" role="alert" hidden></p>
+        <div class="table-scroll">
+          <table class="benchmark-table model-detail-table">
+            <colgroup>
+              <col style="width: 20%">
+              <col style="width: 8%">
+              <col style="width: 8%">
+              <col style="width: 8%">
+              <col style="width: 9%">
+              <col style="width: 9%">
+              <col style="width: 9%">
+              <col style="width: 9%">
+              <col style="width: 11%">
+              <col style="width: 9%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col" data-i18n="model.mazeName">미로명</th>
+                <th scope="col" data-i18n="common.mazeSize">미로 크기</th>
+                <th scope="col" data-i18n="model.status">상태</th>
+                <th scope="col" data-i18n="common.score">점수</th>
+                <th scope="col" data-i18n="common.cost">비용</th>
+                <th scope="col" data-i18n="common.input">입력</th>
+                <th scope="col" data-i18n="common.output">출력</th>
+                <th scope="col" data-i18n="common.reasoning">추론</th>
+                <th scope="col" data-i18n="common.totalTokens">총 토큰</th>
+                <th scope="col" data-i18n="common.replay">리플레이</th>
+              </tr>
+            </thead>
+            <tbody id="resultBody"></tbody>
+          </table>
+          <div id="emptyState" class="empty-state" hidden data-i18n="model.noMazes">표시할 미로가 없습니다.</div>
+        </div>
+      </section>
+
+      <section class="model-analytics" aria-labelledby="analyticsTitle">
+        <div class="analytics-heading">
+          <h2 id="analyticsTitle" data-i18n="model.analytics">미로 크기와 구조별 평균 점수</h2>
+        </div>
+        <div class="analytics-grid">
+          <article id="exportModelSizes" class="analytics-card" aria-labelledby="sizeChartTitle">
+            <div class="analytics-card-heading">
+              <h3 id="sizeChartTitle" data-i18n="model.sizeAverage">미로 크기별 평균 점수</h3>
+              <div class="analytics-card-actions">
+                <span class="export-watermark" data-export-show="true">Github/hehee9</span>
+                <button
+                  id="exportModelSizesButton"
+                  class="export-button"
+                  type="button"
+                  data-export-hide="true"
+                  data-export-target="#exportModelSizes"
+                  data-export-filename="maze-bench-model-size-scores.png"
+                  aria-label="이미지로 내보내기"
+                  title="이미지로 내보내기"
+                  data-i18n-aria-label="export.image"
+                  data-i18n-title="export.image"
+                >
+                  <svg aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5" stroke-width="2"></circle>
+                    <path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="sizeScoreChart" class="score-chart"></div>
+          </article>
+          <article id="exportModelHeatmap" class="analytics-card" aria-labelledby="heatmapTitle">
+            <div class="analytics-card-heading">
+              <h3 id="heatmapTitle" data-i18n="model.structureHeatmap">미로 크기 × 출입구 구조</h3>
+              <div class="analytics-card-actions">
+                <span class="export-watermark" data-export-show="true">Github/hehee9</span>
+                <button
+                  id="exportModelHeatmapButton"
+                  class="export-button"
+                  type="button"
+                  data-export-hide="true"
+                  data-export-target="#exportModelHeatmap"
+                  data-export-filename="maze-bench-model-structure-heatmap.png"
+                  aria-label="이미지로 내보내기"
+                  title="이미지로 내보내기"
+                  data-i18n-aria-label="export.image"
+                  data-i18n-title="export.image"
+                >
+                  <svg aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke-width="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5" stroke-width="2"></circle>
+                    <path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div id="scoreHeatmap" class="score-heatmap"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="vendor/html-to-image/html-to-image.js"></script>
+  <script src="export-image.js"></script>
+  <script src="benchmark-data.js"></script>
+  <script src="model.js"></script>
+</body>
+</html>

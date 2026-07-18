@@ -1,0 +1,24 @@
+problem_id: maze_06x06_adjacent_01
+size: 6x6
+wall_density: 0.7
+seed: 17616309899876556215
+start_cell: (1, 0) on N side
+goal_cell: (5, 4) on E side
+initial_facing: S
+legend: #=wall, .=corridor, A=start outside, G=goal outside
+
+    A          
+ ###.######### 
+ #.#...#.#...# 
+ #.#.#.#.#.#.# 
+ #...#.#.#.#.# 
+ #.#####.#.#.# 
+ #.........#.# 
+ ###.#######.# 
+ #...........# 
+ #.#####.#.#.# 
+ #.......#.#..G
+ #.#.#####.#.# 
+ #.#.....#...# 
+ ############# 
+               
