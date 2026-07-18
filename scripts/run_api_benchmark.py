@@ -201,7 +201,7 @@ def discover_mazes(maze_dir: Path) -> List[MazeCase]:
     return cases
 
 
-def result_filename(model: ModelConfig, maze: MazeCase) -> str:
+def legacy_result_filename(model: ModelConfig, maze: MazeCase) -> str:
     return "__".join(
         (
             slug(model.provider),
@@ -210,6 +210,27 @@ def result_filename(model: ModelConfig, maze: MazeCase) -> str:
             slug(maze.maze_id),
         )
     ) + ".json"
+
+
+def result_filename(model: ModelConfig, maze: MazeCase) -> str:
+    return "__".join(
+        (
+            slug(model.provider),
+            slug(model.model_id),
+            slug(reasoning_label(model)),
+            slug(model.name),
+            slug(maze.maze_id),
+        )
+    ) + ".json"
+
+
+def _result_record_paths(task: BenchmarkTask) -> Iterable[Path]:
+    yield task.output_path
+    legacy_path = task.output_path.with_name(
+        legacy_result_filename(task.model, task.maze)
+    )
+    if legacy_path != task.output_path:
+        yield legacy_path
 
 
 def ensure_unique_paths(tasks: Sequence[BenchmarkTask]) -> None:
@@ -422,50 +443,81 @@ def read_current_record(path: Path, run_id: str) -> Optional[Dict[str, Any]]:
     return record if record.get("run_id") == run_id else None
 
 
+def read_current_task_record(
+    task: BenchmarkTask,
+    run_id: str,
+) -> Optional[Dict[str, Any]]:
+    current = read_current_record(task.output_path, run_id)
+    if current is not None:
+        return current
+
+    for path in _result_record_paths(task):
+        if path == task.output_path:
+            continue
+        record = read_current_record(path, run_id)
+        if record is None:
+            continue
+        model = record.get("model") or {}
+        maze = record.get("maze") or {}
+        if (
+            model.get("name") == task.model.name
+            and maze.get("maze_id") == task.maze.maze_id
+            and maze.get("json_sha256") == task.maze.json_sha256
+            and maze.get("image_sha256") == task.maze.image_sha256
+        ):
+            return record
+    return None
+
+
 def read_compatible_record(
     task: BenchmarkTask,
     prompt_hash: str,
 ) -> Optional[Dict[str, Any]]:
-    if not task.output_path.is_file():
-        return None
-    try:
-        record = json.loads(task.output_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return None
-
-    record_model = record.get("model") or {}
     expected_model = task.model.public_dict()
-    model_matches = all(
-        record_model.get(key) == value
-        for key, value in expected_model.items()
-        if key != "max_output_tokens"
-    )
-    if model_matches and (
-        record_model.get("max_output_tokens") != expected_model["max_output_tokens"]
-    ):
-        stored_limit = record_model.get("max_output_tokens")
-        expected_limit = expected_model["max_output_tokens"]
-        response = record.get("response") or {}
-        usage = response.get("usage") or {}
-        output_tokens = usage.get("output_tokens", response.get("output_tokens"))
-        model_matches = (
-            record_is_api_success(record)
-            and type(stored_limit) is int
-            and stored_limit > expected_limit
-            and type(output_tokens) is int
-            and output_tokens <= expected_limit
+    for path in _result_record_paths(task):
+        if not path.is_file():
+            continue
+        try:
+            record = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+
+        record_model = record.get("model") or {}
+        model_matches = all(
+            record_model.get(key) == value
+            for key, value in expected_model.items()
+            if key != "max_output_tokens"
         )
-    maze = record.get("maze") or {}
-    prompt = record.get("prompt") or {}
-    if not (
-        model_matches
-        and maze.get("maze_id") == task.maze.maze_id
-        and maze.get("json_sha256") == task.maze.json_sha256
-        and maze.get("image_sha256") == task.maze.image_sha256
-        and prompt.get("sha256") == prompt_hash
-    ):
-        return None
-    return record
+        if model_matches and (
+            record_model.get("max_output_tokens")
+            != expected_model["max_output_tokens"]
+        ):
+            stored_limit = record_model.get("max_output_tokens")
+            expected_limit = expected_model["max_output_tokens"]
+            response = record.get("response") or {}
+            usage = response.get("usage") or {}
+            output_tokens = usage.get(
+                "output_tokens",
+                response.get("output_tokens"),
+            )
+            model_matches = (
+                record_is_api_success(record)
+                and type(stored_limit) is int
+                and stored_limit > expected_limit
+                and type(output_tokens) is int
+                and output_tokens <= expected_limit
+            )
+        maze = record.get("maze") or {}
+        prompt = record.get("prompt") or {}
+        if (
+            model_matches
+            and maze.get("maze_id") == task.maze.maze_id
+            and maze.get("json_sha256") == task.maze.json_sha256
+            and maze.get("image_sha256") == task.maze.image_sha256
+            and prompt.get("sha256") == prompt_hash
+        ):
+            return record
+    return None
 
 
 def select_aggregate_tasks(
@@ -513,7 +565,7 @@ def read_aggregate_record(
         active_maze_ids is None or task.maze.maze_id in active_maze_ids
     )
     if model_is_active and maze_is_active:
-        current = read_current_record(task.output_path, run_id)
+        current = read_current_task_record(task, run_id)
         if current is not None or not reuse_compatible_active_records:
             return current
     if prompt_hash is None:
@@ -890,6 +942,17 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         return 2
 
     all_mazes = discover_mazes(maze_dir)
+    ensure_unique_paths(
+        [
+            BenchmarkTask(
+                model=model,
+                maze=maze,
+                output_path=output_dir / result_filename(model, maze),
+            )
+            for model in configured_models
+            for maze in all_mazes
+        ]
+    )
     try:
         mazes = select_mazes(all_mazes, args.maze_sizes)
     except ValueError as error:

@@ -426,6 +426,10 @@ a {
   vertical-align: middle;
 }
 
+html[lang="en"] .state-pill {
+  white-space: nowrap;
+}
+
 .state-pill.is-success {
   color: #0b7650;
   background: #d9f6e9;
@@ -2183,7 +2187,7 @@ body.model-detail-page.is-resizing-sidebar {
   }
 
   .site-brand h1 {
-    font-size: 1.08rem;
+    font-size: 0.95rem;
   }
 
   .site-nav {

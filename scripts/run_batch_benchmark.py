@@ -591,6 +591,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         return 2
 
     all_mazes = discover_mazes(maze_dir)
+    ensure_unique_paths(_model_tasks(configured_models, all_mazes, output_dir))
     try:
         mazes = select_mazes(all_mazes, args.maze_sizes)
     except ValueError as error:

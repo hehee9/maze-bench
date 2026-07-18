@@ -73,6 +73,11 @@
       "export.saved": "PNG 이미지 다운로드를 시작했습니다.",
       "export.failed": "이미지를 내보내지 못했습니다.",
 
+      "footer.ariaLabel": "프로젝트 정보",
+      "footer.githubAria": "Maze Bench GitHub 저장소 열기",
+      "footer.licenseAria": "Apache License 2.0 전문 보기",
+      "footer.independent": "Maze Bench는 독립적으로 운영되는 오픈소스 벤치마크입니다.",
+
       "leaderboard.documentTitle": "Maze Bench 리더보드",
       "leaderboard.brandLabel": "Maze Bench 리더보드",
       "leaderboard.title": "모델 리더보드",
@@ -282,6 +287,11 @@
       "export.image": "Export as image",
       "export.saved": "PNG download started.",
       "export.failed": "Could not export the image.",
+
+      "footer.ariaLabel": "Project information",
+      "footer.githubAria": "Open the Maze Bench GitHub repository",
+      "footer.licenseAria": "Read the Apache License 2.0",
+      "footer.independent": "Maze Bench is an independently maintained open-source benchmark.",
 
       "leaderboard.documentTitle": "Maze Bench Leaderboard",
       "leaderboard.brandLabel": "Maze Bench leaderboard",

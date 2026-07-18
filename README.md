@@ -225,7 +225,7 @@ python scripts/run_api_benchmark.py --list-models
 
 One of `--all-models`, `--models`, or `--list-models` is required. Use `--maze-sizes` to run only selected maze sizes and `--max-workers` to control concurrent requests (default: 30).
 
-Individual results are written to `outputs/<provider>__<model>__<reasoning>__<maze>.json`, while aggregates are written to `outputs/all_model_scores.json`; both locations are excluded from Git by default. The `output/` directory at the project root is unrelated to the benchmark. With `--resume`, compatible successful results are reused and only failed or missing runs are requested again.
+Individual results are written to `outputs/<provider>__<model-id>__<reasoning>__<configured-name>__<maze>.json`, while aggregates are written to `outputs/all_model_scores.json`; both locations are excluded from Git by default. The configured name keeps variants with the same model ID in separate files. The `output/` directory at the project root is unrelated to the benchmark. With `--resume`, compatible successful results are reused and only failed or missing runs are requested again.
 
 ### Batch API
 

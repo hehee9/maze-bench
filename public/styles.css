@@ -32,6 +32,12 @@ body {
   overflow: hidden;
 }
 
+body.replay-page {
+  height: auto;
+  min-height: 100dvh;
+  overflow-y: auto;
+}
+
 button,
 select,
 input {
@@ -125,11 +131,52 @@ h2 {
 
 .site-brand {
   min-width: 0;
+}
+
+.site-brand-kicker {
+  display: flex;
+  margin-bottom: 6px;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-brand-kicker .eyebrow {
+  margin: 0;
+}
+
+.site-brand-title {
+  display: block;
   text-decoration: none;
 }
 
 .site-brand h1 {
   font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+}
+
+.site-brand-github {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-radius: 7px;
+  color: #657087;
+  transition: color 140ms ease, background 140ms ease, box-shadow 140ms ease;
+}
+
+.site-brand-github:hover {
+  color: #26324d;
+  background: #eef1f5;
+}
+
+.site-brand-github:focus-visible {
+  box-shadow: 0 0 0 3px rgba(52, 66, 100, 0.24);
+}
+
+.site-brand-github svg {
+  width: 16px;
+  height: 16px;
 }
 
 .header-actions {
@@ -278,6 +325,67 @@ h2 {
 .site-nav a[aria-current="page"] {
   color: #fff;
   background: var(--accent);
+}
+
+.site-footer {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 20px 16px 26px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.site-footer-inner {
+  display: flex;
+  padding-top: 18px;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration-color: currentColor;
+  text-underline-offset: 3px;
+  transition: color 140ms ease, box-shadow 140ms ease;
+}
+
+.site-footer a:hover {
+  color: #26324d;
+}
+
+.site-footer a:focus-visible {
+  border-radius: 4px;
+  box-shadow: 0 0 0 3px rgba(52, 66, 100, 0.24);
+}
+
+.site-footer-github {
+  display: inline-flex;
+  padding: 3px 5px;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.site-footer-github svg {
+  width: 19px;
+  height: 19px;
+}
+
+.site-footer-copyright {
+  font-size: 0.8rem;
+}
+
+.site-footer-note {
+  color: #818a9b;
+  font-size: 0.74rem;
 }
 
 .control-panel,
@@ -713,6 +821,19 @@ h2 {
   color: #a7b0c0;
 }
 
+[data-theme="dark"] .site-brand-github {
+  color: #a7b0c0;
+}
+
+[data-theme="dark"] .site-brand-github:hover {
+  color: #f3f4f6;
+  background: #273249;
+}
+
+[data-theme="dark"] .site-brand-github:focus-visible {
+  box-shadow: 0 0 0 3px rgba(101, 119, 165, 0.48);
+}
+
 [data-theme="dark"] .site-header,
 [data-theme="dark"] .control-panel,
 [data-theme="dark"] .replay-panel,
@@ -754,6 +875,18 @@ h2 {
 
 [data-theme="dark"] .language-switch button:hover:not(:disabled):not([aria-pressed="true"]) {
   background: #273249;
+}
+
+[data-theme="dark"] .site-footer a:hover {
+  color: #f3f4f6;
+}
+
+[data-theme="dark"] .site-footer a:focus-visible {
+  box-shadow: 0 0 0 3px rgba(101, 119, 165, 0.48);
+}
+
+[data-theme="dark"] .site-footer-note {
+  color: #8791a3;
 }
 
 [data-theme="dark"] .theme-toggle,
@@ -1481,8 +1614,38 @@ h2 {
     display: none;
   }
 
+  .site-brand {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .site-brand-kicker {
+    margin: 0;
+    order: 2;
+  }
+
+  .site-brand-title {
+    min-width: 0;
+    order: 1;
+  }
+
   .site-brand h1 {
-    font-size: 1.08rem;
+    overflow: hidden;
+    font-size: 0.95rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .site-brand-github {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+  }
+
+  .site-brand-github svg {
+    width: 14px;
+    height: 14px;
   }
 
   .site-nav {
@@ -1790,5 +1953,17 @@ h2 {
     grid-column: 2;
     grid-row: 1;
     min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    width: calc(100% - 8px);
+    padding: 15px 8px 18px;
+  }
+
+  .site-footer-inner {
+    padding-top: 14px;
+    gap: 5px;
   }
 }
