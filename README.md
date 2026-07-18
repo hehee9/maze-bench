@@ -1,3 +1,10 @@
+---
+title: Maze Bench
+sdk: static
+app_file: index.html
+license: apache-2.0
+---
+
 # Maze Bench
 
 **한국어 문서: [README_ko.md](./README_ko.md)**
@@ -11,8 +18,9 @@
 ### [**Interactive Dashboard**](https://hehee9.github.io/maze-bench/public/leaderboard.html)
 
 [![Dashboard](https://img.shields.io/badge/Dashboard-Live-brightgreen?style=for-the-badge&logo=github)](https://hehee9.github.io/maze-bench/public/leaderboard.html)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face%20Space-yellow?style=for-the-badge)](https://huggingface.co/spaces/Hehee-dev/maze-bench)
 
-**View the leaderboard, compare model performance, and watch replays on the dashboard above.**
+**View the leaderboard, compare model performance, and watch replays using either dashboard link above.**
 
 </div>
 

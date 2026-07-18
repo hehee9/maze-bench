@@ -11,8 +11,9 @@
 ### [**Interactive Dashboard**](https://hehee9.github.io/maze-bench/public/leaderboard.html)
 
 [![Dashboard](https://img.shields.io/badge/Dashboard-Live-brightgreen?style=for-the-badge&logo=github)](https://hehee9.github.io/maze-bench/public/leaderboard.html)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face%20Space-yellow?style=for-the-badge)](https://huggingface.co/spaces/Hehee-dev/maze-bench)
 
-**위 대시보드에서 리더보드, 모델별 성적 비교, 리플레이 등을 확인하실 수 있습니다**
+**위의 두 대시보드 링크에서 리더보드, 모델별 성적 비교, 리플레이 등을 확인하실 수 있습니다**
 
 </div>
 
