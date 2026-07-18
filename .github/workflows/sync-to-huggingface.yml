@@ -14,9 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-      - name: Push to Hugging Face Space
+      - name: Install Hugging Face Hub client
+        run: python -m pip install --disable-pip-version-check "huggingface_hub>=1.0,<2"
+      - name: Upload to Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force "https://Hehee-dev:${HF_TOKEN}@huggingface.co/spaces/Hehee-dev/maze-bench" HEAD:main
+        shell: python
+        run: |
+          from huggingface_hub import HfApi
+
+          HfApi().upload_folder(
+              folder_path=".",
+              repo_id="Hehee-dev/maze-bench",
+              repo_type="space",
+              ignore_patterns=[".github/**"],
+              delete_patterns=["*"],
+              commit_message="Sync from GitHub via GitHub Actions",
+          )
