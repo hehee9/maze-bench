@@ -47,6 +47,12 @@
     loadError: null,
   };
 
+  /** @description Expose leaderboard loading state to automated consumers */
+  function _setDashboardState(status) {
+    document.documentElement.dataset.dashboardState = status;
+    document.documentElement.dataset.dashboardReady = String(status === "ready");
+  }
+
   /** @description Translate a leaderboard string */
   function _t(key, parameters = {}) {
     return i18n.t(key, parameters);
@@ -1490,12 +1496,14 @@
 
   /** @description Load and render the leaderboard */
   async function _load() {
+    _setDashboardState("loading");
     try {
       state.payload = await data.loadBenchmarkResults();
       _populateSizes();
       _initializeChartModels();
       _renderModelPicker();
       _render();
+      _setDashboardState("ready");
     } catch (error) {
       state.loadError = error;
       elements.messageBox.hidden = false;
@@ -1503,12 +1511,14 @@
         detail: _errorText(error),
       });
       elements.scopeNote.textContent = _t("leaderboard.loadFailed");
+      _setDashboardState("error");
     }
   }
 
   if (!data) {
     elements.messageBox.hidden = false;
     elements.messageBox.textContent = _t("common.dataModuleFailure");
+    _setDashboardState("error");
     return;
   }
 

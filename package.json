@@ -1,0 +1,11 @@
+{
+  "name": "maze-bench-dashboard-export",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "export:readme-images": "node scripts/export-readme-images.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

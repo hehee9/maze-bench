@@ -52,6 +52,12 @@
       color: "#FF6A00",
       iconPath: "assets/developers/qwen.svg",
     },
+    xiaomi: {
+      key: "xiaomi",
+      label: "Xiaomi",
+      color: "#FF6900",
+      iconPath: "assets/developers/xiaomi.svg",
+    },
     "x-ai": {
       key: "x-ai",
       label: "xAI",

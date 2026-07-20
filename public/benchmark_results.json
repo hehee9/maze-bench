@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 3,
   "status": "completed",
-  "expected_result_count": 570,
-  "processed_result_count": 570,
+  "expected_result_count": 600,
+  "processed_result_count": 600,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -3258,6 +3258,198 @@
               "output_tokens": 213743,
               "reasoning_tokens": 213579,
               "total_tokens": 242888
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Mimo-V2.5 (medium)",
+      "provider": "openai_chat",
+      "model_id": "xiaomi/mimo-v2.5",
+      "reasoning_label": "effort-medium",
+      "pricing": {
+        "input_per_million": 0.14,
+        "output_per_million": 0.28
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 12.1802569093169,
+      "official_mean_score": 12.1802569093169,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 138090,
+          "output_tokens": 493113,
+          "reasoning_tokens": 491595,
+          "total_tokens": 631203
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 4.7299581994184265,
+          "official_mean_score": 4.7299581994184265,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 23015,
+              "output_tokens": 77534,
+              "reasoning_tokens": 77157,
+              "total_tokens": 100549
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 9.374530421863899,
+          "official_mean_score": 9.374530421863899,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 23015,
+              "output_tokens": 42897,
+              "reasoning_tokens": 42788,
+              "total_tokens": 65912
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 8.513419913419913,
+          "official_mean_score": 8.513419913419913,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 23015,
+              "output_tokens": 78385,
+              "reasoning_tokens": 78300,
+              "total_tokens": 101400
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 12.766666666666666,
+          "official_mean_score": 12.766666666666666,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 23015,
+              "output_tokens": 171354,
+              "reasoning_tokens": 171317,
+              "total_tokens": 194369
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 23.843537414965986,
+          "official_mean_score": 23.843537414965986,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 23015,
+              "output_tokens": 51401,
+              "reasoning_tokens": 50921,
+              "total_tokens": 74416
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 13.853428839566515,
+          "official_mean_score": 13.853428839566515,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 23015,
+              "output_tokens": 71542,
+              "reasoning_tokens": 71112,
+              "total_tokens": 94557
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -10582,6 +10774,996 @@
         "actual_action_count": 2,
         "remaining_action_count": 26,
         "completion_ratio": 0.07142857142857142,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 15454,
+        "reasoning_tokens": 15446,
+        "total_tokens": 20057
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 1,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 419,
+        "reasoning_tokens": 409,
+        "total_tokens": 5022
+      },
+      "score": 18.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 3,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.3,
+        "efficiency_ratio": 0.6
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 13507,
+        "reasoning_tokens": 13498,
+        "total_tokens": 18110
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 1,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 128000,
+        "reasoning_tokens": 127999,
+        "total_tokens": 132603
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 0,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 13974,
+        "reasoning_tokens": 13965,
+        "total_tokens": 18577
+      },
+      "score": 12.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 1,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "The maze solution is determined by tracing the path from the starting point (blue arrow) to the destination (red arrow), making decisions at every junction.\n\n1.  **Start (Blue Arrow):** Enter the maze. The first command is **S**.\n2.  **Junction 1:** You are heading South. There is a path opening to the West (Right) leading to the far left corridor, and a path straight (South) leading to the central horizontal \"highway\". The straight path is direct.\n    *   Command: **S** (Straight)\n3.  **Junction 2 (Highway Intersection):** You are heading South and hit the main horizontal corridor. You can turn Right (West) or Left (East). The exit is on the East side.\n    *   Command: **L** (Left/East)\n4.  **Junction 3 (End of Highway):** You are heading East and hit a wall. You can go North (Right) or South (Left). The North path is a dead end loop. You must go South.\n    *   Command: **L** (Left/South)\n5.  **Junction 4 (Zig-Zag):** You are heading South and hit a wall. You can go West (Right) back where you came from, or East (Left). You need to go East.\n    *   Command: **L** (Left/East)\n6.  **Junction 5 (Right Corridor Intersection):** You are heading East and hit the rightmost vertical corridor. You can go North (Right) or South (Left). The exit is to the South.\n    *   Command: **L** (Left/South)\n7.  **Exit:** You traverse South to the exit cell. The exit is on the wall to the right (West). *Note: In maze coordinates, exiting the right wall of the corridor from a downward path requires turning right.*\n    *   Command: **R** (Right)\n\nS S L L L L R",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 15623,
+        "reasoning_tokens": 15191,
+        "total_tokens": 20226
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 11,
+        "actual_action_count": 0,
+        "remaining_action_count": 11,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 8691,
+        "reasoning_tokens": 8683,
+        "total_tokens": 13294
+      },
+      "score": 37.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 3,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.375,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 13883,
+        "reasoning_tokens": 13872,
+        "total_tokens": 18486
+      },
+      "score": 27.551020408163264,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 6,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.42857142857142855,
+        "efficiency_ratio": 0.6428571428571429
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L L L R L L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 11378,
+        "reasoning_tokens": 11367,
+        "total_tokens": 15981
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 12,
+        "actual_action_count": 2,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R S L R S B R S R S L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 1826,
+        "reasoning_tokens": 1808,
+        "total_tokens": 6429
+      },
+      "score": 37.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 3,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.375,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 18836,
+        "reasoning_tokens": 18816,
+        "total_tokens": 23439
+      },
+      "score": 13.043478260869565,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 3,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.13043478260869565,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 21224,
+        "reasoning_tokens": 21216,
+        "total_tokens": 25827
+      },
+      "score": 13.605442176870747,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 3,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.14285714285714285,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "Based on the maze image provided, here is the step-by-step solution to navigate from the blue arrow (start) to the red arrow (destination):\n\n**Analysis of the Path:**\n1.  **Start:** You begin at the blue arrow at the top. You must enter the maze (**S**).\n2.  **Initial Corridor:** You are facing South. Immediately ahead is a wall. You must turn. The path to your Right (West) is open, while the path to your Left (East) leads to a dead-end corner in the top-right.\n    *   **Move:** Turn Right (**R**).\n3.  **The \"Snake\" Pattern:** You are now facing West. You hit a wall and must turn. You turn Left (**L**) to face South. This pattern of zig-zagging down the left side of the maze repeats.\n    *   Move South to the next intersection. Turn Right (**R**) to face West.\n    *   Move West. Turn Left (**L**) to face South.\n    *   Move South. Turn Right (**R**) to face West.\n    *   Move West. Turn Left (**L**) to face South.\n    *   Move South. Turn Right (**R**) to face West.\n    *   Move West. Turn Left (**L**) to face South.\n4.  **Final Approach:** You are now at the bottom-left corner (South-West).\n    *   You turn Left (**L**) to face East.\n    *   You traverse the straight corridor Eastward past one block until you reach the junction directly west of the exit.\n    *   The exit is to your Right (South). Turn Right (**R**).\n    *   Move Straight (**S**) to exit the maze.\n\n**Command Sequence:**\nS R L R L R L R L L R S",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 16420,
+        "reasoning_tokens": 16041,
+        "total_tokens": 21023
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 14,
+        "actual_action_count": 0,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R R L R R L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 6178,
+        "reasoning_tokens": 6164,
+        "total_tokens": 10781
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 8884,
+        "reasoning_tokens": 8875,
+        "total_tokens": 13487
+      },
+      "score": 25.951557093425606,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 5,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.29411764705882354,
+        "efficiency_ratio": 0.8823529411764706
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 12339,
+        "reasoning_tokens": 12330,
+        "total_tokens": 16942
+      },
+      "score": 3.7037037037037033,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 1,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.037037037037037035,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "Based on the provided maze image, here is the step-by-step solution to move from the blue arrow (start) to the red arrow (destination):\n\n1.  **S** - Enter the maze from the right side.\n2.  **R** - Turn right to go south (down).\n3.  **R** - Turn right to go west (left).\n4.  **L** - Turn left to go north (up).\n5.  **L** - Turn left to go west (left).\n6.  **R** - Turn right to go north (up).\n7.  **L** - Turn left to go west (left).\n8.  **R** - Turn right to go north (up).\n9.  **L** - Turn left to go west (left).\n10. **R** - Turn right to go north (up).\n11. **R** - Turn right to go east (right).\n12. **R** - Turn right to go north (up).\n13. **R** - Turn right to go east (right).\n14. **R** - Turn right to go north (up).\n15. **R** - Turn right to go east (right).\n16. **S** - Exit the maze to the north.\n\n**S R R L L R L L R L R R R R R S**",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 20426,
+        "reasoning_tokens": 20135,
+        "total_tokens": 25029
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 18,
+        "actual_action_count": 0,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S R S L L U R U U U L U D D R R U",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 16785,
+        "reasoning_tokens": 16764,
+        "total_tokens": 21388
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 18,
+        "actual_action_count": 0,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L L R R R L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 12913,
+        "reasoning_tokens": 12876,
+        "total_tokens": 17516
+      },
+      "score": 11.157024793388429,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.13636363636363635,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L R L L R L R L R L L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 15071,
+        "reasoning_tokens": 15052,
+        "total_tokens": 19674
+      },
+      "score": 8.7890625,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 3,
+        "remaining_action_count": 29,
+        "completion_ratio": 0.09375,
+        "efficiency_ratio": 0.9375
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R L R L R L S R L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 13055,
+        "reasoning_tokens": 13035,
+        "total_tokens": 17658
+      },
+      "score": 17.24137931034483,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 5,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1724137931034483,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R S S S R R S S R R R R R S S R R R R R R R R L L L L L L L L L L L L L L R R R R R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 8756,
+        "reasoning_tokens": 8710,
+        "total_tokens": 13359
+      },
+      "score": 4.166666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 1,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.041666666666666664,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S L L S L S S R L L B S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 9991,
+        "reasoning_tokens": 9973,
+        "total_tokens": 14594
+      },
+      "score": 4.3478260869565215,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 1,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.043478260869565216,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 680,
+        "reasoning_tokens": 671,
+        "total_tokens": 5283
+      },
+      "score": 12.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 3,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R S R L R L R R L R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 10415,
+        "reasoning_tokens": 10399,
+        "total_tokens": 15018
+      },
+      "score": 8.616780045351474,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 2,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.09523809523809523,
+        "efficiency_ratio": 0.9047619047619048
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L L L R S S S S L S L L R L R S S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 18521,
+        "reasoning_tokens": 18497,
+        "total_tokens": 23124
+      },
+      "score": 9.090909090909092,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 2,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.09090909090909091,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 10198,
+        "reasoning_tokens": 10190,
+        "total_tokens": 14801
+      },
+      "score": 4.761904761904762,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 1,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.047619047619047616,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L L R R L L R R L L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 17419,
+        "reasoning_tokens": 17400,
+        "total_tokens": 22022
+      },
+      "score": 14.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 6,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.7
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R L R L R L R L R L R L R L R L R L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 19149,
+        "reasoning_tokens": 19121,
+        "total_tokens": 23752
+      },
+      "score": 4.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 1,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.04,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Mimo-V2.5 (medium)",
+        "provider": "openai_chat",
+        "model_id": "xiaomi/mimo-v2.5",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4603,
+        "output_tokens": 13098,
+        "reasoning_tokens": 13092,
+        "total_tokens": 17701
+      },
+      "score": 10.714285714285714,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 28,
+        "actual_action_count": 3,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.10714285714285714,
         "efficiency_ratio": 1.0
       }
     },

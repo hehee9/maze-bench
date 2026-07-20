@@ -30,7 +30,7 @@ license: apache-2.0
 
 Maze Bench evaluates whether a model can inspect a rectangular maze image and produce an escape route. It is designed to measure continuous visual and spatial reasoning. The benchmark generates rectangular maze images and their solutions at random, then scores each model's movement log by multiplying completion by efficiency.
 
-The benchmark contains five mazes for each of six sizes: easy (4x4 and 6x6), medium (9x9 and 12x12), and hard (15x15 and 18x18). **Even Claude Fable 5 scores below 40% overall.** Reasoning was limited to `medium` due to cost, so stronger reasoning settings may improve the results.
+The benchmark contains five mazes for each of six sizes: easy (4x4 and 6x6), medium (9x9 and 12x12), and hard (15x15 and 18x18). **GPT-5.6 Sol Pro ranks first with an overall score of 66.09, while every other model configuration remains below 40.** Reasoning was limited to `medium` due to cost, so stronger reasoning settings may improve the results.
 
 ---
 
@@ -38,9 +38,9 @@ The benchmark contains five mazes for each of six sizes: easy (4x4 and 6x6), med
 
 ### Leaderboard
 
-![Leaderboard](./images/maze-bench-model-ranking.png)
+![Leaderboard](./images/maze-bench-model-ranking-en.png)
 
-Claude Fable 5 leads the overall ranking by a wide margin. Kimi K3 and GPT-5.6 Sol follow, while Gemini 3.5 Flash also delivers a solid result.
+GPT-5.6 Sol Pro leads the overall ranking with 66.09 points, followed by Claude Fable 5 at 39.35. Kimi K3 and GPT-5.6 Sol rank third and fourth, respectively.
 
 The ranking changes when the results are split by difficulty.
 
@@ -48,30 +48,33 @@ The ranking changes when the results are split by difficulty.
 
 | Rank | Model | Score |
 | --- | --- | --- |
-| 1 | **Claude Fable 5** | 92.54% |
-| 2 | **Claude Opus 4.8** | 70.29% |
-| 3 | **Gemini 3.5 Flash** | 58.80% |
-| 5 | **Kimi K3** | 56.24% |
-| 7 | **GPT-5.6 Sol** | 51.24% |
+| 1 | **GPT-5.6 Sol Pro** | 100.00% |
+| 2 | **Claude Fable 5** | 92.54% |
+| 3 | **Claude Opus 4.8** | 70.29% |
+| 4 | **Gemini 3.5 Flash** | 58.80% |
+| 6 | **Kimi K3** | 56.24% |
+| 8 | **GPT-5.6 Sol** | 51.24% |
 
 **Hard**
 
 | Rank | Model | Score |
 | --- | --- | --- |
-| 1 | **GPT-5.6 Sol** | 16.81% |
-| 2 | **Kimi K3** | 14.27% |
-| 3 | **Qwen3.7 Plus** | 11.68% |
-| 6 | **GPT-5.6 Terra** | 10.40% |
-| 8 | **Claude Opus 4.8** | 8.93% |
-| 9 | **Claude Fable 5** | 8.34% |
+| 1 | **GPT-5.6 Sol Pro** | 24.54% |
+| 2 | **GPT-5.6 Sol** | 16.81% |
+| 3 | **Kimi K3** | 14.27% |
+| 4 | **Qwen3.7 Plus** | 11.68% |
+| 7 | **GPT-5.6 Terra** | 10.40% |
+| 9 | **Mimo-V2.5** | 8.94% |
+| 10 | **Claude Opus 4.8** | 8.93% |
+| 11 | **Claude Fable 5** | 8.34% |
 
-Claude Fable and Opus perform much better on **small mazes** and rise to the top of the ranking. GPT and Kimi perform relatively better on **large mazes**, changing the order of the leading models.
+GPT-5.6 Sol Pro ranks first in both the easy and hard ranges. Below it, the ordering changes substantially with maze size: Claude Fable 5 and Claude Opus 4.8 rank near the top on **small mazes**, while GPT-5.6 Sol, Kimi K3, and Qwen3.7 Plus follow Sol Pro on **large mazes**.
 
-![Scores by maze size](./images/maze-bench-leaderboard-size-scores.png)
+![Scores by maze size](./images/maze-bench-leaderboard-size-scores-en.png)
 
 The chart makes this pattern easier to see.
 
-![Cost performance](./images/maze-bench-leaderboard-cost-performance.png)
+![Cost performance](./images/maze-bench-leaderboard-cost-performance-en.png)
 
 When cost efficiency is included, Claude models generally perform best on Maze Bench. GPT and Kimi achieve high scores but are relatively less cost-efficient.
 
