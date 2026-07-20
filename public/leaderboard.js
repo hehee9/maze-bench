@@ -564,6 +564,10 @@
 
   /** @description Render the manual model selection panel */
   function _renderModelPicker() {
+    const modelNameCollator = new Intl.Collator(i18n.getLocale(), {
+      numeric: true,
+      sensitivity: "base",
+    });
     const groups = new Map();
     for (const entry of data.rankModels(state.payload.models)) {
       const developer = data.modelDeveloper(entry.model);
@@ -571,6 +575,12 @@
         groups.set(developer.key, { developer, entries: [] });
       }
       groups.get(developer.key).entries.push(entry);
+    }
+    for (const group of groups.values()) {
+      group.entries.sort((left, right) => modelNameCollator.compare(
+        _modelName(right.model),
+        _modelName(left.model),
+      ));
     }
     const sortedGroups = [...groups.values()].sort((left, right) => (
       right.entries.length - left.entries.length

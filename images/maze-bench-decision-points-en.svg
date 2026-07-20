@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1600" viewBox="0 0 2400 1600">
+  <defs>
+    <style>
+      .panel-title {
+        font-family: Arial, "Noto Sans", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        fill: #172033;
+        text-anchor: middle;
+      }
+      .panel-note {
+        font-family: Arial, "Noto Sans", sans-serif;
+        font-size: 31px;
+        font-weight: 500;
+        fill: #536078;
+        text-anchor: middle;
+      }
+      .wall {
+        fill: #355fa3;
+        stroke: #172033;
+        stroke-width: 7;
+      }
+      .corridor-outline {
+        fill: none;
+        stroke: #172033;
+        stroke-width: 146;
+        stroke-linecap: butt;
+        stroke-linejoin: miter;
+      }
+      .corridor {
+        fill: none;
+        stroke: #ececec;
+        stroke-width: 132;
+        stroke-linecap: butt;
+        stroke-linejoin: miter;
+      }
+      .decision {
+        fill: #ffb020;
+        stroke: #172033;
+        stroke-width: 7;
+      }
+      .entry {
+        fill: #45a3ff;
+        stroke: #172033;
+        stroke-width: 6;
+      }
+      .exit {
+        fill: #f25555;
+        stroke: #172033;
+        stroke-width: 6;
+      }
+    </style>
+  </defs>
+
+  <rect width="2400" height="1600" fill="#ffffff"/>
+
+  <!-- Panel 1: corner -->
+  <g transform="translate(70 70)">
+    <text class="panel-title" x="350" y="55">Corner</text>
+    <rect class="wall" x="35" y="95" width="630" height="525" rx="10"/>
+    <path class="corridor-outline" d="M350 620 V360 H665"/>
+    <path class="corridor" d="M350 620 V360 H665"/>
+    <circle class="decision" cx="350" cy="360" r="30"/>
+    <path class="entry" d="M350 560 l-38 55 h76 z"/>
+    <text class="panel-note" x="350" y="680">Turn required</text>
+  </g>
+
+  <!-- Panel 2: dead end -->
+  <g transform="translate(835 70)">
+    <text class="panel-title" x="350" y="55">Dead End</text>
+    <rect class="wall" x="35" y="95" width="630" height="525" rx="10"/>
+    <path class="corridor-outline" d="M350 620 V305"/>
+    <path class="corridor" d="M350 620 V305"/>
+    <circle class="decision" cx="350" cy="305" r="30"/>
+    <path class="entry" d="M350 560 l-38 55 h76 z"/>
+    <text class="panel-note" x="350" y="680">Turn back</text>
+  </g>
+
+  <!-- Panel 3: T junction -->
+  <g transform="translate(1600 70)">
+    <text class="panel-title" x="350" y="55">T-Junction</text>
+    <rect class="wall" x="35" y="95" width="630" height="525" rx="10"/>
+    <path class="corridor-outline" d="M350 620 V345 M35 345 H665"/>
+    <path class="corridor" d="M350 620 V345 M35 345 H665"/>
+    <circle class="decision" cx="350" cy="345" r="30"/>
+    <path class="entry" d="M350 560 l-38 55 h76 z"/>
+    <text class="panel-note" x="350" y="680">Choose one of three directions</text>
+  </g>
+
+  <!-- Panel 4: four-way junction -->
+  <g transform="translate(70 825)">
+    <text class="panel-title" x="350" y="55">Four-Way Junction</text>
+    <rect class="wall" x="35" y="95" width="630" height="525" rx="10"/>
+    <path class="corridor-outline" d="M350 95 V620 M35 355 H665"/>
+    <path class="corridor" d="M350 95 V620 M35 355 H665"/>
+    <circle class="decision" cx="350" cy="355" r="30"/>
+    <path class="entry" d="M350 560 l-38 55 h76 z"/>
+    <text class="panel-note" x="350" y="680">Choose one of four directions</text>
+  </g>
+
+  <!-- Panel 5: cell before exit -->
+  <g transform="translate(835 825)">
+    <text class="panel-title" x="350" y="55">Cell Before Exit</text>
+    <rect class="wall" x="35" y="95" width="630" height="525" rx="10"/>
+    <path class="corridor-outline" d="M350 620 V95"/>
+    <path class="corridor" d="M350 620 V95"/>
+    <circle class="decision" cx="350" cy="250" r="30"/>
+    <path class="entry" d="M350 560 l-38 55 h76 z"/>
+    <path class="exit" d="M350 135 l-44 64 h88 z"/>
+    <text class="panel-note" x="350" y="680">One exit command required</text>
+  </g>
+
+  <!-- Panel 6: straight corridor, excluded -->
+  <g transform="translate(1600 825)">
+    <text class="panel-title" x="350" y="55">Straight Corridor</text>
+    <rect class="wall" x="35" y="95" width="630" height="525" rx="10"/>
+    <path class="corridor-outline" d="M350 95 V620"/>
+    <path class="corridor" d="M350 95 V620"/>
+    <path class="entry" d="M350 560 l-38 55 h76 z"/>
+    <text class="panel-note" x="350" y="680">Excluded from decision points</text>
+  </g>
+
+</svg>
