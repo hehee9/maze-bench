@@ -62,11 +62,11 @@ The ranking changes when the results are split by difficulty.
 | 1 | **GPT-5.6 Sol Pro** | 24.54% |
 | 2 | **GPT-5.6 Sol** | 16.81% |
 | 3 | **Kimi K3** | 14.27% |
-| 4 | **Qwen3.7 Plus** | 11.68% |
-| 7 | **GPT-5.6 Terra** | 10.40% |
-| 9 | **Mimo-V2.5** | 8.94% |
-| 10 | **Claude Opus 4.8** | 8.93% |
-| 11 | **Claude Fable 5** | 8.34% |
+| 5 | **Qwen3.7 Plus** | 11.68% |
+| 8 | **GPT-5.6 Terra** | 10.40% |
+| 11 | **Mimo-V2.5** | 8.94% |
+| 12 | **Claude Opus 4.8** | 8.93% |
+| 13 | **Claude Fable 5** | 8.34% |
 
 GPT-5.6 Sol Pro ranks first in both the easy and hard ranges. Below it, the ordering changes substantially with maze size: Claude Fable 5 and Claude Opus 4.8 rank near the top on **small mazes**, while GPT-5.6 Sol, Kimi K3, and Qwen3.7 Plus follow Sol Pro on **large mazes**.
 
