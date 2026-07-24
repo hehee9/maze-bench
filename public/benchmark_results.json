@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 3,
   "status": "completed",
-  "expected_result_count": 660,
-  "processed_result_count": 660,
+  "expected_result_count": 690,
+  "processed_result_count": 690,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -575,6 +575,198 @@
               "input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 5,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Claude Opus 5 (medium)",
+      "provider": "anthropic",
+      "model_id": "claude-opus-5",
+      "reasoning_label": "effort-medium_thinking-adaptive",
+      "pricing": {
+        "input_per_million": 5.0,
+        "output_per_million": 25.0
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 50.86333965495908,
+      "official_mean_score": 50.86333965495908,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 154140,
+          "output_tokens": 177101,
+          "reasoning_tokens": 176544,
+          "total_tokens": 331241
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 32.037961630195184,
+          "official_mean_score": 32.037961630195184,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25690,
+              "output_tokens": 66781,
+              "reasoning_tokens": 66679,
+              "total_tokens": 92471
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 9.313625217877407,
+          "official_mean_score": 9.313625217877407,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25690,
+              "output_tokens": 18111,
+              "reasoning_tokens": 17985,
+              "total_tokens": 43801
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 8.340091293322063,
+          "official_mean_score": 8.340091293322063,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25690,
+              "output_tokens": 8447,
+              "reasoning_tokens": 8320,
+              "total_tokens": 34137
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 100.0,
+          "official_mean_score": 100.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25690,
+              "output_tokens": 9322,
+              "reasoning_tokens": 9278,
+              "total_tokens": 35012
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 83.2,
+          "official_mean_score": 83.2,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25690,
+              "output_tokens": 21430,
+              "reasoning_tokens": 21373,
+              "total_tokens": 47120
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 72.28835978835978,
+          "official_mean_score": 72.28835978835978,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25690,
+              "output_tokens": 53010,
+              "reasoning_tokens": 52909,
+              "total_tokens": 78700
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
               "total_tokens": 0
             }
           }
@@ -23029,6 +23221,996 @@
         "output_tokens": 667,
         "reasoning_tokens": null,
         "total_tokens": 5805
+      },
+      "score": 3.571428571428571,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 1,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.03571428571428571,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 1841,
+        "reasoning_tokens": 1833,
+        "total_tokens": 6979
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 1792,
+        "reasoning_tokens": 1784,
+        "total_tokens": 6930
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 1586,
+        "reasoning_tokens": 1578,
+        "total_tokens": 6724
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 2021,
+        "reasoning_tokens": 2011,
+        "total_tokens": 7159
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 2082,
+        "reasoning_tokens": 2072,
+        "total_tokens": 7220
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L R L S S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 3113,
+        "reasoning_tokens": 3100,
+        "total_tokens": 8251
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 11,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 2695,
+        "reasoning_tokens": 2685,
+        "total_tokens": 7833
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S S L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 8728,
+        "reasoning_tokens": 8717,
+        "total_tokens": 13866
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 9,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L R S L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 4211,
+        "reasoning_tokens": 4197,
+        "total_tokens": 9349
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 12,
+        "actual_action_count": 12,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 2683,
+        "reasoning_tokens": 2674,
+        "total_tokens": 7821
+      },
+      "score": 16.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 2,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.8
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R R L L R L S R R L L S R L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 11228,
+        "reasoning_tokens": 11203,
+        "total_tokens": 16366
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 23,
+        "actual_action_count": 23,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R L L R L R L L L R L R R L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 10854,
+        "reasoning_tokens": 10831,
+        "total_tokens": 15992
+      },
+      "score": 95.23809523809523,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 20,
+        "actual_action_count": 21,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S L R R L S S R S L S R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 7140,
+        "reasoning_tokens": 7122,
+        "total_tokens": 12278
+      },
+      "score": 87.5,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 14,
+        "actual_action_count": 16,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.875
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R L R S L R S S L R R R L L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 9477,
+        "reasoning_tokens": 9455,
+        "total_tokens": 14615
+      },
+      "score": 37.03703703703704,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 15,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.5555555555555556,
+        "efficiency_ratio": 0.6666666666666666
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R L R R S L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 14311,
+        "reasoning_tokens": 14298,
+        "total_tokens": 19449
+      },
+      "score": 41.66666666666667,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 9,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.5,
+        "efficiency_ratio": 0.8333333333333334
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R S L S R S R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 8417,
+        "reasoning_tokens": 8404,
+        "total_tokens": 13555
+      },
+      "score": 12.841854934601663,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 4,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.13793103448275862,
+        "efficiency_ratio": 0.9310344827586207
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S S R L R S S S R R L L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 13010,
+        "reasoning_tokens": 12993,
+        "total_tokens": 18148
+      },
+      "score": 11.11111111111111,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 2,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.1111111111111111,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L R R L S R L R S L R S S R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 9608,
+        "reasoning_tokens": 9588,
+        "total_tokens": 14746
+      },
+      "score": 31.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 7,
+        "remaining_action_count": 13,
+        "completion_ratio": 0.35,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S S L S R R L L R L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 13840,
+        "reasoning_tokens": 13819,
+        "total_tokens": 18978
+      },
+      "score": 94.73684210526315,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 18,
+        "actual_action_count": 19,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.9473684210526315
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S S R R L L R S S L L S R L L R R L L R L L R R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 21906,
+        "reasoning_tokens": 21875,
+        "total_tokens": 27044
+      },
+      "score": 10.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 3,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.1,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R L S R S L L R S R L S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 2447,
+        "reasoning_tokens": 2426,
+        "total_tokens": 7585
+      },
+      "score": 15.088449531737773,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 5,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.16129032258064516,
+        "efficiency_ratio": 0.9354838709677419
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "Hmm. Just output something.S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 1882,
+        "reasoning_tokens": 1836,
+        "total_tokens": 7020
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 24,
+        "actual_action_count": 0,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R S L S R S S L S R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 3494,
+        "reasoning_tokens": 3476,
+        "total_tokens": 8632
+      },
+      "score": 12.620027434842248,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 4,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.14814814814814814,
+        "efficiency_ratio": 0.8518518518518519
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S L R R L L R R S L R S L S R S R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 8599,
+        "reasoning_tokens": 8575,
+        "total_tokens": 13737
+      },
+      "score": 8.333333333333332,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 2,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.08333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R S L S R S L S R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 1689,
+        "reasoning_tokens": 1672,
+        "total_tokens": 6827
+      },
+      "score": 10.526315789473683,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 2,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.10526315789473684,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L L R S L R S L R S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 434,
+        "reasoning_tokens": 417,
+        "total_tokens": 5572
+      },
+      "score": 9.763313609467456,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.8461538461538461
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S L S R S L S R S L S R L S L S R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 4176,
+        "reasoning_tokens": 4154,
+        "total_tokens": 9314
+      },
+      "score": 14.285714285714285,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 3,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.14285714285714285,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L S R L S L R S R L S S R L S R S L R S L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 1137,
+        "reasoning_tokens": 1110,
+        "total_tokens": 6275
+      },
+      "score": 10.08,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 3,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.12,
+        "efficiency_ratio": 0.84
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L S R S L S R S L S S R S L S L S R S L S R S S L S R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 661,
+        "reasoning_tokens": 629,
+        "total_tokens": 5799
+      },
+      "score": 4.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 1,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.04,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Claude Opus 5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-opus-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R S R L S R L S R S L R S R L S R L S R S L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5138,
+        "output_tokens": 2039,
+        "reasoning_tokens": 2010,
+        "total_tokens": 7177
       },
       "score": 3.571428571428571,
       "grading": {
