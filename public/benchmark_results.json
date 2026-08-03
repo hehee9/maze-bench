@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 3,
   "status": "completed",
-  "expected_result_count": 720,
-  "processed_result_count": 720,
+  "expected_result_count": 750,
+  "processed_result_count": 750,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -3834,6 +3834,198 @@
               "output_tokens": 121229,
               "reasoning_tokens": 121075,
               "total_tokens": 139411
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Kimi K3 (max)",
+      "provider": "openai_chat",
+      "model_id": "moonshotai/kimi-k3",
+      "reasoning_label": "thinking",
+      "pricing": {
+        "input_per_million": 3.0,
+        "output_per_million": 15.0
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 32.88958069592808,
+      "official_mean_score": 32.88958069592808,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 174870,
+          "output_tokens": 1258435,
+          "reasoning_tokens": 1257536,
+          "total_tokens": 1433305
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 16.01907734998266,
+          "official_mean_score": 16.01907734998266,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 29145,
+              "output_tokens": 284729,
+              "reasoning_tokens": 284571,
+              "total_tokens": 313874
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 17.532564209703708,
+          "official_mean_score": 17.532564209703708,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 29145,
+              "output_tokens": 301700,
+              "reasoning_tokens": 301531,
+              "total_tokens": 330845
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 11.012987012987013,
+          "official_mean_score": 11.012987012987013,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 29145,
+              "output_tokens": 256899,
+              "reasoning_tokens": 256723,
+              "total_tokens": 286044
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 72.5,
+          "official_mean_score": 72.5,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 29145,
+              "output_tokens": 79742,
+              "reasoning_tokens": 79633,
+              "total_tokens": 108887
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 39.98852157943067,
+          "official_mean_score": 39.98852157943067,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 29145,
+              "output_tokens": 121622,
+              "reasoning_tokens": 121499,
+              "total_tokens": 150767
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 40.28433402346446,
+          "official_mean_score": 40.28433402346446,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 29145,
+              "output_tokens": 213743,
+              "reasoning_tokens": 213579,
+              "total_tokens": 242888
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -10543,6 +10735,996 @@
         "output_tokens": 4821,
         "reasoning_tokens": 4660,
         "total_tokens": 10001
+      },
+      "score": 7.142857142857142,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 2,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.07142857142857142,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 22892,
+        "reasoning_tokens": 22871,
+        "total_tokens": 28721
+      },
+      "score": 83.33333333333334,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 5,
+        "remaining_action_count": 1,
+        "completion_ratio": 0.8333333333333334,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 17891,
+        "reasoning_tokens": 17870,
+        "total_tokens": 23720
+      },
+      "score": 66.66666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 4,
+        "remaining_action_count": 2,
+        "completion_ratio": 0.6666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 9516,
+        "reasoning_tokens": 9495,
+        "total_tokens": 15345
+      },
+      "score": 50.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 3,
+        "remaining_action_count": 3,
+        "completion_ratio": 0.5,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 13750,
+        "reasoning_tokens": 13727,
+        "total_tokens": 19579
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 15693,
+        "reasoning_tokens": 15670,
+        "total_tokens": 21522
+      },
+      "score": 62.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 5,
+        "remaining_action_count": 3,
+        "completion_ratio": 0.625,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 23676,
+        "reasoning_tokens": 23650,
+        "total_tokens": 29505
+      },
+      "score": 36.36363636363637,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 11,
+        "actual_action_count": 4,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.36363636363636365,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 26578,
+        "reasoning_tokens": 26555,
+        "total_tokens": 32407
+      },
+      "score": 62.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 5,
+        "remaining_action_count": 3,
+        "completion_ratio": 0.625,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 22411,
+        "reasoning_tokens": 22387,
+        "total_tokens": 28240
+      },
+      "score": 37.1900826446281,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 9,
+        "actual_action_count": 5,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.45454545454545453,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R S L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 25888,
+        "reasoning_tokens": 25861,
+        "total_tokens": 31717
+      },
+      "score": 25.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 12,
+        "actual_action_count": 3,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.25,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 23069,
+        "reasoning_tokens": 23046,
+        "total_tokens": 28898
+      },
+      "score": 38.888888888888886,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 7,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.5833333333333334,
+        "efficiency_ratio": 0.6666666666666666
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R L R L S R L S R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 38560,
+        "reasoning_tokens": 38522,
+        "total_tokens": 44389
+      },
+      "score": 21.73913043478261,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 5,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.21739130434782608,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R L S L S L R L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 52593,
+        "reasoning_tokens": 52558,
+        "total_tokens": 58422
+      },
+      "score": 20.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 4,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S L R L S R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 30593,
+        "reasoning_tokens": 30565,
+        "total_tokens": 36422
+      },
+      "score": 28.57142857142857,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 4,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.2857142857142857,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R L R S R L R L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 43989,
+        "reasoning_tokens": 43956,
+        "total_tokens": 49818
+      },
+      "score": 77.77777777777779,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 14,
+        "remaining_action_count": 4,
+        "completion_ratio": 0.7777777777777778,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R S R L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 48008,
+        "reasoning_tokens": 47978,
+        "total_tokens": 53837
+      },
+      "score": 53.333333333333336,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 8,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.5333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 35854,
+        "reasoning_tokens": 35830,
+        "total_tokens": 41683
+      },
+      "score": 8.428720083246619,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 3,
+        "remaining_action_count": 28,
+        "completion_ratio": 0.0967741935483871,
+        "efficiency_ratio": 0.8709677419354839
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S R L R L R L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 48095,
+        "reasoning_tokens": 48067,
+        "total_tokens": 53924
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R L R L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 52300,
+        "reasoning_tokens": 52270,
+        "total_tokens": 58129
+      },
+      "score": 18.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 4,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S L S R S L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 79213,
+        "reasoning_tokens": 79180,
+        "total_tokens": 85042
+      },
+      "score": 27.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 6,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.3,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S R L R S L R S L R S L R L R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 69267,
+        "reasoning_tokens": 69224,
+        "total_tokens": 75096
+      },
+      "score": 10.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 3,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.1,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 67669,
+        "reasoning_tokens": 67638,
+        "total_tokens": 73498
+      },
+      "score": 17.24137931034483,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 5,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1724137931034483,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R S L S R S L S R S L S R S L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 47809,
+        "reasoning_tokens": 47766,
+        "total_tokens": 53638
+      },
+      "score": 14.201183431952664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 4,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.15384615384615385,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L S L R S R L S R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 77358,
+        "reasoning_tokens": 77320,
+        "total_tokens": 83187
+      },
+      "score": 13.043478260869565,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 3,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.13043478260869565,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R L R L S R S L R S L R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 47335,
+        "reasoning_tokens": 47303,
+        "total_tokens": 53164
+      },
+      "score": 34.56,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 9,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.36,
+        "efficiency_ratio": 0.96
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 61529,
+        "reasoning_tokens": 61504,
+        "total_tokens": 67358
+      },
+      "score": 8.616780045351474,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 2,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.09523809523809523,
+        "efficiency_ratio": 0.9047619047619048
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R S R L S R L S L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 50361,
+        "reasoning_tokens": 50330,
+        "total_tokens": 56190
+      },
+      "score": 13.636363636363635,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 3,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.13636363636363635,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S L R S L S R L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 48041,
+        "reasoning_tokens": 48011,
+        "total_tokens": 53870
+      },
+      "score": 14.285714285714285,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 3,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.14285714285714285,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "I can’t reliably determine the exact command sequence from the image.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 47921,
+        "reasoning_tokens": 47893,
+        "total_tokens": 53750
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 21,
+        "actual_action_count": 0,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L R L S R S L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 66157,
+        "reasoning_tokens": 66121,
+        "total_tokens": 71986
+      },
+      "score": 20.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 5,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (max)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "thinking"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L R L R L R L R L R L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5829,
+        "output_tokens": 44419,
+        "reasoning_tokens": 44368,
+        "total_tokens": 50248
       },
       "score": 7.142857142857142,
       "grading": {
