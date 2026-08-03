@@ -263,7 +263,7 @@ Wall collisions were the most common outcome, accounting for 81.75% of all respo
 |---|---:|---:|---:|---:|---:|---:|
 | GPT-5.6 Sol Pro (medium) | 66.09 | 16 | 14 | 0 | 0 | 46.38 |
 | Claude Fable 5 (medium) | 39.35 | 8 | 21 | 0 | 1 | 8.68 |
-| Kimi K3 (thinking) | 32.89 | 1 | 26 | 1 | 2 | 19.40 |
+| Kimi K3 (max) | 32.89 | 1 | 26 | 1 | 2 | 19.40 |
 | GPT-5.6 Sol (medium) | 31.46 | 1 | 27 | 0 | 2 | 7.70 |
 | Claude Opus 4.8 (medium) | 29.88 | 5 | 24 | 0 | 1 | 4.32 |
 | GPT-5.6 Terra Pro (medium) | 26.75 | 2 | 25 | 2 | 1 | 8.90 |

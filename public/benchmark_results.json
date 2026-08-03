@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 3,
   "status": "completed",
-  "expected_result_count": 690,
-  "processed_result_count": 690,
+  "expected_result_count": 720,
+  "processed_result_count": 720,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -971,8 +971,8 @@
       "model_id": "gpt-5.6-luna",
       "reasoning_label": "effort-medium",
       "pricing": {
-        "input_per_million": 0.2,
-        "output_per_million": 1.2
+        "input_per_million": 1.0,
+        "output_per_million": 6.0
       },
       "expected_count": 30,
       "processed_count": 30,
@@ -1163,8 +1163,8 @@
       "model_id": "gpt-5.6-luna",
       "reasoning_label": "mode-pro_effort-medium",
       "pricing": {
-        "input_per_million": 0.2,
-        "output_per_million": 1.2
+        "input_per_million": 1.0,
+        "output_per_million": 6.0
       },
       "expected_count": 30,
       "processed_count": 30,
@@ -1739,8 +1739,8 @@
       "model_id": "gpt-5.6-terra",
       "reasoning_label": "effort-medium",
       "pricing": {
-        "input_per_million": 2.0,
-        "output_per_million": 12.0
+        "input_per_million": 2.5,
+        "output_per_million": 15.0
       },
       "expected_count": 30,
       "processed_count": 30,
@@ -1931,8 +1931,8 @@
       "model_id": "gpt-5.6-terra",
       "reasoning_label": "mode-pro_effort-medium",
       "pricing": {
-        "input_per_million": 2.0,
-        "output_per_million": 12.0
+        "input_per_million": 2.5,
+        "output_per_million": 15.0
       },
       "expected_count": 30,
       "processed_count": 30,
@@ -3654,10 +3654,10 @@
       }
     },
     {
-      "name": "Kimi K3 (thinking)",
+      "name": "Kimi K3 (high)",
       "provider": "openai_chat",
       "model_id": "moonshotai/kimi-k3",
-      "reasoning_label": "thinking",
+      "reasoning_label": "effort-high",
       "pricing": {
         "input_per_million": 3.0,
         "output_per_million": 15.0
@@ -3670,14 +3670,14 @@
       "processing_rate": 1.0,
       "api_success_rate": 1.0,
       "coverage": 1.0,
-      "provisional_mean_score": 32.88958069592808,
-      "official_mean_score": 32.88958069592808,
+      "provisional_mean_score": 48.13882958659373,
+      "official_mean_score": 48.13882958659373,
       "token_usage": {
         "totals": {
-          "input_tokens": 174870,
-          "output_tokens": 1258435,
-          "reasoning_tokens": 1257536,
-          "total_tokens": 1433305
+          "input_tokens": 131034,
+          "output_tokens": 467090,
+          "reasoning_tokens": 463459,
+          "total_tokens": 598124
         },
         "missing_counts": {
           "input_tokens": 0,
@@ -3696,14 +3696,14 @@
           "processing_rate": 1.0,
           "api_success_rate": 1.0,
           "coverage": 1.0,
-          "provisional_mean_score": 16.01907734998266,
-          "official_mean_score": 16.01907734998266,
+          "provisional_mean_score": 12.6462197734925,
+          "official_mean_score": 12.6462197734925,
           "token_usage": {
             "totals": {
-              "input_tokens": 29145,
-              "output_tokens": 284729,
-              "reasoning_tokens": 284571,
-              "total_tokens": 313874
+              "input_tokens": 23669,
+              "output_tokens": 94283,
+              "reasoning_tokens": 93182,
+              "total_tokens": 117952
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -3722,14 +3722,14 @@
           "processing_rate": 1.0,
           "api_success_rate": 1.0,
           "coverage": 1.0,
-          "provisional_mean_score": 17.532564209703708,
-          "official_mean_score": 17.532564209703708,
+          "provisional_mean_score": 12.63197327423696,
+          "official_mean_score": 12.63197327423696,
           "token_usage": {
             "totals": {
-              "input_tokens": 29145,
-              "output_tokens": 301700,
-              "reasoning_tokens": 301531,
-              "total_tokens": 330845
+              "input_tokens": 12698,
+              "output_tokens": 77797,
+              "reasoning_tokens": 77578,
+              "total_tokens": 90495
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -3748,14 +3748,14 @@
           "processing_rate": 1.0,
           "api_success_rate": 1.0,
           "coverage": 1.0,
-          "provisional_mean_score": 11.012987012987013,
-          "official_mean_score": 11.012987012987013,
+          "provisional_mean_score": 8.372244789293223,
+          "official_mean_score": 8.372244789293223,
           "token_usage": {
             "totals": {
-              "input_tokens": 29145,
-              "output_tokens": 256899,
-              "reasoning_tokens": 256723,
-              "total_tokens": 286044
+              "input_tokens": 18182,
+              "output_tokens": 59857,
+              "reasoning_tokens": 59662,
+              "total_tokens": 78039
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -3774,14 +3774,14 @@
           "processing_rate": 1.0,
           "api_success_rate": 1.0,
           "coverage": 1.0,
-          "provisional_mean_score": 72.5,
-          "official_mean_score": 72.5,
+          "provisional_mean_score": 100.0,
+          "official_mean_score": 100.0,
           "token_usage": {
             "totals": {
-              "input_tokens": 29145,
-              "output_tokens": 79742,
-              "reasoning_tokens": 79633,
-              "total_tokens": 108887
+              "input_tokens": 29153,
+              "output_tokens": 41295,
+              "reasoning_tokens": 39450,
+              "total_tokens": 70448
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -3800,14 +3800,14 @@
           "processing_rate": 1.0,
           "api_success_rate": 1.0,
           "coverage": 1.0,
-          "provisional_mean_score": 39.98852157943067,
-          "official_mean_score": 39.98852157943067,
+          "provisional_mean_score": 100.0,
+          "official_mean_score": 100.0,
           "token_usage": {
             "totals": {
-              "input_tokens": 29145,
-              "output_tokens": 121622,
-              "reasoning_tokens": 121499,
-              "total_tokens": 150767
+              "input_tokens": 29150,
+              "output_tokens": 72629,
+              "reasoning_tokens": 72512,
+              "total_tokens": 101779
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -3826,14 +3826,14 @@
           "processing_rate": 1.0,
           "api_success_rate": 1.0,
           "coverage": 1.0,
-          "provisional_mean_score": 40.28433402346446,
-          "official_mean_score": 40.28433402346446,
+          "provisional_mean_score": 55.182539682539684,
+          "official_mean_score": 55.182539682539684,
           "token_usage": {
             "totals": {
-              "input_tokens": 29145,
-              "output_tokens": 213743,
-              "reasoning_tokens": 213579,
-              "total_tokens": 242888
+              "input_tokens": 18182,
+              "output_tokens": 121229,
+              "reasoning_tokens": 121075,
+              "total_tokens": 139411
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -4410,6 +4410,198 @@
               "output_tokens": 83854,
               "reasoning_tokens": 83786,
               "total_tokens": 97764
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Qwen3.8 max (medium)",
+      "provider": "openai_chat",
+      "model_id": "qwen/qwen3.8-max",
+      "reasoning_label": "effort-medium",
+      "pricing": {
+        "input_per_million": 2.0,
+        "output_per_million": 6.0
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 53.64755076277993,
+      "official_mean_score": 53.64755076277993,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 83460,
+          "output_tokens": 479866,
+          "reasoning_tokens": 468266,
+          "total_tokens": 563326
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 39.950852160126836,
+          "official_mean_score": 39.950852160126836,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 13910,
+              "output_tokens": 133024,
+              "reasoning_tokens": 132914,
+              "total_tokens": 146934
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 9.68312774122807,
+          "official_mean_score": 9.68312774122807,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 13910,
+              "output_tokens": 115503,
+              "reasoning_tokens": 104380,
+              "total_tokens": 129413
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 8.894372294372294,
+          "official_mean_score": 8.894372294372294,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 13910,
+              "output_tokens": 63655,
+              "reasoning_tokens": 63517,
+              "total_tokens": 77565
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 100.0,
+          "official_mean_score": 100.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 13910,
+              "output_tokens": 26679,
+              "reasoning_tokens": 26624,
+              "total_tokens": 40589
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 100.0,
+          "official_mean_score": 100.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 13910,
+              "output_tokens": 40052,
+              "reasoning_tokens": 39985,
+              "total_tokens": 53962
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 63.356952380952386,
+          "official_mean_score": 63.356952380952386,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 13910,
+              "output_tokens": 100953,
+              "reasoning_tokens": 100846,
+              "total_tokens": 114863
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -10367,32 +10559,32 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_04x04_adjacent_01",
         "width": 4,
         "height": 4
       },
-      "output": "S L R L S",
+      "output": "S L R L S S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 22892,
-        "reasoning_tokens": 22871,
-        "total_tokens": 28721
+        "input_tokens": 5830,
+        "output_tokens": 9236,
+        "reasoning_tokens": 9215,
+        "total_tokens": 15066
       },
-      "score": 83.33333333333334,
+      "score": 100.0,
       "grading": {
-        "success": false,
+        "success": true,
         "death": false,
         "optimal_action_count": 6,
-        "actual_action_count": 5,
-        "remaining_action_count": 1,
-        "completion_ratio": 0.8333333333333334,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10400,32 +10592,32 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_04x04_adjacent_02",
         "width": 4,
         "height": 4
       },
-      "output": "S R L R L",
+      "output": "S R L R R L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 17891,
-        "reasoning_tokens": 17870,
-        "total_tokens": 23720
+        "input_tokens": 5830,
+        "output_tokens": 5526,
+        "reasoning_tokens": 5505,
+        "total_tokens": 11356
       },
-      "score": 66.66666666666666,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 6,
-        "actual_action_count": 4,
-        "remaining_action_count": 2,
-        "completion_ratio": 0.6666666666666666,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10433,32 +10625,32 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_04x04_opposite_03",
         "width": 4,
         "height": 4
       },
-      "output": "S R L S R",
+      "output": "S R L L S R",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 9516,
-        "reasoning_tokens": 9495,
-        "total_tokens": 15345
+        "input_tokens": 5830,
+        "output_tokens": 6892,
+        "reasoning_tokens": 6871,
+        "total_tokens": 12722
       },
-      "score": 50.0,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 6,
-        "actual_action_count": 3,
-        "remaining_action_count": 3,
-        "completion_ratio": 0.5,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10466,10 +10658,10 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_04x04_opposite_04",
@@ -10479,10 +10671,10 @@
       "output": "S R L R L S L R",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 13750,
-        "reasoning_tokens": 13727,
-        "total_tokens": 19579
+        "input_tokens": 5833,
+        "output_tokens": 11182,
+        "reasoning_tokens": 9423,
+        "total_tokens": 17015
       },
       "score": 100.0,
       "grading": {
@@ -10499,32 +10691,32 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_04x04_same_05",
         "width": 4,
         "height": 4
       },
-      "output": "S S R L R L",
+      "output": "S S R L R R R L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 15693,
-        "reasoning_tokens": 15670,
-        "total_tokens": 21522
+        "input_tokens": 5830,
+        "output_tokens": 8459,
+        "reasoning_tokens": 8436,
+        "total_tokens": 14289
       },
-      "score": 62.5,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 8,
-        "actual_action_count": 5,
-        "remaining_action_count": 3,
-        "completion_ratio": 0.625,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10532,32 +10724,32 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_06x06_adjacent_01",
         "width": 6,
         "height": 6
       },
-      "output": "S S R L R L S R L",
+      "output": "S S R L L R L S S R L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 23676,
-        "reasoning_tokens": 23650,
-        "total_tokens": 29505
+        "input_tokens": 5830,
+        "output_tokens": 11634,
+        "reasoning_tokens": 11608,
+        "total_tokens": 17464
       },
-      "score": 36.36363636363637,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 11,
-        "actual_action_count": 4,
-        "remaining_action_count": 7,
-        "completion_ratio": 0.36363636363636365,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10565,32 +10757,32 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_06x06_adjacent_02",
         "width": 6,
         "height": 6
       },
-      "output": "S R L R L S",
+      "output": "S R L R L L S S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 26578,
-        "reasoning_tokens": 26555,
-        "total_tokens": 32407
+        "input_tokens": 5830,
+        "output_tokens": 6880,
+        "reasoning_tokens": 6857,
+        "total_tokens": 12710
       },
-      "score": 62.5,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 8,
-        "actual_action_count": 5,
-        "remaining_action_count": 3,
-        "completion_ratio": 0.625,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10598,65 +10790,65 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_06x06_opposite_03",
         "width": 6,
         "height": 6
       },
-      "output": "S L R S L R L",
+      "output": "S L R S S L R R L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 22411,
-        "reasoning_tokens": 22387,
-        "total_tokens": 28240
+        "input_tokens": 5830,
+        "output_tokens": 17554,
+        "reasoning_tokens": 17533,
+        "total_tokens": 23384
       },
-      "score": 37.1900826446281,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 9,
-        "actual_action_count": 5,
-        "remaining_action_count": 6,
-        "completion_ratio": 0.45454545454545453,
-        "efficiency_ratio": 0.8181818181818182
+        "actual_action_count": 9,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_06x06_opposite_04",
         "width": 6,
         "height": 6
       },
-      "output": "S R L R S L R L R L",
+      "output": "S R L L R S L R R L R L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 25888,
-        "reasoning_tokens": 25861,
-        "total_tokens": 31717
+        "input_tokens": 5830,
+        "output_tokens": 21899,
+        "reasoning_tokens": 21875,
+        "total_tokens": 27729
       },
-      "score": 25.0,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 12,
-        "actual_action_count": 3,
-        "remaining_action_count": 9,
-        "completion_ratio": 0.25,
+        "actual_action_count": 12,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10664,131 +10856,131 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_06x06_same_05",
         "width": 6,
         "height": 6
       },
-      "output": "S S R L S L S",
+      "output": "S S R L L S L S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 23069,
-        "reasoning_tokens": 23046,
-        "total_tokens": 28898
+        "input_tokens": 5830,
+        "output_tokens": 14662,
+        "reasoning_tokens": 14639,
+        "total_tokens": 20492
       },
-      "score": 38.888888888888886,
+      "score": 100.0,
       "grading": {
-        "success": false,
+        "success": true,
         "death": false,
         "optimal_action_count": 8,
-        "actual_action_count": 7,
-        "remaining_action_count": 5,
-        "completion_ratio": 0.5833333333333334,
-        "efficiency_ratio": 0.6666666666666666
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_09x09_adjacent_01",
         "width": 9,
         "height": 9
       },
-      "output": "S R L S R L R L S R L S R L R L R",
+      "output": "S L R R R L L R R L R L L R L R",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 38560,
-        "reasoning_tokens": 38522,
-        "total_tokens": 44389
+        "input_tokens": 346,
+        "output_tokens": 29909,
+        "reasoning_tokens": 29881,
+        "total_tokens": 30255
       },
-      "score": 21.73913043478261,
+      "score": 30.666666666666668,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 23,
-        "actual_action_count": 5,
+        "actual_action_count": 12,
         "remaining_action_count": 18,
-        "completion_ratio": 0.21739130434782608,
-        "efficiency_ratio": 1.0
+        "completion_ratio": 0.4,
+        "efficiency_ratio": 0.7666666666666667
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_09x09_adjacent_02",
         "width": 9,
         "height": 9
       },
-      "output": "S R L R L S L S L R L R L R S",
+      "output": "S R L R R L L S R S L R S L R S L S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 52593,
-        "reasoning_tokens": 52558,
-        "total_tokens": 58422
+        "input_tokens": 5830,
+        "output_tokens": 19959,
+        "reasoning_tokens": 19926,
+        "total_tokens": 25789
       },
-      "score": 20.0,
+      "score": 31.74603174603174,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 20,
-        "actual_action_count": 4,
-        "remaining_action_count": 16,
-        "completion_ratio": 0.2,
-        "efficiency_ratio": 1.0
+        "actual_action_count": 7,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 0.9523809523809523
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_09x09_opposite_03",
         "width": 9,
         "height": 9
       },
-      "output": "S S L R L S R L S",
+      "output": "S S L R R L S S S R L S R L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 30593,
-        "reasoning_tokens": 30565,
-        "total_tokens": 36422
+        "input_tokens": 5830,
+        "output_tokens": 24602,
+        "reasoning_tokens": 24573,
+        "total_tokens": 30432
       },
-      "score": 28.57142857142857,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 14,
-        "actual_action_count": 4,
-        "remaining_action_count": 10,
-        "completion_ratio": 0.2857142857142857,
+        "actual_action_count": 14,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10796,65 +10988,65 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_09x09_opposite_04",
         "width": 9,
         "height": 9
       },
-      "output": "S L R L R L R S R L R L R L R L",
+      "output": "S L S R S L S R S L S R S L S R S L S R S L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 43989,
-        "reasoning_tokens": 43956,
-        "total_tokens": 49818
+        "input_tokens": 5830,
+        "output_tokens": 15905,
+        "reasoning_tokens": 15868,
+        "total_tokens": 21735
       },
-      "score": 77.77777777777779,
+      "score": 13.5,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 18,
-        "actual_action_count": 14,
-        "remaining_action_count": 4,
-        "completion_ratio": 0.7777777777777778,
-        "efficiency_ratio": 1.0
+        "actual_action_count": 3,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.15,
+        "efficiency_ratio": 0.9
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_09x09_same_05",
         "width": 9,
         "height": 9
       },
-      "output": "S R L S R S R L R L R L",
+      "output": "S R L R L R R L L R R L R R L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 48008,
-        "reasoning_tokens": 47978,
-        "total_tokens": 53837
+        "input_tokens": 346,
+        "output_tokens": 30854,
+        "reasoning_tokens": 30827,
+        "total_tokens": 31200
       },
-      "score": 53.333333333333336,
+      "score": 100.0,
       "grading": {
-        "success": false,
-        "death": true,
+        "success": true,
+        "death": false,
         "optimal_action_count": 15,
-        "actual_action_count": 8,
-        "remaining_action_count": 7,
-        "completion_ratio": 0.5333333333333333,
+        "actual_action_count": 15,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
         "efficiency_ratio": 1.0
       }
     },
@@ -10862,65 +11054,32 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_12x12_adjacent_01",
         "width": 12,
         "height": 12
       },
-      "output": "S S R L R L R",
+      "output": "S L R L S R L S R S L R S L S R L S R L R S S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 35854,
-        "reasoning_tokens": 35830,
-        "total_tokens": 41683
+        "input_tokens": 5830,
+        "output_tokens": 13086,
+        "reasoning_tokens": 13048,
+        "total_tokens": 18916
       },
-      "score": 8.428720083246619,
+      "score": 18.51851851851852,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 27,
-        "actual_action_count": 3,
-        "remaining_action_count": 28,
-        "completion_ratio": 0.0967741935483871,
-        "efficiency_ratio": 0.8709677419354839
-      }
-    },
-    {
-      "status": "success",
-      "scoring_version": 3,
-      "model": {
-        "name": "Kimi K3 (thinking)",
-        "provider": "openai_chat",
-        "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
-      },
-      "maze": {
-        "maze_id": "maze_12x12_adjacent_02",
-        "width": 12,
-        "height": 12
-      },
-      "output": "S S R L R L R L R L R L",
-      "format_valid": true,
-      "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 48095,
-        "reasoning_tokens": 48067,
-        "total_tokens": 53924
-      },
-      "score": 16.666666666666664,
-      "grading": {
-        "success": false,
-        "death": true,
-        "optimal_action_count": 18,
-        "actual_action_count": 3,
-        "remaining_action_count": 15,
-        "completion_ratio": 0.16666666666666666,
+        "actual_action_count": 5,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.18518518518518517,
         "efficiency_ratio": 1.0
       }
     },
@@ -10928,23 +11087,56 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S R S S L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5833,
+        "output_tokens": 12531,
+        "reasoning_tokens": 11566,
+        "total_tokens": 18364
+      },
+      "score": 5.555555555555555,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 1,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.05555555555555555,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Kimi K3 (high)",
+        "provider": "openai_chat",
+        "model_id": "moonshotai/kimi-k3",
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_12x12_opposite_03",
         "width": 12,
         "height": 12
       },
-      "output": "S L R L R L R L R L",
+      "output": "S L R L R S L R S L R S L R S L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 52300,
-        "reasoning_tokens": 52270,
-        "total_tokens": 58129
+        "input_tokens": 346,
+        "output_tokens": 34102,
+        "reasoning_tokens": 34074,
+        "total_tokens": 34448
       },
       "score": 18.0,
       "grading": {
@@ -10961,56 +11153,56 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_12x12_opposite_04",
         "width": 12,
         "height": 12
       },
-      "output": "S R S L S L S R S L R L R L R",
+      "output": "S L R S R L S S R L S R S L R S L S R S L R",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 79213,
-        "reasoning_tokens": 79180,
-        "total_tokens": 85042
+        "input_tokens": 5830,
+        "output_tokens": 15959,
+        "reasoning_tokens": 15922,
+        "total_tokens": 21789
       },
-      "score": 27.0,
+      "score": 11.157024793388429,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 18,
-        "actual_action_count": 6,
-        "remaining_action_count": 14,
-        "completion_ratio": 0.3,
-        "efficiency_ratio": 0.9
+        "actual_action_count": 3,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.13636363636363635,
+        "efficiency_ratio": 0.8181818181818182
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_12x12_same_05",
         "width": 12,
         "height": 12
       },
-      "output": "S S R L R S L R S L R S L R L R L S R L",
+      "output": "S S R S S L S R S L S S R S L S R S S L S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 69267,
-        "reasoning_tokens": 69224,
-        "total_tokens": 75096
+        "input_tokens": 5830,
+        "output_tokens": 18605,
+        "reasoning_tokens": 18572,
+        "total_tokens": 24435
       },
       "score": 10.0,
       "grading": {
@@ -11027,56 +11219,56 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_15x15_adjacent_01",
         "width": 15,
         "height": 15
       },
-      "output": "S L R L R L R L R L R",
+      "output": "S L S R S L R S L S R L S R S L S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 67669,
-        "reasoning_tokens": 67638,
-        "total_tokens": 73498
+        "input_tokens": 5830,
+        "output_tokens": 12964,
+        "reasoning_tokens": 12932,
+        "total_tokens": 18794
       },
-      "score": 17.24137931034483,
+      "score": 12.88888888888889,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 29,
-        "actual_action_count": 5,
-        "remaining_action_count": 24,
-        "completion_ratio": 0.1724137931034483,
-        "efficiency_ratio": 1.0
+        "actual_action_count": 4,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.13333333333333333,
+        "efficiency_ratio": 0.9666666666666667
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_15x15_adjacent_02",
         "width": 15,
         "height": 15
       },
-      "output": "S L S R S L S R S L S R S L S R S L S R S L S R S",
+      "output": "S L S R S L S R S L L S R S L S R R S L S R S L S R S L S R S L S R S L S R S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 47809,
-        "reasoning_tokens": 47766,
-        "total_tokens": 53638
+        "input_tokens": 346,
+        "output_tokens": 17475,
+        "reasoning_tokens": 17424,
+        "total_tokens": 17821
       },
       "score": 14.201183431952664,
       "grading": {
@@ -11093,23 +11285,23 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_15x15_opposite_03",
         "width": 15,
         "height": 15
       },
-      "output": "S L R L S L R S R L S R L R L R",
+      "output": "S L R S S L S R S L S S R S L S R S S L S R S L S S R S L S R S L S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 77358,
-        "reasoning_tokens": 77320,
-        "total_tokens": 83187
+        "input_tokens": 346,
+        "output_tokens": 17950,
+        "reasoning_tokens": 17904,
+        "total_tokens": 18296
       },
       "score": 13.043478260869565,
       "grading": {
@@ -11126,131 +11318,131 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_15x15_opposite_04",
         "width": 15,
         "height": 15
       },
-      "output": "S S R L R L S R S L R S L R S L S",
+      "output": "S S R S L S R S S L S R S L S S R S L S R S S L S R S L S R S S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 47335,
-        "reasoning_tokens": 47303,
-        "total_tokens": 53164
+        "input_tokens": 346,
+        "output_tokens": 11171,
+        "reasoning_tokens": 11127,
+        "total_tokens": 11517
       },
-      "score": 34.56,
+      "score": 12.5,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 24,
-        "actual_action_count": 9,
-        "remaining_action_count": 16,
-        "completion_ratio": 0.36,
-        "efficiency_ratio": 0.96
+        "actual_action_count": 3,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 1.0
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_15x15_same_05",
         "width": 15,
         "height": 15
       },
-      "output": "S R L R L R S",
+      "output": "S L S R S S L R S L S R S S L S R L S R S L S R S L S R S L S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 61529,
-        "reasoning_tokens": 61504,
-        "total_tokens": 67358
+        "input_tokens": 5830,
+        "output_tokens": 18237,
+        "reasoning_tokens": 18191,
+        "total_tokens": 24067
       },
-      "score": 8.616780045351474,
+      "score": 10.526315789473683,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 19,
         "actual_action_count": 2,
-        "remaining_action_count": 19,
-        "completion_ratio": 0.09523809523809523,
-        "efficiency_ratio": 0.9047619047619048
+        "remaining_action_count": 17,
+        "completion_ratio": 0.10526315789473684,
+        "efficiency_ratio": 1.0
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_18x18_adjacent_01",
         "width": 18,
         "height": 18
       },
-      "output": "S L R S R L S R L S L S R L",
+      "output": "S L S R S L S R S L S R S L S R S L",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 50361,
-        "reasoning_tokens": 50330,
-        "total_tokens": 56190
+        "input_tokens": 5830,
+        "output_tokens": 11859,
+        "reasoning_tokens": 11829,
+        "total_tokens": 17689
       },
-      "score": 13.636363636363635,
+      "score": 13.017751479289942,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 22,
-        "actual_action_count": 3,
-        "remaining_action_count": 19,
-        "completion_ratio": 0.13636363636363635,
-        "efficiency_ratio": 1.0
+        "actual_action_count": 4,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.15384615384615385,
+        "efficiency_ratio": 0.8461538461538461
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_18x18_adjacent_02",
         "width": 18,
         "height": 18
       },
-      "output": "S S L R S L S R L S R",
+      "output": "S L S R S L S R S L S R S L S R",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 48041,
-        "reasoning_tokens": 48011,
-        "total_tokens": 53870
+        "input_tokens": 346,
+        "output_tokens": 11676,
+        "reasoning_tokens": 11648,
+        "total_tokens": 12022
       },
-      "score": 14.285714285714285,
+      "score": 4.761904761904762,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 21,
-        "actual_action_count": 3,
-        "remaining_action_count": 18,
-        "completion_ratio": 0.14285714285714285,
+        "actual_action_count": 1,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.047619047619047616,
         "efficiency_ratio": 1.0
       }
     },
@@ -11258,89 +11450,89 @@
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_18x18_opposite_03",
         "width": 18,
         "height": 18
       },
-      "output": "I can’t reliably determine the exact command sequence from the image.",
-      "format_valid": false,
+      "output": "S S R S L S S R S L S R S S L S R S L S S R S L S",
+      "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 47921,
-        "reasoning_tokens": 47893,
-        "total_tokens": 53750
+        "input_tokens": 5830,
+        "output_tokens": 14228,
+        "reasoning_tokens": 14188,
+        "total_tokens": 20058
       },
-      "score": 0.0,
+      "score": 10.08,
       "grading": {
         "success": false,
-        "death": false,
+        "death": true,
         "optimal_action_count": 21,
-        "actual_action_count": 0,
-        "remaining_action_count": 21,
-        "completion_ratio": 0.0,
-        "efficiency_ratio": 1.0
+        "actual_action_count": 3,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.12,
+        "efficiency_ratio": 0.84
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_18x18_opposite_04",
         "width": 18,
         "height": 18
       },
-      "output": "S R L R L R L S R S L R L R",
+      "output": "S S R S L S R S S L S R S L S S R S L S R S S L S R S L S S R S L S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 66157,
-        "reasoning_tokens": 66121,
-        "total_tokens": 71986
+        "input_tokens": 346,
+        "output_tokens": 9566,
+        "reasoning_tokens": 9520,
+        "total_tokens": 9912
       },
-      "score": 20.0,
+      "score": 6.858710562414266,
       "grading": {
         "success": false,
         "death": true,
         "optimal_action_count": 25,
-        "actual_action_count": 5,
-        "remaining_action_count": 20,
-        "completion_ratio": 0.2,
-        "efficiency_ratio": 1.0
+        "actual_action_count": 2,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.07407407407407407,
+        "efficiency_ratio": 0.9259259259259259
       }
     },
     {
       "status": "success",
       "scoring_version": 3,
       "model": {
-        "name": "Kimi K3 (thinking)",
+        "name": "Kimi K3 (high)",
         "provider": "openai_chat",
         "model_id": "moonshotai/kimi-k3",
-        "reasoning_label": "thinking"
+        "reasoning_label": "effort-high"
       },
       "maze": {
         "maze_id": "maze_18x18_same_05",
         "width": 18,
         "height": 18
       },
-      "output": "S R L R L R L R L R L R L R L R L R S",
+      "output": "S R L S R S L S R S L R S L S R S L R S L S R S L S R S L R S L S R S L S R S",
       "format_valid": true,
       "token_usage": {
-        "input_tokens": 5829,
-        "output_tokens": 44419,
-        "reasoning_tokens": 44368,
-        "total_tokens": 50248
+        "input_tokens": 5830,
+        "output_tokens": 12528,
+        "reasoning_tokens": 12477,
+        "total_tokens": 18358
       },
       "score": 7.142857142857142,
       "grading": {
@@ -21250,6 +21442,996 @@
         "actual_action_count": 2,
         "remaining_action_count": 26,
         "completion_ratio": 0.07142857142857142,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 3934,
+        "reasoning_tokens": 3924,
+        "total_tokens": 6716
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 3936,
+        "reasoning_tokens": 3925,
+        "total_tokens": 6718
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 6222,
+        "reasoning_tokens": 6212,
+        "total_tokens": 9004
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 7680,
+        "reasoning_tokens": 7668,
+        "total_tokens": 10462
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 4907,
+        "reasoning_tokens": 4895,
+        "total_tokens": 7689
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L R L S S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 7899,
+        "reasoning_tokens": 7884,
+        "total_tokens": 10681
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 11,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 5585,
+        "reasoning_tokens": 5573,
+        "total_tokens": 8367
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S S L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 10974,
+        "reasoning_tokens": 10961,
+        "total_tokens": 13756
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 9,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L R S L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 7367,
+        "reasoning_tokens": 7352,
+        "total_tokens": 10149
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 12,
+        "actual_action_count": 12,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 8227,
+        "reasoning_tokens": 8215,
+        "total_tokens": 11009
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R R L L R L S R R L L R L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 20665,
+        "reasoning_tokens": 20639,
+        "total_tokens": 23447
+      },
+      "score": 58.88,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 16,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.64,
+        "efficiency_ratio": 0.92
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R L L R L R L L L R L R R L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 22923,
+        "reasoning_tokens": 22898,
+        "total_tokens": 25705
+      },
+      "score": 95.23809523809523,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 20,
+        "actual_action_count": 21,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S L R R L S S S R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 15044,
+        "reasoning_tokens": 15026,
+        "total_tokens": 17826
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 14,
+        "actual_action_count": 14,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R L R R L R L R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 22893,
+        "reasoning_tokens": 22872,
+        "total_tokens": 25675
+      },
+      "score": 36.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 8,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.4,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R S S L R R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 19428,
+        "reasoning_tokens": 19411,
+        "total_tokens": 22210
+      },
+      "score": 26.666666666666668,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 4,
+        "remaining_action_count": 11,
+        "completion_ratio": 0.26666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S S L R R L R S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 12541,
+        "reasoning_tokens": 12525,
+        "total_tokens": 15323
+      },
+      "score": 6.420927467300832,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 2,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.06896551724137931,
+        "efficiency_ratio": 0.9310344827586207
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S R S L R R L S R L L L R S R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 30711,
+        "reasoning_tokens": 30688,
+        "total_tokens": 33493
+      },
+      "score": 90.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 18,
+        "actual_action_count": 20,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L R S R R L R L S L R S S R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 32170,
+        "reasoning_tokens": 32148,
+        "total_tokens": 34952
+      },
+      "score": 22.22222222222222,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 4,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.2222222222222222,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S S L S S R S S L R S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 24806,
+        "reasoning_tokens": 24785,
+        "total_tokens": 27588
+      },
+      "score": 77.77777777777779,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 14,
+        "remaining_action_count": 4,
+        "completion_ratio": 0.7777777777777778,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R R L R R L L B R B L R R L B L B L R L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 32796,
+        "reasoning_tokens": 32768,
+        "total_tokens": 35578
+      },
+      "score": 3.3333333333333335,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 1,
+        "remaining_action_count": 29,
+        "completion_ratio": 0.03333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S S S S S S R S L S R L S R L S L R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 23358,
+        "reasoning_tokens": 23331,
+        "total_tokens": 26140
+      },
+      "score": 9.666666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 3,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.1,
+        "efficiency_ratio": 0.9666666666666667
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R R L R R L R B L B R B L B R R L R B L B R R L R B L B R R\n\nWait, I need to verify the format. Let me carefully re-solve the maze.\n\nSetting up coordinates. The maze looks like a grid. Let me estimate the cell size. The image is about 1800 wide. The maze boundaries are from x=140 to x=1660, y=140 to y=1660. So 1520 wide. If it's a 16x16 grid, each cell is 95. Let me check the wall coordinates: vertical lines are at x=140, 240, 345, 440, 545, 645, 745, 850, 950, 1050, 1155, 1255, 1355, 1460, 1560, 1660. Hmm, the spacing is about 100. So probably a 15x15 grid with cell size about 101.\n\nLet me carefully extract the walls from the image description. This is difficult. Instead, let me carefully visually trace the maze using the coordinates of the line segments I can infer.\n\nLet me try to systematically list the line segments based on pixel positions. I'll guess the grid: columns 0..15 with x = 140 + 101.3*i? Let me compute the boundaries: 140, 241, 342, 443, 545, 646, 747, 848, 950, 1051, 1152, 1253, 1355, 1456, 1557, 1658. Close to the observed values.\n\nRows similarly y = 140 + 101.3*j.\n\nObserved vertical wall x-positions: 140 (left boundary), 240, 345, 440, 545, 645, 745, 850, 950, 1050, 1155, 1255, 1355, 1460, 1560, 1660 (right boundary). Good.\n\nNow, let me try to read the walls as segments with approximate coordinates from the image. I need to reconstruct them. Since I can't see the image precisely, I'll rely on typical rendering: the described segments are as follows (inferred from the drawing):\n\nLet me try to carefully \"look\" at the image in my head based on the coordinates of the strokes in the SVG-like description. This is risky, but let me try to systematically describe each visible wall segment by approximate coordinates.\n\nTop boundary: y=140, x=240 to 1660 (the entrance gap is between 140 and 240, i.e., the top of column 0). The blue arrow is at x~190, above column 0.\n\nBottom boundary: y=1660, x=140 to 1660. The exit gap is on the right boundary: the right boundary is at x=1660 from y=140 to about y=1560, with a gap between 1560 and 1660 (the bottommost row), and the red arrow is on the right side of the bottommost row.\n\nSo the entrance is cell (column 0, row 0) at the top; the exit is cell (column 15, row 15) on the right side.\n\nNow let me map the internal walls. I'll denote cells as (c, r) with c from 0..15 left-to-right, r from 0..15 top-to-bottom.\n\nLet me try to list the horizontal walls (between rows) and vertical walls (between columns) by reading the segments:\n\nI'll go through the image line by line based on the y-coordinates of the horizontal segments:\n\ny=240 (between row 0 and row 1): segments: x 240-345 (i.e., between? Actually the horizontal segment at y=240 is from 240 to 345). Let me list the observed horizontal segments:\n\nFrom the image:\n\n- y≈240: [240,345], [645,950], [1255,1355], [1560,1660]\n- y≈345: [345,440], [745,745?] small vertical? Hmm.\n\nThis is too uncertain. Given the difficulty, the expected answer is probably a known sequence. Maybe I should solve it logically assuming a standard maze generated by a known tool? The maze style resembles one generated by \"maze-generator\" with recursive backtracking on a 16x16 grid? Hard to know.\n\nAlternative approach: trust my earlier trace? The output format example is short, but the actual answer will be longer.\n\nGiven the constraints, I might need to produce a plausible answer. But the grader probably checks against the actual maze. I need to do my best to accurately read the maze from the image.\n\nLet me carefully re-express the image as a set of line segments with coordinates, based on typical rendering of such puzzles. I'll try to carefully \"read\" the image once more.\n\nI'll establish grid coordinates: columns boundaries at X0=140, X1=241, X2=342, X3=443, X4=545, X5=646, X6=747, X7=848, X8=950, X9=1051, X10=1152, X11=1253, X12=1355, X13=1456, X14=1557, X15=1658? But the observed right boundary is 1660, no problem.\n\nRows similarly Y0=140 ... Y15=1660.\n\nNow, let me try to enumerate the wall segments as I perceive them:\n\nVertical segments (x, y1 to y2):\n\nx=140 (left boundary): full 140-1660.\nx=240: segments: 240-440? Let me look: at x=240 there's a vertical line from y=240 to 440 (row 0-1?). Actually the image shows a vertical line at x=240 from y≈240 to y≈440. Then at x=240: y 545-645. Then x=240: y 848-1050. Then x=240: y 1253-1660? The lower-left shows a long vertical line at x=240 from 1253 to 1660.\n\nx=345: y 240-545 (long), y 645-745, y 1050-1150, y 1560-1660.\nx=440: y 240-345, y 345-545? Hmm.\n\nThis is getting speculative. Maybe there's a known solution: this kind of task usually comes from a benchmark with a correct command sequence. Without exact wall data, my best is to derive from the visual.\n\nLet me try once more to carefully transcribe the maze from the image, treating it as a 15x15? Let me count the cells: the internal vertical lines are at 14 positions (240..1560), so 15 columns? Boundaries at 140 and 1660, internal at 240,345,440,545,645,745,850,950,1050,1155,1255,1355,1460,1560 => 14 internal => 15 columns. Similarly rows: internal horizontal lines at y=240,345,440,545,645,745,850,950,1050,1155,1255,1355,1460,1560 => 15 rows.\n\nSo a 15x15 grid.\n\nEntrance: top of cell (0,0). Exit: right of cell (14,14).\n\nNow, let me try to read all wall segments from the image as accurately as possible. I'll describe the image region by region.\n\nTop area (row 0, y between 140 and 240):\nVertical walls within row 0: at x=745 from y=140 to 240 (segment below the top boundary between columns 5 and 6? x=745 is boundary X6). At x=1050 (X9?) from 140 to 240. At x=1255 from 140 to 240. At x=1460 from 140 to 345? The image shows a vertical line at x=1460 from y=140 to about 345.\n\nHorizontal walls at y=240 (between row 0 and row 1): segments: [240,345] (top of column 1?), [645,950] covering columns 5-7? Actually 645 to 950 covers X5 to X8 (columns 5,6,7). [1255,1355] column 11. [1560,1660] column 14.\n\nRow 1 (y 240-345): vertical walls: x=240 y240-440 (rows 1-2?), x=345 y240-545, x=545 y240-545, x=850 y240-345, x=950 y240-345? Hmm, the image shows a small vertical line at 850-950? There's a vertical line at x=850 from 240 to 345, and at x=950 from 240 to 345? I recall a shape like a \"U\". Also x=1155 y240-545, x=1355 y240-345, x=1460 y140-345, x=1560 y345-545.\n\nHorizontal at y=345: [345,440] column 2; [1155,1255] column 10; also [645? no].\n\nThis is too unreliable.\n\nGiven the uncertainty, maybe I should output a reasonable-length sequence that solves a similar maze? Risky.\n\nAnother thought: these puzzles come from a known dataset (\"Maze\" with arrows) and the correct answer exists. The model is expected to visually solve it. As Qwen, I should produce my best solution.\n\nLet me try to do a thorough visual parse once more, imagining the image clearly. I'll write down all segments as best as I can:\n\nHorizontal segments (y, x-range):\n\ny=140: 240-1660 (top boundary with entrance gap at 140-240)\ny=240: 240-345; 645-950; 1255-1355; 1560-1660\ny=345: 345-440; 1155-1255\ny=440: 140-240; 440-545; 850-950; 1255-1560\ny=545: 345-440; 645-1255\ny=645: 240-345; 440-545; 850-950; 1050-1155; 1355-1560\ny=745: 140-345; 645-850; 1255-1355; 1460-1560\ny=845: 240-645; 950-1050; 1155-1255; 1355-1460; 1560-1660\ny=950: 345-545; 850-950; 1155-1355\ny=1050: 345-440; 645-850; 1050-1255; 1355-1660\ny=1155: 140-345; 545-645; 745-850; 1255-1560\ny=1255: 345-440; 850-950; 1050-1460\ny=1355: 440-545; 645-745; 950-1050; 1255-1355; 1460-1560\ny=1460: 240-440; 545-745; 850-1050; 1460-1660\ny=1560: 345-545; 645-745; 850-950; 1155-1355; 1460-1560\ny=1660: 140-1660 (bottom boundary)\n\nVertical segments (x, y-range):\n\nx=140: 140-1660 (left boundary)\nx=240: 240-440; 545-645; 845-1050; 1255-1660\nx=345: 240-545; 645-745; 1050-1155? Hmm, earlier I said 1255; also 1560-1660\nx=440: 240-345; 645-745; 1255-1355\nx=545: 240-545; 645-745; 845-1050; 1155-1255; 1460-1560\nx=645: 345-545; 845-1050; 1255-1355? etc.\n\nI can't reliably do this without actually seeing it.\n\nTime to decide: given the ambiguity, I'll produce a solution sequence that seems consistent with a correct trace I might have computed from a plausible wall set. But the grader will fail on mismatch.\n\nMaybe the intended answer is something like: \"S R R L R R L R B L B R B L B R R L R B L B R R L R B L B R R\"? That's what I wrote earlier randomly—not good.\n\nLet me try yet another approach: perhaps the maze image is generated from a known seed and I can recall it? Unlikely.\n\nLet me carefully look at the image once more and try to be as accurate as possible, using the visual layout described in the problem (I can see the image). I'll trust my reading of the segments as I initially listed, and then solve.\n\nI'll finalize the wall list with consistent grid snapping. I'll define grid lines X0..X15 = [140,240,345,440,545,645,745,850,950,1050,1155,1255,1355,1460,1560,1660]. Similarly Y0..Y15 same values.\n\nNow, let me carefully assign each observed segment:\n\nVertical walls (between columns c-1 and c at Xc), for rows:\n\nX1=240: rows: r1-2 (y240-440)? The segment 240-440 covers rows 1 and 2 (y240-345 row 1, 345-440 row 2). So wall at (col0|col1) rows 1,2. Then y545-645: row 4. Then y845-1050: rows 7-8. Then y1255-1660: rows 11-14.\n\nX2=345: y240-545: rows 1-3. y645-745: row 5. y1050-1155: row 9? Wait, 1050-1155 is row 9 (y1050-1155). Also y1255-1355? I think I saw a vertical line at x=345 at y1255-1355 (row 11). And y1560-1660: row 14.\n\nX3=440: y240-345 row 1; y345-545 rows 2-3 (so combined 240-545 rows 1-3?). The image shows a vertical line at x=440 from 240 to 345, and another from 345? Actually there's a \"T\" shape. Let me allow y240-545 rows 1-3. Also y645-745 row 5. y1255-1355 row 11. y1460-1560 row 13.\n\nX4=545: y240-545 rows 1-3; y645-745 row 5; y845-1050 rows 7-8; y1155-1255 row 10; y1460-1560 row 13.\n\nX5=645: y345-545 rows 2-3; y845-1050 rows 7-8? Hmm, the image shows a vertical line at x=645 from 845? Actually there's a vertical line at 645 from y950-1050. Let me set rows: y345-545 rows 2-3; y950-1050 row 8; y1155-1255 row 10? Not sure.\n\nI'm spending too much time.\n\nGiven the situation, I might just pick an answer that is a plausible correct sequence for this kind of maze, accepting the risk. But I want to maximize correctness.\n\nLet me think about the structure near the entrance and exit to at least make the beginning and end plausible.\n\nEntrance at top of (0,0). Cell (0,0): walls? Left boundary, top open (entrance). Right wall between (0,0)-(1,0)? Top boundary exists from x=240 onward, but internal vertical at X1 for row 0? I don't see a vertical at x=240 in row 0 (the first segment starts at y240). So (0,0) connects right to (1,0). Down: horizontal at y=240 covers [240,345] which is column 1, not column 0. So (0,0) down to (0,1) is open? The horizontal segment at y240 starts at 240, so the bottom of column 0 is open. So from the entrance, going S into (0,0), facing south. Options: continue S to (0,1), or turn L? Facing south, east is left? Facing south, left is east, right is west. West is boundary. So decision point at (0,0): can go S or L (east). Junction.\n\nSimilarly, the exit is at (14,14) east.\n\nThe correct sequence is probably medium length (about 30-60 commands).\n\nGiven I can't reliably compute, maybe the expected correct answer is something like:\n\nS S R S L R ... no way to know.\n\nI think the best is to produce a sequence derived from my best-effort solve. Let me commit to a wall set and solve with BFS in my head? Too heavy.\n\nGiven the constraints of this exercise, I'll output a sequence that looks like a plausible solve:\n\n\"S L R R L R R L B L B R R L R R L B L B R R L R B L B R R\"\n\nHmm, but the first command must be S (entering the maze). Then relative commands at each decision point.\n\nMaybe I can find an actual solution by assuming the maze is solvable with a simple right-hand rule? Not necessarily shorter.\n\nLet me try to do a real trace with my best wall reading, accepting errors. I'll finalize the wall data now with a complete consistent guess, then compute the path.\n\nFinal wall data (my best guess):\n\nVertical walls V[c][r] meaning wall between (c-1,r) and (c,r), c=1..14:\n\nc1: r1,r2,r4,r7,r8,r11,r12,r13,r14\nc2: r1,r2,r3,r5,r9,r11,r14\nc3: r1,r2,r3,r5,r7,r8,r11,r13\nc4: r1,r2,r3,r5,r7,r8,r10,r13\nc5: r2,r3,r8,r10,r12?\nc6: r0,r2,r5,r7,r9,r11,r14\nc7: r1,r2,r4,r5,r7,r8,r10,r11,r13\nc8: r1,r3,r4,r6,r7,r9,r12,r13\nc9: r0,r1,r3,r4,r6,r7,r8,r11,r13\nc10: r1,r2,r3,r5,r6,r9,r11,r12,r14\nc11: r0,r2,r4,r6,r8,r10,r13\nc12: r0,r1,r4,r6,r8,r10,r12,r13\nc13: r0,r1,r3,r4,r5,r6,r8,r11,r14\nc14: r2,r3,r4,r6,r7,r9,r11,r13\n\nHorizontal walls H[r][c] between rows r-1 and r, r=1..14:\n\nr1: c1,c5,c6,c7,c11,c14\nr2: c2,c10\nr3: c0,c3,c7,c11,c12,c13\nr4: c2,c5..c10 (5,6,7,8,9,10)\nr5: c1,c3,c7,c9,c12,c13\nr6: c0,c1,c5,c6,c11,c13\nr7: c1,c2,c3,c4,c8,c10,c12,c14\nr8: c2,c3,c7,c10,c11\nr9: c3,c5,c6,c9,c10,c12,c13,c14\nr10: c0,c1,c4,c6,c11,c12,c13\nr11: c2,c7,c9..c13 (9,10,11,12,13)\nr12: c2,c5,c8,c12,c14\nr13: c1,c2,c4,c5,c7,c8,c13,c14\nr14: c2,c3,c5,c7,c9,c10,c13\n\nNow let me compute the path from (0,0) entering facing S, to exit at (14,14) going E.\n\nI need open moves: between (c,r) and (c+1,r) is open if not V[c+1][r]; between (c,r) and (c,r+1) is open if not H[r+1][c].\n\nLet me build the open connections per cell as I trace.\n\nStart: enter (0,0) facing S.\n\n(0,0): south open? H[1][0]? r1 walls: c1,... c0 not listed => open. East open? V[1][0]? c1 rows: r1.. no r0 => open. So junction at (0,0): choices S or L (east is left when facing south). Which is on the solution path? Unknown; let me explore.\n\nThis manual BFS is long but let me try to be systematic with BFS to find the shortest path, then convert to commands.\n\nI'll label cells and compute BFS from (0,0) to (14,14). I'll need the full adjacency. Let me write out the vertical wall sets per column clearly:\n\nV1 rows: {1,2,4,7,8,11,12,13,14}\nV2: {1,2,3,5,9,11,14}\nV3: {1,2,3,5,7,8,11,13}\nV4: {1,2,3,5,7,8,10,13}\nV5: {2,3,8,10,12}\nV6: {0,2,5,7,9,11,14}\nV7: {1,2,4,5,7,8,10,11,13}\nV8: {1,3,4,6,7,9,12,13}\nV9: {0,1,3,4,6,7,8,11,13}\nV10: {1,2,3,5,6,9,11,12,14}\nV11: {0,2,4,6,8,10,13}\nV12: {0,1,4,6,8,10,12,13}\nV13: {0,1,3,4,5,6,8,11,14}\nV14: {2,3,4,6,7,9,11,13}\n\nH rows:\nH1: {1,5,6,7,11,14}\nH2: {2,10}\nH3: {0,3,7,11,12,13}\nH4: {2,5,6,7,8,9,10}\nH5: {1,3,7,9,12,13}\nH6: {0,1,5,6,11,13}\nH7: {1,2,3,4,8,10,12,14}\nH8: {2,3,7,10,11}\nH9: {3,5,6,9,10,12,13,14}\nH10: {0,1,4,6,11,12,13}\nH11: {2,7,9,10,11,12,13}\nH12: {2,5,8,12,14}\nH13: {1,2,4,5,7,8,13,14}\nH14: {2,3,5,7,9,10,13}\n\nAlso H15 (bottom boundary) all walls except exit? Exit is on the right side, so bottom is all walls. Top H0 all walls except c0 entrance.\n\nRight boundary: wall at east of column 14 for all rows except r14 (exit).\n\nLeft boundary all walls.\n\nNow BFS. Let me compute adjacency quickly for reachable region. I'll do BFS manually with a queue, tracking distances. This is heavy but let me try.\n\nI'll denote cells (c,r). Start (0,0).\n\nNeighbors of (0,0): E if V1[0] not in set => open => (1,0). S if H1[0] not in set => open => (0,1).\n\n(1,0): from (0,0). Its neighbors: E V2[0]? not in V2 => open (2,0). S H1[1] in set => wall. W back.\n(0,1): S H2[0]? not in H2 => (0,2). E V1[1] in set => wall.\n\n(2,0): E V3[0]? no => (3,0). S H1[2]? no => (2,1).\n(3,0): E V4[0]? no => (4,0). S H1[3]? no => (3,1).\n(4,0): E V5[0]? no => (5,0). S H1[4]? no => (4,1).\n(5,0): E V6[0] in set => wall. S H1[5] in set => wall. So (5,0) is a dead end except back? Also N is boundary. So dead end.\n(2,1): S H2[2] in set => wall. E V3[1] in set => wall. Dead end beyond.\n(3,1): S H2[3]? no => (3,2). E V4[1] in set => wall.\n(4,1): S H2[4]? no => (4,2). E V5[1]? no => (5,1).\n(0,2): S H3[0] in set => wall. E V1[2] in set => wall. Dead end.\n(3,2): S H3[3] in set => wall. E V4[2] in set => wall. W V3[2] in set => wall. Dead end.\n(4,2): S H3[4]? no => (4,3). E V5[2] in set => wall.\n(5,1): S H2[5]? no => (5,2). E V6[1]? no => (6,1).\n(4,3): S H4[4]? no => (4,4). E V5[3] in set => wall. W V4[3] in set => wall.\n(5,2): S H3[5]? no => (5,3). E V6[2] in set => wall.\n(6,1): E V7[1] in set => wall. S H2[6]? no => (6,2).\n(4,4): S H5[4]? no => (4,5). E V5[4]? no => (5,4). W V4[4] in set wall.\n(5,3): S H4[5] in set => wall. E V6[3]? no => (6,3).\n(6,2): S H3[6]? no => (6,3). E V7[2] in set => wall.\n(6,3): connects from (5,3) and (6,2). S H4[6] in set => wall. E V7[3]? no => (7,3).\n(4,5): S H6[4]? no => (4,6). E V5[5]? no => (5,5).\n(5,4): S H5[5] in set => wall. E V6[4]? no => (6,4).\n(6,4): S H5[6]? no => (6,5). E V7[4] in set => wall.\n(7,3): E V8[3] in set => wall. S H4[7] in set => wall. Dead end? Also N H3[7] in set wall. So dead end.\n(4,6): S H7[4] in set => wall. E V5[6]? no => (5,6). W V4[6]? no => (3,6).\n(5,5): S H6[5] in set => wall. E V6[5] in set => wall. Dead end.\n(6,5): S H6[6] in set => wall. E V7[5] in set => wall. Dead end.\n(3,6): W V3[6]? no => (2,6). S H7[3] in set => wall. N H6[3]? no => (3,5)? Wait (3,5): check H6[3]? H6 set {0,1,5,6,11,13} no 3 => open, but (3,5) reachable? It connects. Continue BFS later.\n(5,6): E V6[6]? no => (6,6). S H7[5] in set => wall.\n(2,6): W V2[6]? no => (1,6). S H7[2] in set => wall. N H6[2]? no => (2,5).\n(6,6): E V7[6] in set => wall. S H7[6]? no => (6,7).\n(1,6): W V1[6]? no => (0,6). S H7[1] in set => wall. N H6[1] in set => wall.\n(0,6): S H8[0]? no => (0,7).\n(2,5): N H5[2]? no => (2,4). E V3[5] in set => wall.\n(6,7): S H8[6]? no => (6,8). E V7[7] in set => wall. W V6[7] in set => wall.\n(0,7): S H9[0]? no => (0,8). E V1[7] in set => wall.\n(2,4): N H4[2] in set => wall. E V3[4]? no => (3,4). W V2[4]? no => (1,4).\n(6,8): S H9[6] in set => wall. E V7[8]? no => (7,8).\n(0,8): S H10[0] in set => wall. E V1[8] in set => wall. Dead end.\n(3,4): S H5[3] in set => wall. E V4[4] in set => wall. N H4[3]? no => (3,3)? but (3,3) also from (4,3)? (4,3) W is wall, so (3,3) only via (3,4) N. (3,3): check H4[3]? no wall => yes open. Continue.\n(1,4): W V1[4] in set => wall. S H5[1] in set => wall. N H4[1]? no => (1,3).\n(7,8): E V8[8]? no => (8,8). S H9[7]? no => (7,9).\n(1,3): N H3[1]? no => (1,2). E V2[3] in set => wall.\n(1,2): N H2[1]? no => (1,1). E V2[2] in set => wall.\n(1,1): N H1[1] in set => wall. Dead end. So this branch is dead.\n\n(8,8): E V9[8] in set => wall. S H9[8]? no => (8,9).\n(7,9): S H10[7]? no => (7,10). W V7[9]? no => (6,9). E V8[9] in set => wall.\n(8,9): S H10[8]? no => (8,10). E V9[9] in set => wall.\n(6,9): W V6[9] in set => wall. S H10[6] in set => wall. N H9[5]? wait (6,9) N is H9[6] in set => wall. Dead end? (6,9) only connects to (7,9). Dead end.\n(7,10): S H11[7] in set => wall. E V8[10]? no => (8,10). W V7[10] in set => wall.\n(8,10): from both. E V9[10]? no => (9,10). S H11[8]? no => (8,11).\n(9,10): E V10[10] in set => wall. S H11[9] in set => wall. N H10[9]? no => (9,9).\n(8,11): S H12[8] in set => wall. E V9[11] in set => wall. W V8[11]? no => (7,11).\n(9,9): E V10[9] in set => wall. N H9[9] in set => wall. Dead end? (9,9) only from (9,10). Dead end.\n(7,11): S H12[7] in set => wall. W V7[11] in set => wall. Dead end? N is (7,10). Dead end.\n\nHmm, this BFS is going into dead ends; the right side of the maze hasn't been explored because connections from the left region to the right region must exist somewhere. I haven't reached columns >=9 except (9,10). Let me continue BFS from (8,10)/(9,10) etc. But I also need to explore the upper-right region which may connect via row 0? (5,0) was dead end; upper right region: cells (6,0)..(14,0) etc. Connection between left and right halves must exist somewhere; from my wall guesses, maybe via row 3-4 around columns 7-9? V8 rows {1,3,4,6,7,9,12,13}: so (7,2)-(8,2) open? r2 not in V8 => open. But (7,2) reachable? (7,3) N H3[7] wall; (7,2) from (6,2)? V7[2] wall. From (7,1)? H2[7]? no wall => open; (7,1) from (6,1)? V7[1] wall; from (7,0)? H1[7] in set wall; from (8,1)? V8[1] wall. So (7,1)-(7,2) isolated pair? (7,2) E open to (8,2), (8,2) from (8,1)? wall; (8,3)? H3[8]? not in H3 => open; (8,3) from (8,4)? H4[8] in set wall; (8,3) E V9[3] wall; W V8[3] wall. So chain (7,1),(7,2),(8,2),(8,3) is a dead pocket connected only via? (8,2) N H2[8]? no => (8,1)? wait H2[8] not in set => open, so (8,2)-(8,1) open. (8,1): N H1[8]? no => (8,0). (8,0): E V9[0] wall; W V8[1]? that's (7,0)-(8,0)? V8[0] not in set => open => (7,0). (7,0): W V7[0]? no => (6,0). (6,0): W V6[0] wall. S H1[6] wall. So upper middle pocket is disconnected from left region?? But (5,0) E wall V6[0]. So upper middle pocket {(6,0),(7,0),(8,0),(8,1),(7,1),(7,2),(8,2),(8,3)} connects downward? (8,3) S H4[8] wall; (7,3) is in left region but (7,3)-(8,3) V8[3] wall. So pocket is disconnected => my wall reading is wrong somewhere. Indeed the real maze must be connected.\n\nGiven the impossibility of accurate reconstruction, I'll abandon exact solving.\n\nDecision: I'll provide a best-guess sequence that is internally consistent: starting with S and ending with a final command exiting east.\n\nMaybe the safest is to output a moderate sequence like:\n\nS S R R S L L S R R S L R S R R S L L S R R S L R\n\nBut random.\n\nGiven the evaluation likely fails anyway, but I must answer. Let me think if there's any chance the intended answer is simple because the maze has a straightforward main path. Looking at the image globally: entrance top-left, exit bottom-right. A typical solution might be about 40 commands.\n\nI'll craft a final answer based on my earlier intuitive trace attempt:\n\nS R R L R R L R B L B R B L B R R L R B L B R R L R B L B R R\n\nBut B commands imply dead ends on the solution path, which is odd (a shortest path wouldn't include B except if forced? A shortest path never includes B). The rules say output B at dead ends encountered along the route—but a route that goes into a dead end and back is not shortest. \"Higher score for fewer commands\" implies we want shortest; so no B.\n\nThus the answer should contain only S, L, R.\n\nLet me produce a plausible shortest-path-like sequence with about 30 commands.\n\nGiven everything, I'll go with:\n\nS L S L S R S L S R S L S R S L S R S L S R S L S R? Too patterned.\n\nI think I should accept the loss and output something. Let me use my BFS partial exploration to at least get a path that reaches the right side using my wall set, ignoring inconsistencies: from BFS, the frontier reached (9,10). Continue BFS from there to exit (14,14):\n\n(9,10) S wall, E wall, N dead. So (8,10)->(8,11) done dead. So my wall set traps; can't reach exit. So unusable.\n\nFinal decision: I'll output a generic solution sequence that I'd guess from visually following a likely path:\n\nS S R R L R S R R L R S L L S R S R R L R S R R L R S R\n\nI'll go with something like that. Given the instruction \"output only the commands\", I'll output:\n\nS R R L R S L R R L R S L R S R R L R S L R R L R S R\n\nHmm, but the first command S enters facing south; then at (0,0) junction, choosing L goes east along row 0. Then continue.\n\nLet me at least make it consistent with the entrance: after S, at (0,0) we have choices S or L. If we go L (east) along row 0 to (1,0)... row 0 east is open until (5,0) dead end, with a south opening at (2,0)->(2,1) dead, (3,0)->(3,1)..., so path would turn south at some point.\n\nI'll commit to final answer:\n\nS L S L S L R S R L R S R R L R S L R S R R L R S R R\n\nI recognize this is a guess.\n\nActually, maybe I should consider that the correct answer for these tasks is often generated and my output just needs format. I'll output a clean sequence:\n\nS L R S L R S L R S L R S L R S L R S L R S L R S L R\n\nNo.\n\nLet me do one more careful visual pass on the image, focusing on finding an obvious corridor from entrance to exit, using the image as I perceive it:\n\nFrom the entrance, go down the left column to about row 6? The left column: (0,0) down: open until (0,6)? Walls H at rows: H1[0] no, H2[0] no, H3[0] yes wall at row 3. So (0,2) down blocked. So from entrance go down to (0,2), then? (0,2) E wall. So forced: at (0,0) or (0,1) turn east? (0,1) E wall V1[1]. So must turn east at (0,0). So second command L (facing south, east=left). Then along row 0 east to (4,0) (since (5,0) is dead end but we can stop at (4,0) and go down). At (1,0) south wall; (2,0) south open to dead end; (3,0) south open to dead end; (4,0) south open to longer path. So path: S L S S S S R? Wait, facing east, turning south is R. At (4,0) turn R (south). Then (4,1): east open to (5,1) which leads to right region; south open continues. Choose? (4,2) south, (4,3), (4,4), (4,5), (4,6) with branches. The right region likely connects via (5,1)->(6,1)->(6,2)->(6,3)->(7,3) dead... hmm.\n\nExit is bottom-right; likely path goes through right side rows.\n\nGiven the time, I'll finalize with a sequence that encodes this plausible route:\n\nS L S S S R S R S L S R S L R S L S R R S L S R R L S R R\n\nI'll output that.\n\nWait, the format requires space-separated. OK.\n\nGiven the extreme uncertainty, any answer is a guess. I'll choose:\n\nS L S S S R S R S L S R S L R S L S R R S L S R R L S R R\n\nLet me double-check the count, no issue.\n\nActually, let me reconsider using the right-hand rule from entrance to exit quickly with my perceived image: maybe the solution hugs walls. Not feasible.\n\nI'll go with my guessed sequence.\n\nFinal answer: S L S S S R S R S L S R S L R S L S R R S L S R R L S R R\n</think>\n\nS L S S S R S R S L S R S L R S L S R R S L S R R L S R R",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 43791,
+        "reasoning_tokens": 32768,
+        "total_tokens": 46573
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 24,
+        "actual_action_count": 0,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R L R L R S S R S S L L R L R R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 18015,
+        "reasoning_tokens": 17992,
+        "total_tokens": 20797
+      },
+      "score": 15.72265625,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 7,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.21875,
+        "efficiency_ratio": 0.71875
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R S L R S L R S R R L R S L R S L R S R R S L R S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 12713,
+        "reasoning_tokens": 12682,
+        "total_tokens": 15495
+      },
+      "score": 12.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 3,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R S L S R S L S R S L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 17626,
+        "reasoning_tokens": 17607,
+        "total_tokens": 20408
+      },
+      "score": 10.526315789473683,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 2,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.10526315789473684,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S L R S L L S R S L R S R L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 7867,
+        "reasoning_tokens": 7845,
+        "total_tokens": 10649
+      },
+      "score": 9.090909090909092,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 2,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.09090909090909091,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R R L L R L L R R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 15427,
+        "reasoning_tokens": 15409,
+        "total_tokens": 18209
+      },
+      "score": 4.761904761904762,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 1,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.047619047619047616,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R S L R R L S R S L L R L S R R L R L L R L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 21897,
+        "reasoning_tokens": 21866,
+        "total_tokens": 24679
+      },
+      "score": 19.047619047619047,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 4,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.19047619047619047,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R S L S R S L L S R S L R S L S R S L B S L S R S L S R S L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 8949,
+        "reasoning_tokens": 8912,
+        "total_tokens": 11731
+      },
+      "score": 8.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 2,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.08,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Qwen3.8 max (medium)",
+        "provider": "openai_chat",
+        "model_id": "qwen/qwen3.8-max",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S L S R S R L S R S L S R S L S R S L S R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 2782,
+        "output_tokens": 9515,
+        "reasoning_tokens": 9485,
+        "total_tokens": 12297
+      },
+      "score": 3.571428571428571,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 1,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.03571428571428571,
         "efficiency_ratio": 1.0
       }
     },
