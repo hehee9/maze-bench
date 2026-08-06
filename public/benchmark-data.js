@@ -28,6 +28,12 @@
       color: "#4285F4",
       iconPath: "assets/developers/google.svg",
     },
+    meta: {
+      key: "meta",
+      label: "Meta",
+      color: "#0064E0",
+      iconPath: "assets/developers/meta.svg",
+    },
     minimax: {
       key: "minimax",
       label: "MiniMax",
