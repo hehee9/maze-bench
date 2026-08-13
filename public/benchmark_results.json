@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 3,
   "status": "completed",
-  "expected_result_count": 780,
-  "processed_result_count": 780,
+  "expected_result_count": 810,
+  "processed_result_count": 810,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -3066,6 +3066,198 @@
               "output_tokens": 78759,
               "reasoning_tokens": 78717,
               "total_tokens": 85559
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Gemini 3.7 Flash (medium)",
+      "provider": "google",
+      "model_id": "gemini-3.7-flash",
+      "reasoning_label": "level-medium",
+      "pricing": {
+        "input_per_million": 0.75,
+        "output_per_million": 3.75
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 23.128581143891804,
+      "official_mean_score": 23.128581143891804,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 40800,
+          "output_tokens": 168956,
+          "reasoning_tokens": 168565,
+          "total_tokens": 209756
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 10.81964647010588,
+          "official_mean_score": 10.81964647010588,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6800,
+              "output_tokens": 39688,
+              "reasoning_tokens": 39638,
+              "total_tokens": 46488
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 9.559500939657857,
+          "official_mean_score": 9.559500939657857,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6800,
+              "output_tokens": 30042,
+              "reasoning_tokens": 29963,
+              "total_tokens": 36842
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 9.096126809548359,
+          "official_mean_score": 9.096126809548359,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6800,
+              "output_tokens": 22574,
+              "reasoning_tokens": 22439,
+              "total_tokens": 29374
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 62.1,
+          "official_mean_score": 62.1,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6800,
+              "output_tokens": 17799,
+              "reasoning_tokens": 17767,
+              "total_tokens": 24599
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 27.51818181818182,
+          "official_mean_score": 27.51818181818182,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6800,
+              "output_tokens": 21156,
+              "reasoning_tokens": 21118,
+              "total_tokens": 27956
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 19.67803082585691,
+          "official_mean_score": 19.67803082585691,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6800,
+              "output_tokens": 37697,
+              "reasoning_tokens": 37640,
+              "total_tokens": 44497
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -15886,6 +16078,996 @@
         "actual_action_count": 1,
         "remaining_action_count": 27,
         "completion_ratio": 0.03571428571428571,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "`S L R L S`",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 3140,
+        "reasoning_tokens": 3133,
+        "total_tokens": 4500
+      },
+      "score": 83.33333333333334,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 5,
+        "remaining_action_count": 1,
+        "completion_ratio": 0.8333333333333334,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 3051,
+        "reasoning_tokens": 3045,
+        "total_tokens": 4411
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 3945,
+        "reasoning_tokens": 3940,
+        "total_tokens": 5305
+      },
+      "score": 66.66666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 4,
+        "remaining_action_count": 2,
+        "completion_ratio": 0.6666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 2559,
+        "reasoning_tokens": 2552,
+        "total_tokens": 3919
+      },
+      "score": 48.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 6,
+        "remaining_action_count": 4,
+        "completion_ratio": 0.6,
+        "efficiency_ratio": 0.8
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 5104,
+        "reasoning_tokens": 5097,
+        "total_tokens": 6464
+      },
+      "score": 12.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 1,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L S L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 6210,
+        "reasoning_tokens": 6201,
+        "total_tokens": 7570
+      },
+      "score": 9.090909090909092,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 11,
+        "actual_action_count": 1,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.09090909090909091,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 3044,
+        "reasoning_tokens": 3039,
+        "total_tokens": 4404
+      },
+      "score": 37.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 3,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.375,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 4967,
+        "reasoning_tokens": 4959,
+        "total_tokens": 6327
+      },
+      "score": 33.33333333333333,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 9,
+        "actual_action_count": 3,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 2567,
+        "reasoning_tokens": 2559,
+        "total_tokens": 3927
+      },
+      "score": 41.66666666666667,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 12,
+        "actual_action_count": 5,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.4166666666666667,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 4368,
+        "reasoning_tokens": 4360,
+        "total_tokens": 5728
+      },
+      "score": 16.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 2,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.8
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S R L S R R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 10869,
+        "reasoning_tokens": 10859,
+        "total_tokens": 12229
+      },
+      "score": 4.3478260869565215,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 1,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.043478260869565216,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R L L L L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 6311,
+        "reasoning_tokens": 6298,
+        "total_tokens": 7671
+      },
+      "score": 31.74603174603174,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 7,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R R L R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 5444,
+        "reasoning_tokens": 5433,
+        "total_tokens": 6804
+      },
+      "score": 12.962962962962962,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.7777777777777778
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 6111,
+        "reasoning_tokens": 6101,
+        "total_tokens": 7471
+      },
+      "score": 36.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 8,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.4,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R R L L R R L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 8962,
+        "reasoning_tokens": 8949,
+        "total_tokens": 10322
+      },
+      "score": 13.333333333333334,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 2,
+        "remaining_action_count": 13,
+        "completion_ratio": 0.13333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R L R R L R R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 7702,
+        "reasoning_tokens": 7690,
+        "total_tokens": 9062
+      },
+      "score": 16.05231866825208,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 5,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1724137931034483,
+        "efficiency_ratio": 0.9310344827586207
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 6102,
+        "reasoning_tokens": 6096,
+        "total_tokens": 7462
+      },
+      "score": 5.555555555555555,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 1,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.05555555555555555,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 8122,
+        "reasoning_tokens": 8115,
+        "total_tokens": 9482
+      },
+      "score": 18.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 4,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L L R L R L R R R L L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 7701,
+        "reasoning_tokens": 7685,
+        "total_tokens": 9061
+      },
+      "score": 11.157024793388429,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.13636363636363635,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R L L L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 10061,
+        "reasoning_tokens": 10052,
+        "total_tokens": 11421
+      },
+      "score": 3.3333333333333335,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 1,
+        "remaining_action_count": 29,
+        "completion_ratio": 0.03333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L L R R L L R R L R L R L R L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 5646,
+        "reasoning_tokens": 5626,
+        "total_tokens": 7006
+      },
+      "score": 6.896551724137931,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 2,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.06896551724137931,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R R L L R L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 6925,
+        "reasoning_tokens": 6910,
+        "total_tokens": 8285
+      },
+      "score": 10.650887573964498,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L L R L R L R R L R L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 4468,
+        "reasoning_tokens": 4451,
+        "total_tokens": 5828
+      },
+      "score": 7.36,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 2,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.08,
+        "efficiency_ratio": 0.92
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L L R R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 5995,
+        "reasoning_tokens": 5983,
+        "total_tokens": 7355
+      },
+      "score": 7.100591715976332,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 2,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.07692307692307693,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R R L R R L R L R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 7008,
+        "reasoning_tokens": 6993,
+        "total_tokens": 8368
+      },
+      "score": 15.789473684210526,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 3,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.15789473684210525,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R R L R L L R R L L L R R L L R R R L L L R R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 2785,
+        "reasoning_tokens": 2755,
+        "total_tokens": 4145
+      },
+      "score": 13.636363636363635,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 3,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.13636363636363635,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R L L R R L R R L L R L L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 3446,
+        "reasoning_tokens": 3428,
+        "total_tokens": 4806
+      },
+      "score": 4.761904761904762,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 1,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.047619047619047616,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R R L L R L L R R L L R R L L R R L L R R L L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 5727,
+        "reasoning_tokens": 5699,
+        "total_tokens": 7087
+      },
+      "score": 7.9395085066162565,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 2,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.08695652173913043,
+        "efficiency_ratio": 0.9130434782608695
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L L R L L R R L R L R R L R L R L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 4962,
+        "reasoning_tokens": 4939,
+        "total_tokens": 6322
+      },
+      "score": 12.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 3,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.12,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "Gemini 3.7 Flash (medium)",
+        "provider": "google",
+        "model_id": "gemini-3.7-flash",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L L R R L R L R R L L R R L L R R L L R R L R R L L R R L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1360,
+        "output_tokens": 5654,
+        "reasoning_tokens": 5618,
+        "total_tokens": 7014
+      },
+      "score": 7.142857142857142,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 2,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.07142857142857142,
         "efficiency_ratio": 1.0
       }
     },
