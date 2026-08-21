@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 3,
   "status": "completed",
-  "expected_result_count": 810,
-  "processed_result_count": 810,
+  "expected_result_count": 840,
+  "processed_result_count": 840,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -959,6 +959,198 @@
               "input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 5,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "DeepSeek V4 Flash Vision Exp (high)",
+      "provider": "openai_chat",
+      "model_id": "deepseek-v4-flash-vision-exp",
+      "reasoning_label": "effort-high",
+      "pricing": {
+        "input_per_million": 0.22,
+        "output_per_million": 0.66
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 18.862329373768663,
+      "official_mean_score": 18.862329373768663,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 20700,
+          "output_tokens": 2247855,
+          "reasoning_tokens": 2247198,
+          "total_tokens": 2268555
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 17.62962962962963,
+          "official_mean_score": 17.62962962962963,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 3450,
+              "output_tokens": 317691,
+              "reasoning_tokens": 317632,
+              "total_tokens": 321141
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 15.009990455891009,
+          "official_mean_score": 15.009990455891009,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 3450,
+              "output_tokens": 268654,
+              "reasoning_tokens": 268535,
+              "total_tokens": 272104
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 10.949333333333334,
+          "official_mean_score": 10.949333333333334,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 3450,
+              "output_tokens": 851729,
+              "reasoning_tokens": 851433,
+              "total_tokens": 855179
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 31.666666666666664,
+          "official_mean_score": 31.666666666666664,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 3450,
+              "output_tokens": 166174,
+              "reasoning_tokens": 166134,
+              "total_tokens": 169624
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 25.08953168044077,
+          "official_mean_score": 25.08953168044077,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 3450,
+              "output_tokens": 299899,
+              "reasoning_tokens": 299833,
+              "total_tokens": 303349
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 12.828824476650563,
+          "official_mean_score": 12.828824476650563,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 3450,
+              "output_tokens": 343708,
+              "reasoning_tokens": 343631,
+              "total_tokens": 347158
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
               "total_tokens": 0
             }
           }
@@ -11119,6 +11311,996 @@
         "output_tokens": 4821,
         "reasoning_tokens": 4660,
         "total_tokens": 10001
+      },
+      "score": 7.142857142857142,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 2,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.07142857142857142,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 27603,
+        "reasoning_tokens": 27596,
+        "total_tokens": 28293
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 1,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 25825,
+        "reasoning_tokens": 25818,
+        "total_tokens": 26515
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 32720,
+        "reasoning_tokens": 32713,
+        "total_tokens": 33410
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 1,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 15713,
+        "reasoning_tokens": 15705,
+        "total_tokens": 16403
+      },
+      "score": 12.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 1,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R S L R S R R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 64313,
+        "reasoning_tokens": 64302,
+        "total_tokens": 65003
+      },
+      "score": 12.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 1,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 65573,
+        "reasoning_tokens": 65566,
+        "total_tokens": 66263
+      },
+      "score": 9.090909090909092,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 11,
+        "actual_action_count": 1,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.09090909090909091,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L S R L R L R L R L L S S L S R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 53287,
+        "reasoning_tokens": 53265,
+        "total_tokens": 53977
+      },
+      "score": 37.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 3,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.375,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 42969,
+        "reasoning_tokens": 42961,
+        "total_tokens": 43659
+      },
+      "score": 37.1900826446281,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 9,
+        "actual_action_count": 5,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.45454545454545453,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L S R R L R L R S L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 70514,
+        "reasoning_tokens": 70499,
+        "total_tokens": 71204
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 12,
+        "actual_action_count": 2,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S S S L S L R L S S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 67556,
+        "reasoning_tokens": 67542,
+        "total_tokens": 68246
+      },
+      "score": 25.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 2,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.25,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S R R R R S R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 73548,
+        "reasoning_tokens": 73537,
+        "total_tokens": 74238
+      },
+      "score": 4.3478260869565215,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 1,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.043478260869565216,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R L L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 68587,
+        "reasoning_tokens": 68579,
+        "total_tokens": 69277
+      },
+      "score": 20.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 4,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R R L R L R L R L R L L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 71541,
+        "reasoning_tokens": 71520,
+        "total_tokens": 72231
+      },
+      "score": 12.962962962962962,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.7777777777777778
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L S R S R S R S L S L S L S S R S S R S L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 77048,
+        "reasoning_tokens": 77023,
+        "total_tokens": 77738
+      },
+      "score": 13.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.15,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R S L R S R R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 52984,
+        "reasoning_tokens": 52972,
+        "total_tokens": 53674
+      },
+      "score": 13.333333333333334,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 2,
+        "remaining_action_count": 13,
+        "completion_ratio": 0.13333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 56220,
+        "reasoning_tokens": 56215,
+        "total_tokens": 56910
+      },
+      "score": 3.7037037037037033,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 1,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.037037037037037035,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R L R L R L R L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 62425,
+        "reasoning_tokens": 62412,
+        "total_tokens": 63115
+      },
+      "score": 5.555555555555555,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 1,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.05555555555555555,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L R R L L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 58404,
+        "reasoning_tokens": 58392,
+        "total_tokens": 59094
+      },
+      "score": 33.33333333333333,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 6,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S S L R L R L R L R L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 73043,
+        "reasoning_tokens": 73024,
+        "total_tokens": 73733
+      },
+      "score": 38.88888888888889,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 7,
+        "remaining_action_count": 11,
+        "completion_ratio": 0.3888888888888889,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L S R L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 67599,
+        "reasoning_tokens": 67589,
+        "total_tokens": 68289
+      },
+      "score": 6.666666666666667,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 2,
+        "remaining_action_count": 28,
+        "completion_ratio": 0.06666666666666667,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R L R L R L R L R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 50585,
+        "reasoning_tokens": 50568,
+        "total_tokens": 51275
+      },
+      "score": 17.24137931034483,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 5,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1724137931034483,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R R S L S R S L L S R S R S L S R R S L S R S L S R R S L S R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 36519,
+        "reasoning_tokens": 36482,
+        "total_tokens": 37209
+      },
+      "score": 16.46090534979424,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 5,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.18518518518518517,
+        "efficiency_ratio": 0.8888888888888888
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L L R R L L R R L R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 61584,
+        "reasoning_tokens": 61566,
+        "total_tokens": 62274
+      },
+      "score": 22.080000000000002,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 6,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.24,
+        "efficiency_ratio": 0.92
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S S R L S R L S R L S R L S R L S R L S R L S R L S R L S R L S R L S R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 73376,
+        "reasoning_tokens": 73336,
+        "total_tokens": 74066
+      },
+      "score": 10.650887573964498,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 46590,
+        "reasoning_tokens": 46583,
+        "total_tokens": 47280
+      },
+      "score": 8.616780045351474,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 2,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.09523809523809523,
+        "efficiency_ratio": 0.9047619047619048
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 384000,
+        "reasoning_tokens": 384000,
+        "total_tokens": 384690
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 22,
+        "actual_action_count": 0,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S R S L S R S R S L S R S L S R S L S R S R S L S R S L S R S L S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 324871,
+        "reasoning_tokens": 324629,
+        "total_tokens": 325561
+      },
+      "score": 9.523809523809524,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 2,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.09523809523809523,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S L S L S R S R S L S L S R S R S L S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 25512,
+        "reasoning_tokens": 25485,
+        "total_tokens": 26202
+      },
+      "score": 10.08,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 3,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.12,
+        "efficiency_ratio": 0.84
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L L R L R L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 65872,
+        "reasoning_tokens": 65856,
+        "total_tokens": 66562
+      },
+      "score": 28.000000000000004,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 7,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.28,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 3,
+      "model": {
+        "name": "DeepSeek V4 Flash Vision Exp (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-v4-flash-vision-exp",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L R R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 690,
+        "output_tokens": 51474,
+        "reasoning_tokens": 51463,
+        "total_tokens": 52164
       },
       "score": 7.142857142857142,
       "grading": {
