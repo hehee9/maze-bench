@@ -22,6 +22,12 @@
       color: "#D97757",
       iconPath: "assets/developers/anthropic.svg",
     },
+    deepseek: {
+      key: "deepseek",
+      label: "DeepSeek",
+      color: "#5786FE",
+      iconPath: "assets/developers/deepseek.svg",
+    },
     google: {
       key: "google",
       label: "Google",
@@ -274,7 +280,9 @@
     } else if (model?.provider === "openai_chat") {
       const modelId = String(model.model_id ?? "").toLowerCase();
       const prefix = modelId.split("/", 1)[0];
-      developer = MODEL_DEVELOPERS[prefix] ?? MODEL_DEVELOPERS.unknown;
+      developer = modelId.startsWith("deepseek-")
+        ? MODEL_DEVELOPERS.deepseek
+        : MODEL_DEVELOPERS[prefix] ?? MODEL_DEVELOPERS.unknown;
     }
     return developer.key === "unknown"
       ? { ...developer, label: _t("common.unknownDeveloper") }
