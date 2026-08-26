@@ -70,6 +70,12 @@
       color: "#FF6900",
       iconPath: "assets/developers/xiaomi.svg",
     },
+    "z-ai": {
+      key: "z-ai",
+      label: "Z.ai",
+      color: "#2D2D2D",
+      iconPath: "assets/developers/z-ai.svg",
+    },
     "x-ai": {
       key: "x-ai",
       label: "xAI",

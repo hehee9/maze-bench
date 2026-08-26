@@ -41,7 +41,7 @@ VALID_ACTIONS = frozenset(REL_TO_DELTA)
 
 START_OUT = "START_OUT"
 GOAL_OUT = "GOAL_OUT"
-SCORING_VERSION = 3
+SCORING_VERSION = 4
 STRICT_ACTIONS = re.compile(
     r"^\s*[SRBL](?:\s+[SRBL])*\s*$",
     re.IGNORECASE,
@@ -57,7 +57,7 @@ class MazeError(Exception):
 
 
 def normalize_action_response(response_text: str) -> str:
-    """Remove one supported outer code wrapper from a command response."""
+    """Remove one supported outer formatting wrapper from a command response."""
     candidate = response_text.strip()
     if candidate.startswith("```") and candidate.endswith("```"):
         if candidate.count("```") != 2:
@@ -80,6 +80,14 @@ def normalize_action_response(response_text: str) -> str:
         and candidate.count("`") == 2
     ):
         return candidate[1:-1].strip()
+    if (
+        candidate.startswith("**")
+        and candidate.endswith("**")
+        and candidate.count("**") == 2
+    ):
+        bold = candidate[2:-2].strip()
+        if STRICT_ACTIONS.fullmatch(bold):
+            return bold
     return candidate
 
 
