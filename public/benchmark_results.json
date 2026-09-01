@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 4,
   "status": "completed",
-  "expected_result_count": 870,
-  "processed_result_count": 870,
+  "expected_result_count": 900,
+  "processed_result_count": 900,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -191,6 +191,198 @@
               "input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 5,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Claude Fable 5.1 (medium)",
+      "provider": "anthropic",
+      "model_id": "claude-fable-5-1",
+      "reasoning_label": "effort-medium",
+      "pricing": {
+        "input_per_million": 10.0,
+        "output_per_million": 50.0
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 55.34559036753233,
+      "official_mean_score": 55.34559036753233,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 154200,
+          "output_tokens": 200273,
+          "reasoning_tokens": 199675,
+          "total_tokens": 354473
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 37.3566196856315,
+          "official_mean_score": 37.3566196856315,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 46590,
+              "reasoning_tokens": 46479,
+              "total_tokens": 72290
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 47.07058221193612,
+          "official_mean_score": 47.07058221193612,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 50712,
+              "reasoning_tokens": 50558,
+              "total_tokens": 76412
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 18.224322621298047,
+          "official_mean_score": 18.224322621298047,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 54811,
+              "reasoning_tokens": 54679,
+              "total_tokens": 80511
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 100.0,
+          "official_mean_score": 100.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 5859,
+              "reasoning_tokens": 5815,
+              "total_tokens": 31559
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 100.0,
+          "official_mean_score": 100.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 9741,
+              "reasoning_tokens": 9683,
+              "total_tokens": 35441
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 29.42201768632835,
+          "official_mean_score": 29.42201768632835,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 32560,
+              "reasoning_tokens": 32461,
+              "total_tokens": 58260
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
               "total_tokens": 0
             }
           }
@@ -29332,6 +29524,996 @@
         "actual_action_count": 1,
         "remaining_action_count": 27,
         "completion_ratio": 0.03571428571428571,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1187,
+        "reasoning_tokens": 1179,
+        "total_tokens": 6327
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1082,
+        "reasoning_tokens": 1074,
+        "total_tokens": 6222
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1152,
+        "reasoning_tokens": 1144,
+        "total_tokens": 6292
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1144,
+        "reasoning_tokens": 1134,
+        "total_tokens": 6284
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1294,
+        "reasoning_tokens": 1284,
+        "total_tokens": 6434
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L R L S S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1823,
+        "reasoning_tokens": 1810,
+        "total_tokens": 6963
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 11,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1727,
+        "reasoning_tokens": 1717,
+        "total_tokens": 6867
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S S L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2037,
+        "reasoning_tokens": 2026,
+        "total_tokens": 7177
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 9,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L R S L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2187,
+        "reasoning_tokens": 2173,
+        "total_tokens": 7327
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 12,
+        "actual_action_count": 12,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1967,
+        "reasoning_tokens": 1957,
+        "total_tokens": 7107
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R R S S S S R S R L L R R L R S L L S S R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 9046,
+        "reasoning_tokens": 9020,
+        "total_tokens": 14186
+      },
+      "score": 8.695652173913043,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 2,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.08695652173913043,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R R S S S L R L L L S S R S S S R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 3818,
+        "reasoning_tokens": 3794,
+        "total_tokens": 8958
+      },
+      "score": 22.675736961451243,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 5,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.23809523809523808,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R R L S R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 10957,
+        "reasoning_tokens": 10944,
+        "total_tokens": 16097
+      },
+      "score": 12.962962962962962,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.7777777777777778
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R L R S L R S S R R L L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4349,
+        "reasoning_tokens": 4327,
+        "total_tokens": 9489
+      },
+      "score": 61.224489795918366,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 15,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.7142857142857143,
+        "efficiency_ratio": 0.8571428571428571
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R S R L S R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4390,
+        "reasoning_tokens": 4376,
+        "total_tokens": 9530
+      },
+      "score": 41.55124653739612,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 10,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.5263157894736842,
+        "efficiency_ratio": 0.7894736842105263
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R L S S L R R L R S S S R L R R S L S S R L L R R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 14143,
+        "reasoning_tokens": 14109,
+        "total_tokens": 19283
+      },
+      "score": 20.663265306122447,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 6,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.21428571428571427,
+        "efficiency_ratio": 0.9642857142857143
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S R L S R L R L R S S S R R L L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 3776,
+        "reasoning_tokens": 3755,
+        "total_tokens": 8916
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L R R L R L L R L L R R S R L R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8486,
+        "reasoning_tokens": 8462,
+        "total_tokens": 13626
+      },
+      "score": 44.628099173553714,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 12,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.5454545454545454,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S S L S S R S S L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4235,
+        "reasoning_tokens": 4215,
+        "total_tokens": 9375
+      },
+      "score": 94.44444444444444,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 17,
+        "remaining_action_count": 1,
+        "completion_ratio": 0.9444444444444444,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R L S L L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 15950,
+        "reasoning_tokens": 15938,
+        "total_tokens": 21090
+      },
+      "score": 10.380622837370241,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 4,
+        "remaining_action_count": 30,
+        "completion_ratio": 0.11764705882352941,
+        "efficiency_ratio": 0.8823529411764706
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R L L S R S S R L R S L S R R L R L S L R S S L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8307,
+        "reasoning_tokens": 8275,
+        "total_tokens": 13447
+      },
+      "score": 56.640625,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 20,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.625,
+        "efficiency_ratio": 0.90625
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S S R S S L S R L S S S S R L R R L R L S L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 11772,
+        "reasoning_tokens": 11744,
+        "total_tokens": 16912
+      },
+      "score": 24.85207100591716,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 7,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.2692307692307692,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L L L R R R L R S L S S R L L S S R L R R L L R R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8893,
+        "reasoning_tokens": 8860,
+        "total_tokens": 14033
+      },
+      "score": 74.19354838709677,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 23,
+        "actual_action_count": 31,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.7419354838709677
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R L R L R L R L S R S S S R S S L L S S S R L S S S R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 9078,
+        "reasoning_tokens": 9043,
+        "total_tokens": 14218
+      },
+      "score": 41.66666666666667,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 10,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.4166666666666667,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L S R L S R L R L S R R L R L R S S S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 12662,
+        "reasoning_tokens": 12636,
+        "total_tokens": 17802
+      },
+      "score": 38.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 8,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.4,
+        "efficiency_ratio": 0.95
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L R S L S S L R L R L R L S R L S R L R L L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 18851,
+        "reasoning_tokens": 18818,
+        "total_tokens": 23991
+      },
+      "score": 22.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 9,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.3,
+        "efficiency_ratio": 0.7333333333333333
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S L L R S R L L R R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 6653,
+        "reasoning_tokens": 6637,
+        "total_tokens": 11793
+      },
+      "score": 27.7882797731569,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 7,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.30434782608695654,
+        "efficiency_ratio": 0.9130434782608695
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R S L R S R L L R L R S L R R S L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8607,
+        "reasoning_tokens": 8583,
+        "total_tokens": 13747
+      },
+      "score": 19.047619047619047,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 4,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.19047619047619047,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R R L S R R L R R L L L R R L L R S R L S R R L L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8642,
+        "reasoning_tokens": 8612,
+        "total_tokens": 13782
+      },
+      "score": 8.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 2,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.08,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Fable 5.1 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-fable-5-1",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R R L R S L R S L R S L R S L S R L S R L S L R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 12058,
+        "reasoning_tokens": 12029,
+        "total_tokens": 17198
+      },
+      "score": 14.285714285714285,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 4,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.14285714285714285,
         "efficiency_ratio": 1.0
       }
     },
