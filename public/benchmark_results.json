@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 4,
   "status": "completed",
-  "expected_result_count": 930,
-  "processed_result_count": 930,
+  "expected_result_count": 960,
+  "processed_result_count": 960,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -5562,6 +5562,198 @@
               "output_tokens": 172896,
               "reasoning_tokens": 172772,
               "total_tokens": 194706
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Muse Spark 1.3 (medium)",
+      "provider": "openai_chat",
+      "model_id": "meta/muse-spark-1.3",
+      "reasoning_label": "effort-medium",
+      "pricing": {
+        "input_per_million": 1.25,
+        "output_per_million": 4.25
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 40.74667285766035,
+      "official_mean_score": 40.74667285766035,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 130860,
+          "output_tokens": 798165,
+          "reasoning_tokens": 793695,
+          "total_tokens": 929025
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 15.83581349206349,
+          "official_mean_score": 15.83581349206349,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 21810,
+              "output_tokens": 182289,
+              "reasoning_tokens": 181607,
+              "total_tokens": 204099
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 10.743838371439406,
+          "official_mean_score": 10.743838371439406,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 21810,
+              "output_tokens": 170722,
+              "reasoning_tokens": 169977,
+              "total_tokens": 192532
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 9.054377007607776,
+          "official_mean_score": 9.054377007607776,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 21810,
+              "output_tokens": 163294,
+              "reasoning_tokens": 162564,
+              "total_tokens": 185104
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 90.0,
+          "official_mean_score": 90.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 21810,
+              "output_tokens": 59862,
+              "reasoning_tokens": 59322,
+              "total_tokens": 81672
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 56.665120593692016,
+          "official_mean_score": 56.665120593692016,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 21810,
+              "output_tokens": 91173,
+              "reasoning_tokens": 90524,
+              "total_tokens": 112983
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 62.180887681159426,
+          "official_mean_score": 62.180887681159426,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 21810,
+              "output_tokens": 130825,
+              "reasoning_tokens": 129701,
+              "total_tokens": 152635
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -15856,6 +16048,996 @@
         "actual_action_count": 3,
         "remaining_action_count": 25,
         "completion_ratio": 0.10714285714285714,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 11878,
+        "reasoning_tokens": 11725,
+        "total_tokens": 16240
+      },
+      "score": 83.33333333333334,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 5,
+        "remaining_action_count": 1,
+        "completion_ratio": 0.8333333333333334,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 9185,
+        "reasoning_tokens": 9108,
+        "total_tokens": 13547
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 6560,
+        "reasoning_tokens": 6362,
+        "total_tokens": 10922
+      },
+      "score": 66.66666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 4,
+        "remaining_action_count": 2,
+        "completion_ratio": 0.6666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 15163,
+        "reasoning_tokens": 15127,
+        "total_tokens": 19525
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 17076,
+        "reasoning_tokens": 17000,
+        "total_tokens": 21438
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 11905,
+        "reasoning_tokens": 11692,
+        "total_tokens": 16267
+      },
+      "score": 9.090909090909092,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 11,
+        "actual_action_count": 1,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.09090909090909091,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L S R L L S S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 22593,
+        "reasoning_tokens": 22378,
+        "total_tokens": 26955
+      },
+      "score": 37.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 3,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.375,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S S L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 17828,
+        "reasoning_tokens": 17766,
+        "total_tokens": 22190
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 9,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R R L L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 18571,
+        "reasoning_tokens": 18550,
+        "total_tokens": 22933
+      },
+      "score": 36.73469387755102,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 12,
+        "actual_action_count": 6,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.42857142857142855,
+        "efficiency_ratio": 0.8571428571428571
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L S L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 20276,
+        "reasoning_tokens": 20138,
+        "total_tokens": 24638
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S S R L L R R L R L S R R L R S S L L S R L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 25745,
+        "reasoning_tokens": 25519,
+        "total_tokens": 30107
+      },
+      "score": 76.66666666666667,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 23,
+        "actual_action_count": 30,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.7666666666666667
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R L L R L R L L R L L R L R L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 24774,
+        "reasoning_tokens": 24532,
+        "total_tokens": 29136
+      },
+      "score": 86.95652173913044,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 20,
+        "actual_action_count": 23,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.8695652173913043
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S L R R L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 30427,
+        "reasoning_tokens": 30240,
+        "total_tokens": 34789
+      },
+      "score": 38.28125,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 7,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.4375,
+        "efficiency_ratio": 0.875
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S L R L R S R L R L R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 24127,
+        "reasoning_tokens": 23898,
+        "total_tokens": 28489
+      },
+      "score": 9.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 2,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.1,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R S R L L R R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 25752,
+        "reasoning_tokens": 25512,
+        "total_tokens": 30114
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 15,
+        "actual_action_count": 15,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 29310,
+        "reasoning_tokens": 29293,
+        "total_tokens": 33672
+      },
+      "score": 11.11111111111111,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 3,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1111111111111111,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R L R L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 27044,
+        "reasoning_tokens": 27005,
+        "total_tokens": 31406
+      },
+      "score": 5.555555555555555,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 1,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.05555555555555555,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L R L S R S S S R L S R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 49531,
+        "reasoning_tokens": 49303,
+        "total_tokens": 53893
+      },
+      "score": 22.22222222222222,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 4,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.2222222222222222,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R L L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 36875,
+        "reasoning_tokens": 36708,
+        "total_tokens": 41237
+      },
+      "score": 28.571428571428566,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 7,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 0.8571428571428571
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S S L S S L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 39529,
+        "reasoning_tokens": 39298,
+        "total_tokens": 43891
+      },
+      "score": 11.71875,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 4,
+        "remaining_action_count": 28,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 0.9375
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 27498,
+        "reasoning_tokens": 27344,
+        "total_tokens": 31860
+      },
+      "score": 17.24137931034483,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 5,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1724137931034483,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 35238,
+        "reasoning_tokens": 35126,
+        "total_tokens": 39600
+      },
+      "score": 10.650887573964498,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R S L S R S L S R S S R S L S L S R R S L R S S S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 33335,
+        "reasoning_tokens": 33278,
+        "total_tokens": 37697
+      },
+      "score": 13.043478260869565,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 3,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.13043478260869565,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R S L S R S L S R S L S S R S S L S R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 40306,
+        "reasoning_tokens": 40060,
+        "total_tokens": 44668
+      },
+      "score": 4.166666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 1,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.041666666666666664,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L R S L R R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 34345,
+        "reasoning_tokens": 34169,
+        "total_tokens": 38707
+      },
+      "score": 8.616780045351474,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 2,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.09523809523809523,
+        "efficiency_ratio": 0.9047619047619048
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L L R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 33534,
+        "reasoning_tokens": 33322,
+        "total_tokens": 37896
+      },
+      "score": 9.763313609467456,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.8461538461538461
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S L S R L S S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 25182,
+        "reasoning_tokens": 25072,
+        "total_tokens": 29544
+      },
+      "score": 14.285714285714285,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 3,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.14285714285714285,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S S S R L S L R S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 44561,
+        "reasoning_tokens": 44398,
+        "total_tokens": 48923
+      },
+      "score": 10.08,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 3,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.12,
+        "efficiency_ratio": 0.84
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R L R R L L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 27133,
+        "reasoning_tokens": 26919,
+        "total_tokens": 31495
+      },
+      "score": 4.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 1,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.04,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Muse Spark 1.3 (medium)",
+        "provider": "openai_chat",
+        "model_id": "meta/muse-spark-1.3",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L S R R L S L S R R S L R L R S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 4362,
+        "output_tokens": 32884,
+        "reasoning_tokens": 32853,
+        "total_tokens": 37246
+      },
+      "score": 7.142857142857142,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 2,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.07142857142857142,
         "efficiency_ratio": 1.0
       }
     },
