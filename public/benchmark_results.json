@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 4,
   "status": "completed",
-  "expected_result_count": 990,
-  "processed_result_count": 962,
+  "expected_result_count": 1020,
+  "processed_result_count": 992,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -1338,6 +1338,198 @@
               "output_tokens": 343708,
               "reasoning_tokens": 343631,
               "total_tokens": 347158
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "DeepSeek V4.1 Flash (high)",
+      "provider": "openai_chat",
+      "model_id": "deepseek-flash",
+      "reasoning_label": "effort-high",
+      "pricing": {
+        "input_per_million": 0.15,
+        "output_per_million": 0.6
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 14.960350287478581,
+      "official_mean_score": 14.960350287478581,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 38490,
+          "output_tokens": 721559,
+          "reasoning_tokens": 717012,
+          "total_tokens": 760049
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 7.995296604571277,
+          "official_mean_score": 7.995296604571277,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 140662,
+              "reasoning_tokens": 140160,
+              "total_tokens": 147077
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 6.695218389612623,
+          "official_mean_score": 6.695218389612623,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 118465,
+              "reasoning_tokens": 118371,
+              "total_tokens": 124880
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 7.070754924917215,
+          "official_mean_score": 7.070754924917215,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 174578,
+              "reasoning_tokens": 174433,
+              "total_tokens": 180993
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 20.0,
+          "official_mean_score": 20.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 52518,
+              "reasoning_tokens": 50660,
+              "total_tokens": 58933
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 36.36363636363636,
+          "official_mean_score": 36.36363636363636,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 85921,
+              "reasoning_tokens": 84558,
+              "total_tokens": 92336
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 11.637195442134004,
+          "official_mean_score": 11.637195442134004,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 149415,
+              "reasoning_tokens": 148830,
+              "total_tokens": 155830
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -13270,6 +13462,996 @@
         "actual_action_count": 2,
         "remaining_action_count": 26,
         "completion_ratio": 0.07142857142857142,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "Looking at the maze, I'll set up a 4×4 grid with columns at x≈190–350–500–650–810 and rows at y≈190–350–500–650–810.\n\n**Walls observed:**\n- Left wall (x=190, full height), top wall (y=190, from x=350 rightward), bottom wall (y=810, full width).\n- Right wall present only for rows 1–2 (y=190–500) and row 4 (y=650–810), leaving an exit gap on the right of row 3.\n- Vertical wall at x=350 (y=350–650); vertical wall at x=500 (y=190–500 and y=650–810).\n- Horizontal walls at y=350 and y=500 (x=500–650), and at y=650 (x=650–810).\n\n**Tracing the path:**\n- Enter from the top (blue arrow) at column 1, facing south: command **S**.\n- Cell (1,1) is a junction (east open, since the x=350 wall starts at y=350). Turn left (east): **L**.\n- Move east to (1,2). Here north is the top wall and east is the x=500 wall, so the only way is south: turn right: **R**.\n- Move south through (2,2) (a straight corridor, walls on both sides) down to (3,2).\n- At (3,2), facing south, the west side is walled (x=350) but east is open. Turn left (east): **L**.\n- Move east to (3,3). Facing east, north is walled (y=500 wall), but going straight east is open. Go straight: **S**.\n- Move east to (3,4). Facing east, the south is walled (y=650 wall) but the east side is the exit gap. Go straight out: **S**.\n\nChecking alternatives: going straight south at (1,1) leads to the bottom-left corner, requiring more turns (S S L L R S S = 7 commands), so the route via the first left turn is shorter (6 commands).\n\nTherefore, the answer is **S L R L S S**.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 11907,
+        "reasoning_tokens": 11412,
+        "total_tokens": 13190
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 0,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "Looking at the maze, I'll map the walls onto a grid of cells (columns 0–3 left→right, rows 0–3 top→bottom).\n\n**Walls observed:**\n- Top boundary (y=57) spans all columns; right boundary (x=810) spans all rows.\n- Left boundary (x=195) exists only from y=345 down to y=810, so the entrance is on the left of cell (0,0).\n- Bottom boundary (y=810) spans x=345–810, so the exit is at the bottom of cell (0,3).\n- Internal walls: vertical at x=650 (rows 0 and 2), horizontal at y=345 (between (2,0)-(2,1)), vertical at x=500 (rows 1 and 3), horizontal at y=500 (between (1,1)-(1,2)), vertical at x=345 (row 1), horizontal at y=650 (between (0,2)-(0,3)).\n\n**Path finding:**\n- Entering at (0,0) facing east: going straight east leads to (2,0), a dead end (blocked by x=650 wall and y=345 wall). So turn right (south) into the left column.\n- (0,1) is a straight corridor → continue south automatically.\n- At (0,2), south is blocked (y=650 wall), so turn left (east) to (1,2).\n- At (1,2), north is blocked (y=500 wall); the exit requires going south to (1,3), since (0,2)-(0,3) is blocked and (1,3)-(2,3) is blocked. Turn right (south).\n- At (1,3), south is blocked (bottom wall) and east is blocked (x=500 wall); turn right (west) to (0,3).\n- At (0,3), facing west, the only opening is south (the exit); turn left and leave the maze.\n\n**Command sequence:** S (enter), R (at (0,0) turn south), L (at (0,2) turn east), R (at (1,2) turn south), R (at (1,3) turn west), L (at (0,3) turn south to exit).\n\nS R L R R L",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 10642,
+        "reasoning_tokens": 10137,
+        "total_tokens": 11925
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 0,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "Looking at the maze, I'll map the walls onto a 4×4 grid:\n\n- Entrance: top gap above column 2 (blue arrow).\n- Exit: bottom gap below column 3 (red arrow).\n- Walls: vertical at x=750 (rows 1–2), vertical at x=520 (rows 2–3), vertical at x=975 (row 2), horizontal at y=750 (columns 2 and 4), horizontal at y=975 (column 3).\n\nWalking the route:\n\n1. **S** – enter the maze heading down into cell (1,2).\n2. At (1,2), the way down leads to a dead end (2,2), so I must turn right (west) → **R**, moving to (1,1).\n3. At (1,1), the path continues downward; facing west, south is a left turn → **L**, moving to (2,1).\n4. (2,1) and (3,1) are straight corridors (walls on both sides), so I pass straight through automatically to (4,1).\n5. At (4,1), the path turns east; facing south, east is a left turn → **L**, moving to (4,2).\n6. At (4,2), a T-junction (open west, north, east), I continue straight east → **S**, moving to (4,3).\n7. At (4,3), the exit lies to the south; facing east, south is a right turn → **R**, leaving the maze at the red arrow.\n\nChecking alternatives: the right side from (1,2) is blocked by the wall at x=750, and (2,2) is a dead end, so the left-hand route through the bottom-left cells is the only path; going via (3,2)/(3,3) would require extra commands.\n\nThe command sequence is: S R L L S R.\n\nTherefore, the answer is **S R L L S R**.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 8615,
+        "reasoning_tokens": 8191,
+        "total_tokens": 9898
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 0,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "Looking at the maze, I'll set up a grid: columns 1–4 from left to right, rows 1–4 from top to bottom.\n\n**Walls observed:**\n- Right boundary gap (entrance, blue arrow) at row 3, column 4.\n- Left boundary gap (exit, red arrow) at row 2, column 1.\n- Vertical wall between (1,3)-(1,4); vertical wall between (2,2)-(2,3); horizontal wall between (2,3)-(3,3); vertical wall between (3,3)-(3,4); vertical wall between columns 1 and 2 in rows 2–4; horizontal wall between (3,2)-(4,2).\n\n**Tracing the path:**\n- Enter facing west (S) into cell (3,4). Forward (west) is blocked by the wall; the only useful turn is north → R.\n- Move north to (2,4). Forward (north) leads to a dead end (1,4); turn left (west) → L.\n- Move west to (2,3). Forward (west) blocked, south blocked; turn right (north) → R.\n- Move north to (1,3). Forward (north) blocked, east blocked; turn left (west) → L.\n- Move west to (1,2). It's a T‑junction; continue straight (west) → S.\n- Move west to (1,1). Forward (west) blocked; turn left (south) → L.\n- Move south to (2,1). The exit is to the west; facing south, turn right (west) → R, and leave the maze.\n\nChecking alternatives: going south from (3,4) through the bottom corridor gives a longer sequence (S L R R L R S L L R), so the 8‑command route is optimal.\n\nThe command sequence is: S R L R L S L R.\n\nS R L R L S L R",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 6592,
+        "reasoning_tokens": 6168,
+        "total_tokens": 7875
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 0,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 14762,
+        "reasoning_tokens": 14752,
+        "total_tokens": 16045
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "Looking at the maze, I'll set up a grid: columns 1–6 left to right, rows 1–6 top to bottom. The entrance gap is at the top of column 2, and the exit gap is on the right of row 5.\n\nTracing the route:\n\n- **S** – enter the maze at (1,2), facing down.\n- At (1,2): straight (down) is open, left (east) leads to the dead-end (1,3), right (west) is walled. Go **S** to (2,2).\n- At (2,2): straight (down) is open, left (east) is walled, right (west) leads to a dead-end pocket. Go **S** to (3,2).\n- At (3,2): straight (down) is walled, left (east) is open, right (west) leads to a long dead-end loop. Turn **L** to (3,3), then continue straight through the corridor to (3,4).\n- At (3,4): left (north) is walled, straight (east) is open, right (south) is open. Turn **R** to (4,4).\n- At (4,4): straight (down) is walled, left (east) is open, right (west) loops back. Turn **L** to (4,5).\n- At (4,5): straight (east) is open, left (north) loops back, right (south) leads down but away from the exit. Go **S** to (4,6).\n- At (4,6): straight (east) is the outer wall, left (north) loops back, right (south) is open. Turn **R** to (5,6).\n- At (5,6): the exit is to the east; facing south, that is a left turn. Output **L** to leave the maze.\n\nChecking the path against the walls: the vertical wall at x=266 (top-left) forces the first straight move; the wall at x=383 (row 2) and the horizontal wall at y=383 (columns 3–4) prevent shortcuts; the wall at x=733 (rows 2–3) and the horizontal wall at y=500 (columns 3–5) close off the upper-right; the wall at x=733 (row 5) and the horizontal wall at y=733 (columns 3–4) close off the lower-right alternatives. The route reaches the exit legally with no blocked moves.\n\nThe command sequence is: S S S L R L S R L.\n\nS S S L R L S R L",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 25129,
+        "reasoning_tokens": 24545,
+        "total_tokens": 26412
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 11,
+        "actual_action_count": 0,
+        "remaining_action_count": 11,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "Looking at the maze, I'll map it onto a 6×6 grid of cells. The entrance is the gap in the left wall at row 1 (blue arrow), and the exit is the gap in the top wall at column 3 (red arrow).\n\nTracing the route:\n\n- **S** – enter the maze from outside, moving east into cell (1,1).\n- At (1,1): the east path leads to a dead end (cell (1,2) is walled off on its right and bottom), so I must turn right (south). → **R**\n- At (2,1): south is blocked by a wall, so I turn left (east) into (2,2). → **L**\n- At (2,2): east is blocked by the vertical wall, and north is blocked, so I turn right (south) into (3,2). → **R**\n- At (3,2): south continues but east opens toward the exit column, so I turn left (east) into (3,3). → **L**\n- At (3,3): east is blocked by a wall, so I turn left (north) into (2,3). → **L**\n- At (2,3): the path north is clear, so I go straight into (1,3), the exit cell. → **S**\n- At (1,3): facing the exit gap, I go straight out through the red arrow. → **S**\n\nThis route uses every opening correctly and reaches the exit with the fewest decision points.\n\nS R L R L L S S",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 12401,
+        "reasoning_tokens": 12058,
+        "total_tokens": 13684
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 0,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S L S R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 16894,
+        "reasoning_tokens": 16882,
+        "total_tokens": 18177
+      },
+      "score": 81.81818181818183,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L R S L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 20726,
+        "reasoning_tokens": 20713,
+        "total_tokens": 22009
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 12,
+        "actual_action_count": 12,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "Looking at the maze, I'll set up a grid. The outer frame spans the image, with the bottom wall having two gaps: one at the middle-left (where the red arrow exits) and one at the middle-right (where the blue arrow enters).\n\n**Observing the walls:**\n- The blue arrow enters at the bottom-right gap, leading into a bottom-row corridor.\n- Directly north of the entry cell, the passage is open (a junction).\n- West of the entry cell, the bottom corridor continues; one cell west there is a junction where a pocket opens northward (the U-shaped dead-end pocket formed by the walls at x≈500–620, y≈620–735).\n- Continuing west, the next cell is the exit cell, which opens south through the gap marked by the red arrow, and also opens north.\n\n**Tracing the path:**\n1. Start outside, facing the maze (north, as the blue arrow points). Enter: **S** → now in the bottom-right cell, facing north.\n2. This cell is a junction (open north, west, east). The exit lies to the west, so turn left: **L** → now facing west.\n3. Move west along the bottom corridor. At the next cell (below the pocket), there is a junction (open north, west, east). Continue straight: **S** → now in the exit cell, facing west.\n4. In the exit cell, the red arrow's gap is to the south, which is a left turn from west. Turn left to leave the maze: **L**.\n\n**Verification:** The path uses only open passages (no walls between the entry cell and the exit cell along the bottom row), and each decision point (entry junction, pocket junction, exit cell) is handled with exactly one command. Any other route (e.g., going north first) would require more commands, so S L S L is optimal.\n\nTherefore, the answer is **S L S L**.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 10771,
+        "reasoning_tokens": 10360,
+        "total_tokens": 12054
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 0,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S R S L S R S L S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 26345,
+        "reasoning_tokens": 26332,
+        "total_tokens": 27628
+      },
+      "score": 4.3478260869565215,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 1,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.043478260869565216,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R S S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 29019,
+        "reasoning_tokens": 29012,
+        "total_tokens": 30302
+      },
+      "score": 15.122873345935727,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 4,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.17391304347826086,
+        "efficiency_ratio": 0.8695652173913043
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L S R S S R S L R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 39087,
+        "reasoning_tokens": 39073,
+        "total_tokens": 40370
+      },
+      "score": 10.9375,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 2,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.125,
+        "efficiency_ratio": 0.875
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R S S S R L R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 26689,
+        "reasoning_tokens": 26672,
+        "total_tokens": 27972
+      },
+      "score": 27.77777777777778,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 5,
+        "remaining_action_count": 13,
+        "completion_ratio": 0.2777777777777778,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "Looking at the maze, I'll set up a grid: 9 columns (0–8, left to right) and 9 rows (0–8, top to bottom). The blue arrow enters on the right side at the bottom row (row 8), and the red arrow exits on the right side at row 1.\n\nTracing the walls:\n\n- Entering west into (8,8), the only viable route (since north leads to a dead end at (8,7)) is straight west along the bottom corridor.\n- The bottom corridor runs west until column 2, where a wall blocks further west; the only turn is north (right).\n- At (2,7), the path turns east (right) and runs along row 7 to column 5 (the walls below row 7 and above row 7 force this).\n- At (5,7), turn north (left) to (5,6), then straight north to (5,5).\n- At (5,5), turn east (right) to (6,5); at (6,5) turn north (left).\n- Then straight north through (6,4), (6,3), (6,2) to (6,1).\n- At (6,1), turn east (right) to (7,1); turn north (left) to (7,0); turn east (right) to (8,0); turn south (right) to (8,1).\n- At (8,1), the exit is to the east, so turn left and leave the maze.\n\nVerifying each decision against the wall segments confirms this is the shortest route (any alternative via the left side or middle leads to dead ends).\n\nCommand sequence: S (enter), S (straight at (8,8)), R (north at (2,8)), R (east at (2,7)), L (north at (5,7)), S (straight at (5,6)), R (east at (5,5)), L (north at (6,5)), S, S, S (straight through (6,4), (6,3), (6,2)), R (east at (6,1)), L (north at (7,1)), R (east at (7,0)), R (south at (8,0)), L (east at (8,1), exiting).\n\nTherefore, the answer is **S S R R L S R L S S S R L R R L**.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 28275,
+        "reasoning_tokens": 27741,
+        "total_tokens": 29558
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 15,
+        "actual_action_count": 0,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 20818,
+        "reasoning_tokens": 20807,
+        "total_tokens": 22101
+      },
+      "score": 6.420927467300832,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 2,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.06896551724137931,
+        "efficiency_ratio": 0.9310344827586207
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 27634,
+        "reasoning_tokens": 27626,
+        "total_tokens": 28917
+      },
+      "score": 5.555555555555555,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 1,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.05555555555555555,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L S R S L S R S L S R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 28951,
+        "reasoning_tokens": 28935,
+        "total_tokens": 30234
+      },
+      "score": 18.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 4,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "Looking at the maze, I'll set up a grid with columns 0–11 and rows 0–11 (entrance at bottom of column 9, exit at top of column 5). Tracing the only viable corridor from the blue arrow:\n\n- Enter upward (S) into (9,11), a 4-way junction → S\n- (9,10) is a 3-way junction, go straight → S\n- (9,9) is a corner, turn left (N→W) → L\n- (8,9) is a junction, turn right (W→N) → R\n- (8,8) is a corner, turn right (N→E) → R\n- (9,8) is a 4-way junction, go straight → S\n- (9,7) is a junction, turn right (N→E) → R\n- (10,7) is a 4-way junction, go straight → S\n- (10,6) is a junction, turn left (N→W) → L\n- (9,6) is a junction, go straight (W) → S\n- (8,6) is a junction, turn right (W→N) → R\n- (8,5) is a junction, go straight (N) → S\n- (8,4) is a straight corridor, no command\n- (8,3) is a junction, go straight (N) → S\n- (8,2) is a 4-way junction, go straight (N) → S\n- (8,1) is a junction, go straight (N) → S\n- (8,0) is a corner, turn left (N→W) → L\n- (7,0) is a straight corridor, no command\n- (6,0) is a junction, go straight (W) → S\n- (5,0) is the exit cell, turn right (W→N) to leave → R\n\nThis yields the command sequence:\n\nS S S L R R S R S L S R S S S S L S R",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 45109,
+        "reasoning_tokens": 44656,
+        "total_tokens": 46392
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 18,
+        "actual_action_count": 0,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S R S L S S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 18150,
+        "reasoning_tokens": 18136,
+        "total_tokens": 19433
+      },
+      "score": 10.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 3,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.1,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S L S R S L S R S L S R S L S R S L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 14700,
+        "reasoning_tokens": 14678,
+        "total_tokens": 15983
+      },
+      "score": 6.035379812695108,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 2,
+        "remaining_action_count": 29,
+        "completion_ratio": 0.06451612903225806,
+        "efficiency_ratio": 0.9354838709677419
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R L R L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 44883,
+        "reasoning_tokens": 44869,
+        "total_tokens": 46166
+      },
+      "score": 10.650887573964498,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R S L S R S L S L S R S L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 22974,
+        "reasoning_tokens": 22957,
+        "total_tokens": 24257
+      },
+      "score": 7.36,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 2,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.08,
+        "efficiency_ratio": 0.92
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R S L S R S L S R S L S R S L S R S L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 19818,
+        "reasoning_tokens": 19790,
+        "total_tokens": 21101
+      },
+      "score": 4.166666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 1,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.041666666666666664,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R S L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 16090,
+        "reasoning_tokens": 16077,
+        "total_tokens": 17373
+      },
+      "score": 5.263157894736842,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 1,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.05263157894736842,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L L R L L R R R L L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 38294,
+        "reasoning_tokens": 38275,
+        "total_tokens": 39577
+      },
+      "score": 12.22222222222222,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 5,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.7333333333333333
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R L L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 39932,
+        "reasoning_tokens": 39922,
+        "total_tokens": 41215
+      },
+      "score": 4.761904761904762,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 1,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.047619047619047616,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S L S R S L S R S R S L S R S L S R S L S R S L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 38817,
+        "reasoning_tokens": 38784,
+        "total_tokens": 40100
+      },
+      "score": 7.9395085066162565,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 2,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.08695652173913043,
+        "efficiency_ratio": 0.9130434782608695
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S L L S S R S L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 25004,
+        "reasoning_tokens": 24989,
+        "total_tokens": 26287
+      },
+      "score": 6.858710562414266,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 2,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.07407407407407407,
+        "efficiency_ratio": 0.9259259259259259
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S L S R S L S S R S L S R S L S R S L S S R S L S R S L S S R S L S R S L S R S L S S R S L S R S L S S R S L S R S L S R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 32531,
+        "reasoning_tokens": 32463,
+        "total_tokens": 33814
+      },
+      "score": 3.571428571428571,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 1,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.03571428571428571,
         "efficiency_ratio": 1.0
       }
     },
