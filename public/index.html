@@ -106,6 +106,19 @@
 
       <div id="controlContent" class="control-content">
         <div class="selector-grid">
+          <div class="field tier-field">
+            <span data-i18n="tier.label">벤치마크 티어</span>
+            <div
+              id="tierButtons"
+              class="tier-buttons"
+              role="group"
+              aria-label="벤치마크 티어 선택"
+              data-i18n-aria-label="tier.switch"
+            >
+              <button type="button" data-tier="1" data-i18n="tier.one">Tier 1</button>
+              <button type="button" data-tier="2" data-i18n="tier.two">Tier 2</button>
+            </div>
+          </div>
           <label class="field field-compact">
             <span data-i18n="common.mazeSize">미로 크기</span>
             <select id="sizeSelect"></select>
@@ -234,7 +247,10 @@
         aria-label="미로 이동 경로"
         data-i18n-aria-label="replay.mazePath"
       >
-        <span class="export-watermark maze-export-watermark" data-export-show="true">Github/hehee9</span>
+        <span
+          class="export-watermark maze-export-watermark"
+          data-export-show="true"
+        >Github/hehee9 · <span class="tier-indicator" data-tier-indicator>Tier 1</span></span>
         <button
           id="exportReplayButton"
           class="export-button maze-export-button"

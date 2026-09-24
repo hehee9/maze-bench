@@ -30,7 +30,7 @@ license: apache-2.0
 
 Maze Bench evaluates whether a model can inspect a rectangular maze image and produce an escape route. It is designed to measure continuous visual and spatial reasoning. The benchmark generates rectangular maze images and their solutions at random, then scores each model's movement log by multiplying completion by efficiency.
 
-The benchmark contains five mazes for each of six sizes: easy (4x4 and 6x6), medium (9x9 and 12x12), and hard (15x15 and 18x18).
+Tier 1 contains five mazes for each of six sizes: easy (4x4 and 6x6), medium (9x9 and 12x12), and hard (15x15 and 18x18), for 30 mazes in total. Tier 2 contains five mazes each at 15x15, 18x18, 21x21, and 24x24, for 20 mazes in total.
 
 ---
 
@@ -74,8 +74,6 @@ Each maze is scored as `100 × P × E`.
 
 The score is calculated from the model's final position. A movement path may therefore pass through a position that would have received a higher score before ending elsewhere.
 
-The overall score is the average of all individual maze scores.
-
 ### Visualization and Replay
 
 ![Replay](./images/replay.gif)
@@ -105,6 +103,12 @@ python scripts/maze_benchmark.py generate --width 15 --height 15 --wall-density 
 ```
 
 The generator creates different mazes on every run, even with the same options, and records the seeds used in the results.
+
+Generate the Tier 2 set in `maze_sets_tier2/`:
+
+```bash
+python scripts/generate_tier2.py
+```
 
 Score a model's commands on one maze:
 
@@ -198,13 +202,16 @@ python scripts/run_api_benchmark.py --all-models --dry-run    # Validate configu
 python scripts/run_api_benchmark.py --all-models               # Run all models
 python scripts/run_api_benchmark.py --models "GPT-5.6 Sol (medium)"
 python scripts/run_api_benchmark.py --models "GPT-5.6 Sol (medium)" --maze-sizes 4x4 6x6
+python scripts/run_api_benchmark.py --all-models --tier 2
 python scripts/run_api_benchmark.py --all-models --resume      # Retry failed or missing runs only
 python scripts/run_api_benchmark.py --list-models
 ```
 
 One of `--all-models`, `--models`, or `--list-models` is required. Use `--maze-sizes` to run only selected maze sizes and `--max-workers` to control concurrent requests (default: 30).
 
-Individual results are written to `outputs/<provider>__<model-id>__<reasoning>__<configured-name>__<maze>.json`, while aggregates are written to `outputs/all_model_scores.json`; both locations are excluded from Git by default. The configured name keeps variants with the same model ID in separate files. The `output/` directory at the project root is unrelated to the benchmark. With `--resume`, compatible successful results are reused and only failed or missing runs are requested again.
+Tier 1 is used by default. Pass `--tier 2` to run Tier 2 mazes from `maze_sets_tier2/`, save run results in `outputs/tier2/`, and save dashboard data in `public/benchmark_results_tier2.json`. You can also specify these paths directly.
+
+With `--resume`, successful API responses are reused and only failed or missing requests are retried.
 
 ### Batch API
 
@@ -213,6 +220,7 @@ Asynchronous Batch API requests use a separate runner. Anthropic Message Batches
 ```bash
 python scripts/run_batch_benchmark.py --all-models
 python scripts/run_batch_benchmark.py --models "Claude Opus 4.8 (medium)" --maze-sizes 9x9
+python scripts/run_batch_benchmark.py --all-models --tier 2
 python scripts/run_batch_benchmark.py --all-models --resume
 ```
 
@@ -220,9 +228,10 @@ The runner submits one batch per model and checks its status every 60 seconds by
 
 ### Dashboard
 
-Dashboard data is stored separately in `public/benchmark_results.json`. It includes only scores, token counts, command outputs, and aggregate values; sensitive information such as paths, IDs, error messages, and hashes is excluded. Use `--public-output <path>` to write it elsewhere.
+Dashboard data is stored separately under `public/`. Use `--public-output <path>` to change its location.
 
 Serve the repository root with a static HTTP server to view the leaderboard at `public/leaderboard.html`, per-model results at `public/model.html`, and replays at `public/index.html`.
+Use the tier selector or add `?tier=2` to the dashboard URL to open Tier 2.
 
 ---
 

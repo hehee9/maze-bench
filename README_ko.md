@@ -23,7 +23,7 @@
 
 Maze Bench 직사각형의 미로 이미지를 보고 탈출 경로를 출력하는 벤치마크입니다. 연속적 시각+공간 추론 능력을 측정하기 위해 만들어졌습니다. 직사각형 미로 이미지와 정답을 무작위로 생성하고, 모델의 이동 로그를 바탕으로 완성률과 효율성 곱해 채점합니다.
 
-벤치마크에는 쉬움(4x4, 6x6), 보통(9x9, 12x12), 어려움(15x15, 18x18) 미로를 각각 5개씩 사용했습니다.
+Tier 1에는 쉬움(4x4, 6x6), 보통(9x9, 12x12), 어려움(15x15, 18x18) 미로가 각각 5개씩, 총 30개 준비되어 있습니다. Tier 2에는 15x15, 18x18, 21x21, 24x24 미로가 각 5개씩, 총 20개 준비되어 있습니다.
 
 ---
 
@@ -67,8 +67,6 @@ Maze Bench 직사각형의 미로 이미지를 보고 탈출 경로를 출력하
 
 최종 이동 지역 기준으로 측정합니다. 즉, 이동 경로 도중에는 더 좋은 점수를 받을 수 있는 위치가 존재할 수 있습니다.
 
-전체 점수는 모든 미로의 개별 점수의 평균치입니다.
-
 ### 시각화 및 리플레이
 
 ![리플레이](./images/replay.gif)
@@ -98,6 +96,12 @@ python scripts/maze_benchmark.py generate --width 15 --height 15 --wall-density 
 ```
 
 같은 옵션으로 실행해도 매번 다른 미로가 생성되며, 사용된 시드는 결과에 기록됩니다.
+
+Tier 2 문제 세트는 `maze_sets_tier2/`에 생성됩니다.
+
+```bash
+python scripts/generate_tier2.py
+```
 
 모델이 출력한 명령을 문제 하나에 채점합니다.
 
@@ -191,13 +195,16 @@ python scripts/run_api_benchmark.py --all-models --dry-run    # 설정 점검
 python scripts/run_api_benchmark.py --all-models               # 전체 실행
 python scripts/run_api_benchmark.py --models "GPT-5.6 Sol (medium)"
 python scripts/run_api_benchmark.py --models "GPT-5.6 Sol (medium)" --maze-sizes 4x4 6x6
+python scripts/run_api_benchmark.py --all-models --tier 2
 python scripts/run_api_benchmark.py --all-models --resume      # 실패·누락만 재시도
 python scripts/run_api_benchmark.py --list-models
 ```
 
 `--all-models`, `--models`, `--list-models` 중 하나를 반드시 지정합니다. `--maze-sizes`로 특정 크기만 실행할 수 있고, `--max-workers`로 동시 호출 수를 조절합니다(기본 30).
 
-개별 결과는 `outputs/<provider>__<model>__<reasoning>__<maze>.json`, 집계는 `outputs/all_model_scores.json`에 저장되며 기본적으로 Git에서 제외됩니다. 프로젝트 루트의 `output/`은 벤치마크와 무관합니다. `--resume`은 호환되는 기존 성공 결과를 재사용하고 실패·누락 항목만 다시 요청합니다.
+기본적으로 Tier 1을 사용하며, `--tier` 옵션을 지정하면 2티어 이상의 문제 풀이가 가능합니다. 이 때 문제 파일은 `maze_sets_tier2/`에, 실행 결과는 `outputs/tier2/`에, 그리고 대시보드 데이터는 `public/benchmark_results_tier2.json`에 저장됩니다. 경로를 직접 지정할 수도 있습니다.
+
+`--resume`은 오류 없이 실행된 호출 결과를 재사용하여 실패/누락 항목만 다시 요청합니다.
 
 ### Batch API
 
@@ -206,6 +213,7 @@ python scripts/run_api_benchmark.py --list-models
 ```bash
 python scripts/run_batch_benchmark.py --all-models
 python scripts/run_batch_benchmark.py --models "Claude Opus 4.8 (medium)" --maze-sizes 9x9
+python scripts/run_batch_benchmark.py --all-models --tier 2
 python scripts/run_batch_benchmark.py --all-models --resume
 ```
 
@@ -213,9 +221,10 @@ python scripts/run_batch_benchmark.py --all-models --resume
 
 ### 대시보드
 
-대시보드용 데이터는 `public/benchmark_results.json`에 별도로 저장됩니다. 점수·토큰·명령 출력과 집계만 포함하며, 경로·ID·오류문·해시 등 민감 정보는 제외됩니다. `--public-output <경로>`로 위치를 변경할 수 있습니다.
+대시보드용 데이터는 `public/` 폴더 아래에 별도로 저장됩니다. `--public-output <경로>`로 위치를 변경할 수 있습니다.
 
 저장소 루트를 정적 HTTP 서버로 제공하면 `public/leaderboard.html`에서 리더보드를, `public/model.html`에서 모델별 결과를, `public/index.html`에서 리플레이를 확인할 수 있습니다.
+대시보드에서 티어를 선택하거나 주소에 `?tier=2`를 붙이면 Tier 2를 볼 수 있습니다.
 
 ---
 

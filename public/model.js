@@ -12,7 +12,9 @@
   const SIDEBAR_STORAGE_KEY = "maze-bench-model-sidebar-width";
   const i18n = globalThis.MazeBenchI18n;
   const data = globalThis.MazeBenchmarkData;
+  const requestedTier = new URLSearchParams(window.location.search).get("tier");
   const elements = {
+    tierButtons: document.querySelector("#tierButtons"),
     modelTitle: document.querySelector("#modelTitle"),
     scoreValue: document.querySelector("#scoreValue"),
     costValue: document.querySelector("#costValue"),
@@ -36,6 +38,7 @@
     exportModelHeatmapButton: document.querySelector("#exportModelHeatmapButton"),
   };
   const state = {
+    tier: requestedTier === "2" ? 2 : 1,
     payload: null,
     size: "all",
     modelKey: null,
@@ -51,6 +54,57 @@
   /** @description Translate a model-detail string */
   function _t(key, parameters = {}) {
     return i18n.t(key, parameters);
+  }
+
+  /** @description 선택한 티어를 유지하는 내부 주소 생성 */
+  function _tierUrl(path, parameters = {}) {
+    return data.buildUrl(path, {
+      ...parameters,
+      tier: state.tier === 1 ? null : state.tier,
+    });
+  }
+
+  /** @description 티어 선택, 페이지 이동 주소, 이미지 내보내기 표시를 동기화 */
+  function _syncTierInterface() {
+    for (const button of elements.tierButtons.querySelectorAll("[data-tier]")) {
+      const tier = Number(button.dataset.tier);
+      const config = data.getTierConfig(tier);
+      button.setAttribute(
+        "aria-pressed",
+        String(tier === state.tier),
+      );
+      button.setAttribute(
+        "aria-label",
+        _t("tier.buttonAria", {
+          tier: config.id,
+          count: config.problemCount,
+        }),
+      );
+    }
+    for (const link of document.querySelectorAll(
+      ".site-brand-title, .site-nav a, .ranking-sidebar-brand",
+    )) {
+      link.href = _tierUrl(link.getAttribute("href").split("?")[0]);
+    }
+    for (const indicator of document.querySelectorAll("[data-tier-indicator]")) {
+      indicator.textContent = _t(
+        "tier.indicator",
+        { tier: state.tier },
+      );
+    }
+  }
+
+  /** @description 모델이 현재 티어에 있으면 선택을 유지하며 티어 변경 */
+  function _navigateTier(tier) {
+    if (tier === state.tier) {
+      return;
+    }
+    const queryModel = new URLSearchParams(window.location.search).get("model");
+    const model = state.payload ? _selectedModel() : null;
+    window.location.assign(data.buildUrl("model.html", {
+      tier: tier === 1 ? null : tier,
+      model: model?.name ?? queryModel,
+    }));
   }
 
   /** @description Create an error that can be translated after a locale change */
@@ -139,7 +193,7 @@
   /** @description Update model and size query parameters */
   function _syncUrl() {
     const model = _selectedModel();
-    const url = data.buildUrl("model.html", {
+    const url = _tierUrl("model.html", {
       model: model?.name,
       size: state.size === "all" ? null : state.size,
     });
@@ -275,13 +329,15 @@
 
   /** @description Render the overall model ranking sidebar */
   function _renderRanking() {
-    const entries = data.rankModels(state.payload.models);
+    const entries = state.payload.results.length === 0
+      ? []
+      : data.rankModels(state.payload.models);
     const links = entries.map((entry) => {
       const modelName = _modelName(entry.model);
       const link = document.createElement("a");
       const isActive = data.modelKey(entry.model) === state.modelKey;
       link.className = `ranking-entry is-${entry.state}`;
-      link.href = data.buildUrl("model.html", {
+      link.href = _tierUrl("model.html", {
         model: entry.model.name ?? data.modelKey(entry.model),
         size: state.size === "all" ? null : state.size,
       });
@@ -494,7 +550,7 @@
     const analytics = data.aggregateModelScores(
       state.payload.results,
       model,
-      data.getSizes(state.payload),
+      data.getTierConfig(state.tier).sizes,
     );
     _renderSizeChart(analytics);
     _renderHeatmap(analytics);
@@ -567,7 +623,7 @@
     mobileLabel.textContent = _t("model.viewReplay");
     replayLink.append(desktopLabel, mobileLabel);
     if (resultState.replayable) {
-      replayLink.href = data.buildUrl("index.html", {
+      replayLink.href = _tierUrl("index.html", {
         size: data.mazeSize(maze),
         maze: maze.maze_id,
         model: model.name,
@@ -593,6 +649,24 @@
   function _render() {
     const model = _selectedModel();
     if (!model) {
+      const emptyAnalytics = data.aggregateModelScores(
+        [],
+        null,
+        data.getTierConfig(state.tier).sizes,
+      );
+      elements.modelTitle.textContent = _t(
+        "tier.indicator",
+        { tier: state.tier },
+      );
+      document.title = _t("model.documentTitle");
+      elements.resultTitle.textContent = _t("model.mazeResults");
+      elements.resultBody.replaceChildren();
+      elements.emptyState.hidden = false;
+      elements.emptyState.textContent = _t("tier.noResults", { tier: state.tier });
+      _renderRanking();
+      _renderSizeChart(emptyAnalytics);
+      _renderHeatmap(emptyAnalytics);
+      _syncUrl();
       return;
     }
     const stats = data.statsForModel(model, state.size);
@@ -604,6 +678,26 @@
 
     elements.modelTitle.textContent = _t("model.detailTitle", { model: modelName });
     document.title = _t("model.detailDocumentTitle", { model: modelName });
+    if (state.payload.results.length === 0) {
+      elements.scoreValue.textContent = "—";
+      elements.costValue.textContent = "—";
+      elements.tokenPriceValue.textContent = _t("model.price", {
+        input: data.formatCost(model.pricing?.input_per_million),
+        output: data.formatCost(model.pricing?.output_per_million),
+      });
+      elements.sizeSelect.value = state.size;
+      elements.resultBody.replaceChildren();
+      elements.emptyState.hidden = false;
+      elements.emptyState.textContent = _t("tier.noResults", { tier: state.tier });
+      elements.resultTitle.textContent = _t("model.resultsTitle", {
+        model: modelName,
+      });
+      _renderRanking();
+      _renderAnalytics(model);
+      _syncUrl();
+      return;
+    }
+
     elements.scoreValue.textContent = data.formatScore(score);
     elements.costValue.textContent = _t("model.costAndTokens", {
       cost: data.formatCost(data.calculateCost(stats?.token_usage, model.pricing)),
@@ -622,6 +716,9 @@
       ...filteredMazes.map((maze, index) => _createResultRow(maze, index, model)),
     );
     elements.emptyState.hidden = filteredMazes.length > 0;
+    elements.emptyState.textContent = state.payload.results.length === 0
+      ? _t("tier.noResults", { tier: state.tier })
+      : _t("model.noMazes");
     elements.resultTitle.textContent = _t("model.resultsTitle", {
       model: modelName,
     });
@@ -663,7 +760,7 @@
     const query = new URLSearchParams(window.location.search);
     const queryModel = query.get("model");
     const querySize = query.get("size");
-    const sizes = data.getSizes(state.payload);
+    const sizes = data.getTierConfig(state.tier).sizes;
 
     const preferredModel = state.payload.models.find(
       (model) => model.name === queryModel || data.modelKey(model) === queryModel,
@@ -677,7 +774,7 @@
   function _populateSizeSelect() {
     const options = [
       { value: "all", label: _t("common.all") },
-      ...data.getSizes(state.payload).map((size) => ({
+      ...data.getTierConfig(state.tier).sizes.map((size) => ({
         value: size,
         label: data.formatSize(size),
       })),
@@ -695,13 +792,10 @@
   /** @description Load and render model details */
   async function _load() {
     try {
-      state.payload = await data.loadBenchmarkResults();
+      state.payload = await data.loadBenchmarkResults(state.tier);
       _buildCatalog();
       _restoreSelection();
       _populateSizeSelect();
-      if (state.payload.models.length === 0) {
-        throw _error("common.noDisplayModels");
-      }
       _render();
     } catch (error) {
       state.loadError = error;
@@ -722,6 +816,14 @@
     elements.messageBox.textContent = _t("common.dataModuleFailure");
     return;
   }
+
+  _syncTierInterface();
+  elements.tierButtons.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-tier]");
+    if (button) {
+      _navigateTier(Number(button.dataset.tier));
+    }
+  });
 
   elements.rankingToggle.addEventListener("click", () => {
     _setSidebarOpen(true);
@@ -789,6 +891,7 @@
   });
   sidebarMedia.addEventListener("change", _syncSidebarMode);
   globalThis.addEventListener(i18n.LOCALE_EVENT, () => {
+    _syncTierInterface();
     if (state.payload) {
       _populateSizeSelect();
       _render();

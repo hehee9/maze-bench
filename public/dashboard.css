@@ -60,6 +60,14 @@ a {
   min-width: 0;
 }
 
+@media (min-width: 641px) {
+  .leaderboard-page .toolbar-fields {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.tier-filter,
 .size-filter {
   min-width: 0;
   padding: 0;
@@ -67,6 +75,7 @@ a {
   border: 0;
 }
 
+.tier-filter legend,
 .size-filter legend {
   margin-bottom: 5px;
   padding: 0;
@@ -502,7 +511,14 @@ html[lang="en"] .state-pill {
 }
 
 .summary-size-card {
-  cursor: pointer;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.summary-size-control {
+  display: grid;
+  gap: 2px;
 }
 
 .summary-size-select {
@@ -643,6 +659,21 @@ body.leaderboard-page {
 
 .leaderboard-card-heading h2 {
   font-size: 1.2rem;
+}
+
+.leaderboard-card-title {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.leaderboard-card-title h2 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .leaderboard-heading-actions {
@@ -1568,6 +1599,7 @@ body.model-detail-page.is-resizing-sidebar {
   background: var(--dashboard-panel);
 }
 
+[data-theme="dark"] .tier-filter legend,
 [data-theme="dark"] .size-filter legend,
 [data-theme="dark"] .scope-note,
 [data-theme="dark"] .summary-card > span,
@@ -2238,6 +2270,20 @@ body.model-detail-page.is-resizing-sidebar {
     grid-column: 1 / -1;
   }
 
+  .tier-filter {
+    grid-column: 1 / -1;
+  }
+
+  .tier-buttons {
+    gap: 5px;
+  }
+
+  .tier-buttons button {
+    min-height: 34px;
+    padding-inline: 10px;
+    font-size: 0.72rem;
+  }
+
   .size-buttons {
     gap: 5px;
   }
@@ -2526,6 +2572,11 @@ body.model-detail-page.is-resizing-sidebar {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .leaderboard-card-title h2 {
+    flex: 1 1 auto;
+    font-size: clamp(0.82rem, 4vw, 1rem);
   }
 
   .model-picker {

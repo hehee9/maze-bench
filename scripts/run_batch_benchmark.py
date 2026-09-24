@@ -16,6 +16,7 @@ from typing import Any, Dict, Optional, Sequence
 from dotenv import load_dotenv
 from PIL import Image
 
+from benchmark_paths import resolve_tier_paths
 from anthropic_batch_client import AnthropicBatchProvider
 from batch_api import (
     BatchItemResult,
@@ -90,7 +91,17 @@ def create_argument_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="list registered Batch API provider identifiers",
     )
-    parser.add_argument("--maze-dir", default="maze_sets")
+    parser.add_argument(
+        "--tier",
+        type=int,
+        choices=(1, 2),
+        default=1,
+        help="실행할 미로 티어 (기본값: 1)",
+    )
+    parser.add_argument(
+        "--maze-dir",
+        help="미로 데이터 경로 (기본값은 --tier에 따라 선택)",
+    )
     parser.add_argument(
         "--maze-sizes",
         nargs="+",
@@ -98,11 +109,13 @@ def create_argument_parser() -> argparse.ArgumentParser:
         help="run only exact WIDTHxHEIGHT sizes, such as 4x4 6x6",
     )
     parser.add_argument("--prompt", default="scripts/prompt.md")
-    parser.add_argument("--output-dir", default="outputs")
+    parser.add_argument(
+        "--output-dir",
+        help="결과 저장 경로 (기본값은 --tier에 따라 선택)",
+    )
     parser.add_argument(
         "--public-output",
-        default="public/benchmark_results.json",
-        help="write dashboard-safe results to this JSON file",
+        help="공개 결과 JSON 경로 (기본값은 --tier에 따라 선택)",
     )
     parser.add_argument(
         "--poll-seconds",
@@ -553,10 +566,14 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     root = Path(__file__).resolve().parent.parent
     models_path = (root / args.models_config).resolve()
-    maze_dir = (root / args.maze_dir).resolve()
     prompt_path = (root / args.prompt).resolve()
-    output_dir = (root / args.output_dir).resolve()
-    public_output_path = (root / args.public_output).resolve()
+    maze_dir, output_dir, public_output_path = resolve_tier_paths(
+        root,
+        args.tier,
+        args.maze_dir,
+        args.output_dir,
+        args.public_output,
+    )
     aggregate_path = output_dir / "all_model_scores.json"
     state_path = output_dir / "batch_state.json"
     load_dotenv(root / ".env", override=False)

@@ -8,6 +8,22 @@
 
   const i18n = globalScope.MazeBenchI18n;
   const RELATIONS = ["adjacent", "opposite", "same"];
+  const TIER_CONFIG = Object.freeze({
+    1: Object.freeze({
+      id: 1,
+      resultsFile: "benchmark_results.json",
+      mazeDirectory: "../maze_sets",
+      problemCount: 30,
+      sizes: Object.freeze(["4x4", "6x6", "9x9", "12x12", "15x15", "18x18"]),
+    }),
+    2: Object.freeze({
+      id: 2,
+      resultsFile: "benchmark_results_tier2.json",
+      mazeDirectory: "../maze_sets_tier2",
+      problemCount: 20,
+      sizes: Object.freeze(["15x15", "18x18", "21x21", "24x24"]),
+    }),
+  });
   const TOKEN_FIELDS = [
     "input_tokens",
     "output_tokens",
@@ -603,9 +619,14 @@
     return size.replace("x", " × ");
   }
 
+  /** @description 벤치마크 티어의 공개 설정 반환 */
+  function getTierConfig(tier = 1) {
+    return TIER_CONFIG[Number(tier) === 2 ? 2 : 1];
+  }
+
   /** @description Return a readable public maze name */
   function mazeDisplayName(maze, fallbackIndex = 0) {
-    const match = /^maze_\d+x\d+_(adjacent|opposite|same)_(\d+)$/i.exec(
+    const match = /^maze_(?:t2_)?\d+x\d+_(adjacent|opposite|same)_(\d+)$/i.exec(
       maze?.maze_id ?? "",
     );
     if (match) {
@@ -629,9 +650,10 @@
     return suffix ? `${path}?${suffix}` : path;
   }
 
-  /** @description Load the public benchmark result */
-  async function loadBenchmarkResults() {
-    const response = await fetch("benchmark_results.json", { cache: "no-store" });
+  /** @description 선택한 벤치마크 티어의 공개 결과를 불러옴 */
+  async function loadBenchmarkResults(tier = 1) {
+    const config = getTierConfig(tier);
+    const response = await fetch(config.resultsFile, { cache: "no-store" });
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
@@ -658,6 +680,7 @@
     formatTokens,
     getMazes,
     getSizes,
+    getTierConfig,
     loadBenchmarkResults,
     mazeDisplayName,
     mazeRelation,

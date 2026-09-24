@@ -12,11 +12,13 @@
   const i18n = globalThis.MazeBenchI18n;
   const data = globalThis.MazeBenchmarkData;
   const core = globalThis.MazeReplayCore;
+  const requestedTier = new URLSearchParams(window.location.search).get("tier");
   const portraitLayout = window.matchMedia(
     "(max-width: 900px) and (orientation: portrait)",
   );
 
   const state = {
+    tier: requestedTier === "2" ? 2 : 1,
     results: [],
     models: [],
     mazes: [],
@@ -44,6 +46,7 @@
   };
 
   const elements = {
+    tierButtons: document.querySelector("#tierButtons"),
     sizeSelect: document.querySelector("#sizeSelect"),
     replaySelect: document.querySelector("#replaySelect"),
     modelSearch: document.querySelector("#modelSearch"),
@@ -88,6 +91,58 @@
   /** @description Translate a replay string */
   function _t(key, parameters = {}) {
     return i18n.t(key, parameters);
+  }
+
+  /** @description 선택한 티어를 유지하는 내부 주소 생성 */
+  function _tierUrl(path, parameters = {}) {
+    return data.buildUrl(path, {
+      ...parameters,
+      tier: state.tier === 1 ? null : state.tier,
+    });
+  }
+
+  /** @description 티어 선택, 페이지 이동 주소, 이미지 내보내기 표시를 동기화 */
+  function _syncTierInterface() {
+    for (const button of elements.tierButtons.querySelectorAll("[data-tier]")) {
+      const tier = Number(button.dataset.tier);
+      const config = data.getTierConfig(tier);
+      button.setAttribute(
+        "aria-pressed",
+        String(tier === state.tier),
+      );
+      button.setAttribute(
+        "aria-label",
+        _t("tier.buttonAria", {
+          tier: config.id,
+          count: config.problemCount,
+        }),
+      );
+    }
+    for (const link of document.querySelectorAll(
+      ".site-brand-title, .site-nav a",
+    )) {
+      link.href = _tierUrl(link.getAttribute("href").split("?")[0]);
+    }
+    for (const indicator of document.querySelectorAll("[data-tier-indicator]")) {
+      indicator.textContent = _t(
+        "tier.indicator",
+        { tier: state.tier },
+      );
+    }
+  }
+
+  /** @description 현재 선택된 모델이 있으면 유지하며 티어 변경 */
+  function _navigateTier(tier) {
+    if (tier === state.tier) {
+      return;
+    }
+    const activeModel = state.models.find(
+      (item) => item.key === state.activeModelKey,
+    )?.model;
+    window.location.assign(data.buildUrl("index.html", {
+      tier: tier === 1 ? null : tier,
+      model: activeModel?.name ?? state.initialQuery.model,
+    }));
   }
 
   /** @description Create an error that can be translated after a locale change */
@@ -176,7 +231,7 @@
 
   /** @description Return a readable replay name */
   function _mazeDisplayName(maze, fallbackIndex) {
-    const match = /^maze_\d+x\d+_(adjacent|opposite|same)_(\d+)$/i.exec(
+    const match = /^maze_(?:t2_)?\d+x\d+_(adjacent|opposite|same)_(\d+)$/i.exec(
       maze.maze_id,
     );
     if (match) {
@@ -190,20 +245,26 @@
 
   /** @description Keep the current replay selection in the address bar */
   function _syncUrl() {
-    if (!state.selectedMaze) {
-      return;
-    }
     const activeModel = state.models.find(
       (item) => item.key === state.activeModelKey,
     )?.model;
-    const query = new URLSearchParams({
-      size: `${state.selectedMaze.width}x${state.selectedMaze.height}`,
-      maze: state.selectedMaze.maze_id,
-    });
+    const query = new URLSearchParams();
+    if (state.tier === 2) {
+      query.set("tier", "2");
+    }
+    if (state.selectedMaze) {
+      query.set("size", `${state.selectedMaze.width}x${state.selectedMaze.height}`);
+      query.set("maze", state.selectedMaze.maze_id);
+    }
     if (activeModel?.name) {
       query.set("model", activeModel.name);
     }
-    window.history.replaceState(null, "", `index.html?${query}`);
+    const suffix = query.toString();
+    window.history.replaceState(
+      null,
+      "",
+      suffix ? `index.html?${suffix}` : "index.html",
+    );
   }
 
   /** @description Show a blocking replay message */
@@ -348,16 +409,9 @@
     state.payloadStatus = payload.status ?? null;
   }
 
-  /** @description Populate maze size choices from every result */
+  /** @description 선택한 티어에서 지원하는 미로 크기 선택지를 구성 */
   function _populateSizes() {
-    const sizeSet = new Set(
-      state.mazes.map((maze) => `${maze.width}x${maze.height}`),
-    );
-    const sizes = [...sizeSet].sort((first, second) => {
-      const [firstWidth, firstHeight] = first.split("x").map(Number);
-      const [secondWidth, secondHeight] = second.split("x").map(Number);
-      return firstWidth * firstHeight - secondWidth * secondHeight;
-    });
+    const sizes = data.getTierConfig(state.tier).sizes;
 
     _setOptions(
       elements.sizeSelect,
@@ -859,13 +913,18 @@
     elements.optimalToggle.disabled = true;
 
     if (!selectedMaze) {
-      _showMessage("replay.noSelectableMaze");
+      if (state.results.length === 0) {
+        _showMessage("tier.noResults", { tier: state.tier });
+      } else {
+        _showMessage("replay.noSelectableMaze");
+      }
       return;
     }
 
     try {
       const sizeDirectory = `${selectedMaze.width}x${selectedMaze.height}`;
-      const mazeUrl = `../maze_sets/${sizeDirectory}/${selectedMaze.maze_id}.json`;
+      const mazeDirectory = data.getTierConfig(state.tier).mazeDirectory;
+      const mazeUrl = `${mazeDirectory}/${sizeDirectory}/${selectedMaze.maze_id}.json`;
       const response = await fetch(mazeUrl, { cache: "no-store" });
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
@@ -1436,31 +1495,27 @@
   async function _loadResults() {
     _setReplayControlsEnabled(false);
     try {
-      const response = await fetch("benchmark_results.json", { cache: "no-store" });
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-      const payload = await response.json();
-      if (!Array.isArray(payload.results)) {
-        throw _error("replay.resultsMissing");
-      }
-      if (payload.results.length === 0) {
-        throw _error("replay.resultsEmpty");
-      }
+      const payload = await data.loadBenchmarkResults(state.tier);
 
       _buildCatalog(payload);
       _populateSizes();
+      if (state.results.length === 0) {
+        elements.outcomeBadge.className = "badge badge-unfinished";
+        elements.outcomeBadge.textContent = _t("common.noResults");
+        _showMessage("tier.noResults", { tier: state.tier });
+      }
     } catch (error) {
       state.resultLoadError = error;
       elements.outcomeBadge.className = "badge badge-error";
       elements.outcomeBadge.textContent = _t("replay.loadFailure");
-      elements.activeModelName.textContent = "benchmark_results.json";
+      elements.activeModelName.textContent = data.getTierConfig(state.tier).resultsFile;
       _showErrorMessage("replay.publicAutoLoadFailure", error);
     }
   }
 
   /** @description Refresh translated replay labels without reloading result data */
   function _renderLocale() {
+    _syncTierInterface();
     const expanded = elements.panelToggle.getAttribute("aria-expanded") === "true";
     _setPanelExpanded(expanded);
 
@@ -1508,6 +1563,9 @@
     _renderMessage();
     if (state.resultLoadError !== null) {
       elements.outcomeBadge.textContent = _t("replay.loadFailure");
+    } else if (state.message?.key === "tier.noResults") {
+      elements.outcomeBadge.className = "badge badge-unfinished";
+      elements.outcomeBadge.textContent = _t("common.noResults");
     }
   }
 
@@ -1518,6 +1576,12 @@
       _setPanelExpanded(!expanded);
     });
     portraitLayout.addEventListener("change", _syncResponsivePanel);
+    elements.tierButtons.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-tier]");
+      if (button) {
+        _navigateTier(Number(button.dataset.tier));
+      }
+    });
     elements.sizeSelect.addEventListener("change", _populateReplays);
     elements.replaySelect.addEventListener("change", () => void _loadSelectedMaze());
     elements.modelSearch.addEventListener("input", _renderModelList);
@@ -1653,6 +1717,7 @@
     return;
   }
 
+  _syncTierInterface();
   _syncResponsivePanel(portraitLayout);
   _bindEvents();
   void _loadResults();

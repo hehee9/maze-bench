@@ -128,12 +128,27 @@
           <span data-i18n="model.pricePerMillion">100만 토큰당 가격</span>
           <strong id="tokenPriceValue" data-i18n="model.priceValue">입력 — · 출력 —</strong>
         </article>
-        <label class="summary-card summary-size-card" for="sizeSelect">
-          <span data-i18n="common.mazeSize">미로 크기</span>
-          <select id="sizeSelect" class="summary-size-select" disabled>
-            <option data-i18n="common.loading">불러오는 중</option>
-          </select>
-        </label>
+        <div class="summary-card summary-size-card">
+          <fieldset class="tier-filter">
+            <legend data-i18n="tier.label">벤치마크 티어</legend>
+            <div
+              id="tierButtons"
+              class="tier-buttons"
+              role="group"
+              aria-label="벤치마크 티어 선택"
+              data-i18n-aria-label="tier.switch"
+            >
+              <button type="button" data-tier="1" data-i18n="tier.one">Tier 1</button>
+              <button type="button" data-tier="2" data-i18n="tier.two">Tier 2</button>
+            </div>
+          </fieldset>
+          <label class="summary-size-control" for="sizeSelect">
+            <span data-i18n="common.mazeSize">미로 크기</span>
+            <select id="sizeSelect" class="summary-size-select" disabled>
+              <option data-i18n="common.loading">불러오는 중</option>
+            </select>
+          </label>
+        </div>
       </section>
 
       <section class="dashboard-content model-detail-content" aria-labelledby="resultTitle">
@@ -186,6 +201,7 @@
             <div class="analytics-card-heading">
               <h3 id="sizeChartTitle" data-i18n="model.sizeAverage">미로 크기별 평균 점수</h3>
               <div class="analytics-card-actions">
+                <span class="tier-indicator" data-tier-indicator data-export-show="true">Tier 1</span>
                 <span class="export-watermark" data-export-show="true">Github/hehee9</span>
                 <button
                   id="exportModelSizesButton"
@@ -213,6 +229,7 @@
             <div class="analytics-card-heading">
               <h3 id="heatmapTitle" data-i18n="model.structureHeatmap">미로 크기 × 출입구 구조</h3>
               <div class="analytics-card-actions">
+                <span class="tier-indicator" data-tier-indicator data-export-show="true">Tier 1</span>
                 <span class="export-watermark" data-export-show="true">Github/hehee9</span>
                 <button
                   id="exportModelHeatmapButton"

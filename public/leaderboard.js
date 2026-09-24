@@ -10,7 +10,9 @@
 
   const i18n = globalThis.MazeBenchI18n;
   const data = globalThis.MazeBenchmarkData;
+  const requestedTier = new URLSearchParams(window.location.search).get("tier");
   const elements = {
+    tierButtons: document.querySelector("#tierButtons"),
     sizeButtons: document.querySelector("#sizeButtons"),
     scopeNote: document.querySelector("#scopeNote"),
     rankingBody: document.querySelector("#rankingBody"),
@@ -35,6 +37,7 @@
     scatterScaleButtons: document.querySelectorAll("[data-scale]"),
   };
   const state = {
+    tier: requestedTier === "2" ? 2 : 1,
     payload: null,
     sizes: [],
     selectedSizes: new Set(),
@@ -56,6 +59,51 @@
   /** @description Translate a leaderboard string */
   function _t(key, parameters = {}) {
     return i18n.t(key, parameters);
+  }
+
+  /** @description 선택한 티어를 유지하는 내부 주소 생성 */
+  function _tierUrl(path, parameters = {}) {
+    return data.buildUrl(path, {
+      ...parameters,
+      tier: state.tier === 1 ? null : state.tier,
+    });
+  }
+
+  /** @description 티어 선택, 페이지 이동 주소, 이미지 내보내기 표시를 동기화 */
+  function _syncTierInterface() {
+    for (const button of elements.tierButtons.querySelectorAll("[data-tier]")) {
+      const tier = Number(button.dataset.tier);
+      const config = data.getTierConfig(tier);
+      button.setAttribute(
+        "aria-pressed",
+        String(tier === state.tier),
+      );
+      button.setAttribute(
+        "aria-label",
+        _t("tier.buttonAria", {
+          tier: config.id,
+          count: config.problemCount,
+        }),
+      );
+    }
+    for (const link of document.querySelectorAll(
+      ".site-brand-title, .site-nav a",
+    )) {
+      link.href = _tierUrl(link.getAttribute("href").split("?")[0]);
+    }
+    for (const indicator of document.querySelectorAll("[data-tier-indicator]")) {
+      indicator.textContent = _t("tier.indicator", { tier: state.tier });
+    }
+  }
+
+  /** @description 크기 기본 선택 상태로 티어 페이지 이동 */
+  function _navigateTier(tier) {
+    if (tier === state.tier) {
+      return;
+    }
+    window.location.assign(data.buildUrl("leaderboard.html", {
+      tier: tier === 1 ? null : tier,
+    }));
   }
 
   /** @description Translate a stored error in the active locale */
@@ -112,6 +160,9 @@
   /** @description Update the current query without adding browser history */
   function _syncUrl() {
     const query = new URLSearchParams();
+    if (state.tier === 2) {
+      query.set("tier", "2");
+    }
     if (state.selectedSizes.size === 0) {
       query.append("size", "none");
     } else if (state.selectedSizes.size < state.sizes.length) {
@@ -243,7 +294,7 @@
     const modelName = _modelName(entry.model);
     const developer = data.modelDeveloper(entry.model);
     modelLink.className = "model-link";
-    modelLink.href = data.buildUrl("model.html", {
+    modelLink.href = _tierUrl("model.html", {
       model: entry.model.name,
       size: _singleSelectedSize(),
     });
@@ -1399,7 +1450,9 @@
     if (!state.payload) {
       return;
     }
-    const rankedEntries = data.rankModels(state.payload.models, _selectedStats);
+    const rankedEntries = state.payload.results.length === 0
+      ? []
+      : data.rankModels(state.payload.models, _selectedStats);
     const entries = data.sortRankedEntries(
       rankedEntries,
       state.sortKey,
@@ -1407,6 +1460,9 @@
     );
     elements.rankingBody.replaceChildren(...entries.map(_createRow));
     elements.emptyState.hidden = entries.length > 0;
+    elements.emptyState.textContent = state.payload.results.length === 0
+      ? _t("tier.noResults", { tier: state.tier })
+      : _t("leaderboard.noModelResults");
     elements.tableScroll.scrollTop = 0;
 
     const completeCount = rankedEntries.filter(
@@ -1465,7 +1521,7 @@
 
   /** @description Populate size buttons and restore valid query values */
   function _populateSizes() {
-    state.sizes = data.getSizes(state.payload);
+    state.sizes = data.getTierConfig(state.tier).sizes;
     const requestedSizes = new URLSearchParams(window.location.search).getAll("size");
     const validRequestedSizes = requestedSizes.filter((size) => state.sizes.includes(size));
     if (requestedSizes.includes("none")) {
@@ -1498,7 +1554,7 @@
   async function _load() {
     _setDashboardState("loading");
     try {
-      state.payload = await data.loadBenchmarkResults();
+      state.payload = await data.loadBenchmarkResults(state.tier);
       _populateSizes();
       _initializeChartModels();
       _renderModelPicker();
@@ -1521,6 +1577,14 @@
     _setDashboardState("error");
     return;
   }
+
+  _syncTierInterface();
+  elements.tierButtons.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-tier]");
+    if (button) {
+      _navigateTier(Number(button.dataset.tier));
+    }
+  });
 
   elements.tableScroll.addEventListener("wheel", _forwardBoundaryWheel, {
     passive: false,
@@ -1590,6 +1654,7 @@
   }
 
   globalThis.addEventListener(i18n.LOCALE_EVENT, () => {
+    _syncTierInterface();
     if (state.payload) {
       _populateSizes();
       _renderModelPicker();
