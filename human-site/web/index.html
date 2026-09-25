@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Maze Bench 미로를 직접 풀고 이동 경로를 다시 살펴보세요.">
+  <title>Maze Bench — 사람 플레이</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="site-brand">
+        <a id="githubLink" class="brand-mark" href="https://github.com/hehee9/maze-bench" target="_blank" rel="noopener noreferrer" aria-label="Maze Bench GitHub 저장소 (새 탭)">
+          <svg aria-hidden="true" focusable="false" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+        </a>
+        <a id="leaderboardLink" class="brand-title" href="https://hehee9.github.io/maze-bench/public/leaderboard.html" aria-label="Maze Bench 리더보드">Maze Bench</a>
+      </div>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="언어 선택">
+          <button type="button" data-locale="ko" aria-pressed="true">한국어</button>
+          <button type="button" data-locale="en" aria-pressed="false">English</button>
+        </div>
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="어두운 테마로 전환"
+          title="어두운 테마로 전환"
+          aria-pressed="false"
+        >
+          <span data-theme-icon aria-hidden="true">☾</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="play-layout">
+      <section class="maze-panel" aria-labelledby="pageTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow" data-copy="brand.eyebrow">Maze Bench</p>
+            <h1 id="pageTitle" data-copy="page.title">사람 플레이</h1>
+          </div>
+          <div id="mazeToolbar" class="zoom-controls" role="group" aria-label="미로 확대/축소" hidden>
+            <button id="zoomOut" type="button" aria-label="미로 축소" title="미로 축소">−</button>
+            <button id="zoomReset" type="button" class="zoom-reset" aria-label="확대 초기화" title="확대 초기화">100%</button>
+            <button id="zoomIn" type="button" aria-label="미로 확대" title="미로 확대">+</button>
+          </div>
+        </div>
+
+        <div id="mazeViewport" class="maze-viewport" aria-label="미로">
+          <div id="mazePlaceholder" class="maze-placeholder">
+            <h2 id="placeholderTitle">진행 상태를 불러오는 중입니다</h2>
+            <p id="placeholderText">잠시만 기다려 주세요.</p>
+          </div>
+          <div id="mazeCanvas" class="maze-canvas" hidden>
+            <img id="mazeImage" alt="사람이 직접 풀 미로" draggable="false">
+            <svg id="routeSvg" class="route-svg" hidden aria-hidden="true"></svg>
+          </div>
+        </div>
+
+        <section id="terminalSummary" class="terminal-summary" aria-labelledby="terminalTitle" hidden>
+          <div class="terminal-heading">
+            <h2 id="terminalTitle"></h2>
+            <span id="terminalScore" class="terminal-score"></span>
+          </div>
+          <dl id="terminalDetails" class="terminal-details" hidden></dl>
+          <div id="replayControls" class="replay-controls" role="group" aria-label="경로 재생">
+            <button id="replayFirst" type="button" aria-label="처음으로">|◀</button>
+            <button id="replayPrevious" type="button" aria-label="이전 이동">◀</button>
+            <button id="replayPlay" class="replay-play" type="button" aria-label="경로 재생" aria-pressed="false">▶</button>
+            <button id="replayNext" type="button" aria-label="다음 이동">▶</button>
+            <button id="replayLast" type="button" aria-label="마지막으로">▶|</button>
+          </div>
+          <div class="replay-scrubber">
+            <input id="replayRange" type="range" min="0" max="0" value="0" aria-label="경로 위치">
+            <span id="replayPosition" class="replay-position">0 / 0</span>
+          </div>
+        </section>
+      </section>
+
+      <aside class="control-panel" aria-label="미로 조작">
+        <div class="move-counter" id="moveCounter">
+          <span id="moveLabel">이동 횟수</span>
+          <span id="moveCountWindow" class="move-count-window" aria-live="polite" aria-atomic="true">
+            <strong id="moveCount" class="move-count-value">0</strong>
+          </span>
+        </div>
+        <p class="keyboard-hint" data-copy="controls.hint">방향 버튼이나 키보드 화살표로 입력하세요.</p>
+
+        <button id="tutorialOpen" class="tutorial-trigger" type="button" data-copy="tutorial.open">조작 방법 보기</button>
+        <details class="play-rules">
+          <summary data-copy="rules.title">기본 규칙</summary>
+          <ul>
+            <li data-copy="rules.irreversible">입력은 되돌릴 수 없습니다.</li>
+            <li data-copy="rules.oneAttempt">미로마다 한 번만 도전할 수 있습니다.</li>
+            <li data-copy="rules.resume">도중에 나가도 진행 상태가 저장되어 이어서 풀 수 있습니다.</li>
+          </ul>
+        </details>
+
+        <div id="actionPad" class="action-pad" role="group" aria-label="이동 입력">
+          <span aria-hidden="true"></span>
+          <button class="move-button" type="button" data-action="S" aria-label="전진" aria-pressed="false">
+            <span class="move-arrow" aria-hidden="true">↑</span>
+            <span class="move-label" data-action-label="S">전진</span>
+          </button>
+          <span aria-hidden="true"></span>
+          <button class="move-button" type="button" data-action="L" aria-label="좌회전" aria-pressed="false">
+            <span class="move-arrow" aria-hidden="true">←</span>
+            <span class="move-label" data-action-label="L">좌회전</span>
+          </button>
+          <button class="move-button" type="button" data-action="B" aria-label="후진" aria-pressed="false">
+            <span class="move-arrow" aria-hidden="true">↓</span>
+            <span class="move-label" data-action-label="B">후진</span>
+          </button>
+          <button class="move-button" type="button" data-action="R" aria-label="우회전" aria-pressed="false">
+            <span class="move-arrow" aria-hidden="true">→</span>
+            <span class="move-label" data-action-label="R">우회전</span>
+          </button>
+        </div>
+        <p id="actionStatus" class="action-status" aria-live="polite"></p>
+
+        <section class="history-section" aria-labelledby="historyTitle">
+          <div class="history-heading">
+            <h2 id="historyTitle" data-copy="history.title">입력 기록</h2>
+            <span id="historyTotal" class="history-total">0</span>
+          </div>
+          <div
+            id="historyScroll"
+            class="history-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="누적 입력 기록"
+          >
+            <ol id="historyList" class="history-list" aria-live="off"></ol>
+            <p id="historyEmpty" class="history-empty" data-copy="history.empty">입력한 이동이 여기에 표시됩니다.</p>
+          </div>
+        </section>
+
+        <div class="control-actions">
+          <button id="startButton" class="primary-button" type="button" hidden>미로 시작</button>
+          <button id="quitButton" class="quit-button" type="button" hidden>그만두기</button>
+          <button id="nextButton" class="primary-button" type="button" hidden>다음 미로</button>
+          <div id="recoveryActions" class="recovery-actions" hidden>
+            <button id="restoreButton" type="button">상태 다시 불러오기</button>
+            <button id="retryButton" type="button" hidden>같은 요청 다시 보내기</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <dialog id="controlTutorial" class="tutorial-dialog" aria-labelledby="tutorialTitle">
+    <h2 id="tutorialTitle" data-copy="tutorial.title">조작 방법</h2>
+    <p class="tutorial-intro" data-copy="tutorial.intro">실제 플레이에서는 현재 위치가 표시되지 않아요.</p>
+    <div class="tutorial-scene-wrap">
+      <p class="tutorial-scene-label" data-copy="tutorial.illustration">설명용 미로</p>
+      <svg class="tutorial-maze" viewBox="0 0 360 220" role="img" aria-labelledby="tutorialMazeTitle">
+        <title id="tutorialMazeTitle" data-copy="tutorial.mazeAlt">조작 방법을 설명하는 예시 미로</title>
+        <rect class="tutorial-maze-floor" x="16" y="18" width="328" height="184"></rect>
+        <path class="tutorial-maze-corridor" d="M16 144H96V94H188V36H344V68H220V186H188V126H128V176H16Z"></path>
+        <path class="tutorial-maze-wall" d="M16 144V18H344V36 M344 68V202H16V176 M16 144H96V94H188V36H344 M344 68H220V186H188V126H128V176H16"></path>
+        <path class="tutorial-maze-start" d="M24 160H39 M34 154L40 160L34 166"></path>
+        <path class="tutorial-maze-exit" d="M326 52H342 M336 46L342 52L336 58"></path>
+        <path id="tutorialCollision" class="tutorial-collision" d="M196 186L212 202M212 186L196 202" hidden></path>
+        <g id="tutorialMarker" class="tutorial-marker" transform="translate(24 160) rotate(90)">
+          <circle r="12"></circle>
+          <path d="M0 -7L5 2H2V7H-2V2H-5Z"></path>
+        </g>
+      </svg>
+      <p id="tutorialCaption" class="tutorial-caption" aria-live="polite"></p>
+      <div id="tutorialActionGroup" class="tutorial-demo-actions" role="group" aria-label="조작 예시">
+        <span data-demo-action="S"><span aria-hidden="true">↑</span><span data-copy="action.straight">전진</span></span>
+        <span data-demo-action="L"><span aria-hidden="true">←</span><span data-copy="action.left">좌회전</span></span>
+        <span data-demo-action="B"><span aria-hidden="true">↓</span><span data-copy="action.back">후진</span></span>
+        <span data-demo-action="R"><span aria-hidden="true">→</span><span data-copy="action.right">우회전</span></span>
+      </div>
+      <div class="tutorial-step-controls">
+        <button id="tutorialPrevious" type="button" data-copy="tutorial.previous">이전 장면</button>
+        <span id="tutorialProgress" aria-live="off">1 / 8</span>
+        <button id="tutorialNext" type="button" data-copy="tutorial.next">다음 장면</button>
+      </div>
+    </div>
+    <div class="tutorial-actions">
+      <button id="tutorialSkip" type="button" data-copy="tutorial.skip" autofocus>건너뛰기</button>
+      <button id="tutorialReplay" type="button" data-copy="tutorial.replay">다시 보기</button>
+      <button id="tutorialClose" type="button" data-copy="tutorial.close">닫기</button>
+    </div>
+  </dialog>
+
+  <noscript>사람 플레이 화면을 사용하려면 JavaScript를 켜 주세요.</noscript>
+  <script src="/replay-core.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

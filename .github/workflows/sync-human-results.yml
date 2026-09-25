@@ -1,0 +1,57 @@
+name: Sync human maze results
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-human-results-main
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: vars.HUMAN_BASELINE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify dedicated push token
+        env:
+          HUMAN_SYNC_TOKEN: ${{ secrets.HUMAN_SYNC_TOKEN }}
+        run: test -n "$HUMAN_SYNC_TOKEN"
+
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          token: ${{ secrets.HUMAN_SYNC_TOKEN }}
+          persist-credentials: true
+
+      - name: Update main before syncing
+        run: |
+          git fetch origin main
+          git merge --ff-only origin/main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Collect, validate, and score human attempts
+        env:
+          HUMAN_SITE_URL: ${{ vars.HUMAN_SITE_URL }}
+          HUMAN_EXPORT_TOKEN: ${{ secrets.HUMAN_EXPORT_TOKEN }}
+        run: python scripts/sync_human_results.py --site-url "$HUMAN_SITE_URL"
+
+      - name: Commit and push human result files
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -- \
+            public/human_results.json \
+            human_data/records.json \
+            human_data/sync-state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: sync human maze results"
+            git push origin HEAD:main
+          fi

@@ -64,7 +64,7 @@ jobs:
               folder_path=".",
               repo_id="Hehee-dev/maze-bench",
               repo_type="space",
-              ignore_patterns=[".github/**", "node_modules/**", ".tmp/**"],
+              ignore_patterns=[".github/**", "node_modules/**", ".tmp/**", "human-site/**"],
               delete_patterns=["*"],
               commit_message="Sync from GitHub via GitHub Actions",
           )

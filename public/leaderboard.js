@@ -39,10 +39,11 @@
   const state = {
     tier: requestedTier === "2" ? 2 : 1,
     payload: null,
+    humanResults: null,
     sizes: [],
     selectedSizes: new Set(),
-    selectedModelKeys: new Set(),
-    collapsedDeveloperKeys: null,
+    selectedEntryKeys: new Set(),
+    collapsedEntryGroupKeys: null,
     analytics: null,
     scatterScale: "linear",
     sortKey: "rank",
@@ -139,14 +140,6 @@
       return null;
     }
     return tokenUsage.totals.total_tokens;
-  }
-
-  /** @description Combine aggregate statistics for the selected maze sizes */
-  function _selectedStats(model) {
-    if (_usesOverallStats()) {
-      return model;
-    }
-    return data.combineModelStats(model, _activeSizes());
   }
 
   /** @description Return the single selected size for compatible detail links */
@@ -274,9 +267,10 @@
     _renderRanking();
   }
 
-  /** @description Create one ranked model row */
+  /** @description 순위 항목 행 생성 */
   function _createRow(entry) {
     const row = document.createElement("tr");
+    const isHuman = entry.type === "human";
     row.className = `is-${entry.state}`;
 
     const rankCell = document.createElement("td");
@@ -290,15 +284,19 @@
     const mobileRank = document.createElement("span");
     mobileRank.className = "mobile-rank";
     mobileRank.textContent = entry.rank === null ? "—" : `${entry.rank}.`;
-    const modelLink = document.createElement("a");
-    const modelName = _modelName(entry.model);
-    const developer = data.modelDeveloper(entry.model);
-    modelLink.className = "model-link";
-    modelLink.href = _tierUrl("model.html", {
-      model: entry.model.name,
-      size: _singleSelectedSize(),
-    });
-    modelLink.setAttribute("aria-label", `${developer.label} ${modelName}`);
+    const modelNameElement = document.createElement("a");
+    const modelName = _entryName(entry);
+    const developer = _entryDeveloper(entry);
+    modelNameElement.className = "model-link";
+    if (isHuman) {
+      modelNameElement.href = state.humanResults.site_url;
+    } else {
+      modelNameElement.href = _tierUrl("model.html", {
+        model: entry.model.name,
+        size: _singleSelectedSize(),
+      });
+      modelNameElement.setAttribute("aria-label", `${developer.label} ${modelName}`);
+    }
     const developerIcon = document.createElement("img");
     developerIcon.className = "developer-icon";
     developerIcon.src = developer.iconPath;
@@ -306,8 +304,8 @@
     developerIcon.setAttribute("aria-hidden", "true");
     const modelNameText = document.createElement("span");
     modelNameText.textContent = modelName;
-    modelLink.append(developerIcon, modelNameText);
-    modelCell.append(mobileRank, modelLink);
+    modelNameElement.append(developerIcon, modelNameText);
+    modelCell.append(mobileRank, modelNameElement);
     if (entry.state === "partial") {
       const badge = document.createElement("span");
       badge.className = "state-pill";
@@ -324,9 +322,7 @@
     const scoreCell = document.createElement("td");
     scoreCell.className = "score-cell";
     scoreCell.dataset.label = _t("common.score");
-    const score = entry.state === "complete"
-      ? entry.stats.official_mean_score
-      : entry.stats?.provisional_mean_score;
+    const score = entry.score;
     const scoreStrong = document.createElement("strong");
     scoreStrong.textContent = Number.isFinite(score)
       ? `${data.formatScore(score)}%`
@@ -341,13 +337,17 @@
 
     const costCell = document.createElement("td");
     costCell.dataset.label = _t("common.cost");
-    costCell.textContent = data.formatCost(
-      data.calculateCost(entry.stats?.token_usage, entry.model.pricing),
-    );
+    costCell.textContent = isHuman
+      ? "—"
+      : data.formatCost(
+        data.calculateCost(entry.stats?.token_usage, entry.model.pricing),
+      );
 
     const tokenCell = document.createElement("td");
     tokenCell.dataset.label = _t("common.totalTokens");
-    tokenCell.textContent = data.formatTokens(_totalTokens(entry.stats?.token_usage));
+    tokenCell.textContent = isHuman
+      ? "—"
+      : data.formatTokens(_totalTokens(entry.stats?.token_usage));
 
     row.append(rankCell, modelCell, scoreCell, costCell, tokenCell);
     return row;
@@ -373,16 +373,60 @@
     return data.displayModelName(model);
   }
 
-  /** @description Return the stable public index for one model */
+  /** @description 모델 개발사 공통 색상 반환 */
+  function _modelColor(model) {
+    return data.developerColor(model);
+  }
+
+  /** @description 차트 항목의 안정적인 선택 키 반환 */
+  function _entryKey(entry) {
+    return entry.type === "human"
+      ? entry.id
+      : _modelSelectionKey(entry.model);
+  }
+
+  /** @description 불러온 모델의 안정적인 페이지 인덱스 반환 */
   function _modelIndex(model) {
     return state.payload.models.findIndex(
       (candidate) => data.modelKey(candidate) === data.modelKey(model),
     );
   }
 
-  /** @description Return the shared color for one model developer */
-  function _modelColor(model) {
-    return data.developerColor(model);
+  /** @description 불러온 모델의 DOM 안전 선택 키 반환 */
+  function _modelSelectionKey(model) {
+    return `model-${_modelIndex(model)}`;
+  }
+
+  /** @description 리더보드 항목의 표시 이름 반환 */
+  function _entryName(entry) {
+    return entry.type === "human" ? entry.label : _modelName(entry.model);
+  }
+
+  /** @description 차트 항목의 그룹 표시 정보 반환 */
+  function _entryDeveloper(entry) {
+    return entry.type === "human"
+      ? {
+        key: "human",
+        label: _t("leaderboard.humanGroup"),
+        iconPath: entry.iconPath,
+        color: "#6B5CE7",
+      }
+      : data.modelDeveloper(entry.model);
+  }
+
+  /** @description 리더보드 차트 항목의 공통 색상 반환 */
+  function _entryColor(entry) {
+    return entry.type === "human"
+      ? entry.color
+      : _modelColor(entry.model);
+  }
+
+  /** @description 차트 강조 표시용 안전 식별자 반환 */
+  function _entryHighlight(entry) {
+    if (entry.type === "human") {
+      return entry.id;
+    }
+    return String(_modelIndex(entry.model));
   }
 
   /** @description Create an SVG element with attributes and optional text */
@@ -397,15 +441,9 @@
     return element;
   }
 
-  /** @description Order chart aggregates with the active official ranking rules */
-  function _orderedAnalyticsModels(analytics) {
-    const byKey = new Map(analytics.models.map((entry) => (
-      [data.modelKey(entry.model), entry]
-    )));
-    return data.rankModels(
-      state.payload.models,
-      (model) => byKey.get(data.modelKey(model))?.stats,
-    ).map((ranked) => byKey.get(data.modelKey(ranked.model))).filter(Boolean);
+  /** @description 통합 공식 순위 기준 분석 항목 반환 */
+  function _orderedAnalyticsEntries(analytics) {
+    return analytics.entries;
   }
 
   /** @description Add one delegated tooltip to a rendered chart */
@@ -497,19 +535,17 @@
     };
   }
 
-  /** @description Select default chart models by overall rank and developer */
-  function _initializeChartModels() {
-    state.selectedModelKeys = new Set(
-      data.selectDefaultModels(state.payload.models).map((model) => (
-        data.modelKey(model)
-      )),
+  /** @description 상위 모델과 인간 점수 행 차트 기본 선택 */
+  function _initializeChartEntries() {
+    state.selectedEntryKeys = new Set(
+      data.selectDefaultEntries(state.analytics.entries).map(_entryKey),
     );
   }
 
-  /** @description Return the pressed state for a bulk model selection */
+  /** @description 묶음 항목 선택 상태 반환 */
   function _bulkSelectionState(keys) {
     const selectedCount = keys.filter((key) => (
-      state.selectedModelKeys.has(key)
+      state.selectedEntryKeys.has(key)
     )).length;
     if (selectedCount === 0) {
       return "false";
@@ -517,40 +553,40 @@
     return selectedCount === keys.length ? "true" : "mixed";
   }
 
-  /** @description Render all charts affected by the shared model selection */
-  function _renderSelectedModelCharts() {
+  /** @description 공통 항목 선택을 반영한 차트 렌더링 */
+  function _renderSelectedEntryCharts() {
     _renderMultiModelChart(state.analytics);
     _renderLeaderboardHeatmap(state.analytics);
     _renderCostScatter(state.analytics);
   }
 
-  /** @description Toggle every model represented by one bulk control */
-  function _toggleBulkModels(button) {
-    const keys = button.modelKeys ?? [];
+  /** @description 묶음 선택 단추가 나타내는 항목 전체 전환 */
+  function _toggleBulkEntries(button) {
+    const keys = button.entryKeys ?? [];
     const shouldSelect = _bulkSelectionState(keys) !== "true";
     for (const key of keys) {
       if (shouldSelect) {
-        state.selectedModelKeys.add(key);
+        state.selectedEntryKeys.add(key);
       } else {
-        state.selectedModelKeys.delete(key);
+        state.selectedEntryKeys.delete(key);
       }
     }
     _syncModelPickerControls();
-    _renderSelectedModelCharts();
+    _renderSelectedEntryCharts();
   }
 
   /** @description Update one bulk control label and accessibility state */
   function _syncBulkButton(button) {
-    const stateValue = _bulkSelectionState(button.modelKeys ?? []);
+    const stateValue = _bulkSelectionState(button.entryKeys ?? []);
     const shouldSelect = stateValue !== "true";
-    const developer = button.dataset.developerLabel;
+    const group = button.dataset.groupLabel;
     button.setAttribute("aria-pressed", stateValue);
-    if (developer) {
+    if (group) {
       const actionLabel = _t(
         shouldSelect
-          ? "selection.selectDeveloper"
-          : "selection.clearDeveloper",
-        { developer },
+          ? "selection.selectEntryGroup"
+          : "selection.clearEntryGroup",
+        { group },
       );
       button.textContent = "";
       button.setAttribute("aria-label", actionLabel);
@@ -562,30 +598,29 @@
       : _t("selection.clearAll");
   }
 
-  /** @description Create an accessible bulk model selection button */
-  function _createBulkButton(keys, developer = null) {
+  /** @description 접근 가능한 묶음 항목 선택 단추 생성 */
+  function _createBulkButton(keys, group = null) {
     const button = document.createElement("button");
     button.type = "button";
-    button.modelKeys = keys;
-    if (developer) {
+    button.entryKeys = keys;
+    if (group) {
       button.className = "model-picker-group-toggle";
-      button.dataset.developerLabel = developer.label;
+      button.dataset.groupLabel = group.label;
     }
-    button.addEventListener("click", () => _toggleBulkModels(button));
+    button.addEventListener("click", () => _toggleBulkEntries(button));
     _syncBulkButton(button);
     return button;
   }
 
-  /** @description Synchronize every model picker with the shared selection */
+  /** @description 공통 선택 상태와 모든 항목 선택기 동기화 */
   function _syncModelPickerControls() {
     for (const count of elements.selectedModelCounts) {
-      count.textContent = String(state.selectedModelKeys.size);
+      count.textContent = String(state.selectedEntryKeys.size);
     }
     for (const checkbox of document.querySelectorAll(
       ".model-picker-option input[type='checkbox']",
     )) {
-      const model = state.payload.models[Number(checkbox.dataset.modelIndex)];
-      checkbox.checked = state.selectedModelKeys.has(data.modelKey(model));
+      checkbox.checked = state.selectedEntryKeys.has(checkbox.dataset.entryKey);
     }
     for (const button of document.querySelectorAll(
       ".model-picker-master button, .model-picker-group-toggle",
@@ -594,9 +629,9 @@
     }
   }
 
-  /** @description Synchronize one developer disclosure with shared collapsed state */
-  function _syncDeveloperDisclosure(button) {
-    const collapsed = state.collapsedDeveloperKeys.has(button.dataset.developerKey);
+  /** @description 차트 항목 그룹의 펼침 상태 동기화 */
+  function _syncEntryGroupDisclosure(button) {
+    const collapsed = state.collapsedEntryGroupKeys.has(button.dataset.groupKey);
     const options = button
       .closest(".model-picker-group")
       .querySelector(".model-picker-options");
@@ -604,30 +639,30 @@
     button.setAttribute("aria-expanded", String(!collapsed));
     const actionLabel = _t(
       collapsed
-        ? "selection.expandDeveloper"
-        : "selection.collapseDeveloper",
-      { developer: button.dataset.developerLabel },
+        ? "selection.expandGroup"
+        : "selection.collapseGroup",
+      { group: button.dataset.groupLabel },
     );
     button.setAttribute("aria-label", actionLabel);
     button.title = actionLabel;
   }
 
-  /** @description Synchronize developer disclosures across all model pickers */
-  function _syncDeveloperDisclosures() {
+  /** @description 모든 항목 선택기의 그룹 펼침 상태 동기화 */
+  function _syncEntryGroupDisclosures() {
     for (const button of document.querySelectorAll(".model-picker-disclosure")) {
-      _syncDeveloperDisclosure(button);
+      _syncEntryGroupDisclosure(button);
     }
   }
 
-  /** @description Render the manual model selection panel */
+  /** @description 차트 항목 수동 선택 패널 렌더링 */
   function _renderModelPicker() {
     const modelNameCollator = new Intl.Collator(i18n.getLocale(), {
       numeric: true,
       sensitivity: "base",
     });
     const groups = new Map();
-    for (const entry of data.rankModels(state.payload.models)) {
-      const developer = data.modelDeveloper(entry.model);
+    for (const entry of state.analytics.entries) {
+      const developer = _entryDeveloper(entry);
       if (!groups.has(developer.key)) {
         groups.set(developer.key, { developer, entries: [] });
       }
@@ -635,8 +670,8 @@
     }
     for (const group of groups.values()) {
       group.entries.sort((left, right) => modelNameCollator.compare(
-        _modelName(right.model),
-        _modelName(left.model),
+        _entryName(right),
+        _entryName(left),
       ));
     }
     const sortedGroups = [...groups.values()].sort((left, right) => (
@@ -656,16 +691,16 @@
       master.append(
         masterLabel,
         _createBulkButton(
-          state.payload.models.map((model) => data.modelKey(model)),
+          state.analytics.entries.map(_entryKey),
         ),
       );
       const groupList = document.createElement("div");
       groupList.className = "model-picker-groups";
-      if (state.collapsedDeveloperKeys === null) {
-        state.collapsedDeveloperKeys = new Set(
+      if (state.collapsedEntryGroupKeys === null) {
+        state.collapsedEntryGroupKeys = new Set(
           sortedGroups
             .filter(({ entries }) => entries.every(
-              (entry) => !state.selectedModelKeys.has(data.modelKey(entry.model)),
+              (entry) => !state.selectedEntryKeys.has(_entryKey(entry)),
             ))
             .map(({ developer }) => developer.key),
         );
@@ -683,8 +718,8 @@
         const disclosure = document.createElement("button");
         disclosure.type = "button";
         disclosure.className = "model-picker-disclosure";
-        disclosure.dataset.developerKey = developer.key;
-        disclosure.dataset.developerLabel = developer.label;
+        disclosure.dataset.groupKey = developer.key;
+        disclosure.dataset.groupLabel = developer.label;
         disclosure.setAttribute("aria-controls", optionsId);
         const headingLabel = document.createElement("strong");
         headingLabel.id = labelId;
@@ -699,7 +734,7 @@
         heading.append(
           disclosure,
           _createBulkButton(
-            entries.map((entry) => data.modelKey(entry.model)),
+            entries.map(_entryKey),
             developer,
           ),
           developerSwatch,
@@ -710,41 +745,39 @@
         options.id = optionsId;
         options.className = "model-picker-options";
         disclosure.addEventListener("click", () => {
-          if (state.collapsedDeveloperKeys.has(developer.key)) {
-            state.collapsedDeveloperKeys.delete(developer.key);
+          if (state.collapsedEntryGroupKeys.has(developer.key)) {
+            state.collapsedEntryGroupKeys.delete(developer.key);
           } else {
-            state.collapsedDeveloperKeys.add(developer.key);
+            state.collapsedEntryGroupKeys.add(developer.key);
           }
-          _syncDeveloperDisclosures();
+          _syncEntryGroupDisclosures();
         });
         for (const entry of entries) {
-          const key = data.modelKey(entry.model);
+          const key = _entryKey(entry);
           const label = document.createElement("label");
           label.className = "model-picker-option";
           const checkbox = document.createElement("input");
           checkbox.type = "checkbox";
-          checkbox.dataset.modelIndex = String(
-            state.payload.models.indexOf(entry.model),
-          );
-          checkbox.checked = state.selectedModelKeys.has(key);
+          checkbox.dataset.entryKey = key;
+          checkbox.checked = state.selectedEntryKeys.has(key);
           checkbox.addEventListener("change", () => {
             if (checkbox.checked) {
-              state.selectedModelKeys.add(key);
+              state.selectedEntryKeys.add(key);
             } else {
-              state.selectedModelKeys.delete(key);
+              state.selectedEntryKeys.delete(key);
             }
             _syncModelPickerControls();
-            _renderSelectedModelCharts();
+            _renderSelectedEntryCharts();
           });
           const name = document.createElement("span");
-          name.textContent = _modelName(entry.model);
+          name.textContent = _entryName(entry);
           name.title = name.textContent;
           label.append(checkbox, name);
           options.append(label);
         }
         group.append(heading, options);
         groupList.append(group);
-        _syncDeveloperDisclosure(disclosure);
+        _syncEntryGroupDisclosure(disclosure);
         groupIndex += 1;
       }
       panel.replaceChildren(master, groupList);
@@ -752,10 +785,10 @@
     _syncModelPickerControls();
   }
 
-  /** @description Render grouped score bars for selected models and maze sizes */
+  /** @description 선택한 항목과 미로 크기별 묶음 점수 막대 렌더링 */
   function _renderMultiModelChart(analytics) {
-    const models = _orderedAnalyticsModels(analytics).filter((entry) => (
-      state.selectedModelKeys.has(data.modelKey(entry.model))
+    const models = _orderedAnalyticsEntries(analytics).filter((entry) => (
+      state.selectedEntryKeys.has(_entryKey(entry))
     ));
     if (models.length === 0 || analytics.sizes.length === 0) {
       const empty = document.createElement("p");
@@ -815,7 +848,8 @@
       const barsWidth = models.length * (availableBarWidth + barGap) - barGap;
       const barsStart = groupStart + (groupWidth - barsWidth) / 2;
       models.forEach((entry, modelIndex) => {
-        const score = entry.bySize.find((item) => item.size === size)?.meanScore;
+        const sizeStats = entry.bySize.find((item) => item.size === size);
+        const score = sizeStats?.meanScore;
         if (!Number.isFinite(score)) {
           return;
         }
@@ -823,7 +857,7 @@
         const x = barsStart + modelIndex * (availableBarWidth + barGap);
         const y = margin.top + plotHeight - barHeight;
         const tooltip = (
-          `${_modelName(entry.model)} · ${data.formatSize(size)} · `
+          `${_entryName(entry)} · ${data.formatSize(size)} · `
           + _t("common.points", { score: data.formatScore(score) })
         );
         const rect = _svgElement("rect", {
@@ -833,12 +867,12 @@
           height: barHeight,
           rx: 3,
           class: "developer-mark",
-          fill: _modelColor(entry.model),
+          fill: _entryColor(entry),
           tabindex: 0,
           role: "img",
           "aria-label": tooltip,
           "data-chart-tooltip": tooltip,
-          "data-model-highlight": _modelIndex(entry.model),
+          "data-model-highlight": _entryHighlight(entry),
         });
         barElements.push({ element: rect, modelIndex, sizeIndex });
         svg.append(rect);
@@ -973,11 +1007,11 @@
     legend.className = "model-chart-legend";
     for (const entry of models) {
       const item = document.createElement("span");
-      item.dataset.modelHighlight = String(_modelIndex(entry.model));
+      item.dataset.modelHighlight = _entryHighlight(entry);
       const swatch = document.createElement("i");
-      swatch.style.backgroundColor = _modelColor(entry.model);
+      swatch.style.backgroundColor = _entryColor(entry);
       const name = document.createElement("span");
-      name.textContent = _modelName(entry.model);
+      name.textContent = _entryName(entry);
       item.append(swatch, name);
       legend.append(item);
     }
@@ -994,10 +1028,10 @@
     return Math.min(4, Math.max(0, Math.floor(score / 20)));
   }
 
-  /** @description Render all model scores for each selected individual maze */
+  /** @description 선택한 항목의 미로별 점수 렌더링 */
   function _renderLeaderboardHeatmap(analytics) {
-    const models = _orderedAnalyticsModels(analytics).filter((entry) => (
-      state.selectedModelKeys.has(data.modelKey(entry.model))
+    const models = _orderedAnalyticsEntries(analytics).filter((entry) => (
+      state.selectedEntryKeys.has(_entryKey(entry))
     ));
     if (analytics.mazes.length === 0 || models.length === 0) {
       const empty = document.createElement("p");
@@ -1017,7 +1051,7 @@
     modelHeading.className = "full-heatmap-model-heading";
     modelHeading.rowSpan = 2;
     modelHeading.scope = "col";
-    modelHeading.textContent = _t("common.model");
+      modelHeading.textContent = _t("common.modelName");
     sizeRow.append(modelHeading);
 
     for (let index = 0; index < analytics.mazes.length;) {
@@ -1056,17 +1090,17 @@
     const body = document.createElement("tbody");
     for (const entry of models) {
       const row = document.createElement("tr");
-      row.dataset.modelHighlight = String(_modelIndex(entry.model));
+      row.dataset.modelHighlight = _entryHighlight(entry);
       const modelHeadingCell = document.createElement("th");
       modelHeadingCell.className = "full-heatmap-model-cell";
       modelHeadingCell.scope = "row";
       const developerMark = document.createElement("i");
       developerMark.className = "developer-color-mark";
-      developerMark.style.backgroundColor = _modelColor(entry.model);
+      developerMark.style.backgroundColor = _entryColor(entry);
       const modelName = document.createElement("span");
-      modelName.textContent = _modelName(entry.model);
+      modelName.textContent = _entryName(entry);
       modelHeadingCell.append(developerMark, modelName);
-      modelHeadingCell.title = _modelName(entry.model);
+      modelHeadingCell.title = _entryName(entry);
       row.append(modelHeadingCell);
       for (const maze of analytics.mazes) {
         const score = entry.scoresByMaze[maze.maze_id];
@@ -1075,14 +1109,14 @@
           cell.className = `score-band-${_scoreBand(score)}`;
           cell.textContent = String(Math.round(score));
           cell.dataset.chartTooltip = (
-            `${_modelName(entry.model)} · ${data.mazeDisplayName(maze)} · `
+            `${_entryName(entry)} · ${data.mazeDisplayName(maze)} · `
             + _t("common.points", { score: data.formatScore(score) })
           );
         } else {
           cell.className = "is-empty";
           cell.textContent = "—";
           cell.dataset.chartTooltip = (
-            `${_modelName(entry.model)} · ${data.mazeDisplayName(maze)} · `
+            `${_entryName(entry)} · ${data.mazeDisplayName(maze)} · `
             + _t("common.scoreMissing")
           );
         }
@@ -1186,8 +1220,9 @@
 
   /** @description Render score against selected-range cost */
   function _renderCostScatter(analytics) {
-    const points = _orderedAnalyticsModels(analytics).filter((entry) => (
-      state.selectedModelKeys.has(data.modelKey(entry.model))
+    const points = _orderedAnalyticsEntries(analytics).filter((entry) => (
+      entry.type !== "human"
+      && state.selectedEntryKeys.has(_entryKey(entry))
       &&
       Number.isFinite(entry.score)
       && Number.isFinite(entry.cost)
@@ -1351,7 +1386,7 @@
       const pointX = xPosition(entry.cost);
       const pointY = yPosition(entry.score);
       const tooltip = (
-        `${_modelName(entry.model)} · `
+        `${_entryName(entry)} · `
         + `${_t("common.points", { score: data.formatScore(entry.score) })} · `
         + `${data.formatCost(entry.cost)}`
         + (entry.state === "partial"
@@ -1365,16 +1400,16 @@
         class: entry.state === "partial"
           ? "scatter-partial-point"
           : "developer-mark",
-        fill: entry.state === "partial" ? "#ffffff" : _modelColor(entry.model),
+        fill: entry.state === "partial" ? "#ffffff" : _entryColor(entry),
         ...(entry.state === "partial" ? {
-          stroke: _modelColor(entry.model),
+          stroke: _entryColor(entry),
           "stroke-width": 2.5,
         } : {}),
         tabindex: 0,
         role: "img",
         "aria-label": tooltip,
         "data-chart-tooltip": tooltip,
-        "data-model-highlight": _modelIndex(entry.model),
+        "data-model-highlight": _entryHighlight(entry),
       };
       if (entry.state === "partial") {
         svg.append(_svgElement("circle", {
@@ -1396,7 +1431,7 @@
         "data-cost-scatter-label": "true",
         "data-point-x": pointX,
         "data-point-y": pointY,
-      }, _modelName(entry.model));
+      }, _entryName(entry));
       svg.append(circle, exportLabel);
     }
 
@@ -1408,11 +1443,18 @@
   }
 
   /** @description Render every leaderboard analytics card */
-  function _renderAnalytics() {
+  function _aggregateAnalytics() {
     state.analytics = data.aggregateLeaderboardModels(
       state.payload,
       _activeSizes(),
+      state.humanResults,
+      state.tier,
     );
+  }
+
+  /** @description 선택 범위의 분석 항목과 차트 렌더링 */
+  function _renderAnalytics() {
+    _aggregateAnalytics();
     _renderMultiModelChart(state.analytics);
     _renderLeaderboardHeatmap(state.analytics);
     _renderCostScatter(state.analytics);
@@ -1447,12 +1489,12 @@
 
   /** @description Render ranking for the selected maze sizes */
   function _renderRanking() {
-    if (!state.payload) {
+    if (!state.payload || !state.analytics) {
       return;
     }
-    const rankedEntries = state.payload.results.length === 0
-      ? []
-      : data.rankModels(state.payload.models, _selectedStats);
+    const rankedEntries = state.analytics.entries.filter((entry) => (
+      entry.type === "human" || state.payload.results.length > 0
+    ));
     const entries = data.sortRankedEntries(
       rankedEntries,
       state.sortKey,
@@ -1483,8 +1525,8 @@
 
   /** @description Render ranking and analytics for the selected maze sizes */
   function _render() {
-    _renderRanking();
     _renderAnalytics();
+    _renderRanking();
     _syncUrl();
   }
 
@@ -1554,11 +1596,17 @@
   async function _load() {
     _setDashboardState("loading");
     try {
-      state.payload = await data.loadBenchmarkResults(state.tier);
+      [state.payload, state.humanResults] = await Promise.all([
+        data.loadBenchmarkResults(state.tier),
+        data.loadHumanResults(),
+      ]);
       _populateSizes();
-      _initializeChartModels();
+      _aggregateAnalytics();
+      _initializeChartEntries();
+      _renderSelectedEntryCharts();
       _renderModelPicker();
-      _render();
+      _renderRanking();
+      _syncUrl();
       _setDashboardState("ready");
     } catch (error) {
       state.loadError = error;
@@ -1657,8 +1705,10 @@
     _syncTierInterface();
     if (state.payload) {
       _populateSizes();
+      _renderAnalytics();
       _renderModelPicker();
-      _render();
+      _renderRanking();
+      _syncUrl();
       return;
     }
     if (state.loadError !== null) {
@@ -1672,7 +1722,7 @@
     globalThis.MazeBenchTheme.THEME_EVENT,
     () => {
       if (state.analytics) {
-        _renderSelectedModelCharts();
+        _renderSelectedEntryCharts();
       }
     },
   );

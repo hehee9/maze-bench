@@ -30,6 +30,21 @@
     "reasoning_tokens",
     "total_tokens",
   ];
+  const HUMAN_RESULTS_FILE = "human_results.json";
+  const HUMAN_SCORE_FIELDS = [
+    {
+      id: "human-median",
+      labelKey: "leaderboard.humanMedian",
+      scoreField: "median_score",
+      color: "#6B5CE7",
+    },
+    {
+      id: "human-top-five",
+      labelKey: "leaderboard.humanTopFive",
+      scoreField: "p95_score",
+      color: "#9B8CE8",
+    },
+  ];
   const REASONING_NAME_SUFFIX = /\s+\((?:minimal|medium|thinking|non-thinking|8k thinking)\)$/i;
   const MODEL_DEVELOPERS = {
     anthropic: {
@@ -228,6 +243,49 @@
     return entries;
   }
 
+  /** @description 모델과 인간 점수 행의 통합 순위 */
+  function rankLeaderboardEntries(
+    models,
+    statsSelector = (model) => model,
+    humanRows = [],
+  ) {
+    const modelEntries = rankModels(models, statsSelector).map((entry) => ({
+      ...entry,
+      type: "model",
+      key: modelKey(entry.model),
+    }));
+    const entries = [
+      ...modelEntries,
+      ...humanRows.map((humanRow, index) => ({
+        ...humanRow,
+        type: "human",
+        key: humanRow.id,
+        processed: humanRow.stats.processed_count,
+        expected: humanRow.stats.expected_count,
+        originalIndex: modelEntries.length + index,
+        rank: null,
+      })),
+    ];
+    const stateOrder = { complete: 0, partial: 1, empty: 2 };
+    entries.sort((first, second) => (
+      stateOrder[first.state] - stateOrder[second.state]
+      || (
+        (Number.isFinite(second.score) ? second.score : -Infinity)
+        - (Number.isFinite(first.score) ? first.score : -Infinity)
+      )
+      || first.originalIndex - second.originalIndex
+    ));
+
+    let rank = 0;
+    for (const entry of entries) {
+      if (entry.state === "complete") {
+        rank += 1;
+        entry.rank = rank;
+      }
+    }
+    return entries;
+  }
+
   /** @description Sort ranked entries while keeping missing values at the bottom */
   function sortRankedEntries(entries, key, direction) {
     const collator = new Intl.Collator(
@@ -243,13 +301,17 @@
         return Number.isFinite(entry.rank) ? entry.rank : null;
       }
       if (key === "model") {
-        return entry.model?.name ?? entry.model?.model_id ?? _t("common.noNameModel");
+        return entry.type === "human"
+          ? entry.label
+          : entry.model?.name ?? entry.model?.model_id ?? _t("common.noNameModel");
       }
       if (key === "score") {
         return Number.isFinite(entry.score) ? entry.score : null;
       }
       if (key === "cost") {
-        return calculateCost(entry.stats?.token_usage, entry.model?.pricing);
+        return entry.type === "human"
+          ? null
+          : calculateCost(entry.stats?.token_usage, entry.model?.pricing);
       }
       if (key === "tokens") {
         const tokenUsage = entry.stats?.token_usage;
@@ -316,26 +378,59 @@
     return modelDeveloper(model).color;
   }
 
+  /** @description 순위가 매겨진 완료 항목의 개발사별 선택 개수 제한 */
+  function _selectDefaultRankedEntries(
+    entries,
+    developerKeySelector,
+    maxPerDeveloper,
+    maxEntries,
+  ) {
+    const developerCounts = new Map();
+    const selected = [];
+    for (const entry of entries) {
+      if (entry.state !== "complete" || selected.length >= maxEntries) {
+        continue;
+      }
+      const developerKey = developerKeySelector(entry);
+      const count = developerCounts.get(developerKey) ?? 0;
+      if (count >= maxPerDeveloper) {
+        continue;
+      }
+      selected.push(entry);
+      developerCounts.set(developerKey, count + 1);
+    }
+    return selected;
+  }
+
   /** @description Select top complete models with a per-developer limit */
   function selectDefaultModels(models, {
     maxPerDeveloper = 3,
     maxModels = 9,
   } = {}) {
-    const developerCounts = new Map();
-    const selected = [];
-    for (const entry of rankModels(models)) {
-      if (entry.state !== "complete" || selected.length >= maxModels) {
-        continue;
-      }
-      const developer = modelDeveloper(entry.model);
-      const count = developerCounts.get(developer.key) ?? 0;
-      if (count >= maxPerDeveloper) {
-        continue;
-      }
-      selected.push(entry.model);
-      developerCounts.set(developer.key, count + 1);
-    }
-    return selected;
+    return _selectDefaultRankedEntries(
+      rankModels(models),
+      (entry) => modelDeveloper(entry.model).key,
+      maxPerDeveloper,
+      maxModels,
+    ).map(({ model }) => model);
+  }
+
+  /** @description 모델과 인간 행에 공통 기본 차트 선택 규칙 적용 */
+  function selectDefaultEntries(entries, {
+    maxPerDeveloper = 3,
+    maxEntries = 9,
+  } = {}) {
+    const rankedEntries = entries
+      .filter((entry) => entry.state === "complete")
+      .sort((first, second) => first.rank - second.rank);
+    return _selectDefaultRankedEntries(
+      rankedEntries,
+      (entry) => entry.type === "human"
+        ? "human"
+        : modelDeveloper(entry.model).key,
+      maxPerDeveloper,
+      maxEntries,
+    );
   }
 
   /** @description Return the entrance relation encoded in a public maze identifier */
@@ -486,13 +581,25 @@
   }
 
   /** @description Collect unique mazes in size and maze-number order */
-  function getMazes(results, requestedSizes = null) {
+  function getMazes(results, requestedSizes = null, additionalMazes = []) {
     const selectedSizes = requestedSizes === null
       ? null
       : new Set(requestedSizes);
     const mazes = new Map();
     for (const result of results ?? []) {
       const maze = result.maze;
+      if (!maze?.maze_id || !maze.width || !maze.height) {
+        continue;
+      }
+      const size = mazeSize(maze);
+      if (selectedSizes && !selectedSizes.has(size)) {
+        continue;
+      }
+      if (!mazes.has(maze.maze_id)) {
+        mazes.set(maze.maze_id, maze);
+      }
+    }
+    for (const maze of additionalMazes) {
       if (!maze?.maze_id || !maze.width || !maze.height) {
         continue;
       }
@@ -520,11 +627,30 @@
   }
 
   /** @description Aggregate leaderboard charts for one selected maze-size range */
-  function aggregateLeaderboardModels(payload, requestedSizes = null) {
-    const sizes = requestedSizes === null
+  function aggregateLeaderboardModels(
+    payload,
+    requestedSizes = null,
+    humanResults = null,
+    tier = 1,
+  ) {
+    let sizes = requestedSizes === null
       ? getSizes(payload)
       : [...new Set(requestedSizes)].sort(compareSizes);
-    const mazes = getMazes(payload.results, sizes);
+    const humanRows = humanResults === null
+      ? []
+      : aggregateHumanBaselines(humanResults, tier, requestedSizes);
+    if (requestedSizes === null && humanRows.length > 0) {
+      sizes = [...new Set([
+        ...sizes,
+        ...humanRows.flatMap((row) => row.bySize.map(({ size }) => size)),
+      ])]
+        .sort(compareSizes);
+    }
+    const mazes = getMazes(
+      payload.results,
+      sizes,
+      humanRows.flatMap((row) => row.mazes),
+    );
     const resultIndex = new Map();
     for (const result of payload.results ?? []) {
       if (!result.maze?.maze_id) {
@@ -561,7 +687,26 @@
         scoresByMaze,
       };
     });
-    return { sizes, mazes, models };
+    const modelByKey = new Map(models.map((entry) => (
+      [modelKey(entry.model), entry]
+    )));
+    const entries = rankLeaderboardEntries(
+      payload.models ?? [],
+      (model) => modelByKey.get(modelKey(model)).stats,
+      humanRows,
+    ).map((entry) => {
+      if (entry.type === "human") {
+        return entry;
+      }
+      return {
+        ...modelByKey.get(entry.key),
+        type: "model",
+        key: entry.key,
+        rank: entry.rank,
+        originalIndex: entry.originalIndex,
+      };
+    });
+    return { sizes, mazes, models, humanRows, entries };
   }
 
   /** @description Calculate USD cost without double-counting reasoning tokens */
@@ -619,6 +764,70 @@
     return size.replace("x", " × ");
   }
 
+  /** @description 선택한 티어의 인간 미로 중앙값과 상위 5% 점수 집계 */
+  function aggregateHumanBaselines(payload, tier = 1, requestedSizes = null) {
+    const tierResults = payload.tiers[String(Number(tier) === 2 ? 2 : 1)];
+    const selectedSizes = requestedSizes === null
+      ? null
+      : new Set(requestedSizes);
+    const mazes = tierResults.mazes.filter((maze) => (
+      selectedSizes === null || selectedSizes.has(mazeSize(maze))
+    ));
+    const sizes = requestedSizes === null
+      ? [...new Set(mazes.map(mazeSize))].sort(compareSizes)
+      : [...new Set(requestedSizes)].sort(compareSizes);
+    return HUMAN_SCORE_FIELDS.map((metric) => {
+      const scoresByMaze = Object.fromEntries(mazes.map((maze) => (
+        [
+          maze.maze_id,
+          Number.isFinite(maze[metric.scoreField])
+            ? maze[metric.scoreField]
+            : null,
+        ]
+      )));
+      const scoredMazes = mazes.filter((maze) => (
+        Number.isFinite(maze[metric.scoreField])
+      ));
+      const provisionalMeanScore = _meanScore(
+        scoredMazes.map((maze) => maze[metric.scoreField]),
+      );
+      const stats = {
+        expected_count: mazes.length,
+        processed_count: scoredMazes.length,
+        official_mean_score: (
+          mazes.length > 0 && scoredMazes.length === mazes.length
+        )
+          ? provisionalMeanScore
+          : null,
+        provisional_mean_score: provisionalMeanScore,
+      };
+      const state = aggregateState(stats);
+      const bySize = sizes.map((size) => ({
+        size,
+        meanScore: _meanScore(
+          scoredMazes
+            .filter((maze) => mazeSize(maze) === size)
+            .map((maze) => maze[metric.scoreField]),
+        ),
+      }));
+      return {
+        id: metric.id,
+        label: _t(metric.labelKey),
+        iconPath: "assets/developers/human.svg",
+        color: metric.color,
+        stats,
+        state,
+        score: state === "complete"
+          ? stats.official_mean_score
+          : stats.provisional_mean_score,
+        cost: null,
+        bySize,
+        scoresByMaze,
+        mazes,
+      };
+    });
+  }
+
   /** @description 벤치마크 티어의 공개 설정 반환 */
   function getTierConfig(tier = 1) {
     return TIER_CONFIG[Number(tier) === 2 ? 2 : 1];
@@ -664,8 +873,18 @@
     return payload;
   }
 
+  /** @description 별도 집계용 인간 리더보드 데이터 로드 */
+  async function loadHumanResults() {
+    const response = await fetch(HUMAN_RESULTS_FILE, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return response.json();
+  }
+
   const api = {
     aggregateLeaderboardModels,
+    aggregateHumanBaselines,
     aggregateModelScores,
     aggregateState,
     buildUrl,
@@ -682,12 +901,15 @@
     getSizes,
     getTierConfig,
     loadBenchmarkResults,
+    loadHumanResults,
     mazeDisplayName,
     mazeRelation,
     mazeSize,
     modelDeveloper,
     modelKey,
     rankModels,
+    rankLeaderboardEntries,
+    selectDefaultEntries,
     selectDefaultModels,
     sortRankedEntries,
     statsForModel,
