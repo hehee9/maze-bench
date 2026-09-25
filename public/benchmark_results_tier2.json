@@ -3,7 +3,7 @@
   "scoring_version": 4,
   "status": "completed",
   "expected_result_count": 100,
-  "processed_result_count": 85,
+  "processed_result_count": 100,
   "models": [
     {
       "name": "Claude Fable 5.1 (medium)",
@@ -15,21 +15,21 @@
         "output_per_million": 50.0
       },
       "expected_count": 20,
-      "processed_count": 5,
-      "api_success_count": 5,
+      "processed_count": 20,
+      "api_success_count": 20,
       "api_failure_count": 0,
-      "graded_count": 5,
-      "processing_rate": 0.25,
-      "api_success_rate": 0.25,
-      "coverage": 0.25,
-      "provisional_mean_score": 2.652299342722892,
-      "official_mean_score": null,
+      "graded_count": 20,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 6.134707276978194,
+      "official_mean_score": 6.134707276978194,
       "token_usage": {
         "totals": {
-          "input_tokens": 25700,
-          "output_tokens": 43651,
-          "reasoning_tokens": 43482,
-          "total_tokens": 69351
+          "input_tokens": 102800,
+          "output_tokens": 314956,
+          "reasoning_tokens": 314277,
+          "total_tokens": 417756
         },
         "missing_counts": {
           "input_tokens": 0,
@@ -41,21 +41,21 @@
       "by_maze_size": {
         "15x15": {
           "expected_count": 5,
-          "processed_count": 0,
-          "api_success_count": 0,
+          "processed_count": 5,
+          "api_success_count": 5,
           "api_failure_count": 0,
-          "graded_count": 0,
-          "processing_rate": 0.0,
-          "api_success_rate": 0.0,
-          "coverage": 0.0,
-          "provisional_mean_score": null,
-          "official_mean_score": null,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 8.76263263566296,
+          "official_mean_score": 8.76263263566296,
           "token_usage": {
             "totals": {
-              "input_tokens": 0,
-              "output_tokens": 0,
-              "reasoning_tokens": 0,
-              "total_tokens": 0
+              "input_tokens": 25700,
+              "output_tokens": 126011,
+              "reasoning_tokens": 125824,
+              "total_tokens": 151711
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -67,21 +67,21 @@
         },
         "18x18": {
           "expected_count": 5,
-          "processed_count": 0,
-          "api_success_count": 0,
+          "processed_count": 5,
+          "api_success_count": 5,
           "api_failure_count": 0,
-          "graded_count": 0,
-          "processing_rate": 0.0,
-          "api_success_rate": 0.0,
-          "coverage": 0.0,
-          "provisional_mean_score": null,
-          "official_mean_score": null,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 9.830510787792043,
+          "official_mean_score": 9.830510787792043,
           "token_usage": {
             "totals": {
-              "input_tokens": 0,
-              "output_tokens": 0,
-              "reasoning_tokens": 0,
-              "total_tokens": 0
+              "input_tokens": 25700,
+              "output_tokens": 81089,
+              "reasoning_tokens": 80945,
+              "total_tokens": 106789
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -93,21 +93,21 @@
         },
         "21x21": {
           "expected_count": 5,
-          "processed_count": 0,
-          "api_success_count": 0,
+          "processed_count": 5,
+          "api_success_count": 5,
           "api_failure_count": 0,
-          "graded_count": 0,
-          "processing_rate": 0.0,
-          "api_success_rate": 0.0,
-          "coverage": 0.0,
-          "provisional_mean_score": null,
-          "official_mean_score": null,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 3.293386341734879,
+          "official_mean_score": 3.293386341734879,
           "token_usage": {
             "totals": {
-              "input_tokens": 0,
-              "output_tokens": 0,
-              "reasoning_tokens": 0,
-              "total_tokens": 0
+              "input_tokens": 25700,
+              "output_tokens": 64205,
+              "reasoning_tokens": 64026,
+              "total_tokens": 89905
             },
             "missing_counts": {
               "input_tokens": 0,
