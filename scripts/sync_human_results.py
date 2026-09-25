@@ -75,6 +75,7 @@ def _maze_rows(catalog: dict[str, tuple[str, MazeProblem]]) -> dict[str, list[di
                 "attempt_count": 0,
                 "mean_score": None,
                 "median_score": None,
+                "p05_score": None,
                 "p95_score": None,
             }
         )
@@ -452,7 +453,16 @@ def _build_public_results(
             row["median_score"] = median(maze_scores) if maze_scores else None
             if maze_scores:
                 sorted_scores = sorted(maze_scores)
-                # 정렬 점수의 (n - 1) * 0.95 위치를 선형 보간
+                # 정렬 점수의 (n - 1) * q 위치 선형 보간
+                p05_position = (len(sorted_scores) - 1) * 0.05
+                p05_lower_index = int(p05_position)
+                p05_interpolation = p05_position - p05_lower_index
+                p05_lower_score = sorted_scores[p05_lower_index]
+                p05_upper_index = min(p05_lower_index + 1, len(sorted_scores) - 1)
+                p05_upper_score = sorted_scores[p05_upper_index]
+                row["p05_score"] = p05_lower_score + (
+                    p05_upper_score - p05_lower_score
+                ) * p05_interpolation
                 p95_position = (len(sorted_scores) - 1) * 0.95
                 lower_index = int(p95_position)
                 interpolation = p95_position - lower_index
@@ -461,6 +471,7 @@ def _build_public_results(
                 upper_score = sorted_scores[upper_index]
                 row["p95_score"] = lower_score + (upper_score - lower_score) * interpolation
             else:
+                row["p05_score"] = None
                 row["p95_score"] = None
     current = {
         "schema_version": 1,

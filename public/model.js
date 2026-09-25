@@ -10,17 +10,50 @@
   const MIN_SIDEBAR_WIDTH = 232;
   const MAX_SIDEBAR_WIDTH = 420;
   const SIDEBAR_STORAGE_KEY = "maze-bench-model-sidebar-width";
+  const HUMAN_MODEL_KEY = "human";
+  const MODEL_TABLE_COLUMNS = [
+    ["model.mazeName", "20%"],
+    ["common.mazeSize", "8%"],
+    ["model.status", "8%"],
+    ["common.score", "8%"],
+    ["common.cost", "9%"],
+    ["common.input", "9%"],
+    ["common.output", "9%"],
+    ["common.reasoning", "9%"],
+    ["common.totalTokens", "11%"],
+    ["common.replay", "9%"],
+  ];
+  const HUMAN_TABLE_COLUMNS = [
+    ["model.mazeName", "30%"],
+    ["common.mazeSize", "11%"],
+    ["model.humanTopFive", "13%"],
+    ["model.humanMedian", "13%"],
+    ["model.humanBottomFive", "13%"],
+    ["model.humanPlayCount", "20%"],
+  ];
   const i18n = globalThis.MazeBenchI18n;
   const data = globalThis.MazeBenchmarkData;
   const requestedTier = new URLSearchParams(window.location.search).get("tier");
   const elements = {
     tierButtons: document.querySelector("#tierButtons"),
     modelTitle: document.querySelector("#modelTitle"),
+    summaryGrid: document.querySelector(".summary-grid"),
+    scoreLabel: document.querySelector("#scoreLabel"),
     scoreValue: document.querySelector("#scoreValue"),
+    humanTopFiveCard: document.querySelector("#humanTopFiveCard"),
+    humanTopFiveValue: document.querySelector("#humanTopFiveValue"),
+    humanBottomFiveCard: document.querySelector("#humanBottomFiveCard"),
+    humanBottomFiveValue: document.querySelector("#humanBottomFiveValue"),
+    humanPlayCountCard: document.querySelector("#humanPlayCountCard"),
+    humanPlayCountValue: document.querySelector("#humanPlayCountValue"),
     costValue: document.querySelector("#costValue"),
+    costCard: document.querySelector(".summary-cost-card"),
     tokenPriceValue: document.querySelector("#tokenPriceValue"),
+    tokenPriceCard: document.querySelector(".summary-price-card"),
     sizeSelect: document.querySelector("#sizeSelect"),
     resultTitle: document.querySelector("#resultTitle"),
+    resultHead: document.querySelector("#resultHead"),
+    resultColumns: document.querySelector("#resultColumns"),
     resultBody: document.querySelector("#resultBody"),
     tableScroll: document.querySelector(".model-detail-content .table-scroll"),
     emptyState: document.querySelector("#emptyState"),
@@ -43,6 +76,8 @@
     size: "all",
     modelKey: null,
     mazes: [],
+    humanResults: null,
+    humanAggregate: null,
     resultIndex: new Map(),
     sidebarOpen: false,
     sidebarWidth: DEFAULT_SIDEBAR_WIDTH,
@@ -130,6 +165,18 @@
     ) ?? null;
   }
 
+  /** @description Check whether the human detail is selected */
+  function _isHumanSelected() {
+    return state.modelKey === HUMAN_MODEL_KEY;
+  }
+
+  /** @description Return the localized name of the selected detail */
+  function _selectedName() {
+    return _isHumanSelected()
+      ? _t("model.humanName")
+      : _modelName(_selectedModel());
+  }
+
   /** @description Return a total token value only when none are missing */
   function _totalTokens(tokenUsage) {
     if (
@@ -194,7 +241,7 @@
   function _syncUrl() {
     const model = _selectedModel();
     const url = _tierUrl("model.html", {
-      model: model?.name,
+      model: _isHumanSelected() ? HUMAN_MODEL_KEY : model?.name,
       size: state.size === "all" ? null : state.size,
     });
     window.history.replaceState(null, "", url);
@@ -327,18 +374,27 @@
     _setSidebarOpen(false);
   }
 
-  /** @description Render the overall model ranking sidebar */
+  /** @description 전체 순위 사이드바 렌더링 */
   function _renderRanking() {
-    const entries = state.payload.results.length === 0
+    const models = state.payload.results.length === 0
       ? []
-      : data.rankModels(state.payload.models);
+      : state.payload.models;
+    const entries = data.rankModelDetailEntries(
+      models,
+      state.humanAggregate,
+    );
     const links = entries.map((entry) => {
-      const modelName = _modelName(entry.model);
+      const isHuman = entry.type === "human";
+      const modelName = isHuman ? _t("model.humanName") : _modelName(entry.model);
       const link = document.createElement("a");
-      const isActive = data.modelKey(entry.model) === state.modelKey;
+      const isActive = isHuman
+        ? _isHumanSelected()
+        : data.modelKey(entry.model) === state.modelKey;
       link.className = `ranking-entry is-${entry.state}`;
       link.href = _tierUrl("model.html", {
-        model: entry.model.name ?? data.modelKey(entry.model),
+        model: isHuman
+          ? HUMAN_MODEL_KEY
+          : entry.model.name ?? data.modelKey(entry.model),
         size: state.size === "all" ? null : state.size,
       });
       link.setAttribute(
@@ -382,8 +438,8 @@
     }
   }
 
-  /** @description Render the model's average score by maze size */
-  function _renderSizeChart(analytics) {
+  /** @description 선택 상세의 미로 크기별 평균 점수 표시 */
+  function _renderSizeChart(analytics, color = data.developerColor(_selectedModel())) {
     const scores = analytics.bySize;
     const finiteScores = scores.filter(({ meanScore }) => Number.isFinite(meanScore));
     if (finiteScores.length === 0) {
@@ -400,7 +456,7 @@
     chart.setAttribute(
       "aria-label",
       _t("model.sizeChartAria", {
-        model: _modelName(_selectedModel()),
+        model: _selectedName(),
         values: scores.map(({ size, meanScore }) => (
           _t("model.sizeChartEntry", {
             size: data.formatSize(size),
@@ -419,7 +475,6 @@
 
     const bars = document.createElement("div");
     bars.className = "score-bars";
-    const developerColor = data.developerColor(_selectedModel());
     for (const { size, meanScore } of scores) {
       const item = document.createElement("div");
       item.className = "score-bar-item";
@@ -430,7 +485,7 @@
       if (Number.isFinite(meanScore)) {
         const bar = document.createElement("div");
         bar.className = "score-bar-fill developer-score-bar";
-        bar.style.backgroundColor = developerColor;
+        bar.style.backgroundColor = color;
         bar.style.setProperty(
           "--bar-score",
           String(Math.min(100, Math.max(0, meanScore))),
@@ -545,22 +600,82 @@
     elements.scoreHeatmap.replaceChildren(scroll, legend);
   }
 
-  /** @description Render the selected model's full-size performance analytics */
-  function _renderAnalytics(model) {
-    const analytics = data.aggregateModelScores(
+  /** @description 선택 상세의 크기·구조별 분석과 이미지 이름 적용 */
+  function _renderAnalytics(model, analytics = null, color = null) {
+    const selectedAnalytics = analytics ?? data.aggregateModelScores(
       state.payload.results,
       model,
       data.getTierConfig(state.tier).sizes,
     );
-    _renderSizeChart(analytics);
-    _renderHeatmap(analytics);
-    const modelName = _modelName(model);
+    _renderSizeChart(
+      selectedAnalytics,
+      color ?? data.developerColor(model),
+    );
+    _renderHeatmap(selectedAnalytics);
+    const modelName = _selectedName();
     elements.exportModelSizesButton.dataset.exportFilename = (
       `maze-bench-model-size-scores-${modelName}.png`
     );
     elements.exportModelHeatmapButton.dataset.exportFilename = (
       `maze-bench-model-structure-heatmap-${modelName}.png`
     );
+  }
+
+  /** @description 번역된 표 머리글과 열 너비 적용 */
+  function _renderTableHeadings(columns) {
+    elements.resultHead.replaceChildren(...columns.map(([key]) => {
+      const heading = document.createElement("th");
+      heading.scope = "col";
+      heading.textContent = _t(key);
+      return heading;
+    }));
+    elements.resultColumns.replaceChildren(...columns.map(([, width]) => {
+      const column = document.createElement("col");
+      column.style.width = width;
+      return column;
+    }));
+  }
+
+  /** @description 사람 미로별 백분위 행 생성 */
+  function _createHumanResultRow(maze, fallbackIndex) {
+    const row = document.createElement("tr");
+
+    const mazeCell = document.createElement("td");
+    mazeCell.dataset.label = _t("model.mazeName");
+    const mazeName = document.createElement("span");
+    mazeName.className = "maze-name";
+    mazeName.textContent = data.mazeDisplayName(maze, fallbackIndex);
+    mazeName.title = maze.maze_id;
+    mazeName.setAttribute(
+      "aria-label",
+      _t("common.originalId", {
+        label: mazeName.textContent,
+        id: maze.maze_id,
+      }),
+    );
+    mazeCell.append(mazeName);
+
+    const sizeCell = document.createElement("td");
+    sizeCell.dataset.label = _t("common.mazeSize");
+    sizeCell.textContent = data.formatSize(data.mazeSize(maze));
+
+    const scoreCells = [
+      ["model.humanTopFive", maze.p95_score],
+      ["model.humanMedian", maze.median_score],
+      ["model.humanBottomFive", maze.p05_score],
+    ].map(([labelKey, score]) => {
+      const cell = document.createElement("td");
+      cell.dataset.label = _t(labelKey);
+      cell.textContent = data.formatScore(score);
+      return cell;
+    });
+
+    const playCountCell = document.createElement("td");
+    playCountCell.dataset.label = _t("model.humanPlayCount");
+    playCountCell.textContent = data.formatTokens(maze.attempt_count);
+
+    row.append(mazeCell, sizeCell, ...scoreCells, playCountCell);
+    return row;
   }
 
   /** @description Create one per-maze result row */
@@ -645,10 +760,80 @@
     return row;
   }
 
-  /** @description Render selected model summary and maze rows */
+  /** @description 사람 요약·미로별 백분위·중앙값 분석 렌더링 */
+  function _renderHumanDetail() {
+    const selected = state.size === "all"
+      ? state.humanAggregate
+      : data.aggregateHumanDetail(
+        state.humanResults,
+        state.tier,
+        [state.size],
+      );
+    const humanName = _t("model.humanName");
+    const filteredMazes = selected.mazes;
+
+    elements.summaryGrid.classList.add("is-human");
+    elements.summaryGrid.setAttribute("aria-label", _t("model.humanSummary"));
+    elements.humanTopFiveCard.hidden = false;
+    elements.humanBottomFiveCard.hidden = false;
+    elements.humanPlayCountCard.hidden = false;
+    elements.costCard.hidden = true;
+    elements.tokenPriceCard.hidden = true;
+    elements.scoreLabel.textContent = _t("model.humanMedian");
+    elements.humanTopFiveValue.textContent = data.formatScore(
+      selected.summary.p95Score,
+    );
+    elements.scoreValue.textContent = data.formatScore(
+      selected.summary.medianScore,
+    );
+    elements.humanBottomFiveValue.textContent = data.formatScore(
+      selected.summary.p05Score,
+    );
+    elements.humanPlayCountValue.textContent = data.formatTokens(
+      selected.summary.playCount,
+    );
+    elements.sizeSelect.value = state.size;
+    elements.modelTitle.textContent = _t("model.detailTitle", {
+      model: humanName,
+    });
+    document.title = _t("model.detailDocumentTitle", { model: humanName });
+    elements.resultTitle.textContent = _t("model.resultsTitle", {
+      model: humanName,
+    });
+    _renderTableHeadings(HUMAN_TABLE_COLUMNS);
+    elements.resultBody.replaceChildren(
+      ...filteredMazes.map(_createHumanResultRow),
+    );
+    elements.emptyState.hidden = filteredMazes.length > 0;
+    elements.emptyState.textContent = _t("model.noMazes");
+    _renderRanking();
+    _renderAnalytics(null, state.humanAggregate, "#6B5CE7");
+    _syncUrl();
+  }
+
+  /** @description 모델 요약 카드와 결과 표 복원 */
+  function _setModelDetailMode() {
+    elements.summaryGrid.classList.remove("is-human");
+    elements.summaryGrid.setAttribute("aria-label", _t("model.summary"));
+    elements.humanTopFiveCard.hidden = true;
+    elements.humanBottomFiveCard.hidden = true;
+    elements.humanPlayCountCard.hidden = true;
+    elements.costCard.hidden = false;
+    elements.tokenPriceCard.hidden = false;
+    elements.scoreLabel.textContent = _t("common.score");
+    _renderTableHeadings(MODEL_TABLE_COLUMNS);
+  }
+
+  /** @description 선택 상세 요약과 미로별 행 렌더링 */
   function _render() {
+    if (_isHumanSelected()) {
+      _renderHumanDetail();
+      return;
+    }
+
     const model = _selectedModel();
     if (!model) {
+      _setModelDetailMode();
       const emptyAnalytics = data.aggregateModelScores(
         [],
         null,
@@ -669,6 +854,7 @@
       _syncUrl();
       return;
     }
+    _setModelDetailMode();
     const stats = data.statsForModel(model, state.size);
     const aggregateState = data.aggregateState(stats);
     const score = aggregateState === "complete"
@@ -755,17 +941,21 @@
     ));
   }
 
-  /** @description Restore valid model and maze-size URL selections */
+  /** @description 주소의 사람·모델·미로 크기 선택 복원 */
   function _restoreSelection() {
     const query = new URLSearchParams(window.location.search);
     const queryModel = query.get("model");
     const querySize = query.get("size");
     const sizes = data.getTierConfig(state.tier).sizes;
 
-    const preferredModel = state.payload.models.find(
-      (model) => model.name === queryModel || data.modelKey(model) === queryModel,
-    ) ?? state.payload.models[0];
-    state.modelKey = preferredModel ? data.modelKey(preferredModel) : null;
+    if (queryModel === HUMAN_MODEL_KEY) {
+      state.modelKey = HUMAN_MODEL_KEY;
+    } else {
+      const preferredModel = state.payload.models.find(
+        (model) => model.name === queryModel || data.modelKey(model) === queryModel,
+      ) ?? state.payload.models[0];
+      state.modelKey = preferredModel ? data.modelKey(preferredModel) : null;
+    }
 
     state.size = sizes.includes(querySize) ? querySize : "all";
   }
@@ -789,10 +979,19 @@
     elements.sizeSelect.disabled = false;
   }
 
-  /** @description Load and render model details */
+  /** @description 모델과 사람 결과 로드 및 상세 렌더링 */
   async function _load() {
     try {
-      state.payload = await data.loadBenchmarkResults(state.tier);
+      const [payload, humanResults] = await Promise.all([
+        data.loadBenchmarkResults(state.tier),
+        data.loadHumanResults(),
+      ]);
+      state.payload = payload;
+      state.humanResults = humanResults;
+      state.humanAggregate = data.aggregateHumanDetail(
+        humanResults,
+        state.tier,
+      );
       _buildCatalog();
       _restoreSelection();
       _populateSizeSelect();
@@ -893,6 +1092,10 @@
   globalThis.addEventListener(i18n.LOCALE_EVENT, () => {
     _syncTierInterface();
     if (state.payload) {
+      state.humanAggregate = data.aggregateHumanDetail(
+        state.humanResults,
+        state.tier,
+      );
       _populateSizeSelect();
       _render();
       return;
@@ -910,8 +1113,10 @@
   globalThis.addEventListener(
     globalThis.MazeBenchTheme.THEME_EVENT,
     () => {
-      const model = state.payload ? _selectedModel() : null;
-      if (model) {
+      if (_isHumanSelected() && state.humanAggregate) {
+        _renderAnalytics(null, state.humanAggregate, "#6B5CE7");
+      } else if (state.payload && _selectedModel()) {
+        const model = _selectedModel();
         _renderAnalytics(model);
       }
     },

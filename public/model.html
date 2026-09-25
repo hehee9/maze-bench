@@ -30,27 +30,37 @@
 </head>
 <body class="dashboard-page model-detail-page">
   <div id="sidebarBackdrop" class="model-sidebar-backdrop" hidden></div>
-  <aside id="rankingSidebar" class="model-ranking-sidebar" aria-label="전체 모델 순위" data-i18n-aria-label="model.sidebar">
+  <aside id="rankingSidebar" class="model-ranking-sidebar" aria-label="전체 순위" data-i18n-aria-label="model.sidebar">
     <div class="ranking-sidebar-header">
+      <span class="ranking-sidebar-kicker">MAZE BENCH</span>
+      <button
+        id="rankingClose"
+        class="ranking-close"
+        type="button"
+        aria-label="순위 닫기"
+        data-i18n-aria-label="model.closeRanking"
+      >×</button>
       <a
         href="leaderboard.html"
         class="ranking-sidebar-brand"
         aria-label="전체 순위 보기"
         data-i18n-aria-label="model.allRanking"
       >
-        <span class="ranking-sidebar-kicker">MAZE BENCH</span>
         <strong>
           <span data-i18n="model.allRanking">전체 순위</span>
           <span class="ranking-sidebar-arrow" aria-hidden="true">→</span>
         </strong>
       </a>
-      <button
-        id="rankingClose"
-        class="ranking-close"
-        type="button"
-        aria-label="모델 순위 닫기"
-        data-i18n-aria-label="model.closeRanking"
-      >×</button>
+      <div
+        id="tierButtons"
+        class="tier-buttons ranking-sidebar-tier"
+        role="group"
+        aria-label="벤치마크 티어 선택"
+        data-i18n-aria-label="tier.switch"
+      >
+        <button type="button" data-tier="1" data-i18n="tier.one">티어 1</button>
+        <button type="button" data-tier="2" data-i18n="tier.two">티어 2</button>
+      </div>
     </div>
     <nav id="rankingList" class="ranking-list" aria-label="모델 상세 바로가기" data-i18n-aria-label="model.detailLinks">
       <p class="ranking-list-message" data-i18n="common.readingResults">공개 결과를 읽고 있습니다.</p>
@@ -116,9 +126,21 @@
       </header>
 
       <section class="summary-grid" aria-label="모델 결과 요약" data-i18n-aria-label="model.summary">
+        <article id="humanTopFiveCard" class="summary-card" hidden>
+          <span data-i18n="model.humanTopFive">상위 5%</span>
+          <strong id="humanTopFiveValue">—</strong>
+        </article>
         <article class="summary-card">
-          <span data-i18n="common.score">점수</span>
+          <span id="scoreLabel" data-i18n="common.score">점수</span>
           <strong id="scoreValue">—</strong>
+        </article>
+        <article id="humanBottomFiveCard" class="summary-card" hidden>
+          <span data-i18n="model.humanBottomFive">하위 5%</span>
+          <strong id="humanBottomFiveValue">—</strong>
+        </article>
+        <article id="humanPlayCountCard" class="summary-card" hidden>
+          <span data-i18n="model.humanPlayCount">누적 플레이</span>
+          <strong id="humanPlayCountValue">0</strong>
         </article>
         <article class="summary-card summary-cost-card">
           <span data-i18n="common.totalCost">총 비용</span>
@@ -129,19 +151,6 @@
           <strong id="tokenPriceValue" data-i18n="model.priceValue">입력 — · 출력 —</strong>
         </article>
         <div class="summary-card summary-size-card">
-          <fieldset class="tier-filter">
-            <legend data-i18n="tier.label">벤치마크 티어</legend>
-            <div
-              id="tierButtons"
-              class="tier-buttons"
-              role="group"
-              aria-label="벤치마크 티어 선택"
-              data-i18n-aria-label="tier.switch"
-            >
-              <button type="button" data-tier="1" data-i18n="tier.one">Tier 1</button>
-              <button type="button" data-tier="2" data-i18n="tier.two">Tier 2</button>
-            </div>
-          </fieldset>
           <label class="summary-size-control" for="sizeSelect">
             <span data-i18n="common.mazeSize">미로 크기</span>
             <select id="sizeSelect" class="summary-size-select" disabled>
@@ -160,7 +169,7 @@
         <p id="messageBox" class="dashboard-message" role="alert" hidden></p>
         <div class="table-scroll">
           <table class="benchmark-table model-detail-table">
-            <colgroup>
+            <colgroup id="resultColumns">
               <col style="width: 20%">
               <col style="width: 8%">
               <col style="width: 8%">
@@ -173,7 +182,7 @@
               <col style="width: 9%">
             </colgroup>
             <thead>
-              <tr>
+              <tr id="resultHead">
                 <th scope="col" data-i18n="model.mazeName">미로명</th>
                 <th scope="col" data-i18n="common.mazeSize">미로 크기</th>
                 <th scope="col" data-i18n="model.status">상태</th>

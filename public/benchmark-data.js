@@ -243,6 +243,44 @@
     return entries;
   }
 
+  /** @description 모델과 사람 상세 항목을 기존 완료 규칙으로 정렬 */
+  function rankModelDetailEntries(models, humanAggregate) {
+    const entries = rankModels(models).map((entry) => ({
+      ...entry,
+      type: "model",
+    }));
+    const humanStats = humanAggregate.stats;
+    entries.push({
+      type: "human",
+      key: "human",
+      stats: humanStats,
+      state: aggregateState(humanStats),
+      score: humanAggregate.score,
+      processed: Number(humanStats.processed_count) || 0,
+      expected: Number(humanStats.expected_count) || 0,
+      originalIndex: entries.length,
+      rank: null,
+    });
+
+    const stateOrder = { complete: 0, partial: 1, empty: 2 };
+    entries.sort((first, second) => (
+      stateOrder[first.state] - stateOrder[second.state]
+      || (
+        (Number.isFinite(second.score) ? second.score : -Infinity)
+        - (Number.isFinite(first.score) ? first.score : -Infinity)
+      )
+      || first.originalIndex - second.originalIndex
+    ));
+
+    let rank = 0;
+    for (const entry of entries) {
+      if (entry.state === "complete") {
+        entry.rank = ++rank;
+      }
+    }
+    return entries;
+  }
+
   /** @description 모델과 인간 점수 행의 통합 순위 */
   function rankLeaderboardEntries(
     models,
@@ -764,6 +802,103 @@
     return size.replace("x", " × ");
   }
 
+  /** @description 사람의 미로별 백분위, 플레이 수, 중앙값 분석 집계 */
+  function aggregateHumanDetail(payload, tier = 1, requestedSizes = null) {
+    const tierId = Number(tier) === 2 ? 2 : 1;
+    const tierMazes = getMazes(
+      [],
+      null,
+      payload.tiers[String(tierId)].mazes,
+    );
+    const selectedSizes = requestedSizes === null
+      ? null
+      : new Set(requestedSizes);
+    const mazes = selectedSizes === null
+      ? tierMazes
+      : tierMazes.filter((maze) => selectedSizes.has(mazeSize(maze)));
+    const attemptedMazes = mazes.filter((maze) => maze.attempt_count > 0);
+    const medianMazes = attemptedMazes.filter(
+      (maze) => Number.isFinite(maze.median_score),
+    );
+    const medianScore = _meanScore(
+      medianMazes.map((maze) => maze.median_score),
+    );
+    const stats = {
+      expected_count: mazes.length,
+      processed_count: medianMazes.length,
+      official_mean_score: (
+        mazes.length > 0 && medianMazes.length === mazes.length
+      )
+        ? medianScore
+        : null,
+      provisional_mean_score: medianScore,
+    };
+    const state = aggregateState(stats);
+    const summary = {
+      p95Score: _meanScore(
+        attemptedMazes
+          .filter((maze) => Number.isFinite(maze.p95_score))
+          .map((maze) => maze.p95_score),
+      ),
+      medianScore,
+      p05Score: _meanScore(
+        attemptedMazes
+          .filter((maze) => Number.isFinite(maze.p05_score))
+          .map((maze) => maze.p05_score),
+      ),
+      playCount: mazes.reduce((total, maze) => total + maze.attempt_count, 0),
+    };
+    const sizes = getTierConfig(tierId).sizes;
+    const relations = RELATIONS.map((key) => ({
+      key,
+      label: _t(`relation.${key}`),
+    }));
+    const bySize = sizes.map((size) => {
+      const sizeMazes = tierMazes.filter(
+        (maze) => mazeSize(maze) === size && maze.attempt_count > 0,
+      );
+      const scoredMazes = sizeMazes.filter(
+        (maze) => Number.isFinite(maze.median_score),
+      );
+      return {
+        size,
+        meanScore: _meanScore(scoredMazes.map((maze) => maze.median_score)),
+        sampleCount: scoredMazes.length,
+      };
+    });
+    const heatmap = sizes.map((size) => ({
+      size,
+      cells: relations.map(({ key, label }) => {
+        const scoredMazes = tierMazes.filter((maze) => (
+          mazeSize(maze) === size
+          && maze.attempt_count > 0
+          && mazeRelation(maze) === key
+          && Number.isFinite(maze.median_score)
+        ));
+        return {
+          relation: key,
+          label,
+          meanScore: _meanScore(scoredMazes.map((maze) => maze.median_score)),
+          sampleCount: scoredMazes.length,
+        };
+      }),
+    }));
+
+    return {
+      mazes,
+      stats,
+      state,
+      score: state === "complete"
+        ? stats.official_mean_score
+        : stats.provisional_mean_score,
+      summary,
+      sizes,
+      relations,
+      bySize,
+      heatmap,
+    };
+  }
+
   /** @description 선택한 티어의 인간 미로 중앙값과 상위 5% 점수 집계 */
   function aggregateHumanBaselines(payload, tier = 1, requestedSizes = null) {
     const tierResults = payload.tiers[String(Number(tier) === 2 ? 2 : 1)];
@@ -885,6 +1020,7 @@
   const api = {
     aggregateLeaderboardModels,
     aggregateHumanBaselines,
+    aggregateHumanDetail,
     aggregateModelScores,
     aggregateState,
     buildUrl,
@@ -908,6 +1044,7 @@
     modelDeveloper,
     modelKey,
     rankModels,
+    rankModelDetailEntries,
     rankLeaderboardEntries,
     selectDefaultEntries,
     selectDefaultModels,
