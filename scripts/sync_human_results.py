@@ -122,7 +122,11 @@ def _fetch_export_page(
     endpoint = urlunsplit(parsed._replace(query=urlencode(query)))
     request = Request(
         endpoint,
-        headers={"Authorization": f"Bearer {token}", "Accept": "application/json"},
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/json",
+            "User-Agent": "MazeBench-HumanSync/1.0",
+        },
     )
     with urlopen(request, timeout=30) as response:
         return json.loads(response.read().decode("utf-8"))
