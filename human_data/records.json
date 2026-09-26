@@ -292324,6 +292324,2300 @@
           ]
         ]
       }
+    },
+    {
+      "sequence": 2452,
+      "attempt_id": "26ec424e-ea95-46a2-854d-255dbcd27a63",
+      "maze_id": "maze_06x06_opposite_03",
+      "tier": "1",
+      "actions": [
+        "S",
+        "L",
+        "R"
+      ],
+      "status": "quit",
+      "started_at": "2026-09-26T01:52:10.029Z",
+      "finished_at": "2026-09-26T01:54:08.542Z",
+      "scoring_result": {
+        "problem_id": "maze_06x06_opposite_03",
+        "success": false,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 9,
+        "actual_action_count": 3,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 1.0,
+        "score": 33.33333333333333,
+        "final_event": "E17",
+        "final_cell": [
+          1,
+          3
+        ],
+        "final_facing": "E",
+        "actions_parsed": [
+          "S",
+          "L",
+          "R"
+        ],
+        "actions_executed": [
+          "S",
+          "L",
+          "R"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E24",
+          "E16",
+          "E17"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "sequence": 2453,
+      "attempt_id": "720c7c88-5566-4de6-a8c1-1402ce1326df",
+      "maze_id": "maze_04x04_opposite_03",
+      "tier": "1",
+      "actions": [
+        "B"
+      ],
+      "status": "collision",
+      "started_at": "2026-09-26T01:55:00.423Z",
+      "finished_at": "2026-09-26T01:55:05.684Z",
+      "scoring_result": {
+        "problem_id": "maze_04x04_opposite_03",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at START_OUT (START_OUT): B relative to facing S means N",
+        "first_invalid_action_index": 0,
+        "optimal_action_count": 6,
+        "actual_action_count": 0,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0,
+        "score": 0.0,
+        "final_event": "START_OUT",
+        "final_cell": "START_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "B"
+        ],
+        "actions_executed": [],
+        "trajectory_events": [
+          "START_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 2454,
+      "attempt_id": "81686c13-14a6-48a8-b404-2b171cdbaf69",
+      "maze_id": "maze_18x18_opposite_04",
+      "tier": "1",
+      "actions": [
+        "S",
+        "S",
+        "S",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "R",
+        "L",
+        "L",
+        "R",
+        "S",
+        "S",
+        "R",
+        "L",
+        "S",
+        "R",
+        "L",
+        "S",
+        "S"
+      ],
+      "status": "collision",
+      "started_at": "2026-09-26T02:24:00.614Z",
+      "finished_at": "2026-09-26T02:24:41.902Z",
+      "scoring_result": {
+        "problem_id": "maze_18x18_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E205 ((4, 15)): S relative to facing S means S",
+        "first_invalid_action_index": 21,
+        "optimal_action_count": 25,
+        "actual_action_count": 21,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.7777777777777778,
+        "efficiency_ratio": 0.9259259259259259,
+        "score": 72.0164609053498,
+        "final_event": "E205",
+        "final_cell": [
+          4,
+          15
+        ],
+        "final_facing": "S",
+        "actions_parsed": [
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "S",
+          "S"
+        ],
+        "actions_executed": [
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "S"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E3",
+          "E16",
+          "E28",
+          "E29",
+          "E42",
+          "E43",
+          "E55",
+          "E56",
+          "E70",
+          "E69",
+          "E94",
+          "E95",
+          "E109",
+          "E124",
+          "E136",
+          "E135",
+          "E150",
+          "E165",
+          "E164",
+          "E194",
+          "E205"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            6,
+            8
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            6,
+            10
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            4,
+            12
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            4,
+            15
+          ]
+        ]
+      }
+    },
+    {
+      "sequence": 2455,
+      "attempt_id": "30f29d3c-f7d7-4ffc-9ba5-67ed557a48e6",
+      "maze_id": "maze_t2_21x21_adjacent_01",
+      "tier": "2",
+      "actions": [
+        "S",
+        "S",
+        "L",
+        "S"
+      ],
+      "status": "collision",
+      "started_at": "2026-09-26T02:24:43.903Z",
+      "finished_at": "2026-09-26T02:26:03.887Z",
+      "scoring_result": {
+        "problem_id": "maze_t2_21x21_adjacent_01",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E18 ((6, 1)): S relative to facing E means E",
+        "first_invalid_action_index": 3,
+        "optimal_action_count": 78,
+        "actual_action_count": 3,
+        "remaining_action_count": 75,
+        "completion_ratio": 0.038461538461538464,
+        "efficiency_ratio": 1.0,
+        "score": 3.8461538461538463,
+        "final_event": "E18",
+        "final_cell": [
+          6,
+          1
+        ],
+        "final_facing": "E",
+        "actions_parsed": [
+          "S",
+          "S",
+          "L",
+          "S"
+        ],
+        "actions_executed": [
+          "S",
+          "S",
+          "L"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E2",
+          "E17",
+          "E18"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            6,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "sequence": 2456,
+      "attempt_id": "1e0969bf-c99b-40dc-9f89-8c50c38dedfe",
+      "maze_id": "maze_t2_18x18_opposite_04",
+      "tier": "2",
+      "actions": [
+        "S",
+        "S",
+        "R",
+        "S",
+        "S",
+        "R",
+        "L",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L",
+        "S",
+        "S",
+        "S",
+        "L",
+        "R",
+        "L",
+        "R",
+        "R",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L",
+        "R",
+        "R",
+        "L",
+        "R",
+        "R",
+        "L",
+        "L",
+        "S",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L",
+        "L",
+        "L",
+        "R",
+        "R",
+        "R",
+        "L",
+        "R",
+        "R",
+        "L",
+        "S",
+        "L",
+        "R",
+        "L",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "status": "success",
+      "started_at": "2026-09-26T02:26:52.939Z",
+      "finished_at": "2026-09-26T02:29:09.101Z",
+      "scoring_result": {
+        "problem_id": "maze_t2_18x18_opposite_04",
+        "success": true,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 59,
+        "actual_action_count": 59,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0,
+        "score": 100.0,
+        "final_event": "GOAL_OUT",
+        "final_cell": "GOAL_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "S",
+          "S",
+          "R",
+          "S",
+          "S",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "S",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "S",
+          "L",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R"
+        ],
+        "actions_executed": [
+          "S",
+          "S",
+          "R",
+          "S",
+          "S",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "S",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "S",
+          "L",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "R"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E22",
+          "E35",
+          "E34",
+          "E33",
+          "E32",
+          "E8",
+          "E7",
+          "E17",
+          "E18",
+          "E31",
+          "E30",
+          "E44",
+          "E67",
+          "E80",
+          "E106",
+          "E107",
+          "E121",
+          "E122",
+          "E136",
+          "E135",
+          "E164",
+          "E165",
+          "E179",
+          "E178",
+          "E193",
+          "E192",
+          "E120",
+          "E119",
+          "E104",
+          "E105",
+          "E88",
+          "E87",
+          "E86",
+          "E101",
+          "E102",
+          "E117",
+          "E116",
+          "E146",
+          "E147",
+          "E133",
+          "E134",
+          "E177",
+          "E176",
+          "E190",
+          "E189",
+          "E162",
+          "E161",
+          "E160",
+          "E174",
+          "E173",
+          "E186",
+          "E187",
+          "E205",
+          "E206",
+          "E220",
+          "E221",
+          "E235",
+          "E236",
+          "GOAL_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            17,
+            1
+          ],
+          [
+            17,
+            2
+          ],
+          [
+            16,
+            2
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            11,
+            2
+          ],
+          [
+            11,
+            0
+          ],
+          [
+            9,
+            0
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            10,
+            1
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            9,
+            2
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            10,
+            8
+          ],
+          [
+            10,
+            9
+          ],
+          [
+            11,
+            9
+          ],
+          [
+            11,
+            10
+          ],
+          [
+            10,
+            10
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            11,
+            13
+          ],
+          [
+            10,
+            13
+          ],
+          [
+            10,
+            14
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            8
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            5,
+            9
+          ],
+          [
+            4,
+            9
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            5,
+            11
+          ],
+          [
+            5,
+            10
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            13
+          ],
+          [
+            7,
+            13
+          ],
+          [
+            7,
+            14
+          ],
+          [
+            6,
+            14
+          ],
+          [
+            6,
+            12
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            3,
+            12
+          ],
+          [
+            3,
+            13
+          ],
+          [
+            2,
+            13
+          ],
+          [
+            2,
+            14
+          ],
+          [
+            4,
+            14
+          ],
+          [
+            4,
+            15
+          ],
+          [
+            7,
+            15
+          ],
+          [
+            7,
+            16
+          ],
+          [
+            8,
+            16
+          ],
+          [
+            8,
+            17
+          ],
+          [
+            9,
+            17
+          ],
+          "GOAL_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 2457,
+      "attempt_id": "493e66a0-218b-4f3c-bbc5-16bddc784a9e",
+      "maze_id": "maze_09x09_opposite_03",
+      "tier": "1",
+      "actions": [
+        "S",
+        "S",
+        "L",
+        "R",
+        "R",
+        "L",
+        "S",
+        "S",
+        "S",
+        "R",
+        "L",
+        "S",
+        "R",
+        "L"
+      ],
+      "status": "success",
+      "started_at": "2026-09-26T02:29:18.168Z",
+      "finished_at": "2026-09-26T02:29:28.771Z",
+      "scoring_result": {
+        "problem_id": "maze_09x09_opposite_03",
+        "success": true,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 14,
+        "actual_action_count": 14,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0,
+        "score": 100.0,
+        "final_event": "GOAL_OUT",
+        "final_cell": "GOAL_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "S",
+          "S",
+          "L",
+          "R",
+          "R",
+          "L",
+          "S",
+          "S",
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L"
+        ],
+        "actions_executed": [
+          "S",
+          "S",
+          "L",
+          "R",
+          "R",
+          "L",
+          "S",
+          "S",
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E6",
+          "E9",
+          "E10",
+          "E16",
+          "E15",
+          "E23",
+          "E30",
+          "E38",
+          "E44",
+          "E43",
+          "E51",
+          "E58",
+          "E57",
+          "GOAL_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            4,
+            8
+          ],
+          "GOAL_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 2458,
+      "attempt_id": "d2359906-0bc9-496c-b507-ba275b05659a",
+      "maze_id": "maze_09x09_adjacent_01",
+      "tier": "1",
+      "actions": [
+        "S",
+        "R",
+        "L",
+        "S",
+        "R",
+        "R",
+        "L",
+        "L",
+        "R",
+        "L",
+        "S",
+        "R",
+        "R",
+        "L",
+        "L",
+        "S",
+        "R",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L",
+        "R"
+      ],
+      "status": "success",
+      "started_at": "2026-09-26T02:29:30.337Z",
+      "finished_at": "2026-09-26T02:30:06.072Z",
+      "scoring_result": {
+        "problem_id": "maze_09x09_adjacent_01",
+        "success": true,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 23,
+        "actual_action_count": 23,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0,
+        "score": 100.0,
+        "final_event": "GOAL_OUT",
+        "final_cell": "GOAL_OUT",
+        "final_facing": "W",
+        "actions_parsed": [
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "R",
+          "L",
+          "L",
+          "S",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R"
+        ],
+        "actions_executed": [
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "R",
+          "L",
+          "L",
+          "S",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E6",
+          "E5",
+          "E14",
+          "E21",
+          "E20",
+          "E13",
+          "E12",
+          "E19",
+          "E18",
+          "E24",
+          "E33",
+          "E32",
+          "E23",
+          "E22",
+          "E31",
+          "E38",
+          "E37",
+          "E44",
+          "E45",
+          "E52",
+          "E51",
+          "E59",
+          "GOAL_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            7,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            0,
+            8
+          ],
+          "GOAL_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 2459,
+      "attempt_id": "271b5697-75c2-45e3-ad3d-b6c9992d1601",
+      "maze_id": "maze_18x18_opposite_03",
+      "tier": "1",
+      "actions": [
+        "S",
+        "L",
+        "R",
+        "S",
+        "S",
+        "L",
+        "R",
+        "L",
+        "R",
+        "S",
+        "S",
+        "S",
+        "L",
+        "R",
+        "S",
+        "R",
+        "S",
+        "L",
+        "R",
+        "L",
+        "S"
+      ],
+      "status": "success",
+      "started_at": "2026-09-26T02:30:07.756Z",
+      "finished_at": "2026-09-26T02:30:24.809Z",
+      "scoring_result": {
+        "problem_id": "maze_18x18_opposite_03",
+        "success": true,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 21,
+        "actual_action_count": 21,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0,
+        "score": 100.0,
+        "final_event": "GOAL_OUT",
+        "final_cell": "GOAL_OUT",
+        "final_facing": "E",
+        "actions_parsed": [
+          "S",
+          "L",
+          "R",
+          "S",
+          "S",
+          "L",
+          "R",
+          "L",
+          "R",
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "S",
+          "R",
+          "S",
+          "L",
+          "R",
+          "L",
+          "S"
+        ],
+        "actions_executed": [
+          "S",
+          "L",
+          "R",
+          "S",
+          "S",
+          "L",
+          "R",
+          "L",
+          "R",
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "S",
+          "R",
+          "S",
+          "L",
+          "R",
+          "L",
+          "S"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E116",
+          "E101",
+          "E102",
+          "E103",
+          "E104",
+          "E90",
+          "E91",
+          "E77",
+          "E78",
+          "E79",
+          "E80",
+          "E81",
+          "E70",
+          "E71",
+          "E72",
+          "E85",
+          "E98",
+          "E99",
+          "E114",
+          "E115",
+          "GOAL_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            0,
+            8
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            9,
+            5
+          ],
+          [
+            10,
+            5
+          ],
+          [
+            11,
+            5
+          ],
+          [
+            11,
+            4
+          ],
+          [
+            12,
+            4
+          ],
+          [
+            15,
+            4
+          ],
+          [
+            15,
+            5
+          ],
+          [
+            15,
+            6
+          ],
+          [
+            16,
+            6
+          ],
+          [
+            16,
+            7
+          ],
+          [
+            17,
+            7
+          ],
+          "GOAL_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 2460,
+      "attempt_id": "ddc5019c-bc09-43e4-81e0-efd419d71eaf",
+      "maze_id": "maze_t2_24x24_adjacent_02",
+      "tier": "2",
+      "actions": [
+        "S",
+        "S",
+        "L",
+        "R",
+        "R",
+        "R",
+        "L",
+        "L",
+        "R",
+        "S",
+        "L",
+        "R",
+        "R",
+        "L",
+        "R",
+        "L",
+        "S",
+        "R",
+        "L",
+        "L",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "S",
+        "R",
+        "L",
+        "S",
+        "R",
+        "R",
+        "L",
+        "L",
+        "L",
+        "R",
+        "R",
+        "R",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L",
+        "R",
+        "S",
+        "R",
+        "L",
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "L",
+        "R",
+        "S",
+        "L",
+        "R",
+        "R",
+        "L",
+        "R",
+        "L",
+        "S",
+        "L",
+        "R",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L",
+        "L",
+        "R",
+        "S",
+        "S",
+        "R",
+        "L",
+        "L",
+        "R",
+        "L",
+        "R",
+        "R",
+        "L",
+        "L",
+        "L",
+        "R",
+        "R",
+        "S",
+        "R",
+        "S",
+        "L",
+        "S",
+        "L",
+        "R"
+      ],
+      "status": "success",
+      "started_at": "2026-09-26T02:30:26.680Z",
+      "finished_at": "2026-09-26T02:33:08.091Z",
+      "scoring_result": {
+        "problem_id": "maze_t2_24x24_adjacent_02",
+        "success": true,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 88,
+        "actual_action_count": 91,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.967032967032967,
+        "score": 96.7032967032967,
+        "final_event": "GOAL_OUT",
+        "final_cell": "GOAL_OUT",
+        "final_facing": "E",
+        "actions_parsed": [
+          "S",
+          "S",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "S",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "L",
+          "S",
+          "L",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "S",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "S",
+          "R",
+          "S",
+          "L",
+          "S",
+          "L",
+          "R"
+        ],
+        "actions_executed": [
+          "S",
+          "S",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "S",
+          "R",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "S",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "L",
+          "S",
+          "L",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "S",
+          "S",
+          "R",
+          "L",
+          "L",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L",
+          "L",
+          "L",
+          "R",
+          "R",
+          "S",
+          "R",
+          "S",
+          "L",
+          "S",
+          "L",
+          "R"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E8",
+          "E24",
+          "E25",
+          "E42",
+          "E41",
+          "E7",
+          "E6",
+          "E23",
+          "E22",
+          "E21",
+          "E54",
+          "E53",
+          "E38",
+          "E37",
+          "E20",
+          "E19",
+          "E18",
+          "E1",
+          "E0",
+          "E34",
+          "E35",
+          "E51",
+          "E52",
+          "E69",
+          "E70",
+          "E71",
+          "E89",
+          "E90",
+          "E91",
+          "E108",
+          "E107",
+          "E124",
+          "E125",
+          "E109",
+          "E110",
+          "E145",
+          "E144",
+          "E161",
+          "E162",
+          "E180",
+          "E179",
+          "E193",
+          "E192",
+          "E191",
+          "E175",
+          "E174",
+          "E189",
+          "E188",
+          "E202",
+          "E201",
+          "E218",
+          "E219",
+          "E258",
+          "E277",
+          "E278",
+          "E315",
+          "E314",
+          "E331",
+          "E330",
+          "E347",
+          "E383",
+          "E384",
+          "E403",
+          "E404",
+          "E386",
+          "E387",
+          "E406",
+          "E407",
+          "E389",
+          "E390",
+          "E391",
+          "E392",
+          "E409",
+          "E410",
+          "E393",
+          "E394",
+          "E375",
+          "E376",
+          "E412",
+          "E413",
+          "E396",
+          "E395",
+          "E377",
+          "E378",
+          "E379",
+          "E397",
+          "E414",
+          "E415",
+          "E416",
+          "E382",
+          "GOAL_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            11,
+            0
+          ],
+          [
+            11,
+            1
+          ],
+          [
+            12,
+            1
+          ],
+          [
+            12,
+            2
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            10,
+            0
+          ],
+          [
+            9,
+            0
+          ],
+          [
+            9,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            8,
+            6
+          ],
+          [
+            9,
+            6
+          ],
+          [
+            9,
+            8
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            6,
+            11
+          ],
+          [
+            4,
+            11
+          ],
+          [
+            4,
+            10
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            11
+          ],
+          [
+            1,
+            11
+          ],
+          [
+            1,
+            12
+          ],
+          [
+            0,
+            12
+          ],
+          [
+            0,
+            13
+          ],
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            15
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            2,
+            16
+          ],
+          [
+            2,
+            18
+          ],
+          [
+            1,
+            18
+          ],
+          [
+            1,
+            19
+          ],
+          [
+            0,
+            19
+          ],
+          [
+            0,
+            20
+          ],
+          [
+            0,
+            22
+          ],
+          [
+            1,
+            22
+          ],
+          [
+            1,
+            23
+          ],
+          [
+            3,
+            23
+          ],
+          [
+            3,
+            22
+          ],
+          [
+            5,
+            22
+          ],
+          [
+            5,
+            23
+          ],
+          [
+            7,
+            23
+          ],
+          [
+            7,
+            22
+          ],
+          [
+            8,
+            22
+          ],
+          [
+            9,
+            22
+          ],
+          [
+            11,
+            22
+          ],
+          [
+            11,
+            23
+          ],
+          [
+            12,
+            23
+          ],
+          [
+            12,
+            22
+          ],
+          [
+            13,
+            22
+          ],
+          [
+            13,
+            21
+          ],
+          [
+            14,
+            21
+          ],
+          [
+            14,
+            23
+          ],
+          [
+            16,
+            23
+          ],
+          [
+            16,
+            22
+          ],
+          [
+            15,
+            22
+          ],
+          [
+            15,
+            21
+          ],
+          [
+            16,
+            21
+          ],
+          [
+            17,
+            21
+          ],
+          [
+            17,
+            22
+          ],
+          [
+            17,
+            23
+          ],
+          [
+            22,
+            23
+          ],
+          [
+            23,
+            23
+          ],
+          [
+            23,
+            21
+          ],
+          "GOAL_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 2461,
+      "attempt_id": "9d693f96-a2d4-4272-ad9d-07532284febd",
+      "maze_id": "maze_04x04_adjacent_02",
+      "tier": "1",
+      "actions": [
+        "S",
+        "R",
+        "L",
+        "R",
+        "R",
+        "L"
+      ],
+      "status": "success",
+      "started_at": "2026-09-26T02:33:15.919Z",
+      "finished_at": "2026-09-26T02:33:19.376Z",
+      "scoring_result": {
+        "problem_id": "maze_04x04_adjacent_02",
+        "success": true,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0,
+        "score": 100.0,
+        "final_event": "GOAL_OUT",
+        "final_cell": "GOAL_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "S",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L"
+        ],
+        "actions_executed": [
+          "S",
+          "R",
+          "L",
+          "R",
+          "R",
+          "L"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E0",
+          "E7",
+          "E8",
+          "E11",
+          "E10",
+          "GOAL_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            3
+          ],
+          "GOAL_OUT"
+        ]
+      }
     }
   ]
 }
