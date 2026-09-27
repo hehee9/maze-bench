@@ -349191,6 +349191,152 @@
           "GOAL_OUT"
         ]
       }
+    },
+    {
+      "sequence": 2786,
+      "attempt_id": "daba1685-0d62-4e4d-a523-92661919826a",
+      "maze_id": "maze_t2_15x15_opposite_03",
+      "tier": "2",
+      "actions": [
+        "B"
+      ],
+      "status": "collision",
+      "started_at": "2026-09-27T18:44:58.710Z",
+      "finished_at": "2026-09-27T18:45:09.978Z",
+      "scoring_result": {
+        "problem_id": "maze_t2_15x15_opposite_03",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at START_OUT (START_OUT): B relative to facing S means N",
+        "first_invalid_action_index": 0,
+        "optimal_action_count": 46,
+        "actual_action_count": 0,
+        "remaining_action_count": 46,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0,
+        "score": 0.0,
+        "final_event": "START_OUT",
+        "final_cell": "START_OUT",
+        "final_facing": "S",
+        "actions_parsed": [
+          "B"
+        ],
+        "actions_executed": [],
+        "trajectory_events": [
+          "START_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 2787,
+      "attempt_id": "57ae3a6f-83f0-427d-876f-8a9ccdf413ac",
+      "maze_id": "maze_04x04_opposite_03",
+      "tier": "1",
+      "actions": [
+        "S",
+        "L"
+      ],
+      "status": "collision",
+      "started_at": "2026-09-27T18:45:20.626Z",
+      "finished_at": "2026-09-27T18:45:34.917Z",
+      "scoring_result": {
+        "problem_id": "maze_04x04_opposite_03",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E1 ((1, 0)): L relative to facing S means E",
+        "first_invalid_action_index": 1,
+        "optimal_action_count": 6,
+        "actual_action_count": 1,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0,
+        "score": 16.666666666666664,
+        "final_event": "E1",
+        "final_cell": [
+          1,
+          0
+        ],
+        "final_facing": "S",
+        "actions_parsed": [
+          "S",
+          "L"
+        ],
+        "actions_executed": [
+          "S"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E1"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "sequence": 2788,
+      "attempt_id": "0291caac-5144-46e2-bb3c-23cd7f15de93",
+      "maze_id": "maze_06x06_opposite_04",
+      "tier": "1",
+      "actions": [
+        "S",
+        "L",
+        "S"
+      ],
+      "status": "collision",
+      "started_at": "2026-09-27T18:45:50.786Z",
+      "finished_at": "2026-09-27T18:46:03.657Z",
+      "scoring_result": {
+        "problem_id": "maze_06x06_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E19 ((5, 3)): S relative to facing S means S",
+        "first_invalid_action_index": 2,
+        "optimal_action_count": 12,
+        "actual_action_count": 2,
+        "remaining_action_count": 10,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0,
+        "score": 16.666666666666664,
+        "final_event": "E19",
+        "final_cell": [
+          5,
+          3
+        ],
+        "final_facing": "S",
+        "actions_parsed": [
+          "S",
+          "L",
+          "S"
+        ],
+        "actions_executed": [
+          "S",
+          "L"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E8",
+          "E19"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            5,
+            1
+          ],
+          [
+            5,
+            3
+          ]
+        ]
+      }
     }
   ]
 }
