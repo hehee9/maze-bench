@@ -448,6 +448,7 @@ test("human-play D1 worker contracts", async (t) => {
       const first = starts[0].body.attempt;
       assert.equal(first.status, "active");
       const problem = MAZE_BY_ID.get(first.maze.maze_id).problem;
+      assert.ok(problem.width <= 15 && problem.height <= 15);
       _assertActiveProblem(first, problem);
       assert.equal(Object.hasOwn(first, "result"), false);
       assert.equal(JSON.stringify(first).includes("current_event"), false);

@@ -1,4 +1,5 @@
 import { MAZES, MAZE_BY_ID } from "../.build/maze-catalog.generated.js";
+import { selectMaze } from "./maze-selection.js";
 
 /**
  * @file human-site/src/index.js
@@ -259,7 +260,7 @@ async function _startAttempt(request, env) {
     return _json(await _sessionResult(env.DB, browserId, active));
   }
 
-  const maze = available[_randomIndex(available.length)];
+  const maze = selectMaze(available, triedRows.length + 1, _randomIndex);
   const id = crypto.randomUUID();
   await env.DB.prepare(
     `INSERT OR IGNORE INTO attempts

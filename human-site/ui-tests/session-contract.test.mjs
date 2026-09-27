@@ -151,14 +151,27 @@ async function _json(route, payload, status = 200) {
   });
 }
 
-async function _screenshot(page, name) {
+async function _screenshot(page, name, fullPage = true) {
   if (!screenshotRoot) return;
   await mkdir(screenshotRoot, { recursive: true });
-  await page.screenshot({ path: join(screenshotRoot, name), fullPage: true });
+  await page.screenshot({ path: join(screenshotRoot, name), fullPage });
 }
 
 async function _waitForImage(page) {
   await page.waitForFunction(() => document.querySelector("#mazeImage").naturalWidth > 0);
+}
+
+/** @description SVG 변환값에서 튜토리얼 표식 위치와 방향 조회 */
+async function _tutorialPose(page) {
+  return page.locator("#tutorialMarker").evaluate((marker) => {
+    const position = marker.transform.baseVal.consolidate().matrix;
+    const orientation = document.querySelector("#tutorialOrientation").transform.baseVal.consolidate().matrix;
+    return {
+      x: Math.round(position.e * 100) / 100,
+      y: Math.round(position.f * 100) / 100,
+      angle: Math.round(Math.atan2(orientation.b, orientation.a) * 180 / Math.PI),
+    };
+  });
 }
 
 async function _routeForAttempt(page, getAttempt, exhausted = false) {
@@ -627,7 +640,7 @@ test("기존 sessionStorage 요청은 새 입력 방식 전에 legacy 경로로 
   }
 });
 
-test("언어 전환과 튜토리얼 조작을 유지한다", async () => {
+test("언어 전환과 튜토리얼 조작을 유지한다 (tutorial)", async () => {
   const page = await _newPage();
   await page.route("**/api/session", (route) => (
     _json(route, { attempt: null, exhausted: false })
@@ -641,11 +654,262 @@ test("언어 전환과 튜토리얼 조작을 유지한다", async () => {
     await page.locator("#tutorialOpen").click();
     await page.locator("#controlTutorial[open]").waitFor();
     assert.equal(await page.locator("#tutorialTitle").innerText(), "How to play");
+    assert.equal(
+      await page.locator("#tutorialIntro").innerText(),
+      "Your current position stays hidden during the actual game.",
+    );
+    assert.equal(
+      await page.locator("#tutorialRuleTurns").innerText(),
+      "Left, right, and back each change your facing and move you in one command.",
+    );
+    assert.equal(
+      await page.locator("#tutorialRuleCorridor").innerText(),
+      "You stop at each corner, junction, or dead end. Along a straight corridor, you automatically move forward to the next stopping point without stopping in between.",
+    );
     await page.locator("#tutorialNext").click();
     assert.equal(await page.locator("#tutorialProgress").innerText(), "2 / 8");
     await page.locator("#tutorialClose").click();
     await page.locator("#controlTutorial").waitFor({ state: "hidden" });
   } finally {
     await page.close();
+  }
+});
+
+test("tutorial turns before moving for S, L, R, and B without game input", async () => {
+  const page = await _newPage({ returningVisitor: false });
+  await page.clock.install();
+  let actionRequests = 0;
+  page.on("request", (request) => {
+    if (/\/api\/attempts\/[^/]+\/actions$/.test(new URL(request.url()).pathname)) {
+      actionRequests += 1;
+    }
+  });
+  await page.route("**/api/session", (route) => (
+    _json(route, { attempt: null, exhausted: false })
+  ));
+
+  try {
+    await page.goto(origin);
+    await page.locator("#controlTutorial[open]").waitFor();
+    assert.equal(await page.locator("#tutorialIntro").innerText(), "실제 플레이에서는 현재 위치가 표시되지 않아요.");
+    assert.equal(await page.locator("#tutorialRuleTurns").innerText(), "좌회전·우회전·후진은 방향을 바꾸고 이동까지 한 번에 해요.");
+    assert.equal(await page.locator("#tutorialRuleCorridor").innerText(), "모퉁이·갈림길·막다른 곳마다 멈추고, 직선 통로는 중간에 멈추지 않고 자동으로 다음 정지 지점까지 직진해요.");
+    assert.equal(await page.locator("#tutorialCommand").innerText(), "전진 1회");
+
+    await page.clock.runFor(200);
+    assert.deepEqual(await _tutorialPose(page), { x: 44, y: 160, angle: 90 });
+    await page.clock.runFor(400);
+    let pose = await _tutorialPose(page);
+    assert.ok(pose.x > 44 && pose.x < 112);
+    assert.equal(pose.y, 160);
+    assert.equal(pose.angle, 90);
+    assert.ok(await page.locator("#tutorialRoute").evaluate((route) => (
+      Number(route.style.strokeDashoffset) < 68
+    )));
+    await page.clock.runFor(800);
+    assert.deepEqual(await _tutorialPose(page), { x: 112, y: 160, angle: 90 });
+    assert.equal(await page.locator("#tutorialOrigin").getAttribute("cx"), "44");
+    assert.equal(await page.locator("#tutorialRoute").getAttribute("d"), "M 44 160 L 112 160");
+    assert.equal(Number(await page.locator("#tutorialRoute").evaluate((route) => route.style.strokeDashoffset)), 0);
+    assert.equal(await page.locator('[data-demo-action="S"]').getAttribute("aria-current"), "true");
+
+    await page.locator("#tutorialNext").click();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "2 / 8");
+    assert.equal(await page.locator("#tutorialCommand").innerText(), "좌회전 1회");
+    await page.clock.runFor(500);
+    pose = await _tutorialPose(page);
+    assert.equal(pose.x, 112);
+    assert.equal(pose.y, 160);
+    assert.ok(pose.angle > 0 && pose.angle < 90);
+    assert.equal(Number(await page.locator("#tutorialRoute").evaluate((route) => route.style.strokeDashoffset)), 50);
+    assert.equal(await page.locator('[data-demo-action="L"]').getAttribute("aria-current"), "true");
+    await page.clock.runFor(1250);
+    assert.deepEqual(await _tutorialPose(page), { x: 112, y: 110, angle: 0 });
+    await page.clock.runFor(5000);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "2 / 8");
+    assert.equal(await page.locator('[data-demo-action="L"]').getAttribute("aria-current"), "true");
+    assert.equal(await page.locator("#tutorialRoute").getAttribute("d"), "M 112 160 L 112 110");
+    assert.equal(Number(await page.locator("#tutorialRoute").evaluate((route) => route.style.strokeDashoffset)), 0);
+
+    await page.locator("#tutorialNext").click();
+    assert.equal(await page.locator("#tutorialCommand").innerText(), "우회전 1회");
+    await page.clock.runFor(500);
+    pose = await _tutorialPose(page);
+    assert.deepEqual({ x: pose.x, y: pose.y }, { x: 112, y: 110 });
+    assert.ok(pose.angle > 0 && pose.angle < 90);
+    await page.clock.runFor(1250);
+    assert.deepEqual(await _tutorialPose(page), { x: 204, y: 110, angle: 90 });
+    assert.equal(await page.locator("#tutorialRoute").getAttribute("d"), "M 112 110 L 204 110");
+    assert.equal(await page.locator('[data-demo-action="R"]').getAttribute("aria-current"), "true");
+
+    await page.locator("#tutorialNext").click();
+    await page.locator("#tutorialNext").click();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "5 / 8");
+    assert.equal(await page.locator("#tutorialCommand").innerText(), "후진 1회");
+    await page.clock.runFor(500);
+    pose = await _tutorialPose(page);
+    assert.deepEqual({ x: pose.x, y: pose.y }, { x: 204, y: 170 });
+    assert.ok(pose.angle > 0 && pose.angle < 180);
+    await page.clock.runFor(1250);
+    assert.deepEqual(await _tutorialPose(page), { x: 204, y: 110, angle: 0 });
+    assert.equal(await page.locator("#tutorialRoute").getAttribute("d"), "M 204 170 L 204 110");
+    assert.equal(await page.locator('[data-demo-action="B"]').getAttribute("aria-current"), "true");
+
+    await page.locator("#tutorialPrevious").click();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "4 / 8");
+    await page.clock.runFor(5000);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "4 / 8");
+    await page.locator("#tutorialNext").click();
+    await page.locator("#tutorialNext").click();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "6 / 8");
+    assert.equal(await page.locator("#tutorialCommand").innerText(), "전진 1회");
+    assert.equal(await page.locator("#tutorialCollision").isVisible(), true);
+    assert.match(await page.locator("#tutorialCaption").innerText(), /충돌/);
+    await page.locator("#tutorialNext").click();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "7 / 8");
+    assert.equal(await page.locator("#tutorialCollision").isVisible(), false);
+    assert.match(await page.locator("#tutorialCaption").innerText(), /출구/);
+    await page.locator("#tutorialNext").click();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "8 / 8");
+    assert.match(await page.locator("#tutorialCaption").innerText(), /도착/);
+    assert.equal(actionRequests, 0);
+  } finally {
+    await page.close();
+  }
+});
+
+test("tutorial autoplay advances every 4.5 seconds and ends at the eighth scene", async () => {
+  const page = await _newPage({ returningVisitor: false });
+  await page.clock.install();
+  await page.route("**/api/session", (route) => (
+    _json(route, { attempt: null, exhausted: false })
+  ));
+
+  try {
+    await page.goto(origin);
+    await page.locator("#controlTutorial[open]").waitFor();
+    await page.locator("#tutorialReplay").click();
+    await page.clock.runFor(4490);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "1 / 8");
+    await page.clock.runFor(30);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "2 / 8");
+    await page.clock.runFor(31500);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "8 / 8");
+    assert.equal(await page.locator("#tutorialNext").isDisabled(), true);
+    assert.deepEqual(await _tutorialPose(page), { x: 346, y: 52, angle: 90 });
+    await page.clock.runFor(9000);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "8 / 8");
+    assert.equal(await page.locator('[data-demo-action="S"]').getAttribute("aria-current"), "true");
+  } finally {
+    await page.close();
+  }
+});
+
+test("tutorial Replay restarts autoplay, close cancels it, and reduced motion stays static", async () => {
+  const page = await _newPage();
+  await page.clock.install();
+  await page.route("**/api/session", (route) => (
+    _json(route, { attempt: null, exhausted: false })
+  ));
+
+  try {
+    await page.goto(origin);
+    await page.locator("#startButton").waitFor({ state: "visible" });
+    await page.locator("#tutorialOpen").click();
+    await page.locator("#controlTutorial[open]").waitFor();
+    await page.locator("#tutorialReplay").click();
+    await page.clock.runFor(4600);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "2 / 8");
+    await page.locator("#tutorialReplay").click();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "1 / 8");
+    await page.clock.runFor(4600);
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "2 / 8");
+    await page.locator("#tutorialClose").click();
+    await page.clock.runFor(45000);
+    await page.locator("#controlTutorial").waitFor({ state: "hidden" });
+    await page.locator("#tutorialOpen").click();
+    await page.locator("#controlTutorial[open]").waitFor();
+    assert.equal(await page.locator("#tutorialProgress").innerText(), "1 / 8");
+  } finally {
+    await page.close();
+  }
+
+  const reducedPage = await _newPage({ returningVisitor: false });
+  await reducedPage.clock.install();
+  await reducedPage.emulateMedia({ reducedMotion: "reduce" });
+  await reducedPage.route("**/api/session", (route) => (
+    _json(route, { attempt: null, exhausted: false })
+  ));
+  try {
+    await reducedPage.goto(origin);
+    await reducedPage.locator("#controlTutorial[open]").waitFor();
+    assert.equal(await reducedPage.locator("#tutorialProgress").innerText(), "1 / 8");
+    assert.deepEqual(await _tutorialPose(reducedPage), { x: 112, y: 160, angle: 90 });
+    assert.equal(Number(await reducedPage.locator("#tutorialRoute").evaluate((route) => route.style.strokeDashoffset)), 0);
+    await reducedPage.clock.runFor(45000);
+    assert.equal(await reducedPage.locator("#tutorialProgress").innerText(), "1 / 8");
+    await reducedPage.locator("#tutorialNext").click();
+    assert.equal(await reducedPage.locator("#tutorialProgress").innerText(), "2 / 8");
+    assert.deepEqual(await _tutorialPose(reducedPage), { x: 112, y: 110, angle: 0 });
+    await reducedPage.clock.runFor(45000);
+    assert.equal(await reducedPage.locator("#tutorialProgress").innerText(), "2 / 8");
+  } finally {
+    await reducedPage.close();
+  }
+});
+
+test("tutorial screenshots show the complete rules, selected action, origin, and route", async () => {
+  const screenshots = [
+    {
+      name: "tutorial-desktop-ko-light.png",
+      locale: "ko",
+      theme: "light",
+      viewport: { width: 1360, height: 960 },
+    },
+    {
+      name: "tutorial-desktop-en-dark.png",
+      locale: "en",
+      theme: "dark",
+      viewport: { width: 1360, height: 960 },
+    },
+    {
+      name: "tutorial-mobile-ko-dark.png",
+      locale: "ko",
+      theme: "dark",
+      viewport: { width: 390, height: 844 },
+    },
+    {
+      name: "tutorial-mobile-en-light.png",
+      locale: "en",
+      theme: "light",
+      viewport: { width: 390, height: 844 },
+    },
+  ];
+  for (const screenshot of screenshots) {
+    const page = await browser.newPage({ viewport: screenshot.viewport });
+    await page.addInitScript(({ locale, theme }) => {
+      localStorage.setItem("maze-bench-locale", locale);
+      localStorage.setItem("maze-bench-theme", theme);
+    }, { locale: screenshot.locale, theme: screenshot.theme });
+    await page.clock.install();
+    await page.route("**/api/session", (route) => (
+      _json(route, { attempt: null, exhausted: false })
+    ));
+    try {
+      await page.goto(origin);
+      await page.locator("#controlTutorial[open]").waitFor();
+      for (let index = 0; index < 6; index += 1) {
+        await page.locator("#tutorialNext").click();
+      }
+      await page.clock.runFor(1800);
+      assert.equal(await page.locator("#tutorialProgress").innerText(), "7 / 8");
+      assert.equal(
+        await page.locator("#tutorialCommand").innerText(),
+        screenshot.locale === "ko" ? "우회전 1회" : "One command: Turn right",
+      );
+      await _screenshot(page, screenshot.name, false);
+    } finally {
+      await page.close();
+    }
   }
 });

@@ -15,16 +15,19 @@
   const MAX_ZOOM = 3;
   const MIN_ZOOM = 0.7;
   const REPLAY_INTERVAL_MS = 520;
-  const TUTORIAL_SCENE_INTERVAL_MS = 3200;
+  const TUTORIAL_SCENE_INTERVAL_MS = 4500;
+  const TUTORIAL_INITIAL_HOLD_MS = 300;
+  const TUTORIAL_TURN_MS = 350;
+  const TUTORIAL_TRAVEL_MS = 1050;
   const TUTORIAL_SCENES = [
-    { key: "tutorial.sceneStart", action: "S", from: [44, 160, 90], to: [112, 160, 90] },
-    { key: "tutorial.sceneLeft", action: "L", from: [112, 160, 90], to: [112, 110, 0] },
-    { key: "tutorial.sceneRight", action: "R", from: [112, 110, 0], to: [204, 110, 90] },
-    { key: "tutorial.sceneDeadEnd", action: "R", from: [204, 110, 90], to: [204, 170, 180] },
-    { key: "tutorial.sceneBack", action: "B", from: [204, 170, 180], to: [204, 110, 0] },
-    { key: "tutorial.sceneCollision", action: "S", from: [204, 170, 180], to: [204, 170, 180], collision: true },
-    { key: "tutorial.sceneExitTurn", action: "R", from: [204, 52, 0], to: [326, 52, 90] },
-    { key: "tutorial.sceneExit", action: "S", from: [326, 52, 90], to: [346, 52, 90] },
+    { key: "tutorial.sceneStart", commandKey: "tutorial.command.S", action: "S", from: [44, 160, 90], to: [112, 160, 90] },
+    { key: "tutorial.sceneLeft", commandKey: "tutorial.command.L", action: "L", from: [112, 160, 90], to: [112, 110, 0] },
+    { key: "tutorial.sceneRight", commandKey: "tutorial.command.R", action: "R", from: [112, 110, 0], to: [204, 110, 90] },
+    { key: "tutorial.sceneDeadEnd", commandKey: "tutorial.command.R", action: "R", from: [204, 110, 90], to: [204, 170, 180] },
+    { key: "tutorial.sceneBack", commandKey: "tutorial.command.B", action: "B", from: [204, 170, 180], to: [204, 110, 0] },
+    { key: "tutorial.sceneCollision", commandKey: "tutorial.command.S", action: "S", from: [204, 170, 180], to: [204, 170, 180], collision: true },
+    { key: "tutorial.sceneExitTurn", commandKey: "tutorial.command.R", action: "R", from: [204, 52, 0], to: [326, 52, 90] },
+    { key: "tutorial.sceneExit", commandKey: "tutorial.command.S", action: "S", from: [326, 52, 90], to: [346, 52, 90] },
   ];
   const ACTIONS = {
     S: { symbol: "↑", labelKey: "action.straight", key: "ArrowUp" },
@@ -93,14 +96,20 @@
       "tutorial.close": "닫기",
       "tutorial.previous": "이전 장면",
       "tutorial.next": "다음 장면",
-      "tutorial.sceneStart": "파란 화살표에서 다음 모퉁이까지 한 번에 전진해요.",
-      "tutorial.sceneLeft": "바라보는 방향에서 왼쪽으로 꺾어 이동해요.",
-      "tutorial.sceneRight": "바라보는 방향에서 오른쪽으로 꺾어 이동해요.",
-      "tutorial.sceneDeadEnd": "갈림길에서 우회전하면 아래쪽 통로를 따라 막다른 곳까지 가요.",
-      "tutorial.sceneBack": "후진하면 반대 방향으로 돌아서 다음 갈림길까지 이동해요.",
-      "tutorial.sceneCollision": "충돌 예시예요. 벽을 향해 입력하면 도전이 끝나요.",
-      "tutorial.sceneExitTurn": "탈출 예시예요. 오른쪽 출구로 방향을 틀어 이동해요.",
-      "tutorial.sceneExit": "빨간 화살표가 가리키는 바깥쪽 출구에 도착하면 성공이에요.",
+      "tutorial.ruleTurns": "좌회전·우회전·후진은 방향을 바꾸고 이동까지 한 번에 해요.",
+      "tutorial.ruleCorridor": "모퉁이·갈림길·막다른 곳마다 멈추고, 직선 통로는 중간에 멈추지 않고 자동으로 다음 정지 지점까지 직진해요.",
+      "tutorial.command.S": "전진 1회",
+      "tutorial.command.L": "좌회전 1회",
+      "tutorial.command.R": "우회전 1회",
+      "tutorial.command.B": "후진 1회",
+      "tutorial.sceneStart": "전진하면 파란 시작점에서 다음 모퉁이까지 이동해요.",
+      "tutorial.sceneLeft": "좌회전한 뒤 직선 통로를 따라 다음 모퉁이에서 멈춰요.",
+      "tutorial.sceneRight": "우회전한 뒤 직선 통로를 따라 다음 갈림길에서 멈춰요.",
+      "tutorial.sceneDeadEnd": "갈림길에서 우회전해 아래쪽 통로를 따라 막다른 곳까지 가요.",
+      "tutorial.sceneBack": "후진하면 반대 방향을 바라보고 다음 갈림길까지 이동해요.",
+      "tutorial.sceneCollision": "아래 벽을 향해 전진하면 그 자리에서 충돌로 도전이 끝나요.",
+      "tutorial.sceneExitTurn": "우회전하면 출구 쪽으로 이동해 출구 바로 앞에서 멈춰요.",
+      "tutorial.sceneExit": "전진하면 직선 통로를 벗어나 오른쪽 출구에 도착해요.",
       "status.starting": "새 미로를 준비하고 있어요…",
       "actionStatus.processing": "{action} 입력을 처리하고 있습니다…",
       "actionStatus.accepted": "입력을 반영했습니다.",
@@ -197,14 +206,20 @@
       "tutorial.close": "Close",
       "tutorial.previous": "Previous scene",
       "tutorial.next": "Next scene",
-      "tutorial.sceneStart": "Move from the blue arrow to the next corner with one Forward command.",
-      "tutorial.sceneLeft": "Turn left from the direction you face, then move along the corridor.",
-      "tutorial.sceneRight": "Turn right from the direction you face, then move along the corridor.",
-      "tutorial.sceneDeadEnd": "Turn right at the junction and follow the corridor to its dead end.",
-      "tutorial.sceneBack": "Back turns you around and moves to the next junction.",
-      "tutorial.sceneCollision": "Collision example: a command into a wall ends the attempt.",
-      "tutorial.sceneExitTurn": "Exit example: turn right and move toward the exit.",
-      "tutorial.sceneExit": "The red arrow marks the exit. Move outside in its direction to finish.",
+      "tutorial.ruleTurns": "Left, right, and back each change your facing and move you in one command.",
+      "tutorial.ruleCorridor": "You stop at each corner, junction, or dead end. Along a straight corridor, you automatically move forward to the next stopping point without stopping in between.",
+      "tutorial.command.S": "One command: Forward",
+      "tutorial.command.L": "One command: Turn left",
+      "tutorial.command.R": "One command: Turn right",
+      "tutorial.command.B": "One command: Back",
+      "tutorial.sceneStart": "Move forward from the blue start to the next corner.",
+      "tutorial.sceneLeft": "Turn left, then follow the straight corridor to the next corner.",
+      "tutorial.sceneRight": "Turn right, then follow the straight corridor to the next junction.",
+      "tutorial.sceneDeadEnd": "Turn right at the junction and follow the lower corridor to its dead end.",
+      "tutorial.sceneBack": "The Back command turns you around and takes you to the next junction.",
+      "tutorial.sceneCollision": "Move forward into the wall below to end the attempt in a collision.",
+      "tutorial.sceneExitTurn": "Turn right and follow the corridor to just before the exit.",
+      "tutorial.sceneExit": "Move forward along the corridor and out through the right-hand exit.",
       "status.starting": "Preparing a maze…",
       "actionStatus.processing": "Processing {action}…",
       "actionStatus.accepted": "Input accepted.",
@@ -271,8 +286,10 @@
     replayCursor: 0,
     replayTimer: null,
     tutorialSceneIndex: 0,
-    tutorialTimer: null,
     tutorialFrame: null,
+    tutorialPlaybackMode: null,
+    tutorialPlaybackStartedAt: null,
+    tutorialRouteLength: 0,
     renderedMoveCount: 0,
     counterFrame: null,
     counterAnimationCount: null,
@@ -325,8 +342,12 @@
     tutorialOpen: document.querySelector("#tutorialOpen"),
     tutorialDialog: document.querySelector("#controlTutorial"),
     tutorialCaption: document.querySelector("#tutorialCaption"),
+    tutorialCommand: document.querySelector("#tutorialCommand"),
     tutorialActionGroup: document.querySelector("#tutorialActionGroup"),
     tutorialMarker: document.querySelector("#tutorialMarker"),
+    tutorialOrientation: document.querySelector("#tutorialOrientation"),
+    tutorialOrigin: document.querySelector("#tutorialOrigin"),
+    tutorialRoute: document.querySelector("#tutorialRoute"),
     tutorialCollision: document.querySelector("#tutorialCollision"),
     tutorialProgress: document.querySelector("#tutorialProgress"),
     tutorialPrevious: document.querySelector("#tutorialPrevious"),
@@ -493,7 +514,9 @@
     for (const button of elements.actionButtons) {
       button.setAttribute("aria-label", _t(ACTIONS[button.dataset.action].labelKey));
     }
-    elements.tutorialCaption.textContent = _t(TUTORIAL_SCENES[state.tutorialSceneIndex].key);
+    const tutorialScene = TUTORIAL_SCENES[state.tutorialSceneIndex];
+    elements.tutorialCaption.textContent = _t(tutorialScene.key);
+    elements.tutorialCommand.textContent = _t(tutorialScene.commandKey);
   }
 
   /** @description Apply a supported language and save it for the next visit */
@@ -935,24 +958,21 @@
     return _t(ACTIONS[action].labelKey);
   }
 
-  /** @description Stop the finite tutorial animation */
+  /** @description Stop the tutorial animation loop */
   function _stopTutorialPlayback() {
-    if (state.tutorialTimer !== null) {
-      clearTimeout(state.tutorialTimer);
-      state.tutorialTimer = null;
-    }
     if (state.tutorialFrame !== null) {
       cancelAnimationFrame(state.tutorialFrame);
       state.tutorialFrame = null;
     }
-    elements.tutorialMarker.classList.remove("is-moving");
+    state.tutorialPlaybackMode = null;
+    state.tutorialPlaybackStartedAt = null;
   }
 
   /** @description Render one illustrative tutorial scene */
   function _renderTutorialScene(animate = false) {
     const scene = TUTORIAL_SCENES[state.tutorialSceneIndex];
-    _stopTutorialPlayback();
     elements.tutorialCaption.textContent = _t(scene.key);
+    elements.tutorialCommand.textContent = _t(scene.commandKey);
     elements.tutorialProgress.textContent = `${state.tutorialSceneIndex + 1} / ${TUTORIAL_SCENES.length}`;
     elements.tutorialPrevious.disabled = state.tutorialSceneIndex === 0;
     elements.tutorialNext.disabled = state.tutorialSceneIndex === TUTORIAL_SCENES.length - 1;
@@ -963,46 +983,116 @@
       item.setAttribute("aria-current", String(highlighted));
     }
 
-    const [fromX, fromY, fromAngle] = animate ? scene.from : scene.to;
+    const [fromX, fromY] = scene.from;
+    const [toX, toY] = scene.to;
+    state.tutorialRouteLength = Math.hypot(toX - fromX, toY - fromY);
+    elements.tutorialOrigin.setAttribute("cx", String(fromX));
+    elements.tutorialOrigin.setAttribute("cy", String(fromY));
+    elements.tutorialRoute.setAttribute(
+      "d",
+      state.tutorialRouteLength === 0 ? "" : `M ${fromX} ${fromY} L ${toX} ${toY}`,
+    );
+    elements.tutorialRoute.style.strokeDasharray = String(state.tutorialRouteLength);
+    elements.tutorialRoute.style.strokeDashoffset = String(
+      animate ? state.tutorialRouteLength : 0,
+    );
+
+    const [markerX, markerY, markerAngle] = animate ? scene.from : scene.to;
     elements.tutorialMarker.setAttribute(
       "transform",
-      `translate(${fromX} ${fromY}) rotate(${fromAngle})`,
+      `translate(${markerX} ${markerY})`,
     );
-    if (animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      state.tutorialFrame = requestAnimationFrame(() => {
-        elements.tutorialMarker.classList.add("is-moving");
-        const [toX, toY, toAngle] = scene.to;
-        elements.tutorialMarker.setAttribute(
-          "transform",
-          `translate(${toX} ${toY}) rotate(${toAngle})`,
-        );
-        state.tutorialFrame = null;
-      });
+    elements.tutorialOrientation.setAttribute("transform", `rotate(${markerAngle})`);
+  }
+
+  /** @description Draw the current tutorial turn and travel pose */
+  function _renderTutorialMotion(scene, elapsed) {
+    const [fromX, fromY, fromAngle] = scene.from;
+    const [toX, toY, toAngle] = scene.to;
+    const turnDuration = scene.action === "S" ? 0 : TUTORIAL_TURN_MS;
+    const turnProgress = turnDuration === 0
+      ? 1
+      : Math.max(0, Math.min(1, (elapsed - TUTORIAL_INITIAL_HOLD_MS) / turnDuration));
+    const angle = fromAngle + (toAngle - fromAngle) * turnProgress;
+    const travelStart = TUTORIAL_INITIAL_HOLD_MS + turnDuration;
+    const travelProgress = Math.max(
+      0,
+      Math.min(1, (elapsed - travelStart) / TUTORIAL_TRAVEL_MS),
+    );
+    const x = fromX + (toX - fromX) * travelProgress;
+    const y = fromY + (toY - fromY) * travelProgress;
+
+    elements.tutorialMarker.setAttribute("transform", `translate(${x} ${y})`);
+    elements.tutorialOrientation.setAttribute("transform", `rotate(${angle})`);
+    elements.tutorialRoute.style.strokeDashoffset = String(
+      state.tutorialRouteLength * (1 - travelProgress),
+    );
+  }
+
+  /** @description Advance one tutorial scene or the finite autoplay sequence */
+  function _animateTutorialPlayback(timestamp) {
+    state.tutorialFrame = null;
+    if (!elements.tutorialDialog.open || document.hidden) {
+      _stopTutorialPlayback();
+      return;
     }
+
+    const elapsed = timestamp - state.tutorialPlaybackStartedAt;
+    if (state.tutorialPlaybackMode === "autoplay") {
+      if (elapsed >= TUTORIAL_SCENE_INTERVAL_MS * TUTORIAL_SCENES.length) {
+        state.tutorialSceneIndex = TUTORIAL_SCENES.length - 1;
+        _renderTutorialScene(true);
+        _renderTutorialMotion(
+          TUTORIAL_SCENES[state.tutorialSceneIndex],
+          TUTORIAL_SCENE_INTERVAL_MS,
+        );
+        state.tutorialPlaybackMode = null;
+        state.tutorialPlaybackStartedAt = null;
+        return;
+      }
+      const sceneIndex = Math.floor(elapsed / TUTORIAL_SCENE_INTERVAL_MS);
+      if (sceneIndex !== state.tutorialSceneIndex) {
+        state.tutorialSceneIndex = sceneIndex;
+        _renderTutorialScene(true);
+      }
+      _renderTutorialMotion(
+        TUTORIAL_SCENES[state.tutorialSceneIndex],
+        elapsed - sceneIndex * TUTORIAL_SCENE_INTERVAL_MS,
+      );
+    } else {
+      const scene = TUTORIAL_SCENES[state.tutorialSceneIndex];
+      _renderTutorialMotion(scene, elapsed);
+      const duration = TUTORIAL_INITIAL_HOLD_MS
+        + (scene.action === "S" ? 0 : TUTORIAL_TURN_MS)
+        + TUTORIAL_TRAVEL_MS;
+      if (elapsed >= duration) {
+        state.tutorialPlaybackMode = null;
+        state.tutorialPlaybackStartedAt = null;
+        return;
+      }
+    }
+
+    state.tutorialFrame = requestAnimationFrame(_animateTutorialPlayback);
+  }
+
+  /** @description Start the selected tutorial scene animation */
+  function _startTutorialAnimation(mode) {
+    const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const animate = !reducedMotion && !document.hidden;
+    _renderTutorialScene(animate);
+    if (!animate) {
+      return;
+    }
+    state.tutorialPlaybackMode = mode;
+    state.tutorialPlaybackStartedAt = performance.now();
+    state.tutorialFrame = requestAnimationFrame(_animateTutorialPlayback);
   }
 
   /** @description Play the tutorial once without looping */
   function _playTutorial() {
     _stopTutorialPlayback();
     state.tutorialSceneIndex = 0;
-    _renderTutorialScene(true);
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches || document.hidden) {
-      return;
-    }
-    const advance = () => {
-      if (!elements.tutorialDialog.open || document.hidden) {
-        _stopTutorialPlayback();
-        return;
-      }
-      if (state.tutorialSceneIndex >= TUTORIAL_SCENES.length - 1) {
-        state.tutorialTimer = null;
-        return;
-      }
-      state.tutorialSceneIndex += 1;
-      _renderTutorialScene(true);
-      state.tutorialTimer = setTimeout(advance, TUTORIAL_SCENE_INTERVAL_MS);
-    };
-    state.tutorialTimer = setTimeout(advance, TUTORIAL_SCENE_INTERVAL_MS);
+    _startTutorialAnimation("autoplay");
   }
 
   /** @description Open the tutorial without starting a maze attempt */
@@ -1022,7 +1112,7 @@
       0,
       Math.min(TUTORIAL_SCENES.length - 1, state.tutorialSceneIndex + direction),
     );
-    _renderTutorialScene(false);
+    _startTutorialAnimation("scene");
   }
 
   /** @description Keep the displayed move count aligned with acknowledged server state */
