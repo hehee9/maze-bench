@@ -326453,6 +326453,62 @@
           ]
         ]
       }
+    },
+    {
+      "sequence": 2681,
+      "attempt_id": "e4ee3b11-f733-457a-87cf-176345d1bc7d",
+      "maze_id": "maze_09x09_adjacent_02",
+      "tier": "1",
+      "actions": [
+        "S",
+        "R"
+      ],
+      "status": "quit",
+      "started_at": "2026-09-27T03:32:33.002Z",
+      "finished_at": "2026-09-27T03:32:45.805Z",
+      "scoring_result": {
+        "problem_id": "maze_09x09_adjacent_02",
+        "success": false,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 20,
+        "actual_action_count": 2,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.1,
+        "efficiency_ratio": 1.0,
+        "score": 10.0,
+        "final_event": "E40",
+        "final_cell": [
+          8,
+          5
+        ],
+        "final_facing": "N",
+        "actions_parsed": [
+          "S",
+          "R"
+        ],
+        "actions_executed": [
+          "S",
+          "R"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E51",
+          "E40"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            8,
+            7
+          ],
+          [
+            8,
+            5
+          ]
+        ]
+      }
     }
   ]
 }
