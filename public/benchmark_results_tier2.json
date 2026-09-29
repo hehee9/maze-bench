@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 4,
   "status": "completed",
-  "expected_result_count": 100,
-  "processed_result_count": 100,
+  "expected_result_count": 120,
+  "processed_result_count": 120,
   "models": [
     {
       "name": "Claude Fable 5.1 (medium)",
@@ -704,9 +704,809 @@
           }
         }
       }
+    },
+    {
+      "name": "GPT-6.1 Sol (medium)",
+      "provider": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "reasoning_label": "effort-medium",
+      "pricing": {
+        "input_per_million": 2.0,
+        "output_per_million": 10.0
+      },
+      "expected_count": 20,
+      "processed_count": 20,
+      "api_success_count": 20,
+      "api_failure_count": 0,
+      "graded_count": 20,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 33.50227317000045,
+      "official_mean_score": 33.50227317000045,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 103600,
+          "output_tokens": 289776,
+          "reasoning_tokens": 288428,
+          "total_tokens": 393376
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 59.89621859224202,
+          "official_mean_score": 59.89621859224202,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25900,
+              "output_tokens": 39440,
+              "reasoning_tokens": 39111,
+              "total_tokens": 65340
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 57.33492720634304,
+          "official_mean_score": 57.33492720634304,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25900,
+              "output_tokens": 51267,
+              "reasoning_tokens": 50892,
+              "total_tokens": 77167
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "21x21": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 12.22683039996578,
+          "official_mean_score": 12.22683039996578,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25900,
+              "output_tokens": 79386,
+              "reasoning_tokens": 79047,
+              "total_tokens": 105286
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "24x24": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 4.5511164814509675,
+          "official_mean_score": 4.5511164814509675,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25900,
+              "output_tokens": 119683,
+              "reasoning_tokens": 119378,
+              "total_tokens": 145583
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
     }
   ],
   "results": [
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L L R R L S L R R R L R L R L R R L S L L R R R L L S R S R L L L R L L R L L R R L R L R S R S L L S L R R L R R L L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 8257,
+        "reasoning_tokens": 8186,
+        "total_tokens": 13437
+      },
+      "score": 73.84615384615385,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 48,
+        "actual_action_count": 65,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.7384615384615385
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L R S S R L S S L R S R L L R S L R L L R R L L R L L R R S L S R L S L L R R L R R L S L R L S L R L R L R L R R R L R S L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 9069,
+        "reasoning_tokens": 8995,
+        "total_tokens": 14249
+      },
+      "score": 12.684911242603551,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 49,
+        "actual_action_count": 7,
+        "remaining_action_count": 45,
+        "completion_ratio": 0.1346153846153846,
+        "efficiency_ratio": 0.9423076923076923
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L R L R L L R S R L S L R L L R L R R L L S L R R R L S R R R L S S L R L L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 7301,
+        "reasoning_tokens": 7250,
+        "total_tokens": 12481
+      },
+      "score": 70.80126754187415,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 46,
+        "actual_action_count": 34,
+        "remaining_action_count": 13,
+        "completion_ratio": 0.723404255319149,
+        "efficiency_ratio": 0.9787234042553191
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L S R R L S R L L R L L L R S R R L L L R S R S L L R R L L R L R R S R L S R L R S L L L R R L R R R L S L R S R L S S L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 7501,
+        "reasoning_tokens": 7430,
+        "total_tokens": 12681
+      },
+      "score": 42.14876033057851,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 51,
+        "actual_action_count": 25,
+        "remaining_action_count": 30,
+        "completion_ratio": 0.45454545454545453,
+        "efficiency_ratio": 0.9272727272727272
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L S L R S L R R L S S L R L L R R L L R R L S L S L R R L L S R L L R R R L R L R L R R L L L L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 7312,
+        "reasoning_tokens": 7250,
+        "total_tokens": 12492
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 56,
+        "actual_action_count": 56,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L S R L L R R L R R L R L S R L R L R L L L R R L L R L R S L R S L R S R L R R S L L S S L L R R L S L R R L S S S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 11978,
+        "reasoning_tokens": 11912,
+        "total_tokens": 17158
+      },
+      "score": 68.67845993756504,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 60,
+        "actual_action_count": 44,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.7096774193548387,
+        "efficiency_ratio": 0.967741935483871
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L R R R L L R L S L R S L L R L L S R L R R L R L L R R R S L R L S R L L R L L S R R L R R L L S L R L L R R S L S L R R L L R R L L R L R S R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 10841,
+        "reasoning_tokens": 10756,
+        "total_tokens": 16021
+      },
+      "score": 51.57880829700093,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 64,
+        "actual_action_count": 61,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.7011494252873564,
+        "efficiency_ratio": 0.735632183908046
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R L S R S S L R R S L L L R L R L L R L R R L R L L R R S R R L R L L S R R L L R R L S R R L R S R L R L L S L R L S R L L R R S S S L L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 8775,
+        "reasoning_tokens": 8693,
+        "total_tokens": 13955
+      },
+      "score": 52.62345679012346,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 62,
+        "actual_action_count": 44,
+        "remaining_action_count": 28,
+        "completion_ratio": 0.6111111111111112,
+        "efficiency_ratio": 0.8611111111111112
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S S R L L L R R L S S R R L L R R S R L L L R R L L R L S L S S R R R L L R L L L R S R R L L L R R R L R R L S L R L L R L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 10952,
+        "reasoning_tokens": 10876,
+        "total_tokens": 16132
+      },
+      "score": 84.28571428571429,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 59,
+        "actual_action_count": 70,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.8428571428571429
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L L R R L L R R L R R L L R L R L R S L R R L L R L L L R R L R L R S L L L R R L R L R L R R R L L R R L L S L L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 8721,
+        "reasoning_tokens": 8655,
+        "total_tokens": 13901
+      },
+      "score": 29.508196721311474,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 61,
+        "actual_action_count": 18,
+        "remaining_action_count": 43,
+        "completion_ratio": 0.29508196721311475,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_adjacent_01",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S S L R R L S L R L S L R L R L R R S S R L L L R L R R S R L S R L L R R S R R L L L R L S S S L R S L R L R L L R S R L L L R R L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 28368,
+        "reasoning_tokens": 28291,
+        "total_tokens": 33548
+      },
+      "score": 10.546241211465656,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 78,
+        "actual_action_count": 10,
+        "remaining_action_count": 76,
+        "completion_ratio": 0.11627906976744186,
+        "efficiency_ratio": 0.9069767441860465
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_adjacent_02",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S R L L R L L R R R L S R L L R S L R R L R R L R L R L L R S S R L L R L R S L S S S L R R L L L R R L L R L S S R L S L R R L R L L R R L R L S R R R L L S L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 16144,
+        "reasoning_tokens": 16056,
+        "total_tokens": 21324
+      },
+      "score": 22.06222222222222,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 73,
+        "actual_action_count": 17,
+        "remaining_action_count": 58,
+        "completion_ratio": 0.22666666666666666,
+        "efficiency_ratio": 0.9733333333333334
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_opposite_03",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S R L R L R L L R L R S R R L S R L L R R L R R L S L L R S R L L L R R S L R R L L R L S S S S R L S S L L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 15084,
+        "reasoning_tokens": 15020,
+        "total_tokens": 20264
+      },
+      "score": 15.36,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 72,
+        "actual_action_count": 12,
+        "remaining_action_count": 63,
+        "completion_ratio": 0.16,
+        "efficiency_ratio": 0.96
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_opposite_04",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S L R R L L R R R L L R R L L S L L R R R L R L R S R L S S S R L L L R R L S L R R L L R S R R S L S L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 9382,
+        "reasoning_tokens": 9322,
+        "total_tokens": 14562
+      },
+      "score": 9.297052154195011,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 82,
+        "actual_action_count": 8,
+        "remaining_action_count": 76,
+        "completion_ratio": 0.09523809523809523,
+        "efficiency_ratio": 0.9761904761904762
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_same_05",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S L S S S R L R R L L R R R L L L R S R L L R R R L R L R R L R L L R L S R R L S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 10408,
+        "reasoning_tokens": 10358,
+        "total_tokens": 15588
+      },
+      "score": 3.868636411946009,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 91,
+        "actual_action_count": 4,
+        "remaining_action_count": 93,
+        "completion_ratio": 0.041237113402061855,
+        "efficiency_ratio": 0.9381443298969072
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_adjacent_01",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S R S L L R R S S S S L R L S L L R R L R R R L L S S L R S L R S L S R R L L L R S R S L S R L L L R S L R R L R L L R R L R S R L R L L R R L R R L L R R L L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 28058,
+        "reasoning_tokens": 27970,
+        "total_tokens": 33238
+      },
+      "score": 15.87301587301587,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 80,
+        "actual_action_count": 14,
+        "remaining_action_count": 70,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_adjacent_02",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S L R R R L L R R L S L R R L L L R L R L S R L S R S L L R R R L L R R L R S R L L R L R L L R S L R R L R L S L R L L R S L R R L S R L L R L R R L L L R R S R S L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 27976,
+        "reasoning_tokens": 27884,
+        "total_tokens": 33156
+      },
+      "score": 2.1728395061728394,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 88,
+        "actual_action_count": 2,
+        "remaining_action_count": 88,
+        "completion_ratio": 0.022222222222222223,
+        "efficiency_ratio": 0.9777777777777777
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_opposite_03",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S R S S S S S S L R R L S L R L R L L R R R L L R S L L S R L S R L R S L R S L S R L R S L S S L R L S S S S R S S S R S L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 29078,
+        "reasoning_tokens": 29006,
+        "total_tokens": 34258
+      },
+      "score": 4.709727028066129,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 98,
+        "actual_action_count": 5,
+        "remaining_action_count": 97,
+        "completion_ratio": 0.049019607843137254,
+        "efficiency_ratio": 0.9607843137254902
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_opposite_04",
+        "width": 24,
+        "height": 24
+      },
+      "output": "No valid command sequence exists: the starting point and destination are in disconnected regions of the maze.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 27811,
+        "reasoning_tokens": 27786,
+        "total_tokens": 32991
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 85,
+        "actual_action_count": 0,
+        "remaining_action_count": 85,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "GPT-6.1 Sol (medium)",
+        "provider": "openai_responses",
+        "model_id": "gpt-6.1-sol",
+        "reasoning_label": "effort-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_same_05",
+        "width": 24,
+        "height": 24
+      },
+      "output": "No valid command sequence exists: the red exit is separated from the blue entrance by an unbroken wall barrier.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5180,
+        "output_tokens": 6760,
+        "reasoning_tokens": 6732,
+        "total_tokens": 11940
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 95,
+        "actual_action_count": 0,
+        "remaining_action_count": 95,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
     {
       "status": "success",
       "scoring_version": 4,
