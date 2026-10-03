@@ -19,6 +19,7 @@
 
   const state = {
     tier: requestedTier === "2" ? 2 : 1,
+    humanResults: null,
     results: [],
     models: [],
     mazes: [],
@@ -105,11 +106,15 @@
   function _syncTierInterface() {
     for (const button of elements.tierButtons.querySelectorAll("[data-tier]")) {
       const tier = Number(button.dataset.tier);
-      const config = data.getTierConfig(tier);
+      const config = data.getTierConfig(tier, state.humanResults);
       button.setAttribute(
         "aria-pressed",
         String(tier === state.tier),
       );
+      if (config.problemCount === null) {
+        button.removeAttribute("aria-label");
+        continue;
+      }
       button.setAttribute(
         "aria-label",
         _t("tier.buttonAria", {
@@ -411,7 +416,7 @@
 
   /** @description 선택한 티어에서 지원하는 미로 크기 선택지를 구성 */
   function _populateSizes() {
-    const sizes = data.getTierConfig(state.tier).sizes;
+    const sizes = data.getTierConfig(state.tier, state.humanResults).sizes;
 
     _setOptions(
       elements.sizeSelect,
@@ -1495,8 +1500,13 @@
   async function _loadResults() {
     _setReplayControlsEnabled(false);
     try {
-      const payload = await data.loadBenchmarkResults(state.tier);
+      const [payload, humanResults] = await Promise.all([
+        data.loadBenchmarkResults(state.tier),
+        data.loadHumanResults(),
+      ]);
 
+      state.humanResults = humanResults;
+      _syncTierInterface();
       _buildCatalog(payload);
       _populateSizes();
       if (state.results.length === 0) {

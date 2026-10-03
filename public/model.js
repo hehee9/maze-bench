@@ -52,6 +52,8 @@
     tokenPriceCard: document.querySelector(".summary-price-card"),
     sizeSelect: document.querySelector("#sizeSelect"),
     resultTitle: document.querySelector("#resultTitle"),
+    humanMethodLink: document.querySelector("#humanMethodLink"),
+    humanMethod: document.querySelector("#humanMethod"),
     resultHead: document.querySelector("#resultHead"),
     resultColumns: document.querySelector("#resultColumns"),
     resultBody: document.querySelector("#resultBody"),
@@ -65,6 +67,8 @@
     sidebarBackdrop: document.querySelector("#sidebarBackdrop"),
     rankingResizeHandle: document.querySelector("#rankingResizeHandle"),
     modelMainStage: document.querySelector("#modelMainStage"),
+    analyticsTitle: document.querySelector("#analyticsTitle"),
+    sizeChartTitle: document.querySelector("#sizeChartTitle"),
     sizeScoreChart: document.querySelector("#sizeScoreChart"),
     scoreHeatmap: document.querySelector("#scoreHeatmap"),
     exportModelSizesButton: document.querySelector("#exportModelSizesButton"),
@@ -75,7 +79,6 @@
     payload: null,
     size: "all",
     modelKey: null,
-    mazes: [],
     humanResults: null,
     humanAggregate: null,
     resultIndex: new Map(),
@@ -103,11 +106,16 @@
   function _syncTierInterface() {
     for (const button of elements.tierButtons.querySelectorAll("[data-tier]")) {
       const tier = Number(button.dataset.tier);
-      const config = data.getTierConfig(tier);
       button.setAttribute(
         "aria-pressed",
         String(tier === state.tier),
       );
+      const config = data.getTierConfig(tier, state.humanResults);
+      // 미로 목록이 없으면 개수를 알 수 없으므로 버튼 글자를 이름으로 사용
+      if (config.problemCount === null) {
+        button.removeAttribute("aria-label");
+        continue;
+      }
       button.setAttribute(
         "aria-label",
         _t("tier.buttonAria", {
@@ -175,6 +183,16 @@
     return _isHumanSelected()
       ? _t("model.humanName")
       : _modelName(_selectedModel());
+  }
+
+  /** @description 사람 집계와 같은 미로 ID로 모델 점수 범위 집계 */
+  function _modelScope(size = "all") {
+    return data.aggregateLeaderboardModels(
+      state.payload,
+      size === "all" ? null : [size],
+      state.humanResults,
+      state.tier,
+    );
   }
 
   /** @description Return a total token value only when none are missing */
@@ -376,9 +394,10 @@
 
   /** @description 전체 순위 사이드바 렌더링 */
   function _renderRanking() {
+    // 사이드바의 사람 항목과 같은 전체 미로 범위의 상태·점수로 순위 계산
     const models = state.payload.results.length === 0
       ? []
-      : state.payload.models;
+      : _modelScope().models.map(({ model, stats }) => ({ ...model, ...stats }));
     const entries = data.rankModelDetailEntries(
       models,
       state.humanAggregate,
@@ -455,7 +474,7 @@
     chart.setAttribute("role", "img");
     chart.setAttribute(
       "aria-label",
-      _t("model.sizeChartAria", {
+      _t(_isHumanSelected() ? "model.humanSizeChartAria" : "model.sizeChartAria", {
         model: _selectedName(),
         values: scores.map(({ size, meanScore }) => (
           _t("model.sizeChartEntry", {
@@ -528,6 +547,25 @@
     };
   }
 
+  /** @description 히트맵 칸의 표본 수 문구 반환 */
+  function _heatmapCountText(sampleCount) {
+    // 스키마 2 사람 칸의 표본 수는 결과 수가 아닌 참가자 수
+    if (_isHumanSelected() && state.humanResults.schema_version === 2) {
+      return sampleCount === 1
+        ? _t("model.oneParticipant")
+        : _t("model.participantsCount", { count: sampleCount });
+    }
+    return sampleCount === 1
+      ? _t("common.oneResult")
+      : _t("common.resultsCount", { count: sampleCount });
+  }
+
+  /** @description 번역 키를 바꾸고 현재 언어 문구 적용 */
+  function _setTranslatedText(element, key) {
+    element.dataset.i18n = key;
+    element.textContent = _t(key);
+  }
+
   /** @description Render average scores by maze size and entrance relation */
   function _renderHeatmap(analytics) {
     const scroll = document.createElement("div");
@@ -560,15 +598,11 @@
           cell.textContent = data.formatScore(cellData.meanScore);
           cell.setAttribute(
             "aria-label",
-            _t("model.heatmapValue", {
+            _t(_isHumanSelected() ? "model.humanHeatmapValue" : "model.heatmapValue", {
               size: data.formatSize(row.size),
               relation: cellData.label,
               score: data.formatScore(cellData.meanScore),
-              results: cellData.sampleCount === 1
-                ? _t("common.oneResult")
-                : _t("common.resultsCount", {
-                  count: cellData.sampleCount,
-                }),
+              results: _heatmapCountText(cellData.sampleCount),
             }),
           );
         } else {
@@ -602,11 +636,18 @@
 
   /** @description 선택 상세의 크기·구조별 분석과 이미지 이름 적용 */
   function _renderAnalytics(model, analytics = null, color = null) {
-    const selectedAnalytics = analytics ?? data.aggregateModelScores(
-      state.payload.results,
-      model,
-      data.getTierConfig(state.tier).sizes,
-    );
+    let selectedAnalytics = analytics;
+    if (selectedAnalytics === null) {
+      const scope = _modelScope();
+      const mazeIds = new Set(scope.mazes.map((maze) => maze.maze_id));
+      selectedAnalytics = data.aggregateModelScores(
+        state.payload.results.filter((result) => (
+          mazeIds.has(result.maze?.maze_id)
+        )),
+        model,
+        scope.sizes,
+      );
+    }
     _renderSizeChart(
       selectedAnalytics,
       color ?? data.developerColor(model),
@@ -777,6 +818,11 @@
     elements.humanTopFiveCard.hidden = false;
     elements.humanBottomFiveCard.hidden = false;
     elements.humanPlayCountCard.hidden = false;
+    elements.humanMethodLink.hidden = false;
+    elements.humanMethod.hidden = false;
+    // 사람 값은 참가자 분포의 중앙값이므로 평균 대신 중앙값 제목 사용
+    _setTranslatedText(elements.analyticsTitle, "model.humanAnalytics");
+    _setTranslatedText(elements.sizeChartTitle, "model.humanSizeMedian");
     elements.costCard.hidden = true;
     elements.tokenPriceCard.hidden = true;
     elements.scoreLabel.textContent = _t("model.humanMedian");
@@ -818,6 +864,10 @@
     elements.humanTopFiveCard.hidden = true;
     elements.humanBottomFiveCard.hidden = true;
     elements.humanPlayCountCard.hidden = true;
+    elements.humanMethodLink.hidden = true;
+    elements.humanMethod.hidden = true;
+    _setTranslatedText(elements.analyticsTitle, "model.analytics");
+    _setTranslatedText(elements.sizeChartTitle, "model.sizeAverage");
     elements.costCard.hidden = false;
     elements.tokenPriceCard.hidden = false;
     elements.scoreLabel.textContent = _t("common.score");
@@ -837,7 +887,7 @@
       const emptyAnalytics = data.aggregateModelScores(
         [],
         null,
-        data.getTierConfig(state.tier).sizes,
+        data.getTierConfig(state.tier, state.humanResults).sizes,
       );
       elements.modelTitle.textContent = _t(
         "tier.indicator",
@@ -855,11 +905,6 @@
       return;
     }
     _setModelDetailMode();
-    const stats = data.statsForModel(model, state.size);
-    const aggregateState = data.aggregateState(stats);
-    const score = aggregateState === "complete"
-      ? stats?.official_mean_score
-      : stats?.provisional_mean_score;
     const modelName = _modelName(model);
 
     elements.modelTitle.textContent = _t("model.detailTitle", { model: modelName });
@@ -884,10 +929,14 @@
       return;
     }
 
-    elements.scoreValue.textContent = data.formatScore(score);
+    const scope = _modelScope(state.size);
+    const modelEntry = scope.models.find((entry) => (
+      data.modelKey(entry) === state.modelKey
+    ));
+    elements.scoreValue.textContent = data.formatScore(modelEntry.score);
     elements.costValue.textContent = _t("model.costAndTokens", {
-      cost: data.formatCost(data.calculateCost(stats?.token_usage, model.pricing)),
-      tokens: data.formatTokens(_totalTokens(stats?.token_usage)),
+      cost: data.formatCost(modelEntry.cost),
+      tokens: data.formatTokens(_totalTokens(modelEntry.stats.token_usage)),
     });
     elements.tokenPriceValue.textContent = _t("model.price", {
       input: data.formatCost(model.pricing?.input_per_million),
@@ -895,9 +944,8 @@
     });
     elements.sizeSelect.value = state.size;
 
-    const filteredMazes = state.mazes.filter(
-      (maze) => state.size === "all" || data.mazeSize(maze) === state.size,
-    );
+    // 새로 추가된 미로처럼 결과가 없는 미로도 행으로 표시
+    const filteredMazes = scope.mazes;
     elements.resultBody.replaceChildren(
       ...filteredMazes.map((maze, index) => _createResultRow(maze, index, model)),
     );
@@ -913,32 +961,18 @@
     _syncUrl();
   }
 
-  /** @description Index the maze union and every model result */
+  /** @description Index every model result by model and maze */
   function _buildCatalog() {
-    const mazeMap = new Map();
     for (const result of state.payload.results) {
       const maze = result.maze;
       if (!maze?.maze_id) {
         continue;
       }
-      mazeMap.set(maze.maze_id, {
-        maze_id: maze.maze_id,
-        width: maze.width,
-        height: maze.height,
-      });
       state.resultIndex.set(
         `${data.modelKey(result)}\u001e${maze.maze_id}`,
         result,
       );
     }
-    state.mazes = [...mazeMap.values()].sort((first, second) => (
-      data.compareSizes(data.mazeSize(first), data.mazeSize(second))
-      || first.maze_id.localeCompare(
-        second.maze_id,
-        i18n.getLocale(),
-        { numeric: true },
-      )
-    ));
   }
 
   /** @description 주소의 사람·모델·미로 크기 선택 복원 */
@@ -946,7 +980,7 @@
     const query = new URLSearchParams(window.location.search);
     const queryModel = query.get("model");
     const querySize = query.get("size");
-    const sizes = data.getTierConfig(state.tier).sizes;
+    const sizes = data.getTierConfig(state.tier, state.humanResults).sizes;
 
     if (queryModel === HUMAN_MODEL_KEY) {
       state.modelKey = HUMAN_MODEL_KEY;
@@ -964,7 +998,7 @@
   function _populateSizeSelect() {
     const options = [
       { value: "all", label: _t("common.all") },
-      ...data.getTierConfig(state.tier).sizes.map((size) => ({
+      ...data.getTierConfig(state.tier, state.humanResults).sizes.map((size) => ({
         value: size,
         label: data.formatSize(size),
       })),
@@ -988,6 +1022,8 @@
       ]);
       state.payload = payload;
       state.humanResults = humanResults;
+      // 티어 구성은 로드한 데이터에서 정해지므로 로드 전 표시를 갱신
+      _syncTierInterface();
       state.humanAggregate = data.aggregateHumanDetail(
         humanResults,
         state.tier,

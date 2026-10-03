@@ -74,18 +74,22 @@
   function _syncTierInterface() {
     for (const button of elements.tierButtons.querySelectorAll("[data-tier]")) {
       const tier = Number(button.dataset.tier);
-      const config = data.getTierConfig(tier);
+      const config = data.getTierConfig(tier, state.humanResults);
       button.setAttribute(
         "aria-pressed",
         String(tier === state.tier),
       );
-      button.setAttribute(
-        "aria-label",
-        _t("tier.buttonAria", {
-          tier: config.id,
-          count: config.problemCount,
-        }),
-      );
+      if (config.problemCount !== null) {
+        button.setAttribute(
+          "aria-label",
+          _t("tier.buttonAria", {
+            tier: config.id,
+            count: config.problemCount,
+          }),
+        );
+      } else if (state.humanResults !== null) {
+        button.removeAttribute("aria-label");
+      }
     }
     for (const link of document.querySelectorAll(
       ".site-brand-title, .site-nav a",
@@ -1563,7 +1567,7 @@
 
   /** @description Populate size buttons and restore valid query values */
   function _populateSizes() {
-    state.sizes = data.getTierConfig(state.tier).sizes;
+    state.sizes = data.getTierConfig(state.tier, state.humanResults).sizes;
     const requestedSizes = new URLSearchParams(window.location.search).getAll("size");
     const validRequestedSizes = requestedSizes.filter((size) => state.sizes.includes(size));
     if (requestedSizes.includes("none")) {
@@ -1600,6 +1604,7 @@
         data.loadBenchmarkResults(state.tier),
         data.loadHumanResults(),
       ]);
+      _syncTierInterface();
       _populateSizes();
       _aggregateAnalytics();
       _initializeChartEntries();

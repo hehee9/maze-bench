@@ -13,15 +13,11 @@
       id: 1,
       resultsFile: "benchmark_results.json",
       mazeDirectory: "../maze_sets",
-      problemCount: 30,
-      sizes: Object.freeze(["4x4", "6x6", "9x9", "12x12", "15x15", "18x18"]),
     }),
     2: Object.freeze({
       id: 2,
       resultsFile: "benchmark_results_tier2.json",
       mazeDirectory: "../maze_sets_tier2",
-      problemCount: 20,
-      sizes: Object.freeze(["15x15", "18x18", "21x21", "24x24"]),
     }),
   });
   const TOKEN_FIELDS = [
@@ -36,12 +32,14 @@
       id: "human-median",
       labelKey: "leaderboard.humanMedian",
       scoreField: "median_score",
+      groupScoreField: "median_score",
       color: "#6B5CE7",
     },
     {
       id: "human-top-five",
       labelKey: "leaderboard.humanTopFive",
       scoreField: "p95_score",
+      groupScoreField: "p95_score",
       color: "#9B8CE8",
     },
   ];
@@ -671,26 +669,43 @@
     humanResults = null,
     tier = 1,
   ) {
+    const tierId = Number(tier) === 2 ? 2 : 1;
+    const tierResults = humanResults?.tiers?.[String(tierId)];
+    const hasHumanCatalog = humanResults?.schema_version === 2;
     let sizes = requestedSizes === null
-      ? getSizes(payload)
+      ? (hasHumanCatalog
+        ? getTierConfig(tier, humanResults).sizes
+        : [...new Set([
+          ...getSizes(payload),
+          ...(tierResults
+            ? getTierConfig(tier, humanResults).sizes
+            : []),
+        ])].sort(compareSizes))
       : [...new Set(requestedSizes)].sort(compareSizes);
     const humanRows = humanResults === null
       ? []
       : aggregateHumanBaselines(humanResults, tier, requestedSizes);
-    if (requestedSizes === null && humanRows.length > 0) {
-      sizes = [...new Set([
-        ...sizes,
-        ...humanRows.flatMap((row) => row.bySize.map(({ size }) => size)),
-      ])]
-        .sort(compareSizes);
-    }
-    const mazes = getMazes(
-      payload.results,
-      sizes,
-      humanRows.flatMap((row) => row.mazes),
-    );
+    const humanGroup = hasHumanCatalog
+      ? _humanGroupForSizes(tierResults, sizes)
+      : null;
+    const humanMazeIds = humanGroup === null
+      ? new Set()
+      : new Set(humanGroup.maze_ids);
+    const mazes = hasHumanCatalog
+      ? getMazes([], null, tierResults.mazes).filter((maze) => (
+        humanMazeIds.has(maze.maze_id)
+      ))
+      : getMazes(
+        payload.results,
+        sizes,
+        humanRows.flatMap((row) => row.mazes),
+      );
+    const selectedMazeIds = new Set(mazes.map((maze) => maze.maze_id));
+    const selectedResults = (payload.results ?? []).filter((result) => (
+      selectedMazeIds.has(result.maze?.maze_id)
+    ));
     const resultIndex = new Map();
-    for (const result of payload.results ?? []) {
+    for (const result of selectedResults) {
       if (!result.maze?.maze_id) {
         continue;
       }
@@ -700,9 +715,28 @@
       );
     }
     const models = (payload.models ?? []).map((model) => {
-      const stats = combineModelStats(model, sizes);
+      const summaryStats = combineModelStats(model, sizes);
+      const modelScores = selectedResults.filter((result) => (
+        modelKey(result) === modelKey(model)
+        && Number.isFinite(result.score)
+      ));
+      const provisionalMeanScore = _meanScore(
+        modelScores.map((result) => result.score),
+      );
+      const stats = {
+        ...summaryStats,
+        expected_count: mazes.length,
+        processed_count: modelScores.length,
+        graded_count: modelScores.length,
+        official_mean_score: (
+          mazes.length > 0 && modelScores.length === mazes.length
+        )
+          ? provisionalMeanScore
+          : null,
+        provisional_mean_score: provisionalMeanScore,
+      };
       const state = aggregateState(stats);
-      const analytics = aggregateModelScores(payload.results, model, sizes);
+      const analytics = aggregateModelScores(selectedResults, model, sizes);
       const score = state === "complete"
         ? stats.official_mean_score
         : stats.provisional_mean_score;
@@ -745,6 +779,18 @@
       };
     });
     return { sizes, mazes, models, humanRows, entries };
+  }
+
+  /** @description 선택 크기 조합의 사전 집계 참가자 그룹 반환 */
+  function _humanGroupForSizes(tierResults, requestedSizes) {
+    const sizes = [...new Set(requestedSizes)].sort(compareSizes);
+    if (sizes.length === 0) {
+      return null;
+    }
+    if (sizes.length === 1) {
+      return tierResults.aggregates.by_size[sizes[0]];
+    }
+    return tierResults.aggregates.size_combinations[sizes.join("|")];
   }
 
   /** @description Calculate USD cost without double-counting reasoning tokens */
@@ -805,14 +851,125 @@
   /** @description 사람의 미로별 백분위, 플레이 수, 중앙값 분석 집계 */
   function aggregateHumanDetail(payload, tier = 1, requestedSizes = null) {
     const tierId = Number(tier) === 2 ? 2 : 1;
+    const tierResults = payload.tiers[String(tierId)];
     const tierMazes = getMazes(
       [],
       null,
-      payload.tiers[String(tierId)].mazes,
+      tierResults.mazes,
     );
     const selectedSizes = requestedSizes === null
       ? null
       : new Set(requestedSizes);
+    const sizes = getTierConfig(tierId, payload).sizes;
+    const relations = RELATIONS.map((key) => ({
+      key,
+      label: _t(`relation.${key}`),
+    }));
+    if (payload.schema_version === 2) {
+      const group = _humanGroupForSizes(
+        tierResults,
+        selectedSizes === null ? sizes : [...selectedSizes],
+      );
+      const selectedMazeIds = group === null
+        ? new Set()
+        : new Set(group.maze_ids);
+      const mazes = tierMazes.filter((maze) => selectedMazeIds.has(maze.maze_id));
+      if (group === null) {
+        return {
+          mazes,
+          stats: {
+            expected_count: 0,
+            processed_count: 0,
+            official_mean_score: null,
+            provisional_mean_score: null,
+            participant_count: 0,
+          },
+          state: "empty",
+          score: null,
+          summary: {
+            p95Score: null,
+            medianScore: null,
+            p05Score: null,
+            playCount: 0,
+            participantCount: 0,
+          },
+          sizes,
+          relations,
+          bySize: [],
+          heatmap: [],
+        };
+      }
+      const processedCount = group.status === "ready"
+        ? mazes.length
+        : mazes.filter((maze) => maze.attempt_count > 0).length;
+      const stats = {
+        expected_count: mazes.length,
+        processed_count: processedCount,
+        official_mean_score: group.status === "ready"
+          ? group.median_score
+          : null,
+        provisional_mean_score: group.status === "ready"
+          ? group.median_score
+          : null,
+        participant_count: group.participant_count,
+      };
+      const state = group.status === "ready"
+        ? aggregateState(stats)
+        : processedCount > 0 ? "partial" : "empty";
+      const bySize = sizes.map((size) => {
+        const sizeGroup = tierResults.aggregates.by_size[size];
+        return {
+          size,
+          meanScore: sizeGroup.median_score,
+          sampleCount: sizeGroup.participant_count,
+        };
+      });
+      const heatmap = sizes.map((size) => ({
+        size,
+        cells: RELATIONS.map((relation) => {
+          const relationMazes = tierMazes.filter((maze) => (
+            mazeSize(maze) === size && mazeRelation(maze) === relation
+          ));
+          if (relationMazes.length === 0) {
+            return {
+              relation,
+              label: _t(`relation.${relation}`),
+              meanScore: null,
+              sampleCount: 0,
+            };
+          }
+          const relationGroup = tierResults.aggregates
+            .by_size_relation[size][relation];
+          return {
+            relation,
+            label: _t(`relation.${relation}`),
+            meanScore: relationGroup.median_score,
+            sampleCount: relationGroup.participant_count,
+          };
+        }),
+      }));
+      return {
+        mazes,
+        stats,
+        state,
+        score: state === "complete" ? stats.official_mean_score : null,
+        summary: {
+          p95Score: group.p95_score,
+          medianScore: group.median_score,
+          p05Score: group.p05_score,
+          playCount: mazes.reduce(
+            (total, maze) => total + maze.attempt_count,
+            0,
+          ),
+          participantCount: group.participant_count,
+        },
+        sizes,
+        relations,
+        bySize,
+        heatmap,
+      };
+    }
+
     const mazes = selectedSizes === null
       ? tierMazes
       : tierMazes.filter((maze) => selectedSizes.has(mazeSize(maze)));
@@ -848,11 +1005,6 @@
       ),
       playCount: mazes.reduce((total, maze) => total + maze.attempt_count, 0),
     };
-    const sizes = getTierConfig(tierId).sizes;
-    const relations = RELATIONS.map((key) => ({
-      key,
-      label: _t(`relation.${key}`),
-    }));
     const bySize = sizes.map((size) => {
       const sizeMazes = tierMazes.filter(
         (maze) => mazeSize(maze) === size && maze.attempt_count > 0,
@@ -901,16 +1053,93 @@
 
   /** @description 선택한 티어의 인간 미로 중앙값과 상위 5% 점수 집계 */
   function aggregateHumanBaselines(payload, tier = 1, requestedSizes = null) {
-    const tierResults = payload.tiers[String(Number(tier) === 2 ? 2 : 1)];
+    const tierId = Number(tier) === 2 ? 2 : 1;
+    const tierResults = payload.tiers[String(tierId)];
     const selectedSizes = requestedSizes === null
       ? null
       : new Set(requestedSizes);
-    const mazes = tierResults.mazes.filter((maze) => (
+    const sizes = requestedSizes === null
+      ? getTierConfig(tierId, payload).sizes
+      : [...new Set(requestedSizes)].sort(compareSizes);
+    if (payload.schema_version === 2) {
+      const group = _humanGroupForSizes(
+        tierResults,
+        selectedSizes === null ? sizes : [...selectedSizes],
+      );
+      const catalogMazes = getMazes([], null, tierResults.mazes);
+      const selectedMazeIds = group === null
+        ? new Set()
+        : new Set(group.maze_ids);
+      const mazes = catalogMazes.filter((maze) => selectedMazeIds.has(maze.maze_id));
+      if (group === null) {
+        return HUMAN_SCORE_FIELDS.map((metric) => ({
+          id: metric.id,
+          label: _t(metric.labelKey),
+          iconPath: "assets/developers/human.svg",
+          color: metric.color,
+          stats: {
+            expected_count: 0,
+            processed_count: 0,
+            official_mean_score: null,
+            provisional_mean_score: null,
+            participant_count: 0,
+          },
+          state: "empty",
+          score: null,
+          cost: null,
+          bySize: [],
+          scoresByMaze: {},
+          mazes,
+        }));
+      }
+      const processedCount = group.status === "ready"
+        ? mazes.length
+        : mazes.filter((maze) => maze.attempt_count > 0).length;
+      return HUMAN_SCORE_FIELDS.map((metric) => {
+        const score = group[metric.groupScoreField];
+        const stats = {
+          expected_count: mazes.length,
+          processed_count: processedCount,
+          official_mean_score: group.status === "ready" ? score : null,
+          provisional_mean_score: group.status === "ready" ? score : null,
+          participant_count: group.participant_count,
+        };
+        const state = group.status === "ready"
+          ? aggregateState(stats)
+          : processedCount > 0 ? "partial" : "empty";
+        return {
+          id: metric.id,
+          label: _t(metric.labelKey),
+          iconPath: "assets/developers/human.svg",
+          color: metric.color,
+          stats,
+          state,
+          score: state === "complete" ? score : null,
+          cost: null,
+          bySize: sizes.map((size) => {
+            const sizeGroup = tierResults.aggregates.by_size[size];
+            return {
+              size,
+              meanScore: sizeGroup[metric.groupScoreField],
+              sampleCount: sizeGroup.participant_count,
+            };
+          }),
+          scoresByMaze: Object.fromEntries(mazes.map((maze) => (
+            [
+              maze.maze_id,
+              Number.isFinite(maze[metric.scoreField])
+                ? maze[metric.scoreField]
+                : null,
+            ]
+          ))),
+          mazes,
+        };
+      });
+    }
+
+    const mazes = getMazes([], selectedSizes, tierResults.mazes).filter((maze) => (
       selectedSizes === null || selectedSizes.has(mazeSize(maze))
     ));
-    const sizes = requestedSizes === null
-      ? [...new Set(mazes.map(mazeSize))].sort(compareSizes)
-      : [...new Set(requestedSizes)].sort(compareSizes);
     return HUMAN_SCORE_FIELDS.map((metric) => {
       const scoresByMaze = Object.fromEntries(mazes.map((maze) => (
         [
@@ -964,8 +1193,20 @@
   }
 
   /** @description 벤치마크 티어의 공개 설정 반환 */
-  function getTierConfig(tier = 1) {
-    return TIER_CONFIG[Number(tier) === 2 ? 2 : 1];
+  function getTierConfig(tier = 1, humanResults = null) {
+    const tierId = Number(tier) === 2 ? 2 : 1;
+    const config = TIER_CONFIG[tierId];
+    const tierResults = humanResults === null
+      ? null
+      : humanResults.tiers[String(tierId)];
+    const mazes = tierResults === null ? [] : tierResults.mazes;
+    return {
+      ...config,
+      problemCount: humanResults?.schema_version === 2
+        ? mazes.length
+        : null,
+      sizes: [...new Set(mazes.map(mazeSize))].sort(compareSizes),
+    };
   }
 
   /** @description Return a readable public maze name */

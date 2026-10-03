@@ -330,6 +330,16 @@ a {
   font-weight: 750;
 }
 
+.score-formula-human {
+  margin-top: 4px;
+  padding-top: 7px;
+  border-top: 1px solid #dde2ea;
+}
+
+[data-theme="dark"] .score-formula-human {
+  border-color: #3b475d;
+}
+
 .header-tooltip.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -1620,6 +1630,195 @@ body.model-detail-page.is-resizing-sidebar {
   gap: 8px;
 }
 
+.human-method-link {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 11px;
+  border: 1px solid #d3d9e4;
+  border-radius: 999px;
+  color: #46526c;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.human-method-link:hover {
+  color: #202b45;
+  background: var(--dashboard-soft);
+}
+
+.human-method {
+  display: grid;
+  gap: 12px;
+  padding-top: 7px;
+  scroll-margin-top: 16px;
+}
+
+.human-method-link[hidden],
+.human-method[hidden] {
+  display: none;
+}
+
+.human-method-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  align-items: start;
+  gap: 24px 32px;
+  padding: 24px;
+  border: 1.5px solid rgba(206, 212, 224, 0.9);
+  border-radius: 18px;
+  background: var(--dashboard-panel);
+}
+
+.human-method-lead {
+  margin: 0 0 18px;
+  color: #202b45;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.human-method-steps {
+  margin: 0;
+}
+
+.human-method-steps > div {
+  padding: 13px 0;
+  border-top: 1px solid #e3e7ee;
+}
+
+.human-method-steps dt,
+.human-method-quantiles dt {
+  color: #737c8e;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.human-method-steps dd {
+  margin: 4px 0 0;
+  color: #3a4560;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.human-method-formula {
+  display: grid;
+  min-width: 0;
+  gap: 18px;
+  padding: 20px 22px;
+  border-radius: 14px;
+  color: #1d2740;
+  background: var(--dashboard-soft);
+}
+
+.human-method-formula math {
+  font-family: "Cambria Math", "STIX Two Math", "Noto Sans Math", math;
+}
+
+.human-method-equations {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+  font-size: 1.12rem;
+}
+
+.human-method-equations math {
+  margin: 0;
+}
+
+.human-method-symbols {
+  display: grid;
+  margin: 0;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 7px 14px;
+  font-size: 0.8rem;
+}
+
+.human-method-symbols dt {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.human-method-symbols dd {
+  margin: 0;
+  color: #3a4560;
+  line-height: 1.5;
+}
+
+.human-method-quantiles {
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #dde2ea;
+}
+
+.human-method-quantiles > div {
+  padding: 12px 0 0 14px;
+}
+
+.human-method-quantiles > div:first-child {
+  padding-left: 0;
+}
+
+.human-method-quantiles > div + div {
+  border-left: 1px solid #dde2ea;
+}
+
+.human-method-quantiles dd {
+  margin: 3px 0 0;
+  font-size: 1.05rem;
+}
+
+.human-method-note {
+  margin: 0;
+  color: #4d5770;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+[data-theme="dark"] .human-method-link {
+  border-color: #3b475d;
+  color: #b9c2d2;
+}
+
+[data-theme="dark"] .human-method-link:hover {
+  color: #f1f3f6;
+}
+
+[data-theme="dark"] .human-method-card {
+  border-color: #313c50;
+}
+
+[data-theme="dark"] .human-method-lead,
+[data-theme="dark"] .human-method-formula {
+  color: #eef1f5;
+}
+
+[data-theme="dark"] .human-method-steps > div,
+[data-theme="dark"] .human-method-quantiles,
+[data-theme="dark"] .human-method-quantiles > div + div {
+  border-color: #2f3b4f;
+}
+
+[data-theme="dark"] .human-method-steps dt,
+[data-theme="dark"] .human-method-quantiles dt {
+  color: #a7b0c0;
+}
+
+[data-theme="dark"] .human-method-steps dd,
+[data-theme="dark"] .human-method-symbols dd,
+[data-theme="dark"] .human-method-note {
+  color: #c9d0dc;
+}
+
 [data-theme="dark"] {
   --dashboard-panel: rgba(21, 29, 45, 0.96);
   --dashboard-soft: #111a2a;
@@ -2578,6 +2777,24 @@ body.model-detail-page.is-resizing-sidebar {
   .analytics-card {
     padding: 14px 12px 12px;
     border-radius: 12px;
+  }
+
+  .human-method-card {
+    gap: 16px;
+    padding: 16px 14px 14px;
+    border-radius: 12px;
+  }
+
+  .human-method-lead {
+    font-size: 0.92rem;
+  }
+
+  .human-method-formula {
+    padding: 16px 14px;
+  }
+
+  .human-method-equations {
+    font-size: 1rem;
   }
 
   .analytics-card-heading {
