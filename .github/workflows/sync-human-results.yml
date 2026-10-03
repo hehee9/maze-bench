@@ -37,6 +37,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install pinned human analysis requirements
+        run: python -m pip install -r requirements-human.lock.txt
+
       - name: Collect, validate, and score human attempts
         env:
           HUMAN_SITE_URL: ${{ vars.HUMAN_SITE_URL }}
@@ -50,6 +53,7 @@ jobs:
           git add -- \
             public/human_results.json \
             human_data/records.json \
+            human_data/analysis-records.json \
             human_data/sync-state.json
           if ! git diff --cached --quiet; then
             git commit -m "chore: sync human maze results"

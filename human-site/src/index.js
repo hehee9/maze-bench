@@ -1,4 +1,4 @@
-import { MAZES, MAZE_BY_ID } from "../.build/maze-catalog.generated.js";
+import { CATALOG_ID, MAZES, MAZE_BY_ID } from "../.build/maze-catalog.generated.js";
 import { selectMaze } from "./maze-selection.js";
 
 /**
@@ -16,7 +16,9 @@ const VALID_ACTIONS = new Set(["S", "B", "L", "R"]);
 const DIRECTIONS = ["N", "E", "S", "W"];
 const TURN = { S: 0, R: 1, B: 2, L: 3 };
 const EXPORT_PAGE_SIZE = 200;
+const ANALYSIS_EXPORT_PAGE_SIZE = 200;
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const UTC_CUTOFF_PATTERN = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
 const ACTIVE_PROBLEM_FIELDS = [
   "problem_id",
   "width",
@@ -264,8 +266,8 @@ async function _startAttempt(request, env) {
   const id = crypto.randomUUID();
   await env.DB.prepare(
     `INSERT OR IGNORE INTO attempts
-       (id, browser_id, maze_id, tier, status, facing, started_at)
-     SELECT ?, ?, ?, ?, 'active', ?, ?
+       (id, browser_id, maze_id, tier, catalog_id, status, facing, started_at)
+     SELECT ?, ?, ?, ?, ?, 'active', ?, ?
      WHERE NOT EXISTS (
        SELECT 1 FROM attempts WHERE browser_id = ? AND status = 'active'
      )`,
@@ -274,6 +276,7 @@ async function _startAttempt(request, env) {
     browserId,
     maze.problem.problem_id,
     maze.tier,
+    CATALOG_ID,
     maze.problem.initial_facing,
     new Date().toISOString(),
     browserId,
@@ -647,6 +650,101 @@ async function _export(request, env) {
   });
 }
 
+/** @description 정규화된 브라우저 식별자의 분석용 가명 생성 */
+async function _participantId(browserId) {
+  const input = new TextEncoder().encode(`maze-bench:participant:v1:${browserId.toLowerCase()}`);
+  const digest = await crypto.subtle.digest("SHA-256", input);
+  return Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+/**
+ * @description 변경 불가 시작 기록의 개인정보 비식별 스냅샷 내보내기
+ * @param {Request} request 내보내기 요청
+ * @param {object} env Worker 바인딩
+ * @returns {Promise<Response>} 페이지 단위 결과
+ */
+async function _analysisExport(request, env) {
+  if (!env.EXPORT_TOKEN) return _json({ error: "export_unavailable" }, 503);
+  if (request.headers.get("Authorization") !== `Bearer ${env.EXPORT_TOKEN}`) {
+    return _json({ error: "unauthorized" }, 401);
+  }
+  if (env.DATASET !== "verification" && env.DATASET !== "production") {
+    return _json({ error: "invalid_dataset_configuration" }, 500);
+  }
+
+  const url = new URL(request.url);
+  const after = _cursor(url.searchParams.get("after"), 0);
+  const snapshotParameters = ["start_through", "terminal_through", "cutoff"];
+  const hasSnapshotParameter = snapshotParameters.some((name) => url.searchParams.has(name));
+  if (after === null) return _json({ error: "invalid_cursor" }, 400);
+
+  let startThrough;
+  let terminalThrough;
+  let cutoff;
+  if (hasSnapshotParameter) {
+    if (!snapshotParameters.every((name) => url.searchParams.has(name))) {
+      return _json({ error: "invalid_cursor" }, 400);
+    }
+    startThrough = _cursor(url.searchParams.get("start_through"), null);
+    terminalThrough = _cursor(url.searchParams.get("terminal_through"), null);
+    cutoff = url.searchParams.get("cutoff");
+    if (
+      startThrough === null || terminalThrough === null || !UTC_CUTOFF_PATTERN.test(cutoff) ||
+      !Number.isFinite(Date.parse(cutoff))
+    ) {
+      return _json({ error: "invalid_cursor" }, 400);
+    }
+  } else {
+    ({ start_through: startThrough, terminal_through: terminalThrough, cutoff } = await env.DB.prepare(
+      `SELECT
+         COALESCE((SELECT MAX(sequence) FROM attempt_starts), 0) AS start_through,
+         COALESCE((SELECT MAX(sequence) FROM terminal_exports), 0) AS terminal_through,
+         strftime('%Y-%m-%dT%H:%M:%fZ', 'now') AS cutoff`,
+    ).first());
+  }
+  if (after > startThrough) return _json({ error: "invalid_cursor" }, 400);
+
+  const [catalogResult, startResult] = await env.DB.batch([
+    env.DB.prepare(
+      `SELECT catalog_id, registered_at, mazes_json FROM catalogs
+       WHERE registered_at <= ? ORDER BY registered_at, catalog_id`,
+    ).bind(cutoff),
+    env.DB.prepare(
+      `SELECT sequence, attempt_id, browser_id, maze_id, tier, catalog_id, started_at
+       FROM attempt_starts WHERE sequence > ? AND sequence <= ?
+       ORDER BY sequence LIMIT ?`,
+    ).bind(after, startThrough, ANALYSIS_EXPORT_PAGE_SIZE + 1),
+  ]);
+  const hasMore = startResult.results.length > ANALYSIS_EXPORT_PAGE_SIZE;
+  const rows = startResult.results.slice(0, ANALYSIS_EXPORT_PAGE_SIZE);
+  const starts = await Promise.all(rows.map(async (row) => ({
+    sequence: row.sequence,
+    attempt_id: row.attempt_id,
+    participant_id: await _participantId(row.browser_id),
+    maze_id: row.maze_id,
+    tier: String(row.tier),
+    catalog_id: row.catalog_id,
+    started_at: row.started_at,
+  })));
+
+  return _json({
+    schema_version: 1,
+    dataset: env.DATASET,
+    start_through: startThrough,
+    terminal_through: terminalThrough,
+    cutoff,
+    current_catalog_id: CATALOG_ID,
+    catalogs: catalogResult.results.map((row) => ({
+      catalog_id: row.catalog_id,
+      registered_at: row.registered_at,
+      mazes: JSON.parse(row.mazes_json),
+    })),
+    next_cursor: starts.length > 0 ? starts.at(-1).sequence : after,
+    has_more: hasMore,
+    starts,
+  });
+}
+
 
 
 
@@ -666,6 +764,11 @@ export default {
     }
     if (url.pathname === "/api/export") {
       return request.method === "GET" ? _export(request, env) : _json({ error: "method_not_allowed" }, 405);
+    }
+    if (url.pathname === "/api/analysis-export") {
+      return request.method === "GET"
+        ? _analysisExport(request, env)
+        : _json({ error: "method_not_allowed" }, 405);
     }
     const completeMatch = url.pathname.match(/^\/api\/attempts\/([^/]+)\/complete$/);
     if (completeMatch) {

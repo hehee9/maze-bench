@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import tempfile
@@ -14,6 +15,15 @@ from typing import Any, Callable
 from urllib.parse import urlencode, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
+from human_analysis_export import (
+    collect_analysis_snapshot,
+    load_analysis_archive,
+)
+from human_baseline import (
+    IMPUTATIONS,
+    MODEL_VERSION,
+    build_participant_aggregates,
+)
 from maze_benchmark import (
     SCORING_VERSION,
     VALID_ACTIONS,
@@ -26,6 +36,7 @@ from maze_benchmark import (
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "public" / "human_results.json"
 DEFAULT_ARCHIVE = ROOT / "human_data" / "records.json"
+DEFAULT_ANALYSIS_ARCHIVE = ROOT / "human_data" / "analysis-records.json"
 DEFAULT_STATE = ROOT / "human_data" / "sync-state.json"
 MAZE_DIRECTORIES = {
     "1": ROOT / "maze_sets",
@@ -43,21 +54,23 @@ def _checked_integer(value: Any, field: str, minimum: int = 0) -> int:
 
 
 def _load_maze_catalog() -> dict[str, tuple[str, MazeProblem]]:
-    """실제 미로 파일을 tier와 문제 객체로 로드"""
+    """tier별 manifest에 등록된 미로를 문제 객체로 로드"""
     catalog: dict[str, tuple[str, MazeProblem]] = {}
     for tier, directory in MAZE_DIRECTORIES.items():
-        paths = sorted(
-            path
-            for path in directory.rglob("*.json")
-            if not path.name.endswith(".validation.json")
-            and not path.name.endswith("_manifest.json")
-            and path.name != "generation_summary.json"
-        )
-        for path in paths:
-            problem = load_problem(path)
-            if problem.problem_id in catalog:
-                raise ValueError(f"미로 ID가 중복되었습니다: {problem.problem_id}")
-            catalog[problem.problem_id] = (tier, problem)
+        manifests = sorted(directory.rglob("*_manifest.json"))
+        for manifest_path in manifests:
+            entries = _load_json(manifest_path)
+            if not isinstance(entries, list):
+                raise ValueError(f"미로 manifest 형식이 올바르지 않습니다: {manifest_path}")
+            for entry in entries:
+                if not isinstance(entry, dict):
+                    raise ValueError(f"미로 manifest 항목이 객체가 아닙니다: {manifest_path}")
+                problem = load_problem(manifest_path.parent / entry["json"])
+                if problem.problem_id != entry["problem_id"]:
+                    raise ValueError(f"manifest와 미로 ID가 다릅니다: {problem.problem_id}")
+                if problem.problem_id in catalog:
+                    raise ValueError(f"미로 ID가 중복되었습니다: {problem.problem_id}")
+                catalog[problem.problem_id] = (tier, problem)
     if not catalog:
         raise ValueError("채점할 미로 파일을 찾지 못했습니다.")
     return catalog
@@ -84,18 +97,151 @@ def _maze_rows(catalog: dict[str, tuple[str, MazeProblem]]) -> dict[str, list[di
 
 def _empty_public_results(catalog: dict[str, tuple[str, MazeProblem]]) -> dict[str, Any]:
     """참가 기록이 없는 공개 결과 스키마 구성"""
+    aggregates = _empty_participant_aggregates(catalog)
     return {
-        "schema_version": 1,
+        "schema_version": 2,
         "scoring_version": SCORING_VERSION,
         "site_url": None,
         "updated_at": None,
+        "model": aggregates["model"],
         "tiers": {
             tier: {
                 "participant_count": 0,
                 "attempt_count": 0,
+                "aggregates": aggregates["tiers"][tier]["aggregates"],
                 "mazes": rows,
             }
             for tier, rows in _maze_rows(catalog).items()
+        },
+    }
+
+
+def _empty_participant_aggregates(
+    catalog: dict[str, tuple[str, MazeProblem]],
+) -> dict[str, Any]:
+    """빈 참가 기록의 pending 집계 구성"""
+    catalog_metadata = _catalog_metadata(catalog)
+    catalog_id = _catalog_id(list(catalog))
+    cutoff = (
+        datetime.now(timezone.utc)
+        .isoformat(timespec="seconds")
+        .replace("+00:00", "Z")
+    )
+    return build_participant_aggregates(
+        [],
+        {
+            "cutoff": cutoff,
+            "current_catalog_id": catalog_id,
+            "catalogs": [
+                {
+                    "catalog_id": catalog_id,
+                    "registered_at": cutoff,
+                    "mazes": list(catalog_metadata.values()),
+                }
+            ],
+            "starts": [],
+        },
+        catalog,
+    )
+
+
+def _catalog_id(maze_ids: list[str]) -> str:
+    """정렬된 미로 ID에서 배포 카탈로그 ID 계산"""
+    digest = hashlib.sha256("\n".join(sorted(maze_ids)).encode("utf-8")).hexdigest()
+    return f"catalog-{digest}"
+
+
+def _maze_relation(problem: MazeProblem) -> str:
+    """시작·목표 방향에서 출입구 관계 계산"""
+    if problem.start_side == problem.goal_side:
+        return "same"
+    if {problem.start_side, problem.goal_side} in ({"N", "S"}, {"E", "W"}):
+        return "opposite"
+    return "adjacent"
+
+
+def _catalog_metadata(
+    catalog: dict[str, tuple[str, MazeProblem]],
+) -> dict[str, dict[str, Any]]:
+    """현재 미로 카탈로그의 모델 메타데이터 구성"""
+    return {
+        maze_id: {
+            "maze_id": maze_id,
+            "tier": tier,
+            "width": problem.width,
+            "height": problem.height,
+            "relation": _maze_relation(problem),
+        }
+        for maze_id, (tier, problem) in sorted(catalog.items())
+    }
+
+
+def _validate_current_catalog(
+    analysis: dict[str, Any],
+    catalog: dict[str, tuple[str, MazeProblem]],
+) -> None:
+    """분석 스냅샷의 현재 카탈로그와 로컬 manifest 메타데이터 대조"""
+    expected_id = _catalog_id(list(catalog))
+    if analysis["current_catalog_id"] != expected_id:
+        raise ValueError("현재 미로 manifest와 배포 카탈로그 ID가 다릅니다.")
+    current = next(
+        item for item in analysis["catalogs"] if item["catalog_id"] == expected_id
+    )
+    expected_mazes = list(_catalog_metadata(catalog).values())
+    if current["mazes"] != expected_mazes:
+        raise ValueError("현재 미로 manifest 메타데이터와 배포 카탈로그가 다릅니다.")
+
+
+def _validate_terminal_links(
+    records: list[dict[str, Any]],
+    analysis: dict[str, Any],
+    participant_counts: dict[str, int],
+) -> None:
+    """종료 기록 연결과 실제 tier별 참가자 수 검증"""
+    starts_by_attempt = {start["attempt_id"]: start for start in analysis["starts"]}
+    participants = {"1": set(), "2": set()}
+    for record in records:
+        start = starts_by_attempt.get(record["attempt_id"])
+        if start is None:
+            raise ValueError(f"종료 기록에 연결된 시작 기록이 없습니다: {record['attempt_id']}")
+        if (
+            start["maze_id"] != record["maze_id"]
+            or start["tier"] != record["tier"]
+            or start["started_at"] != record["started_at"]
+        ):
+            raise ValueError(f"시작 기록과 종료 기록의 연결 정보가 다릅니다: {record['attempt_id']}")
+        participants[record["tier"]].add(start["participant_id"])
+    actual_counts = {tier: len(values) for tier, values in participants.items()}
+    if actual_counts != participant_counts:
+        raise ValueError("분석 시작 기록으로 계산한 참가자 수가 내보내기 집계와 다릅니다.")
+
+
+def _analysis_inputs_equal(
+    previous: dict[str, Any] | None,
+    current: dict[str, Any],
+) -> bool:
+    """cutoff 시각을 제외한 분석 입력이 같은지 확인"""
+    if previous is None:
+        return False
+    fields = (
+        "schema_version",
+        "dataset",
+        "start_through",
+        "terminal_through",
+        "current_catalog_id",
+        "catalogs",
+        "starts",
+    )
+    return all(previous[field] == current[field] for field in fields)
+
+
+def _previous_aggregates(previous_public: dict[str, Any]) -> dict[str, Any]:
+    """기존 공개 결과에서 참가자 집계만 추출"""
+    return {
+        "model": previous_public["model"],
+        "tiers": {
+            tier: {"aggregates": previous_public["tiers"][tier]["aggregates"]}
+            for tier in ("1", "2")
         },
     }
 
@@ -229,12 +375,12 @@ def _fetch_snapshot(
     cursor: int,
     allow_verification: bool,
     page_fetcher: _PageFetcher = _fetch_export_page,
+    through: int | None = None,
 ) -> tuple[str, int, dict[str, int], list[dict[str, Any]]]:
     """고정 스냅샷의 모든 페이지 수집 및 중복 제거"""
     records_by_id: dict[str, dict[str, Any]] = {}
     sequences: dict[int, str] = {}
     after = cursor
-    through: int | None = None
     dataset: str | None = None
     counts: dict[str, int] | None = None
     while True:
@@ -242,8 +388,9 @@ def _fetch_snapshot(
         page_through, page_dataset, page_counts = _validate_page_header(
             page, through, dataset, counts
         )
-        if through is None:
-            through = page_through
+        if dataset is None:
+            if through is None:
+                through = page_through
             dataset = page_dataset
             counts = page_counts
             if through < cursor:
@@ -434,10 +581,13 @@ def _build_public_results(
     records: list[dict[str, Any]],
     catalog: dict[str, tuple[str, MazeProblem]],
     previous_public: dict[str, Any] | None,
+    participant_aggregates: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """tier별 참가·시도 수와 미로 점수 통계 산출"""
+    """관측 점수와 참가자 모형 집계의 공개 결과 구성"""
     if dataset not in {"production", "verification"}:
         raise ValueError("공개 집계에 사용할 dataset이 없습니다.")
+    if participant_aggregates is None:
+        participant_aggregates = _empty_participant_aggregates(catalog)
     rows_by_tier = _maze_rows(catalog)
     scores: dict[str, list[float]] = defaultdict(list)
     attempt_counts = {"1": 0, "2": 0}
@@ -474,14 +624,16 @@ def _build_public_results(
                 row["p05_score"] = None
                 row["p95_score"] = None
     current = {
-        "schema_version": 1,
+        "schema_version": 2,
         "scoring_version": SCORING_VERSION,
         "site_url": site_url,
         "updated_at": None,
+        "model": participant_aggregates["model"],
         "tiers": {
             tier: {
                 "participant_count": participant_counts[tier],
                 "attempt_count": attempt_counts[tier],
+                "aggregates": participant_aggregates["tiers"][tier]["aggregates"],
                 "mazes": rows,
             }
             for tier, rows in rows_by_tier.items()
@@ -545,14 +697,21 @@ def sync_results(
     state_path: Path,
     allow_verification: bool = False,
     page_fetcher: _PageFetcher = _fetch_export_page,
+    analysis_archive_path: Path | None = None,
 ) -> dict[str, Any]:
-    """전체 수집·검증 후 집계, 보관 기록, 커서 갱신"""
-    paths = [path.resolve() for path in (output_path, archive_path, state_path)]
+    """분석·종료 기록을 수집·검증한 뒤 공개 결과와 보관 파일 갱신"""
+    if analysis_archive_path is None:
+        analysis_archive_path = archive_path.with_name("analysis-records.json")
+    paths = [
+        path.resolve()
+        for path in (output_path, archive_path, state_path, analysis_archive_path)
+    ]
     if len(set(paths)) != len(paths):
-        raise ValueError("출력, 기록 보관, 커서 파일 경로는 서로 달라야 합니다.")
+        raise ValueError("공개 결과, 기록 보관, 분석 기록, 커서 파일 경로는 서로 달라야 합니다.")
     site_url = _normalize_site_url(site_url)
     state = _load_state(state_path)
     archive_dataset, existing_records = _load_archive(archive_path)
+    previous_analysis = load_analysis_archive(analysis_archive_path)
     if state["cursor"] and not archive_path.exists():
         raise ValueError("커서가 진행되었지만 보관 기록 파일이 없습니다.")
     if state["cursor"] and state["dataset"] is None:
@@ -563,30 +722,86 @@ def sync_results(
         raise ValueError("커서와 기록 보관 파일의 dataset이 다릅니다.")
     if not token:
         raise ValueError("내보내기 인증 토큰이 비어 있습니다.")
+
+    analysis = collect_analysis_snapshot(
+        site_url,
+        token,
+        previous_analysis,
+        allow_verification=allow_verification,
+    )
+    dataset = analysis["dataset"]
+    if state["dataset"] not in {None, dataset} or archive_dataset not in {None, dataset}:
+        raise ValueError("현재 dataset을 기존 기록 파일과 함께 사용할 수 없습니다.")
+    if previous_analysis is not None and previous_analysis["dataset"] != dataset:
+        raise ValueError("현재 dataset을 기존 분석 기록 파일과 함께 사용할 수 없습니다.")
+    if dataset == "verification" and any(
+        path.resolve() == official.resolve()
+        for path, official in (
+            (output_path, DEFAULT_OUTPUT),
+            (archive_path, DEFAULT_ARCHIVE),
+            (analysis_archive_path, DEFAULT_ANALYSIS_ARCHIVE),
+            (state_path, DEFAULT_STATE),
+        )
+    ):
+        raise ValueError("verification 데이터셋에는 기본 정본과 분리된 파일 경로가 필요합니다.")
+    if analysis["terminal_through"] < state["cursor"]:
+        raise ValueError("분석 스냅샷의 종료 커서가 저장된 커서보다 오래되었습니다.")
+
     dataset, through, participant_counts, fetched_records = _fetch_snapshot(
         site_url,
         token,
         state["cursor"],
         allow_verification,
         page_fetcher,
+        through=analysis["terminal_through"],
     )
-    if state["dataset"] not in {None, dataset} or archive_dataset not in {None, dataset}:
-        raise ValueError("현재 dataset을 기존 기록 파일과 함께 사용할 수 없습니다.")
+    if dataset != analysis["dataset"]:
+        raise ValueError("분석 시작 기록과 종료 기록의 dataset이 다릅니다.")
     if existing_records and max(record["sequence"] for record in existing_records) > through:
         raise ValueError("현재 내보내기 스냅샷이 보관 기록보다 오래되었습니다.")
-    if dataset == "verification" and any(
-        path.resolve() == official.resolve()
-        for path, official in (
-            (output_path, DEFAULT_OUTPUT),
-            (archive_path, DEFAULT_ARCHIVE),
-            (state_path, DEFAULT_STATE),
-        )
-    ):
-        raise ValueError("verification 데이터셋에는 기본 정본과 분리된 파일 경로가 필요합니다.")
     merged_records = _merge_records(existing_records, fetched_records)
     catalog = _load_maze_catalog()
+    _validate_current_catalog(analysis, catalog)
+    _validate_terminal_links(merged_records, analysis, participant_counts)
     scored_records = _score_records(merged_records, catalog)
     previous_public = _load_json(output_path) if output_path.exists() else None
+
+    analysis_archive = analysis
+    if _analysis_inputs_equal(previous_analysis, analysis):
+        analysis_archive = previous_analysis
+    previous_tiers = previous_public.get("tiers") if isinstance(previous_public, dict) else None
+    previous_model = previous_public.get("model") if isinstance(previous_public, dict) else None
+    reusable_aggregates = (
+        isinstance(previous_public, dict)
+        and previous_public.get("schema_version") == 2
+        and previous_public.get("scoring_version") == SCORING_VERSION
+        and isinstance(previous_model, dict)
+        and previous_model.get("version") == MODEL_VERSION
+        and previous_model.get("imputations") == IMPUTATIONS
+        and previous_model.get("catalog_id") == analysis_archive["current_catalog_id"]
+        and previous_model.get("cutoff") == analysis_archive["cutoff"]
+        and isinstance(previous_tiers, dict)
+        and all(
+            isinstance(previous_tiers.get(tier), dict)
+            and isinstance(previous_tiers[tier].get("aggregates"), dict)
+            for tier in ("1", "2")
+        )
+        and previous_analysis is not None
+        and _analysis_inputs_equal(previous_analysis, analysis_archive)
+        and not fetched_records
+        and merged_records == existing_records
+        and state["cursor"] == through
+        and state["dataset"] == dataset
+        and all(
+            previous_tiers[tier].get("participant_count") == participant_counts[tier]
+            for tier in ("1", "2")
+        )
+    )
+    participant_aggregates = (
+        _previous_aggregates(previous_public)
+        if reusable_aggregates
+        else build_participant_aggregates(scored_records, analysis_archive, catalog)
+    )
     public_results = _build_public_results(
         site_url,
         dataset,
@@ -594,6 +809,7 @@ def sync_results(
         scored_records,
         catalog,
         previous_public,
+        participant_aggregates,
     )
     archive = {
         "schema_version": 1,
@@ -610,6 +826,7 @@ def sync_results(
     _write_if_changed(
         {
             archive_path: _json_text(archive),
+            analysis_archive_path: _json_text(analysis_archive),
             output_path: _json_text(public_results),
             state_path: _json_text(next_state),
         }
@@ -624,6 +841,7 @@ def _build_argument_parser() -> argparse.ArgumentParser:
     parser.add_argument("--export-token-env", default="HUMAN_EXPORT_TOKEN")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--archive", type=Path)
+    parser.add_argument("--analysis-archive", type=Path)
     parser.add_argument("--state", type=Path)
     parser.add_argument("--allow-verification", action="store_true")
     return parser
@@ -637,16 +855,22 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("--site-url 또는 HUMAN_SITE_URL이 필요합니다.")
     output_path = args.output or DEFAULT_OUTPUT
     archive_path = args.archive or DEFAULT_ARCHIVE
+    analysis_archive_path = args.analysis_archive or archive_path.with_name("analysis-records.json")
     state_path = args.state or DEFAULT_STATE
     if args.allow_verification:
-        explicit_paths = (args.output, args.archive, args.state)
-        official_paths = (DEFAULT_OUTPUT, DEFAULT_ARCHIVE, DEFAULT_STATE)
+        explicit_paths = (args.output, args.archive, args.analysis_archive, args.state)
+        official_paths = (
+            DEFAULT_OUTPUT,
+            DEFAULT_ARCHIVE,
+            DEFAULT_ANALYSIS_ARCHIVE,
+            DEFAULT_STATE,
+        )
         if any(path is None for path in explicit_paths) or any(
             path.resolve() == official.resolve()
             for path, official in zip(explicit_paths, official_paths)
         ):
             parser.error(
-                "verification 데이터셋에는 기본 정본과 분리된 --output, --archive, --state 경로가 모두 필요합니다."
+                "verification 데이터셋에는 기본 정본과 분리된 --output, --archive, --analysis-archive, --state 경로가 모두 필요합니다."
             )
     token = os.environ.get(args.export_token_env)
     if token is None:
@@ -658,6 +882,7 @@ def main(argv: list[str] | None = None) -> int:
         archive_path,
         state_path,
         allow_verification=args.allow_verification,
+        analysis_archive_path=analysis_archive_path,
     )
     return 0
 

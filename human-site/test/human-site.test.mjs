@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { spawn, spawnSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import { createServer } from "node:net";
@@ -7,7 +8,7 @@ import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import test from "node:test";
-import { MAZES, MAZE_BY_ID } from "../.build/maze-catalog.generated.js";
+import { CATALOG, CATALOG_ID, MAZES, MAZE_BY_ID } from "../.build/maze-catalog.generated.js";
 import { scoreActions } from "../src/index.js";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -704,6 +705,126 @@ test("human-play D1 worker contracts", async (t) => {
       assert.equal(records.some(({ attempt_id }) => attempt_id === afterSnapshotStart.body.attempt.id), false);
       assert.ok(records.every(({ status, actions }) =>
         ["success", "collision", "quit"].includes(status) && Array.isArray(actions)));
+    });
+
+    await t.test("analysis export snapshots immutable starts with stable participant pseudonyms", async () => {
+      const badAuth = await fetch(`${baseUrl}/api/analysis-export?after=0`);
+      assert.equal(badAuth.status, 401);
+      const badToken = await fetch(`${baseUrl}/api/analysis-export?after=0`, {
+        headers: { Authorization: "Bearer wrong" },
+      });
+      assert.equal(badToken.status, 401);
+      const malformedCursor = await fetch(`${baseUrl}/api/analysis-export?after=-1`, {
+        headers: { Authorization: `Bearer ${exportToken}` },
+      });
+      assert.equal(malformedCursor.status, 400);
+      const partialSnapshot = await fetch(`${baseUrl}/api/analysis-export?after=0&start_through=1`, {
+        headers: { Authorization: `Bearer ${exportToken}` },
+      });
+      assert.equal(partialSnapshot.status, 400);
+      const wrongMethod = await fetch(`${baseUrl}/api/analysis-export`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${exportToken}` },
+      });
+      assert.equal(wrongMethod.status, 405);
+
+      const browserId = crypto.randomUUID().toUpperCase();
+      const normalizedBrowserId = browserId.toLowerCase();
+      knownBrowsers.add(normalizedBrowserId);
+      const firstAttempt = await _request(baseUrl, browserId, "/api/start", {
+        method: "POST",
+        body: {},
+      });
+      const finishFirst = await _request(
+        baseUrl,
+        browserId,
+        `/api/attempts/${firstAttempt.body.attempt.id}/quit`,
+        { method: "POST", body: { sequence: 1, request_id: crypto.randomUUID() } },
+      );
+      assert.equal(finishFirst.status, 200);
+      const activeAttempt = await _request(baseUrl, browserId, "/api/start", {
+        method: "POST",
+        body: {},
+      });
+      assert.equal(activeAttempt.body.attempt.status, "active");
+
+      const firstResponse = await fetch(`${baseUrl}/api/analysis-export?after=0`, {
+        headers: { Authorization: `Bearer ${exportToken}` },
+      });
+      assert.equal(firstResponse.status, 200);
+      const first = await firstResponse.json();
+      assert.equal(first.schema_version, 1);
+      assert.equal(first.dataset, "verification");
+      assert.ok(first.start_through >= 201);
+      assert.ok(first.terminal_through > 0);
+      assert.match(first.cutoff, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/);
+      assert.equal(first.current_catalog_id, CATALOG_ID);
+      assert.equal(first.starts.length, 200);
+      assert.equal(first.has_more, true);
+      assert.equal(first.next_cursor, first.starts.at(-1).sequence);
+      const currentCatalog = first.catalogs.find(({ catalog_id }) => catalog_id === CATALOG_ID);
+      assert.ok(currentCatalog);
+      assert.ok(currentCatalog.registered_at <= first.cutoff);
+      assert.deepEqual(currentCatalog.mazes, CATALOG);
+
+      const finishActive = await _request(
+        baseUrl,
+        browserId,
+        `/api/attempts/${activeAttempt.body.attempt.id}/quit`,
+        { method: "POST", body: { sequence: 1, request_id: crypto.randomUUID() } },
+      );
+      assert.equal(finishActive.status, 200);
+      const afterSnapshotStart = await _request(baseUrl, browserId, "/api/start", {
+        method: "POST",
+        body: {},
+      });
+      assert.equal(afterSnapshotStart.body.attempt.status, "active");
+
+      const starts = [...first.starts];
+      let nextCursor = first.next_cursor;
+      let hasMore = first.has_more;
+      while (hasMore) {
+        const pageResponse = await fetch(
+          `${baseUrl}/api/analysis-export?after=${nextCursor}` +
+          `&start_through=${first.start_through}&terminal_through=${first.terminal_through}` +
+          `&cutoff=${encodeURIComponent(first.cutoff)}`,
+          { headers: { Authorization: `Bearer ${exportToken}` } },
+        );
+        assert.equal(pageResponse.status, 200);
+        const page = await pageResponse.json();
+        assert.equal(page.start_through, first.start_through);
+        assert.equal(page.terminal_through, first.terminal_through);
+        assert.equal(page.cutoff, first.cutoff);
+        assert.equal(page.current_catalog_id, first.current_catalog_id);
+        assert.deepEqual(page.catalogs, first.catalogs);
+        assert.ok(page.starts.length <= 200);
+        assert.equal(page.next_cursor, page.starts.at(-1)?.sequence ?? nextCursor);
+        starts.push(...page.starts);
+        nextCursor = page.next_cursor;
+        hasMore = page.has_more;
+      }
+
+      assert.equal(starts.length, first.start_through);
+      assert.deepEqual(
+        starts.map(({ sequence }) => sequence),
+        Array.from({ length: first.start_through }, (_, index) => index + 1),
+      );
+      assert.equal(new Set(starts.map(({ attempt_id }) => attempt_id)).size, starts.length);
+      const firstAndActive = new Set([firstAttempt.body.attempt.id, activeAttempt.body.attempt.id]);
+      const participantId = createHash("sha256")
+        .update(`maze-bench:participant:v1:${normalizedBrowserId}`)
+        .digest("hex");
+      const participantStarts = starts.filter(({ attempt_id }) => firstAndActive.has(attempt_id));
+      assert.equal(participantStarts.length, 2);
+      assert.ok(participantStarts.every(({ participant_id }) => participant_id === participantId));
+      assert.ok(participantStarts.every(({ catalog_id }) => catalog_id === CATALOG_ID));
+      assert.equal(starts.some(({ attempt_id }) => attempt_id === afterSnapshotStart.body.attempt.id), false);
+      assert.ok(starts.some(({ sequence }) => sequence < participantStarts[0].sequence));
+      assert.ok(starts.every((start) =>
+        !Object.hasOwn(start, "browser_id") && !Object.hasOwn(start, "status") &&
+        !Object.hasOwn(start, "finished_at") && !Object.hasOwn(start, "actions")));
+      const serialized = JSON.stringify({ ...first, starts });
+      for (const knownBrowserId of knownBrowsers) assert.equal(serialized.includes(knownBrowserId), false);
     });
   } finally {
     server.child.kill();
