@@ -272,9 +272,9 @@ class AnthropicBatchProvider(BatchProvider):
                     "Claude Opus 4.8 requires adaptive thinking without a token budget"
                 )
         elif model_id.startswith("claude-sonnet-5"):
-            if model.thinking_enabled or budget is not None:
+            if budget is not None:
                 raise ValueError(
-                    "Claude Sonnet 5 uses default adaptive thinking; omit thinking"
+                    "Claude Sonnet 5 supports adaptive thinking without a token budget"
                 )
         elif model_id.startswith("claude-haiku-4-5"):
             if not model.thinking_enabled or budget is None:

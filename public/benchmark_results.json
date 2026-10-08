@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 4,
   "status": "completed",
-  "expected_result_count": 1140,
-  "processed_result_count": 1140,
+  "expected_result_count": 1200,
+  "processed_result_count": 1200,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -570,6 +570,198 @@
               "output_tokens": 7166,
               "reasoning_tokens": 7090,
               "total_tokens": 16346
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Claude Haiku 5.5 (medium)",
+      "provider": "anthropic",
+      "model_id": "claude-haiku-5-5",
+      "reasoning_label": "effort-medium_thinking-adaptive",
+      "pricing": {
+        "input_per_million": 0.1,
+        "output_per_million": 0.5
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 52.65455083534051,
+      "official_mean_score": 52.65455083534051,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 154200,
+          "output_tokens": 277598,
+          "reasoning_tokens": 276822,
+          "total_tokens": 431798
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 44.002404828487656,
+          "official_mean_score": 44.002404828487656,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 79390,
+              "reasoning_tokens": 79251,
+              "total_tokens": 105090
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 17.311188383508203,
+          "official_mean_score": 17.311188383508203,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 61523,
+              "reasoning_tokens": 61376,
+              "total_tokens": 87223
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 20.962962962962962,
+          "official_mean_score": 20.962962962962962,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 64615,
+              "reasoning_tokens": 64333,
+              "total_tokens": 90315
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 80.0,
+          "official_mean_score": 80.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 10681,
+              "reasoning_tokens": 10637,
+              "total_tokens": 36381
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 94.6969696969697,
+          "official_mean_score": 94.6969696969697,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 19224,
+              "reasoning_tokens": 19163,
+              "total_tokens": 44924
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 58.95377914011455,
+          "official_mean_score": 58.95377914011455,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 42165,
+              "reasoning_tokens": 42062,
+              "total_tokens": 67865
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -1343,6 +1535,198 @@
               "input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 5,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Claude Sonnet 5.5 (medium)",
+      "provider": "anthropic",
+      "model_id": "claude-sonnet-5-5",
+      "reasoning_label": "effort-medium_thinking-adaptive",
+      "pricing": {
+        "input_per_million": 2.0,
+        "output_per_million": 10.0
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 58.466635601638316,
+      "official_mean_score": 58.466635601638316,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 154200,
+          "output_tokens": 154549,
+          "reasoning_tokens": 152296,
+          "total_tokens": 308749
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 36.381474211790845,
+          "official_mean_score": 36.381474211790845,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 30171,
+              "reasoning_tokens": 30042,
+              "total_tokens": 55871
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 67.00134199693954,
+          "official_mean_score": 67.00134199693954,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 54296,
+              "reasoning_tokens": 54146,
+              "total_tokens": 79996
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 57.10403180936096,
+          "official_mean_score": 57.10403180936096,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 39976,
+              "reasoning_tokens": 39834,
+              "total_tokens": 65676
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 60.0,
+          "official_mean_score": 60.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 4285,
+              "reasoning_tokens": 2622,
+              "total_tokens": 29985
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 66.06046550851747,
+          "official_mean_score": 66.06046550851747,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 6430,
+              "reasoning_tokens": 6372,
+              "total_tokens": 32130
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 64.2525000832211,
+          "official_mean_score": 64.2525000832211,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 25700,
+              "output_tokens": 19391,
+              "reasoning_tokens": 19280,
+              "total_tokens": 45091
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
               "total_tokens": 0
             }
           }
@@ -42947,6 +43331,996 @@
       "status": "success",
       "scoring_version": 4,
       "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "I read the maze as a 4×4 grid, with cell boundaries at x = 375, 670, 967, 1262, 1558 and y = 375, 670, 967, 1262, 1558.\n\n**Walls**\n- Top wall: spans x 670–1558, so the opening is at column 0 (x 375–670).\n- Vertical wall at x=967 from y 375 to 967, between columns 1 and 2 in rows 0 and 1.\n- Vertical wall at x=670 from y 670 to 1262, between columns 0 and 1 in rows 1 and 2.\n- Horizontal wall at y=670 from x 967 to 1262, between rows 0 and 1 in column 2.\n- Horizontal wall at y=967 from x 967 to 1262, between rows 1 and 2 in column 2.\n- Horizontal wall at y=1262 from x 1262 to 1558, between rows 2 and 3 in column 3.\n- Vertical wall at x=967 from y 1262 to 1558, between columns 1 and 2 in row 3.\n- Right wall: closed from y 375 to 967 and from y 1262 to 1558, so the exit is at row 2 (y 967–1262).\n\n**Route**\nStart by entering at cell (row 0, col 0) heading south. Column 0 is open all the way down, but the wall at x=670 blocks column 0 from column 1 in rows 1 and 2. Row 0 is open between columns 0 and 1, so I go east along row 0 to column 1, then south down column 1 to row 2.\n\nAt row 2, column 1, the way east is open (there is no wall at x=967 for y 967–1262). I go east along row 2 through columns 2 and 3 to the exit.\n\n**Commands**\n- S: enter the maze at (0,0), heading south.\n- At (0,0), turn left to face east. Going straight south is also open, so this is a junction, and I choose L (facing east).\n- Reach (0,1), which is a corner because the wall at x=967 blocks the way east. Turn right to face south: R.\n- Go south down column 1. At (2,1) the way east is open, so it is a junction. Turn left to face east: L.\n- Travel east along row 2 to (2,3). There are junctions along the way: at (2,2), north and south are both open, so S. At (2,3), S exits.\n\nWait, I need to check the cells before the exit for decision points. At (1,1) and (2,1) there are junctions: (1,1) has west blocked and east blocked, so it is only a straight corridor. At (2,1), south continues to (3,1) and east is open, so it is a junction, and I choose L.\n\n**S L R L S S**",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 870,
+        "reasoning_tokens": 0,
+        "total_tokens": 6010
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 0,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 823,
+        "reasoning_tokens": 815,
+        "total_tokens": 5963
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "Grid: x from 374 to 1558, with cells about 296 wide, giving 4 columns (374-670, 670-966, 966-1262, 1262-1558). Rows: 374-670, 670-966, 966-1262, 1262-1558.\n\nEntrance: top of column 1 (x 670-966), the cell (r0,c1). Exit: bottom of column 2 (966-1262), the cell (r3,c2).\n\nWalls:\n- Vertical x=966 from y374 to 966: between c1 and c2 in rows 0 and 1.\n- Vertical x=670 from y670 to 1262: between c0 and c1 in rows 1 and 2.\n- Horizontal y=966 from x670 to 966: between r1 and r2 in column 1.\n- Vertical x=1262 from y670 to 966: between c2 and c3 in row 1.\n- Horizontal y=966 from x1262 to 1558: between r1 and r2 in column 3.\n- Horizontal y=1262 from x966 to 1262: between r2 and r3 in column 2.\n\nPath: enter (0,1) heading south. Going down is blocked by the wall at y=966 below (1,1), and the right side is walled in rows 0 and 1. So go left to (0,0), down column 0 to (3,0), right along row 3 to (3,2), then exit south.\n\nCommands:\n- S: enter at (0,1) facing south. Continuing straight reaches (1,1), where the corridor is a dead end with a wall ahead, but the route turns before that. At (0,1) the decision is to turn right (facing south, the right-hand side is west), so R goes to (0,0).\n- At (0,0), facing west, the wall is ahead and the only way is south, which is a left turn: L.\n- Go down column 0 to (3,0). Along the way, (1,0) and (2,0) have walls on the east side, so there are no junctions. At (3,0) facing south, turn left (east): L.\n- Go east along row 3. At (3,1), the north is open (since (2,1) connects to (3,1)), which makes a junction, so go straight: S. At (3,2), turn right to face south toward the exit: R. Whether (3,2) counts as a decision point is unclear, but the final command is needed anyway to leave.\n\nSequence: S R L L S R\n\n**S R L L S R**",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 765,
+        "reasoning_tokens": 0,
+        "total_tokens": 5905
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 0,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 856,
+        "reasoning_tokens": 846,
+        "total_tokens": 5996
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 971,
+        "reasoning_tokens": 961,
+        "total_tokens": 6111
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L R L S S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1245,
+        "reasoning_tokens": 1232,
+        "total_tokens": 6385
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 11,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 986,
+        "reasoning_tokens": 976,
+        "total_tokens": 6126
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L S R S S S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1343,
+        "reasoning_tokens": 1332,
+        "total_tokens": 6483
+      },
+      "score": 37.1900826446281,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 9,
+        "actual_action_count": 5,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.45454545454545453,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L S R S L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1649,
+        "reasoning_tokens": 1634,
+        "total_tokens": 6789
+      },
+      "score": 30.612244897959183,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 12,
+        "actual_action_count": 5,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.35714285714285715,
+        "efficiency_ratio": 0.8571428571428571
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1207,
+        "reasoning_tokens": 1198,
+        "total_tokens": 6347
+      },
+      "score": 62.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 5,
+        "remaining_action_count": 3,
+        "completion_ratio": 0.625,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R S S S S R S R L S L R R L R S S L L S R L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 6276,
+        "reasoning_tokens": 6245,
+        "total_tokens": 11416
+      },
+      "score": 79.3103448275862,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 23,
+        "actual_action_count": 29,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.7931034482758621
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R L S S L S L L L R R L R R L L R S R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4929,
+        "reasoning_tokens": 4901,
+        "total_tokens": 10069
+      },
+      "score": 76.92307692307693,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 20,
+        "actual_action_count": 26,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.7692307692307693
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R R L S S S R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2159,
+        "reasoning_tokens": 2144,
+        "total_tokens": 7299
+      },
+      "score": 12.962962962962962,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.7777777777777778
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R L R L R R L S S R S L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 3663,
+        "reasoning_tokens": 3643,
+        "total_tokens": 8803
+      },
+      "score": 52.06611570247934,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 14,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.6363636363636364,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R S R L L R R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2364,
+        "reasoning_tokens": 2347,
+        "total_tokens": 7504
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 15,
+        "actual_action_count": 15,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R L L R S S R L R S R L R L R L S S S R S R L L R R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 7755,
+        "reasoning_tokens": 7723,
+        "total_tokens": 12895
+      },
+      "score": 16.05231866825208,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 5,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1724137931034483,
+        "efficiency_ratio": 0.9310344827586207
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L R L S R R L L R R L R L L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 5607,
+        "reasoning_tokens": 5582,
+        "total_tokens": 10747
+      },
+      "score": 78.26086956521739,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 18,
+        "actual_action_count": 23,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.782608695652174
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L R L L R R L L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4674,
+        "reasoning_tokens": 4655,
+        "total_tokens": 9814
+      },
+      "score": 18.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 4,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R L S S L S S R S S L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4358,
+        "reasoning_tokens": 4339,
+        "total_tokens": 9498
+      },
+      "score": 13.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.15,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S S S R R L L R S S L L R S S S L L R S S S L L R L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 7777,
+        "reasoning_tokens": 7743,
+        "total_tokens": 12917
+      },
+      "score": 56.094182825484765,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 27,
+        "remaining_action_count": 11,
+        "completion_ratio": 0.7105263157894737,
+        "efficiency_ratio": 0.7894736842105263
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R R S L R L S R L L S S S S R L S L R S R L R L R L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 13584,
+        "reasoning_tokens": 13549,
+        "total_tokens": 18724
+      },
+      "score": 87.51300728407908,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 29,
+        "remaining_action_count": 2,
+        "completion_ratio": 0.9354838709677419,
+        "efficiency_ratio": 0.9354838709677419
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S S R S L R L S R L R L S R L R R L L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8292,
+        "reasoning_tokens": 8267,
+        "total_tokens": 13432
+      },
+      "score": 71.00591715976333,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 20,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.7692307692307693,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L L L R R R L R S L S S R L L S S R L R S S R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 10466,
+        "reasoning_tokens": 10435,
+        "total_tokens": 15606
+      },
+      "score": 57.44016649323621,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 24,
+        "remaining_action_count": 7,
+        "completion_ratio": 0.7741935483870968,
+        "efficiency_ratio": 0.7419354838709677
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R L R R L R L S L R L R L R R L S R L S L R R R L L R L S S S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 16419,
+        "reasoning_tokens": 16383,
+        "total_tokens": 21559
+      },
+      "score": 28.57142857142857,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 21,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.5,
+        "efficiency_ratio": 0.5714285714285714
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L R S L R L R R S L R L S L R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 5535,
+        "reasoning_tokens": 5512,
+        "total_tokens": 10675
+      },
+      "score": 90.47619047619048,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 19,
+        "actual_action_count": 21,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.9047619047619048
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S L R R L L R R L R S L L R L L R S R L S R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 6696,
+        "reasoning_tokens": 6666,
+        "total_tokens": 11836
+      },
+      "score": 78.57142857142857,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 22,
+        "actual_action_count": 28,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.7857142857142857
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S S S L R L S S S L R L R L R S L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 5637,
+        "reasoning_tokens": 5615,
+        "total_tokens": 10777
+      },
+      "score": 21.694214876033058,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 5,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.22727272727272727,
+        "efficiency_ratio": 0.9545454545454546
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R S L R L R S S S L R S R S L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 5494,
+        "reasoning_tokens": 5472,
+        "total_tokens": 10634
+      },
+      "score": 19.047619047619047,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 4,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.19047619047619047,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L L S R L R R L R S L L R R L L R R R L L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 7700,
+        "reasoning_tokens": 7669,
+        "total_tokens": 12840
+      },
+      "score": 86.20689655172413,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 25,
+        "actual_action_count": 29,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.8620689655172413
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Sonnet 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-sonnet-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R R L L S L L R R R L R S L R S S S S S R S S L R S L L R S R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 14449,
+        "reasoning_tokens": 14412,
+        "total_tokens": 19589
+      },
+      "score": 80.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 28,
+        "actual_action_count": 35,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.8
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
         "name": "Claude Sonnet 5 (medium)",
         "provider": "anthropic",
         "model_id": "claude-sonnet-5",
@@ -43930,6 +45304,996 @@
         "actual_action_count": 2,
         "remaining_action_count": 26,
         "completion_ratio": 0.07142857142857142,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L L R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2132,
+        "reasoning_tokens": 2124,
+        "total_tokens": 7272
+      },
+      "score": 33.33333333333333,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 2,
+        "remaining_action_count": 4,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2342,
+        "reasoning_tokens": 2334,
+        "total_tokens": 7482
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 1615,
+        "reasoning_tokens": 1608,
+        "total_tokens": 6755
+      },
+      "score": 66.66666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 6,
+        "actual_action_count": 4,
+        "remaining_action_count": 2,
+        "completion_ratio": 0.6666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2202,
+        "reasoning_tokens": 2192,
+        "total_tokens": 7342
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2390,
+        "reasoning_tokens": 2379,
+        "total_tokens": 7530
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L R L S S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4109,
+        "reasoning_tokens": 4096,
+        "total_tokens": 9249
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 11,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 2956,
+        "reasoning_tokens": 2946,
+        "total_tokens": 8096
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L S R S L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 3515,
+        "reasoning_tokens": 3502,
+        "total_tokens": 8655
+      },
+      "score": 81.81818181818183,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 11,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L R S L R R L R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 3910,
+        "reasoning_tokens": 3895,
+        "total_tokens": 9050
+      },
+      "score": 91.66666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 12,
+        "actual_action_count": 11,
+        "remaining_action_count": 1,
+        "completion_ratio": 0.9166666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 4734,
+        "reasoning_tokens": 4724,
+        "total_tokens": 9874
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R L R L S R R L L S R L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8714,
+        "reasoning_tokens": 8692,
+        "total_tokens": 13854
+      },
+      "score": 13.043478260869565,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 3,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.13043478260869565,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R L L R L L L R L R R L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 7483,
+        "reasoning_tokens": 7462,
+        "total_tokens": 12623
+      },
+      "score": 40.81632653061224,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 9,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.42857142857142855,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S L R R L S S S R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 5996,
+        "reasoning_tokens": 5980,
+        "total_tokens": 11136
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 14,
+        "actual_action_count": 14,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R L R L R L R R L R R L R L R L L R L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 11487,
+        "reasoning_tokens": 11460,
+        "total_tokens": 16627
+      },
+      "score": 40.909090909090914,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 11,
+        "remaining_action_count": 11,
+        "completion_ratio": 0.5,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R L R R L L R R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 8485,
+        "reasoning_tokens": 8468,
+        "total_tokens": 13625
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 15,
+        "actual_action_count": 15,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R L S L R S R L R S R L R L S R L R S S R S L R L S R L S S L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 20380,
+        "reasoning_tokens": 20343,
+        "total_tokens": 25520
+      },
+      "score": 48.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 16,
+        "remaining_action_count": 14,
+        "completion_ratio": 0.5333333333333333,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L R L R L R R L R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 11376,
+        "reasoning_tokens": 11357,
+        "total_tokens": 16516
+      },
+      "score": 23.818525519848777,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 7,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.30434782608695654,
+        "efficiency_ratio": 0.782608695652174
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L R R L R L L R L L S R R S R L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 11693,
+        "reasoning_tokens": 11669,
+        "total_tokens": 16833
+      },
+      "score": 60.48,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 21,
+        "remaining_action_count": 4,
+        "completion_ratio": 0.84,
+        "efficiency_ratio": 0.72
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R L L R L R R L L S R R L S L R L R L R L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 15234,
+        "reasoning_tokens": 15208,
+        "total_tokens": 20374
+      },
+      "score": 74.3801652892562,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 20,
+        "remaining_action_count": 2,
+        "completion_ratio": 0.9090909090909091,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S S S S R R L L R S S L L R S L L R R L L R L L R R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 20707,
+        "reasoning_tokens": 20674,
+        "total_tokens": 25847
+      },
+      "score": 13.333333333333334,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 4,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.13333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R S L S L S R R L R S L L S S S R L S S R L R L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 16270,
+        "reasoning_tokens": 16237,
+        "total_tokens": 21410
+      },
+      "score": 10.344827586206897,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 3,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.10344827586206896,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L R L R S R L L S R L R L S R B S L S R S L R S L R L S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 10926,
+        "reasoning_tokens": 10892,
+        "total_tokens": 16066
+      },
+      "score": 10.650887573964498,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R R L S L R S R L S S L S S R R L R R L L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 16666,
+        "reasoning_tokens": 16638,
+        "total_tokens": 21806
+      },
+      "score": 44.160000000000004,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 12,
+        "remaining_action_count": 13,
+        "completion_ratio": 0.48,
+        "efficiency_ratio": 0.92
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R S L R S L R S R L S B R S L R L S R S L R S L R S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 10047,
+        "reasoning_tokens": 10015,
+        "total_tokens": 15187
+      },
+      "score": 4.166666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 1,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.041666666666666664,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R S L R L S R S L R B S R L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 7614,
+        "reasoning_tokens": 7594,
+        "total_tokens": 12754
+      },
+      "score": 17.233560090702948,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 4,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.19047619047619047,
+        "efficiency_ratio": 0.9047619047619048
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L L R S S R L S L S R S S L S R L S S S L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 15430,
+        "reasoning_tokens": 15400,
+        "total_tokens": 20570
+      },
+      "score": 12.22222222222222,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 5,
+        "remaining_action_count": 25,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.7333333333333333
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L S L R S R S R L R S L S R\n\nI could not fully trace the maze, so this sequence is a best-effort partial route and may not reach the exit.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 16154,
+        "reasoning_tokens": 16102,
+        "total_tokens": 21294
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 21,
+        "actual_action_count": 0,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L S R B L S R L S L R S R L S R S L R S L S R L S R L S\n\nI could not verify this route against the walls, so it is a guess and may hit a wall and fail.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 5861,
+        "reasoning_tokens": 5799,
+        "total_tokens": 11001
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 21,
+        "actual_action_count": 0,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L L R R L L R R L L R R L L R L R R R L L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 21058,
+        "reasoning_tokens": 21029,
+        "total_tokens": 26198
+      },
+      "score": 92.5925925925926,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 25,
+        "actual_action_count": 27,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.9259259259259259
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Claude Haiku 5.5 (medium)",
+        "provider": "anthropic",
+        "model_id": "claude-haiku-5-5",
+        "reasoning_label": "effort-medium_thinking-adaptive"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "I couldn't trace this maze reliably from the image, so I can't give a verified command sequence. The opening moves look like S R R L L, which take you from the blue arrow up into the bottom-left pocket and out through the gap north of it. I could not map the rest of the route to the red exit with confidence, so I'm not providing a full sequence.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 5140,
+        "output_tokens": 6112,
+        "reasoning_tokens": 6003,
+        "total_tokens": 11252
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 28,
+        "actual_action_count": 0,
+        "remaining_action_count": 28,
+        "completion_ratio": 0.0,
         "efficiency_ratio": 1.0
       }
     },
