@@ -398179,6 +398179,64 @@
           ]
         ]
       }
+    },
+    {
+      "sequence": 3209,
+      "attempt_id": "934f0cf5-0d01-4360-8e3a-a0d5a2830b01",
+      "maze_id": "maze_04x04_opposite_03",
+      "tier": "1",
+      "actions": [
+        "S",
+        "S",
+        "S"
+      ],
+      "status": "collision",
+      "started_at": "2026-10-15T04:24:49.101Z",
+      "finished_at": "2026-10-15T04:24:57.174Z",
+      "scoring_result": {
+        "problem_id": "maze_04x04_opposite_03",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E4 ((1, 1)): S relative to facing S means S",
+        "first_invalid_action_index": 2,
+        "optimal_action_count": 6,
+        "actual_action_count": 2,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.25,
+        "efficiency_ratio": 0.75,
+        "score": 18.75,
+        "final_event": "E4",
+        "final_cell": [
+          1,
+          1
+        ],
+        "final_facing": "S",
+        "actions_parsed": [
+          "S",
+          "S",
+          "S"
+        ],
+        "actions_executed": [
+          "S",
+          "S"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E1",
+          "E4"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
     }
   ]
 }
