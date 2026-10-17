@@ -37,6 +37,8 @@ class BatchStatus:
     ended_at: Optional[str] = None
     expires_at: Optional[str] = None
     results_url: Optional[str] = None
+    terminal_result_type: Optional[str] = None
+    error_message: Optional[str] = None
 
 
 @dataclass(frozen=True)
@@ -50,6 +52,9 @@ class BatchItemResult:
 
 class BatchProvider(ABC):
     provider: str
+
+    def validate_requests(self, requests: Sequence[BatchRequest]) -> None:
+        """제출 전 요청 묶음 전체를 검증."""
 
     @classmethod
     @abstractmethod

@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 4,
   "status": "completed",
-  "expected_result_count": 1200,
-  "processed_result_count": 1200,
+  "expected_result_count": 1260,
+  "processed_result_count": 1260,
   "models": [
     {
       "name": "Claude Fable 5 (medium)",
@@ -2106,6 +2106,198 @@
               "output_tokens": 149415,
               "reasoning_tokens": 148830,
               "total_tokens": 155830
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "DeepSeek V4.1 Flash 1017 (high)",
+      "provider": "openai_chat",
+      "model_id": "deepseek-flash",
+      "reasoning_label": "effort-high",
+      "pricing": {
+        "input_per_million": 0.15,
+        "output_per_million": 0.6
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 30,
+      "api_failure_count": 0,
+      "graded_count": 30,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 24.459965825891633,
+      "official_mean_score": 24.459965825891633,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 38490,
+          "output_tokens": 1026420,
+          "reasoning_tokens": 1024840,
+          "total_tokens": 1064910
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 8.34074074074074,
+          "official_mean_score": 8.34074074074074,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 208452,
+              "reasoning_tokens": 208393,
+              "total_tokens": 214867
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 8.199824579518799,
+          "official_mean_score": 8.199824579518799,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 255771,
+              "reasoning_tokens": 255675,
+              "total_tokens": 262186
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 11.021852461998808,
+          "official_mean_score": 11.021852461998808,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 262873,
+              "reasoning_tokens": 262632,
+              "total_tokens": 269288
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 60.0,
+          "official_mean_score": 60.0,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 39397,
+              "reasoning_tokens": 38987,
+              "total_tokens": 45812
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 36.95,
+          "official_mean_score": 36.95,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 77198,
+              "reasoning_tokens": 76497,
+              "total_tokens": 83613
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 22.247377173091458,
+          "official_mean_score": 22.247377173091458,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6415,
+              "output_tokens": 182729,
+              "reasoning_tokens": 182656,
+              "total_tokens": 189144
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -5567,6 +5759,198 @@
               "input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Gemini 4 Argon (medium)",
+      "provider": "google",
+      "model_id": "gemini-4-argon",
+      "reasoning_label": "level-medium",
+      "pricing": {
+        "input_per_million": 2.0,
+        "output_per_million": 10.0
+      },
+      "expected_count": 30,
+      "processed_count": 30,
+      "api_success_count": 18,
+      "api_failure_count": 12,
+      "graded_count": 18,
+      "processing_rate": 1.0,
+      "api_success_rate": 0.6,
+      "coverage": 0.6,
+      "provisional_mean_score": 61.768988828698724,
+      "official_mean_score": null,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 25038,
+          "output_tokens": 58812,
+          "reasoning_tokens": 58449,
+          "total_tokens": 83850
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 7,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "12x12": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 1,
+          "api_failure_count": 4,
+          "graded_count": 1,
+          "processing_rate": 1.0,
+          "api_success_rate": 0.2,
+          "coverage": 0.2,
+          "provisional_mean_score": 0.0,
+          "official_mean_score": null,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 1391,
+              "output_tokens": 32768,
+              "reasoning_tokens": 32765,
+              "total_tokens": 34159
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 2,
+          "api_failure_count": 3,
+          "graded_count": 2,
+          "processing_rate": 1.0,
+          "api_success_rate": 0.4,
+          "coverage": 0.4,
+          "provisional_mean_score": 26.81481481481481,
+          "official_mean_score": null,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 2782,
+              "output_tokens": 5585,
+              "reasoning_tokens": 5518,
+              "total_tokens": 8367
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 0,
+          "api_failure_count": 5,
+          "graded_count": 0,
+          "processing_rate": 1.0,
+          "api_success_rate": 0.0,
+          "coverage": 0.0,
+          "provisional_mean_score": null,
+          "official_mean_score": null,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "4x4": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 87.90123456790124,
+          "official_mean_score": 87.90123456790124,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6955,
+              "output_tokens": 2318,
+              "reasoning_tokens": 2260,
+              "total_tokens": 9273
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 1,
+              "total_tokens": 0
+            }
+          }
+        },
+        "6x6": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 57.83272042642672,
+          "official_mean_score": 57.83272042642672,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6955,
+              "output_tokens": 6331,
+              "reasoning_tokens": 6236,
+              "total_tokens": 13286
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 4,
+              "total_tokens": 0
+            }
+          }
+        },
+        "9x9": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 65.90847886306155,
+          "official_mean_score": 65.90847886306155,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6955,
+              "output_tokens": 11810,
+              "reasoning_tokens": 11670,
+              "total_tokens": 18765
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 2,
               "total_tokens": 0
             }
           }
@@ -17591,6 +17975,996 @@
       "status": "success",
       "scoring_version": 4,
       "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "**Observe the maze structure**: The maze is a 4×4 grid of cells. The blue arrow enters from the top of the leftmost column, and the red arrow exits from the right side of the third row (row 2).\n\n**Wall distribution**:\n- The leftmost column is a vertical corridor with no internal walls, running from top to bottom;\n- There is no wall between the top of column 1 and column 2, but there is a wall between column 2 and column 3;\n- The vertical wall in the middle has a gap at row 2, connecting column 2 and column 3;\n- The right wall has an opening at row 2, which is the exit.\n\n**Find the shortest path**: Enter at the top-left cell → turn left (east) into column 2 → turn right (south) into column 2, row 1 → pass straight through the corridor to row 2 → turn left (east) through the gap into column 3 → go straight east → go straight east out of the maze.\n\n**Convert to commands** (relative to the current facing direction):\n1. S: enter the maze from outside, facing south;\n2. L: at the top-left junction, turn from south to east;\n3. R: at the corner, turn from east to south;\n4. (Pass straight through the middle corridor, no command needed);\n5. L: at the row 2 junction, turn from south to east;\n6. S: at the junction, continue east;\n7. S: in the last cell, continue east through the exit.\n\nThe command sequence is: S L R L S S.\n\nTherefore, the answer is **S L R L S S**.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 7515,
+        "reasoning_tokens": 7154,
+        "total_tokens": 8798
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 0,
+        "remaining_action_count": 6,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 6192,
+        "reasoning_tokens": 6185,
+        "total_tokens": 7475
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 7220,
+        "reasoning_tokens": 7212,
+        "total_tokens": 8503
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 7152,
+        "reasoning_tokens": 7143,
+        "total_tokens": 8435
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L\n\ntherefore, the answer is **S S R L R R R L**",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 11318,
+        "reasoning_tokens": 11293,
+        "total_tokens": 12601
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 0,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L R L S R S L L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 19071,
+        "reasoning_tokens": 19056,
+        "total_tokens": 20354
+      },
+      "score": 68.75,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 11,
+        "actual_action_count": 9,
+        "remaining_action_count": 3,
+        "completion_ratio": 0.75,
+        "efficiency_ratio": 0.9166666666666666
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 10628,
+        "reasoning_tokens": 10619,
+        "total_tokens": 11911
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "Looking at the maze, I'll trace the route from the blue arrow (bottom-left entrance) to the red arrow (right-side exit).\n\n- Enter the maze from the left at the bottom row, facing east: **S**.\n- At the first cell, the only open direction is north, so turn left: **L**.\n- Follow the left corridor straight up (no decisions) until the junction at row 4, where I turn right (east): **R**.\n- At the next junction (passage also goes south), continue straight east: **S**.\n- At the 4-way junction, continue straight east: **S**.\n- At the next junction, turn left (north): **L**.\n- At the junction after that, turn right (east): **R**.\n- At the corner cell, turn right (south): **R**.\n- Follow the corridor straight down to the cell in front of the exit, then turn left (east) to leave through the red arrow: **L**.\n\nChecking the turns: entering east → left to north → right to east → straight east → straight east → left to north → right to east → right to south → left to east (exit). The path avoids all walls and reaches the exit with the fewest decision points.\n\nTherefore, the answer is **S L R S S L R R L**.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 19056,
+        "reasoning_tokens": 18768,
+        "total_tokens": 20339
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 9,
+        "actual_action_count": 0,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "Observe the maze: the blue arrow is on the right at row 1 (counting from top to bottom), and the red arrow is on the left at row 0. The route is: enter the maze from the right at row 1 facing west (S), then turn left (L) to go south, pass through two cells, and at the bottom-right corner turn right (R) to go west; then turn right (R) to go north, turn left (L) to go west, and at the T-junction continue straight (S) to go west; then turn left (L) to go south, turn right (R) to go west, turn right (R) to go north, turn left (L) to go west, turn right (R) to go north; after passing through one cell, at the top-left corner turn left (L) to go west and leave the maze, reaching the red arrow.\n\nChecking each decision point in order: entering from outside is S; at the first cell, facing west, turn left to go south, L; at the bottom-right corner, facing south, turn right to go west, R; at the junction, turn right to go north, R; at the corner, turn left to go west, L; at the T-junction, continue straight, S; at the corner, turn left to go south, L; at the T-junction, turn right to go west, R; at the T-junction, turn right to go north, R; at the T-junction, turn left to go west, L; at the corner, turn right to go north, R; finally, at the top-left cell, facing north, turn left to go west and leave the maze, L.\n\nTherefore, the answer is **S L R R L S L R R L R L**.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 15660,
+        "reasoning_tokens": 15276,
+        "total_tokens": 16943
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 12,
+        "actual_action_count": 0,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 12783,
+        "reasoning_tokens": 12778,
+        "total_tokens": 14066
+      },
+      "score": 16.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 2,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.8
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R R L L R S S L S S R L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 36060,
+        "reasoning_tokens": 36038,
+        "total_tokens": 37343
+      },
+      "score": 36.800000000000004,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 10,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.4,
+        "efficiency_ratio": 0.92
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R R L S S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 26599,
+        "reasoning_tokens": 26589,
+        "total_tokens": 27882
+      },
+      "score": 18.140589569160998,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 20,
+        "actual_action_count": 4,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.19047619047619047,
+        "efficiency_ratio": 0.9523809523809523
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 24145,
+        "reasoning_tokens": 24138,
+        "total_tokens": 25428
+      },
+      "score": 12.962962962962962,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 14,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 0.7777777777777778
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L R S R L L S L R R S R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 73743,
+        "reasoning_tokens": 73726,
+        "total_tokens": 75026
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 15,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S S R S S S R L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 22182,
+        "reasoning_tokens": 22165,
+        "total_tokens": 23465
+      },
+      "score": 26.666666666666668,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 4,
+        "remaining_action_count": 11,
+        "completion_ratio": 0.26666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R S L S S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 23123,
+        "reasoning_tokens": 23115,
+        "total_tokens": 24406
+      },
+      "score": 3.7037037037037033,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 27,
+        "actual_action_count": 1,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.037037037037037035,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 54859,
+        "reasoning_tokens": 54848,
+        "total_tokens": 56142
+      },
+      "score": 11.11111111111111,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 2,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.1111111111111111,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S L R R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 26150,
+        "reasoning_tokens": 26141,
+        "total_tokens": 27433
+      },
+      "score": 18.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 4,
+        "remaining_action_count": 16,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S S L S R S L S L S R S R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 37585,
+        "reasoning_tokens": 37568,
+        "total_tokens": 38868
+      },
+      "score": 5.555555555555555,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 1,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.05555555555555555,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": "S R L L R L L R L L R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 66735,
+        "reasoning_tokens": 66721,
+        "total_tokens": 68018
+      },
+      "score": 3.3333333333333335,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 30,
+        "actual_action_count": 1,
+        "remaining_action_count": 29,
+        "completion_ratio": 0.03333333333333333,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S S R S S L S S R S L S S R S S L S S R S L S S R S S L S S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 42849,
+        "reasoning_tokens": 42814,
+        "total_tokens": 44132
+      },
+      "score": 9.666666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 29,
+        "actual_action_count": 3,
+        "remaining_action_count": 27,
+        "completion_ratio": 0.1,
+        "efficiency_ratio": 0.9666666666666667
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R L R L R R L L R L R L L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 51210,
+        "reasoning_tokens": 51193,
+        "total_tokens": 52493
+      },
+      "score": 14.201183431952664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 4,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.15384615384615385,
+        "efficiency_ratio": 0.9230769230769231
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S L L R R L R L R R L L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 60387,
+        "reasoning_tokens": 60371,
+        "total_tokens": 61670
+      },
+      "score": 4.3478260869565215,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 23,
+        "actual_action_count": 1,
+        "remaining_action_count": 22,
+        "completion_ratio": 0.043478260869565216,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L R L R L R L R L R L R L R S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 39658,
+        "reasoning_tokens": 39637,
+        "total_tokens": 40941
+      },
+      "score": 4.166666666666666,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 1,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.041666666666666664,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L R R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 61667,
+        "reasoning_tokens": 61660,
+        "total_tokens": 62950
+      },
+      "score": 8.616780045351474,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 19,
+        "actual_action_count": 2,
+        "remaining_action_count": 19,
+        "completion_ratio": 0.09523809523809523,
+        "efficiency_ratio": 0.9047619047619048
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L L R R L R L L R L R L R L L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 49163,
+        "reasoning_tokens": 49141,
+        "total_tokens": 50446
+      },
+      "score": 9.763313609467456,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 22,
+        "actual_action_count": 3,
+        "remaining_action_count": 23,
+        "completion_ratio": 0.11538461538461539,
+        "efficiency_ratio": 0.8461538461538461
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R S L S L S R S L L S R S L S R S L L S R S L S R S L L S R S L S R S L L S R S L S R S L L S R S L S R S L L S R S L S R S L L S R S L S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 47069,
+        "reasoning_tokens": 46996,
+        "total_tokens": 48352
+      },
+      "score": 12.485136741973841,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 5,
+        "remaining_action_count": 24,
+        "completion_ratio": 0.1724137931034483,
+        "efficiency_ratio": 0.7241379310344828
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L R L R R L L R R L L R L R R L L R R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 57638,
+        "reasoning_tokens": 57614,
+        "total_tokens": 58921
+      },
+      "score": 16.8,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 21,
+        "actual_action_count": 5,
+        "remaining_action_count": 20,
+        "completion_ratio": 0.2,
+        "efficiency_ratio": 0.84
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S L S S R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 65144,
+        "reasoning_tokens": 65063,
+        "total_tokens": 66427
+      },
+      "score": 8.9179548156956,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 25,
+        "actual_action_count": 3,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.10344827586206896,
+        "efficiency_ratio": 0.8620689655172413
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "DeepSeek V4.1 Flash 1017 (high)",
+        "provider": "openai_chat",
+        "model_id": "deepseek-flash",
+        "reasoning_label": "effort-high"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1283,
+        "output_tokens": 43859,
+        "reasoning_tokens": 43818,
+        "total_tokens": 45142
+      },
+      "score": 7.142857142857142,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 28,
+        "actual_action_count": 2,
+        "remaining_action_count": 26,
+        "completion_ratio": 0.07142857142857142,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
         "name": "DeepSeek V4.1 Flash (high)",
         "provider": "openai_chat",
         "model_id": "deepseek-flash",
@@ -24516,6 +25890,900 @@
         "completion_ratio": 0.03571428571428571,
         "efficiency_ratio": 1.0
       }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_01",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 265,
+        "reasoning_tokens": 255,
+        "total_tokens": 1656
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_adjacent_02",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 500,
+        "reasoning_tokens": 490,
+        "total_tokens": 1891
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_03",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S R L L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 728,
+        "reasoning_tokens": 718,
+        "total_tokens": 2119
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 6,
+        "actual_action_count": 6,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_opposite_04",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S L R R S R L R L S R R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 16,
+        "reasoning_tokens": null,
+        "total_tokens": 1407
+      },
+      "score": 39.50617283950617,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 4,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.4444444444444444,
+        "efficiency_ratio": 0.8888888888888888
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_04x04_same_05",
+        "width": 4,
+        "height": 4
+      },
+      "output": "S S R L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 809,
+        "reasoning_tokens": 797,
+        "total_tokens": 2200
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 8,
+        "actual_action_count": 8,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_01",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R R L S R S R L R R R L S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 20,
+        "reasoning_tokens": null,
+        "total_tokens": 1411
+      },
+      "score": 26.035502958579883,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 11,
+        "actual_action_count": 4,
+        "remaining_action_count": 9,
+        "completion_ratio": 0.3076923076923077,
+        "efficiency_ratio": 0.8461538461538461
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_adjacent_02",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L R L S S L S S R L S S R L R L S S R L L S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 29,
+        "reasoning_tokens": null,
+        "total_tokens": 1420
+      },
+      "score": 62.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 5,
+        "remaining_action_count": 3,
+        "completion_ratio": 0.625,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_03",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S L R S S R L S R L L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 15,
+        "reasoning_tokens": null,
+        "total_tokens": 1406
+      },
+      "score": 44.628099173553714,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 9,
+        "actual_action_count": 6,
+        "remaining_action_count": 5,
+        "completion_ratio": 0.5454545454545454,
+        "efficiency_ratio": 0.8181818181818182
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_opposite_04",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S R L L R S L R R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 6252,
+        "reasoning_tokens": 6236,
+        "total_tokens": 7643
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 12,
+        "actual_action_count": 12,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_06x06_same_05",
+        "width": 6,
+        "height": 6
+      },
+      "output": "S S R L L S S L S S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 15,
+        "reasoning_tokens": null,
+        "total_tokens": 1406
+      },
+      "score": 56.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 8,
+        "actual_action_count": 7,
+        "remaining_action_count": 3,
+        "completion_ratio": 0.7,
+        "efficiency_ratio": 0.8
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_01",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L S R R L L R L S R R L L S R L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 4378,
+        "reasoning_tokens": 4351,
+        "total_tokens": 5769
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 23,
+        "actual_action_count": 23,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_adjacent_02",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R R L S S L S S S L S L R L R L R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 5552,
+        "reasoning_tokens": 5525,
+        "total_tokens": 6943
+      },
+      "score": 86.95652173913044,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 20,
+        "actual_action_count": 23,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.8695652173913043
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_03",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S S L R R L S S S R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 1812,
+        "reasoning_tokens": 1794,
+        "total_tokens": 3203
+      },
+      "score": 100.0,
+      "grading": {
+        "success": true,
+        "death": false,
+        "optimal_action_count": 14,
+        "actual_action_count": 14,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_opposite_04",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S L S R S R L S S R L S L R L R L S R S L R L S R L R S L R L S L R L S L R L S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 45,
+        "reasoning_tokens": null,
+        "total_tokens": 1436
+      },
+      "score": 13.5,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 18,
+        "actual_action_count": 3,
+        "remaining_action_count": 17,
+        "completion_ratio": 0.15,
+        "efficiency_ratio": 0.9
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_09x09_same_05",
+        "width": 9,
+        "height": 9
+      },
+      "output": "S R L R L S S L S L R L R L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 23,
+        "reasoning_tokens": null,
+        "total_tokens": 1414
+      },
+      "score": 29.085872576177284,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 15,
+        "actual_action_count": 7,
+        "remaining_action_count": 12,
+        "completion_ratio": 0.3684210526315789,
+        "efficiency_ratio": 0.7894736842105263
+      }
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_01",
+        "width": 12,
+        "height": 12
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_adjacent_02",
+        "width": 12,
+        "height": 12
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_03",
+        "width": 12,
+        "height": 12
+      },
+      "output": "",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 32768,
+        "reasoning_tokens": 32765,
+        "total_tokens": 34159
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 18,
+        "actual_action_count": 0,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_opposite_04",
+        "width": 12,
+        "height": 12
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_12x12_same_05",
+        "width": 12,
+        "height": 12
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S S R L S R R L L R L R S L L R R L S R L R R L R L L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 2264,
+        "reasoning_tokens": 2228,
+        "total_tokens": 3655
+      },
+      "score": 24.0,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 9,
+        "remaining_action_count": 21,
+        "completion_ratio": 0.3,
+        "efficiency_ratio": 0.8
+      }
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R L R L S R L L R R S S S L R L L R S S R L R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "output_tokens": 3321,
+        "reasoning_tokens": 3290,
+        "total_tokens": 4712
+      },
+      "score": 29.629629629629623,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 24,
+        "actual_action_count": 9,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.3333333333333333,
+        "efficiency_ratio": 0.8888888888888888
+      }
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
+    },
+    {
+      "status": "api_failure",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Argon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-argon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": null,
+      "format_valid": null,
+      "token_usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null,
+        "total_tokens": null
+      },
+      "score": null,
+      "grading": null
     },
     {
       "status": "success",

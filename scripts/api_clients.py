@@ -599,40 +599,100 @@ class OpenAIChatClient(BaseAPIClient):
         )
 
 
+def _build_google_request(
+    model: ModelConfig, prompt: str, image_path: str | Path
+) -> Dict[str, Any]:
+    """Google generateContent 요청 본문 구성"""
+    mime_type, encoded = encode_image(image_path)
+    body: Dict[str, Any] = {
+        "contents": [
+            {
+                "role": "user",
+                "parts": [
+                    {
+                        "inline_data": {
+                            "mime_type": mime_type,
+                            "data": encoded,
+                        }
+                    },
+                    {"text": prompt},
+                ],
+            }
+        ],
+        # "service_tier": "flex",
+        "generationConfig": {
+            "maxOutputTokens": model.max_output_tokens,
+        },
+    }
+    thinking_config: Dict[str, Any] = {}
+    if model.thinking_level:
+        thinking_config["thinkingLevel"] = model.thinking_level
+    if model.thinking_budget is not None:
+        thinking_config["thinkingBudget"] = model.thinking_budget
+    if thinking_config:
+        body["generationConfig"]["thinkingConfig"] = thinking_config
+    return body
+
+
+def _parse_google_response(data: Dict[str, Any]) -> APIResult:
+    """Google 응답 본문을 APIResult로 변환"""
+    prompt_feedback = data.get("promptFeedback") or {}
+    candidates = data.get("candidates") or []
+    if not candidates:
+        block_reason = prompt_feedback.get("blockReason") or "NO_CANDIDATES"
+        raise APIClientError(f"Gemini returned no candidates: {block_reason}")
+
+    first_candidate = candidates[0] if isinstance(candidates[0], dict) else {}
+    text_parts: List[str] = []
+    for part in (first_candidate.get("content") or {}).get("parts") or []:
+        if isinstance(part, dict) and part.get("text") and not part.get("thought"):
+            text_parts.append(str(part["text"]))
+
+    finish_reason = first_candidate.get("finishReason")
+    if finish_reason in {
+        "SAFETY",
+        "RECITATION",
+        "BLOCKLIST",
+        "PROHIBITED_CONTENT",
+        "IMAGE_SAFETY",
+    } and not text_parts:
+        raise APIClientError(f"Gemini candidate blocked: {finish_reason}")
+
+    usage = data.get("usageMetadata") or {}
+    reasoning_tokens = usage.get("thoughtsTokenCount")
+    input_tokens, output_tokens, total_tokens = normalize_usage(
+        usage.get("promptTokenCount"),
+        usage.get("candidatesTokenCount"),
+        usage.get("totalTokenCount"),
+        reasoning_tokens,
+    )
+    return APIResult(
+        success=True,
+        raw_response="".join(text_parts),
+        input_tokens=input_tokens,
+        output_tokens=output_tokens,
+        reasoning_tokens=_coerce_nonnegative_int(reasoning_tokens),
+        total_tokens=total_tokens,
+        stop_reason=str(finish_reason) if finish_reason else None,
+        response_id=data.get("responseId"),
+        model_version=data.get("modelVersion"),
+        provider_metadata={
+            "prompt_feedback": prompt_feedback,
+            "safety_ratings": first_candidate.get("safetyRatings"),
+        },
+    )
+
+
 class GoogleClient(BaseAPIClient):
+    MODEL_URL_PREFIX = (
+        "https://generativelanguage.googleapis.com/v1beta/models/"
+    )
+
     def send(self, prompt: str, image_path: str | Path) -> APIResult:
         self._rate_limit()
-        mime_type, encoded = encode_image(image_path)
-        body: Dict[str, Any] = {
-            "contents": [
-                {
-                    "role": "user",
-                    "parts": [
-                        {
-                            "inline_data": {
-                                "mime_type": mime_type,
-                                "data": encoded,
-                            }
-                        },
-                        {"text": prompt},
-                    ],
-                }
-            ],
-            "service_tier": "flex",
-            "generationConfig": {
-                "maxOutputTokens": self.config.max_output_tokens,
-            },
-        }
-        thinking_config: Dict[str, Any] = {}
-        if self.config.thinking_level:
-            thinking_config["thinkingLevel"] = self.config.thinking_level
-        if self.config.thinking_budget is not None:
-            thinking_config["thinkingBudget"] = self.config.thinking_budget
-        if thinking_config:
-            body["generationConfig"]["thinkingConfig"] = thinking_config
-
+        body = _build_google_request(self.config, prompt, image_path)
         endpoint = (
-            "https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{self.MODEL_URL_PREFIX}"
             f"{quote(self.config.model_id, safe='')}:generateContent"
         )
         response = self._post(
@@ -648,52 +708,13 @@ class GoogleClient(BaseAPIClient):
         data = response.json()
         if not isinstance(data, dict):
             raise APIClientError("Gemini returned a non-object JSON response")
+        return _parse_google_response(data)
 
-        prompt_feedback = data.get("promptFeedback") or {}
-        candidates = data.get("candidates") or []
-        if not candidates:
-            block_reason = prompt_feedback.get("blockReason") or "NO_CANDIDATES"
-            raise APIClientError(f"Gemini returned no candidates: {block_reason}")
 
-        first_candidate = candidates[0] if isinstance(candidates[0], dict) else {}
-        text_parts: List[str] = []
-        for part in (first_candidate.get("content") or {}).get("parts") or []:
-            if isinstance(part, dict) and part.get("text") and not part.get("thought"):
-                text_parts.append(str(part["text"]))
-
-        finish_reason = first_candidate.get("finishReason")
-        if finish_reason in {
-            "SAFETY",
-            "RECITATION",
-            "BLOCKLIST",
-            "PROHIBITED_CONTENT",
-            "IMAGE_SAFETY",
-        } and not text_parts:
-            raise APIClientError(f"Gemini candidate blocked: {finish_reason}")
-
-        usage = data.get("usageMetadata") or {}
-        reasoning_tokens = usage.get("thoughtsTokenCount")
-        input_tokens, output_tokens, total_tokens = normalize_usage(
-            usage.get("promptTokenCount"),
-            usage.get("candidatesTokenCount"),
-            usage.get("totalTokenCount"),
-            reasoning_tokens,
-        )
-        return APIResult(
-            success=True,
-            raw_response="".join(text_parts),
-            input_tokens=input_tokens,
-            output_tokens=output_tokens,
-            reasoning_tokens=_coerce_nonnegative_int(reasoning_tokens),
-            total_tokens=total_tokens,
-            stop_reason=str(finish_reason) if finish_reason else None,
-            response_id=data.get("responseId"),
-            model_version=data.get("modelVersion"),
-            provider_metadata={
-                "prompt_feedback": prompt_feedback,
-                "safety_ratings": first_candidate.get("safetyRatings"),
-            },
-        )
+class GoogleVertexClient(GoogleClient):
+    MODEL_URL_PREFIX = (
+        "https://aiplatform.googleapis.com/v1/publishers/google/models/"
+    )
 
 
 class AnthropicClient(BaseAPIClient):
@@ -807,7 +828,16 @@ def create_client(
     config: ModelConfig,
     api_key: str,
     post: Optional[PostFunction] = None,
+    *,
+    vertex: bool = False,
 ) -> BaseAPIClient:
+    if (
+        vertex
+        and config.provider == "google"
+        and config.model_id.startswith("gemini-")
+    ):
+        return GoogleVertexClient(config, api_key, post=post)
+
     client_classes = {
         "openai_responses": OpenAIResponsesClient,
         "openai_chat": OpenAIChatClient,

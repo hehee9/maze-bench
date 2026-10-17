@@ -906,6 +906,7 @@ def create_argument_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--vertex", action="store_true")
     return parser
 
 
@@ -976,8 +977,22 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         parser.error(str(error))
     prompt_text = prompt_path.read_text(encoding="utf-8")
     prompt_hash = sha256_bytes(prompt_text.encode("utf-8"))
+    api_key_envs = {
+        model.name: (
+            "VERTEX_API_KEY"
+            if args.vertex
+            and model.provider == "google"
+            and model.model_id.startswith("gemini-")
+            else model.api_key_env
+        )
+        for model in models
+    }
     missing_keys = sorted(
-        {model.api_key_env for model in models if not os.getenv(model.api_key_env)}
+        {
+            api_key_env
+            for api_key_env in api_key_envs.values()
+            if not os.getenv(api_key_env)
+        }
     )
 
     tasks = [
@@ -1081,7 +1096,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     )
 
     clients = {
-        model.name: create_client(model, os.environ[model.api_key_env])
+        model.name: create_client(
+            model,
+            os.environ[api_key_envs[model.name]],
+            vertex=args.vertex,
+        )
         for model in models
     }
     completed = 0
@@ -1093,7 +1112,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     run_task,
                     task,
                     clients[task.model.name],
-                    os.environ[task.model.api_key_env],
+                    os.environ[api_key_envs[task.model.name]],
                     prompt_text,
                     prompt_path,
                     prompt_hash,
@@ -1117,7 +1136,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                         "task": task.output_path.name,
                         "error": sanitize_error(
                             error,
-                            os.environ[task.model.api_key_env],
+                            os.environ[api_key_envs[task.model.name]],
                         ),
                     }
                     worker_errors.append(worker_error)

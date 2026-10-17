@@ -18,6 +18,7 @@ from PIL import Image
 
 from benchmark_paths import resolve_tier_paths
 from anthropic_batch_client import AnthropicBatchProvider
+from gemini_batch_client import GeminiBatchProvider
 from batch_api import (
     BatchItemResult,
     BatchRequest,
@@ -58,6 +59,14 @@ register_batch_provider(
     "anthropic",
     AnthropicBatchProvider,
     lambda api_key, max_attempts: AnthropicBatchProvider(
+        api_key,
+        max_attempts=max_attempts,
+    ),
+)
+register_batch_provider(
+    "google",
+    GeminiBatchProvider,
+    lambda api_key, max_attempts: GeminiBatchProvider(
         api_key,
         max_attempts=max_attempts,
     ),
@@ -221,6 +230,7 @@ def _validate_dry_run_requests(
         list(task_map),
         prompt_text,
     )
+    provider.validate_requests(requests_to_submit)
     return sum(
         len(json.dumps(request.payload, ensure_ascii=False).encode("utf-8"))
         for request in requests_to_submit
@@ -595,11 +605,23 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             print("No configured models have a registered Batch API adapter.")
         return 0
 
+    resume_state = None
+    if args.resume and (not args.dry_run or args.all_models):
+        if not state_path.is_file():
+            raise ValueError("--resume requires an existing outputs/batch_state.json")
+        resume_state = _read_json(state_path)
+
+    requested_models = args.models
+    all_models = args.all_models
+    if args.resume and args.all_models:
+        requested_models = list(resume_state["models"])
+        all_models = False
+
     try:
         models = _select_batch_models(
             configured_models,
-            args.models,
-            args.all_models,
+            requested_models,
+            all_models,
         )
     except ValueError as error:
         parser.error(str(error))
@@ -687,9 +709,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     }
 
     if args.resume:
-        if not state_path.is_file():
-            raise ValueError("--resume requires an existing outputs/batch_state.json")
-        state = _read_json(state_path)
+        state = resume_state
         if state.get("fingerprint") != fingerprint:
             raise ValueError(
                 "--resume fingerprint mismatch: prompt, maze, or model settings changed"
@@ -776,6 +796,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                         "last_checked_at": utc_now(),
                     }
                 )
+                if status.terminal_result_type is not None:
+                    batch_record["terminal_result_type"] = (
+                        status.terminal_result_type
+                    )
+                    batch_record["error_message"] = status.error_message
                 model_state["status"] = status.status
                 state["status"] = "polling"
                 state["updated_at"] = utc_now()
@@ -784,7 +809,21 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 if not status.terminal:
                     continue
 
-                raw_text, items = provider.download_results(status.batch_id)
+                if status.terminal_result_type is not None:
+                    items = [
+                        BatchItemResult(
+                            custom_id=custom_id,
+                            result_type=status.terminal_result_type,
+                            error_message=status.error_message,
+                        )
+                        for custom_id in batch_record["custom_ids"]
+                    ]
+                    raw_text = "".join(
+                        json.dumps(asdict(item), ensure_ascii=False) + "\n"
+                        for item in items
+                    )
+                else:
+                    raw_text, items = provider.download_results(status.batch_id)
                 _save_batch_results(
                     state,
                     state_path,

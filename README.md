@@ -213,18 +213,34 @@ Tier 1 is used by default. Pass `--tier 2` to run Tier 2 mazes from `maze_sets_t
 
 With `--resume`, successful API responses are reused and only failed or missing requests are retried.
 
+#### Vertex AI로 동기 실행
+
+`.env`에 `VERTEX_API_KEY`를 입력하고 `--vertex`를 지정하면 `google` 제공자의 Gemini 모델을 Vertex AI API 키 방식으로 호출합니다. 기본 경로는 Gemini Developer API이며, Gemma와 다른 제공자의 호출 경로는 그대로 유지됩니다. `--vertex`는 `scripts/run_api_benchmark.py`의 동기 실행에만 적용됩니다.
+
+```bash
+python scripts/run_api_benchmark.py --models "Gemini 3.8 Flash (medium)" --vertex --dry-run
+python scripts/run_api_benchmark.py --models "Gemini 3.8 Flash (medium)" --vertex
+python scripts/run_api_benchmark.py --models "Gemini 3.8 Flash (medium)" --vertex --resume
+```
+
+기존 모델 설정과 이름을 그대로 사용합니다. 경로를 전환해도 같은 모델의 점수와 결과를 함께 유지하며, `--resume`은 전환 전의 성공 기록도 재사용합니다.
+
 ### Batch API
 
-Asynchronous Batch API requests use a separate runner. Anthropic Message Batches are currently supported.
+비동기 Batch API는 별도 실행기로 Anthropic Message Batches와 Gemini Batch를 지원합니다. Google 제공자는 `gemini-` 모델만 지원하며, Gemini 인증에는 기존 `GEMINI_API_KEY` 설정을 사용합니다.
 
 ```bash
 python scripts/run_batch_benchmark.py --all-models
 python scripts/run_batch_benchmark.py --models "Claude Opus 4.8 (medium)" --maze-sizes 9x9
+python scripts/run_batch_benchmark.py --models "Gemini 3.8 Flash (medium)" --maze-sizes 9x9
+python scripts/run_batch_benchmark.py --models "Gemini 3.8 Flash (medium)" --dry-run
 python scripts/run_batch_benchmark.py --all-models --tier 2
 python scripts/run_batch_benchmark.py --all-models --resume
 ```
 
-The runner submits one batch per model and checks its status every 60 seconds by default. Use `--resume` to continue failed or missing runs. Costs are calculated at standard API list prices.
+새 실행의 `--all-models`는 설정된 모델 중 Batch API가 지원하는 Gemini와 Anthropic 모델을 모두 선택합니다. `--all-models --resume`은 저장된 실행의 모델 목록을 사용합니다. `--list-models`와 `--list-providers`로 지원 대상을 확인할 수 있습니다.
+
+모델마다 하나의 배치로 제출한 뒤 기본 60초 간격으로 상태를 확인합니다. `--resume`으로 실패·누락 항목을 이어서 처리합니다. 비용은 일반 API 정가로 계산됩니다. Gemini 인라인 요청은 직렬화된 전체 요청 본문 기준 20MB까지 지원하며, 이를 초과하면 제출 전에 거부됩니다.
 
 ### Dashboard
 
