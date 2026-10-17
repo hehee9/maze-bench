@@ -775,6 +775,8 @@
         type: "model",
         key: entry.key,
         rank: entry.rank,
+        processed: entry.processed,
+        expected: entry.expected,
         originalIndex: entry.originalIndex,
       };
     });
