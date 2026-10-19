@@ -238,6 +238,36 @@ a {
   padding: 0;
 }
 
+.leaderboard-rank-column {
+  width: 9%;
+}
+
+.leaderboard-model-column {
+  width: 32%;
+}
+
+.leaderboard-score-column {
+  width: 24%;
+}
+
+.leaderboard-cost-column {
+  width: 17%;
+}
+
+.leaderboard-token-column {
+  width: 18%;
+}
+
+@media (min-width: 641px) and (max-width: 1199px) {
+  .leaderboard-model-column {
+    width: 35%;
+  }
+
+  .leaderboard-score-column {
+    width: 21%;
+  }
+}
+
 .table-sort-button {
   display: flex;
   width: 100%;
@@ -447,6 +477,10 @@ a {
   object-fit: contain;
 }
 
+.leaderboard-ranking-card .score-cell {
+  white-space: nowrap;
+}
+
 .score-cell strong,
 .metric-primary {
   color: var(--ink);
@@ -458,7 +492,7 @@ a {
 .score-meter {
   position: relative;
   display: inline-block;
-  width: 56px;
+  width: max(0px, min(200px, calc(100% - 68px)));
   height: 4px;
   margin-right: 12px;
   overflow: hidden;
@@ -2461,6 +2495,10 @@ body.model-detail-page.is-resizing-sidebar {
   .leaderboard-heading-actions {
     gap: 6px;
     margin-left: auto;
+  }
+
+  .leaderboard-ranking-card .model-picker {
+    order: 1;
   }
 
   .model-picker summary {

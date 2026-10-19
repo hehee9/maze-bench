@@ -124,6 +124,13 @@
               <path d="M21 15l-5-5L5 21" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
             </svg>
           </button>
+          <details class="model-picker" data-model-picker data-export-hide="true">
+            <summary>
+              <span data-i18n="leaderboard.selectModels">모델 선택</span>
+              <span class="selected-model-count">0</span>
+            </summary>
+            <div class="model-picker-panel"></div>
+          </details>
           <div class="mobile-sort-controls" data-export-hide="true">
             <select id="mobileSortKey" aria-label="정렬 기준" data-i18n-aria-label="leaderboard.sortKey">
               <option value="rank" data-i18n="common.rank">순위</option>
@@ -147,11 +154,11 @@
       <div id="tableScroll" class="table-scroll">
         <table class="benchmark-table leaderboard-table">
           <colgroup>
-            <col style="width: 9%">
-            <col style="width: 39%">
-            <col style="width: 17%">
-            <col style="width: 17%">
-            <col style="width: 18%">
+            <col class="leaderboard-rank-column">
+            <col class="leaderboard-model-column">
+            <col class="leaderboard-score-column">
+            <col class="leaderboard-cost-column">
+            <col class="leaderboard-token-column">
           </colgroup>
           <thead>
             <tr>
