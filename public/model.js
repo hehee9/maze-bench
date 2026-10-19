@@ -57,7 +57,6 @@
     resultHead: document.querySelector("#resultHead"),
     resultColumns: document.querySelector("#resultColumns"),
     resultBody: document.querySelector("#resultBody"),
-    tableScroll: document.querySelector(".model-detail-content .table-scroll"),
     emptyState: document.querySelector("#emptyState"),
     messageBox: document.querySelector("#messageBox"),
     rankingSidebar: document.querySelector("#rankingSidebar"),
@@ -332,34 +331,6 @@
     _setSidebarWidth(state.sidebarWidth, true);
   }
 
-  /** @description Forward boundary wheel movement from the result table to the page */
-  function _forwardBoundaryWheel(event) {
-    if (event.deltaY === 0 || event.ctrlKey) {
-      return;
-    }
-    const maximumScroll = (
-      elements.tableScroll.scrollHeight - elements.tableScroll.clientHeight
-    );
-    const atTop = elements.tableScroll.scrollTop <= 1;
-    const atBottom = elements.tableScroll.scrollTop >= maximumScroll - 1;
-    const movesPastBoundary = (
-      maximumScroll <= 1
-      || (event.deltaY < 0 && atTop)
-      || (event.deltaY > 0 && atBottom)
-    );
-    if (!movesPastBoundary) {
-      return;
-    }
-
-    const unit = event.deltaMode === WheelEvent.DOM_DELTA_LINE
-      ? 16
-      : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
-        ? window.innerHeight
-        : 1;
-    event.preventDefault();
-    window.scrollBy({ top: event.deltaY * unit });
-  }
-
   /** @description Synchronize the mobile ranking drawer and its accessibility state */
   function _setSidebarOpen(open, returnFocus = false) {
     const shouldOpen = sidebarMedia.matches && open;
@@ -534,16 +505,16 @@
   /** @description Return heatmap colors for a score */
   function _heatmapColors(score) {
     if (globalThis.MazeBenchTheme.getTheme() === "dark") {
-      const lightness = 23 + score * 0.38;
+      const lightness = 18 + score * 0.42;
       return {
-        background: `hsl(218 40% ${lightness}%)`,
-        foreground: "#ffffff",
+        background: `hsl(224 60% ${lightness}%)`,
+        foreground: lightness > 53 ? "#0e1014" : "#eef1f6",
       };
     }
-    const lightness = 96 - score * 0.52;
+    const lightness = 97 - score * 0.57;
     return {
-      background: `hsl(220 34% ${lightness}%)`,
-      foreground: score >= 62 ? "#ffffff" : "#26324d",
+      background: `hsl(224 64% ${lightness}%)`,
+      foreground: score >= 72 ? "#ffffff" : "#14171c",
     };
   }
 
@@ -1072,9 +1043,6 @@
   elements.sizeSelect.addEventListener("change", () => {
     state.size = elements.sizeSelect.value;
     _render();
-  });
-  elements.tableScroll.addEventListener("wheel", _forwardBoundaryWheel, {
-    passive: false,
   });
   elements.rankingResizeHandle.addEventListener("pointerdown", (event) => {
     if (sidebarMedia.matches || event.button !== 0) {

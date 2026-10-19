@@ -459,9 +459,9 @@
       context.fillRect(0, 0, width, width);
       context.drawImage(image, 0, 0, width, width);
       context.fillStyle = globalScope.MazeBenchTheme?.getTheme() === "dark"
-        ? "#9CA3AF"
-        : "#8A93A4";
-      context.font = "700 20px Segoe UI, sans-serif";
+        ? "#8d95a2"
+        : "#9aa0aa";
+      context.font = "600 20px \"Pretendard Variable\", \"Segoe UI\", sans-serif";
       context.textAlign = "right";
       context.textBaseline = "top";
       context.fillText("Github/hehee9", width - 24, 22);
@@ -589,7 +589,7 @@
       const width = Math.max(exportWidth, root.scrollWidth);
       const height = root.scrollHeight;
       const backgroundColor = globalScope.MazeBenchTheme?.getTheme() === "dark"
-        ? "#111827"
+        ? "#0e1014"
         : "#ffffff";
       const dataUrl = root.classList.contains("maze-stage")
         ? await _replaySvgToPng(root, width, pixelRatio, backgroundColor)

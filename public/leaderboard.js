@@ -279,6 +279,7 @@
     const isRandomBaseline = entry.type === "random";
     const isSyntheticBaseline = isHuman || isRandomBaseline;
     row.className = `is-${entry.state}`;
+    row.classList.toggle("is-baseline", isSyntheticBaseline);
 
     const rankCell = document.createElement("td");
     rankCell.className = "rank-cell";
@@ -336,6 +337,13 @@
     scoreStrong.textContent = Number.isFinite(score)
       ? `${data.formatScore(score)}%`
       : data.formatScore(score);
+    if (Number.isFinite(score)) {
+      const meter = document.createElement("span");
+      meter.className = "score-meter";
+      meter.setAttribute("aria-hidden", "true");
+      meter.style.setProperty("--score", String(Math.min(100, Math.max(0, score))));
+      scoreCell.append(meter);
+    }
     scoreCell.append(scoreStrong);
     if (entry.state === "partial") {
       const meta = document.createElement("span");
@@ -434,7 +442,19 @@
 
   /** @description 리더보드 차트 항목의 공통 색상 반환 */
   function _entryColor(entry) {
-    return entry.type !== "model" ? entry.color : _modelColor(entry.model);
+    const color = entry.type !== "model" ? entry.color : _modelColor(entry.model);
+    return globalThis.MazeBenchTheme.getTheme() === "dark" ? _liftDarkColor(color) : color;
+  }
+
+  /**
+   * @description 다크 배경에 묻히는 어두운 개발사 색을 밝은 회색으로 바꿔 반환
+   * @param {string} color #RRGGBB 형식 색상
+   * @returns {string} 다크 테마 표시 색상
+   */
+  function _liftDarkColor(color) {
+    const value = Number.parseInt(color.slice(1), 16);
+    const luminance = 0.2126 * (value >> 16) + 0.7152 * ((value >> 8) & 255) + 0.0722 * (value & 255);
+    return luminance < 72 ? "#a1a1aa" : color;
   }
 
   /** @description 차트 강조 표시용 안전 식별자 반환 */
@@ -1254,209 +1274,228 @@
       return;
     }
 
-    const width = 1040;
-    const height = 420;
-    const margin = { top: 20, right: 24, bottom: 56, left: 66 };
-    const plotWidth = width - margin.left - margin.right;
-    const plotHeight = height - margin.top - margin.bottom;
-    const costs = points.map(({ cost }) => cost);
-    const scores = points.map(({ score }) => score);
-    const dataMinimum = Math.min(...costs);
-    const dataMaximum = Math.max(...costs);
-    const linearRange = _niceAxisRange(costs, { floor: 0 });
-    const scoreRange = _niceAxisRange(scores, { floor: 0, ceiling: 100 });
-    const logMinimum = dataMinimum * 0.9;
-    const logMaximum = dataMaximum * 1.1;
-    const logSpan = Math.log10(logMaximum) - Math.log10(logMinimum);
-    const xPosition = (cost) => {
-      if (state.scatterScale === "log") {
-        const ratio = logSpan === 0
-          ? 0.5
-          : (Math.log10(cost) - Math.log10(logMinimum)) / logSpan;
-        return margin.left + ratio * plotWidth;
-      }
-      return (
-        margin.left
-        + ((cost - linearRange.min) / (linearRange.max - linearRange.min))
-        * plotWidth
+    /**
+     * @description 지정한 크기로 산점도 SVG 생성
+     * @param {number} width SVG 가로 길이
+     * @param {number} height SVG 세로 길이
+     * @param {boolean} includeLabels 내보내기용 모델명 표시 여부
+     * @returns {SVGSVGElement}
+     */
+    const buildSvg = (width, height, includeLabels) => {
+      const margin = { top: 20, right: 24, bottom: 56, left: 66 };
+      const plotWidth = width - margin.left - margin.right;
+      const plotHeight = height - margin.top - margin.bottom;
+      const costs = points.map(({ cost }) => cost);
+      const scores = points.map(({ score }) => score);
+      const dataMinimum = Math.min(...costs);
+      const dataMaximum = Math.max(...costs);
+      const linearRange = _niceAxisRange(costs, { floor: 0 });
+      const scoreRange = _niceAxisRange(scores, { floor: 0, ceiling: 100 });
+      const logMinimum = dataMinimum * 0.9;
+      const logMaximum = dataMaximum * 1.1;
+      const logSpan = Math.log10(logMaximum) - Math.log10(logMinimum);
+      const xPosition = (cost) => {
+        if (state.scatterScale === "log") {
+          const ratio = logSpan === 0
+            ? 0.5
+            : (Math.log10(cost) - Math.log10(logMinimum)) / logSpan;
+          return margin.left + ratio * plotWidth;
+        }
+        return (
+          margin.left
+          + ((cost - linearRange.min) / (linearRange.max - linearRange.min))
+          * plotWidth
+        );
+      };
+      const yPosition = (score) => (
+        margin.top
+        + plotHeight
+        - ((score - scoreRange.min) / (scoreRange.max - scoreRange.min))
+        * plotHeight
       );
-    };
-    const yPosition = (score) => (
-      margin.top
-      + plotHeight
-      - ((score - scoreRange.min) / (scoreRange.max - scoreRange.min))
-      * plotHeight
-    );
-    const svg = _svgElement("svg", {
-      class: "cost-scatter-svg",
-      viewBox: `0 0 ${width} ${height}`,
-      width,
-      height,
-      role: "img",
-      "aria-label": _t("leaderboard.chartCost", {
-        scale: state.scatterScale === "log"
-          ? _t("leaderboard.log")
-          : _t("leaderboard.linear"),
-      }),
-    });
-    svg.style.minWidth = "720px";
-
-    svg.append(
-      _svgElement("rect", {
-        x: margin.left,
-        y: margin.top,
-        width: plotWidth / 2,
-        height: plotHeight / 2,
-        class: "scatter-good-area",
-      }),
-      _svgElement("rect", {
-        x: margin.left + plotWidth / 2,
-        y: margin.top + plotHeight / 2,
-        width: plotWidth / 2,
-        height: plotHeight / 2,
-        class: "scatter-poor-area",
-      }),
-    );
-
-    scoreRange.ticks.forEach((tick) => {
-      const y = yPosition(tick);
+      const svg = _svgElement("svg", {
+        class: "cost-scatter-svg",
+        viewBox: `0 0 ${width} ${height}`,
+        width,
+        height,
+        role: "img",
+        "aria-label": _t("leaderboard.chartCost", {
+          scale: state.scatterScale === "log"
+            ? _t("leaderboard.log")
+            : _t("leaderboard.linear"),
+        }),
+      });
       svg.append(
+        _svgElement("rect", {
+          x: margin.left,
+          y: margin.top,
+          width: plotWidth / 2,
+          height: plotHeight / 2,
+          class: "scatter-good-area",
+        }),
+        _svgElement("rect", {
+          x: margin.left + plotWidth / 2,
+          y: margin.top + plotHeight / 2,
+          width: plotWidth / 2,
+          height: plotHeight / 2,
+          class: "scatter-poor-area",
+        }),
+      );
+
+      scoreRange.ticks.forEach((tick) => {
+        const y = yPosition(tick);
+        svg.append(
+          _svgElement("line", {
+            x1: margin.left,
+            x2: width - margin.right,
+            y1: y,
+            y2: y,
+            class: "chart-grid-line",
+          }),
+          _svgElement("text", {
+            x: margin.left - 11,
+            y: y + 4,
+            class: "chart-axis-tick",
+            "text-anchor": "end",
+          }, _formatScoreTick(tick)),
+        );
+      });
+
+      const xTicks = state.scatterScale === "log"
+        ? []
+        : linearRange.ticks;
+      if (state.scatterScale === "log") {
+        for (let index = 0; index <= 4; index += 1) {
+          const value = 10 ** (
+            Math.log10(logMinimum) + (logSpan * index) / 4
+          );
+          xTicks.push(value);
+        }
+      }
+      xTicks.forEach((tick, index) => {
+        const x = state.scatterScale === "log"
+          ? margin.left + (plotWidth * index) / 4
+          : xPosition(tick);
+        svg.append(
+          _svgElement("line", {
+            x1: x,
+            x2: x,
+            y1: margin.top,
+            y2: height - margin.bottom,
+            class: "chart-grid-line",
+          }),
+          _svgElement("text", {
+            x,
+            y: height - margin.bottom + 24,
+            class: "chart-axis-tick",
+            "text-anchor": "middle",
+          }, _formatCostTick(tick)),
+        );
+      });
+      svg.append(
+        _svgElement("line", {
+          x1: margin.left + plotWidth / 2,
+          x2: margin.left + plotWidth / 2,
+          y1: margin.top,
+          y2: height - margin.bottom,
+          class: "chart-reference-line",
+        }),
         _svgElement("line", {
           x1: margin.left,
           x2: width - margin.right,
-          y1: y,
-          y2: y,
-          class: "chart-grid-line",
+          y1: margin.top + plotHeight / 2,
+          y2: margin.top + plotHeight / 2,
+          class: "chart-reference-line",
         }),
-        _svgElement("text", {
-          x: margin.left - 11,
-          y: y + 4,
-          class: "chart-axis-tick",
-          "text-anchor": "end",
-        }, _formatScoreTick(tick)),
       );
-    });
-
-    const xTicks = state.scatterScale === "log"
-      ? []
-      : linearRange.ticks;
-    if (state.scatterScale === "log") {
-      for (let index = 0; index <= 4; index += 1) {
-        const value = 10 ** (
-          Math.log10(logMinimum) + (logSpan * index) / 4
-        );
-        xTicks.push(value);
-      }
-    }
-    xTicks.forEach((tick, index) => {
-      const x = state.scatterScale === "log"
-        ? margin.left + (plotWidth * index) / 4
-        : xPosition(tick);
       svg.append(
-        _svgElement("line", {
-          x1: x,
-          x2: x,
-          y1: margin.top,
-          y2: height - margin.bottom,
-          class: "chart-grid-line",
-        }),
         _svgElement("text", {
-          x,
-          y: height - margin.bottom + 24,
-          class: "chart-axis-tick",
+          x: margin.left + plotWidth / 2,
+          y: height - 8,
+          class: "chart-axis-title",
           "text-anchor": "middle",
-        }, _formatCostTick(tick)),
+        }, _t("leaderboard.totalCostAxis")),
+        _svgElement("text", {
+          x: 17,
+          y: margin.top + plotHeight / 2,
+          class: "chart-axis-title",
+          "text-anchor": "middle",
+          transform: `rotate(-90 17 ${margin.top + plotHeight / 2})`,
+        }, _t("leaderboard.averageScoreAxis")),
       );
-    });
-    svg.append(
-      _svgElement("line", {
-        x1: margin.left + plotWidth / 2,
-        x2: margin.left + plotWidth / 2,
-        y1: margin.top,
-        y2: height - margin.bottom,
-        class: "chart-reference-line",
-      }),
-      _svgElement("line", {
-        x1: margin.left,
-        x2: width - margin.right,
-        y1: margin.top + plotHeight / 2,
-        y2: margin.top + plotHeight / 2,
-        class: "chart-reference-line",
-      }),
-    );
-    svg.append(
-      _svgElement("text", {
-        x: margin.left + plotWidth / 2,
-        y: height - 8,
-        class: "chart-axis-title",
-        "text-anchor": "middle",
-      }, _t("leaderboard.totalCostAxis")),
-      _svgElement("text", {
-        x: 17,
-        y: margin.top + plotHeight / 2,
-        class: "chart-axis-title",
-        "text-anchor": "middle",
-        transform: `rotate(-90 17 ${margin.top + plotHeight / 2})`,
-      }, _t("leaderboard.averageScoreAxis")),
-    );
 
-    for (const entry of points) {
-      const pointX = xPosition(entry.cost);
-      const pointY = yPosition(entry.score);
-      const tooltip = (
-        `${_entryName(entry)} · `
-        + `${_t("common.points", { score: data.formatScore(entry.score) })} · `
-        + `${data.formatCost(entry.cost)}`
-        + (entry.state === "partial"
-          ? ` · ${_t("leaderboard.aggregating")}`
-          : "")
-      );
-      const circleAttributes = {
-        cx: pointX,
-        cy: pointY,
-        r: 7,
-        class: entry.state === "partial"
-          ? "scatter-partial-point"
-          : "developer-mark",
-        fill: entry.state === "partial" ? "#ffffff" : _entryColor(entry),
-        ...(entry.state === "partial" ? {
-          stroke: _entryColor(entry),
-          "stroke-width": 2.5,
-        } : {}),
-        tabindex: 0,
-        role: "img",
-        "aria-label": tooltip,
-        "data-chart-tooltip": tooltip,
-        "data-model-highlight": _entryHighlight(entry),
-      };
-      if (entry.state === "partial") {
-        svg.append(_svgElement("circle", {
-          cx: circleAttributes.cx,
-          cy: circleAttributes.cy,
-          r: 7.8,
-          class: "developer-mark scatter-point-outline",
-          fill: "none",
-        }));
+      for (const entry of points) {
+        const pointX = xPosition(entry.cost);
+        const pointY = yPosition(entry.score);
+        const tooltip = (
+          `${_entryName(entry)} · `
+          + `${_t("common.points", { score: data.formatScore(entry.score) })} · `
+          + `${data.formatCost(entry.cost)}`
+          + (entry.state === "partial"
+            ? ` · ${_t("leaderboard.aggregating")}`
+            : "")
+        );
+        const circleAttributes = {
+          cx: pointX,
+          cy: pointY,
+          r: 7,
+          class: entry.state === "partial"
+            ? "scatter-partial-point"
+            : "developer-mark",
+          fill: entry.state === "partial" ? "#ffffff" : _entryColor(entry),
+          ...(entry.state === "partial" ? {
+            stroke: _entryColor(entry),
+            "stroke-width": 2.5,
+          } : {}),
+          tabindex: 0,
+          role: "img",
+          "aria-label": tooltip,
+          "data-chart-tooltip": tooltip,
+          "data-model-highlight": _entryHighlight(entry),
+        };
+        if (entry.state === "partial") {
+          svg.append(_svgElement("circle", {
+            cx: circleAttributes.cx,
+            cy: circleAttributes.cy,
+            r: 7.8,
+            class: "developer-mark scatter-point-outline",
+            fill: "none",
+          }));
+        }
+        const circle = _svgElement("circle", circleAttributes);
+        svg.append(circle);
+        if (includeLabels) {
+          svg.append(_svgElement("text", {
+            x: pointX,
+            y: pointY - 16,
+            class: "scatter-export-label",
+            "text-anchor": "middle",
+            "aria-hidden": "true",
+            "data-export-show": "true",
+            "data-cost-scatter-label": "true",
+            "data-point-x": pointX,
+            "data-point-y": pointY,
+          }, _entryName(entry)));
+        }
       }
-      const circle = _svgElement("circle", circleAttributes);
-      const exportLabel = _svgElement("text", {
-        x: pointX,
-        y: pointY - 16,
-        class: "scatter-export-label",
-        "text-anchor": "middle",
-        "aria-hidden": "true",
-        "data-export-show": "true",
-        "data-cost-scatter-label": "true",
-        "data-point-x": pointX,
-        "data-point-y": pointY,
-      }, _entryName(entry));
-      svg.append(circle, exportLabel);
-    }
+      return svg;
+    };
 
+    const screenWidth = Math.max(
+      320,
+      Math.round(elements.costScatter.clientWidth || 1040),
+    );
     const scroll = document.createElement("div");
     scroll.className = "chart-horizontal-scroll scatter-scroll";
-    scroll.append(svg);
-    elements.costScatter.replaceChildren(scroll);
+    scroll.dataset.exportHide = "true";
+    scroll.append(buildSvg(screenWidth, screenWidth < 600 ? 320 : 420, false));
+    const exportScroll = document.createElement("div");
+    exportScroll.className = "chart-horizontal-scroll scatter-export-scroll";
+    exportScroll.dataset.exportShow = "true";
+    exportScroll.style.display = "none";
+    exportScroll.setAttribute("aria-hidden", "true");
+    exportScroll.append(buildSvg(1040, 420, true));
+    elements.costScatter.replaceChildren(scroll, exportScroll);
     _bindChartTooltip(elements.costScatter);
   }
 
@@ -1477,33 +1516,6 @@
     _renderMultiModelChart(state.analytics);
     _renderLeaderboardHeatmap(state.analytics);
     _renderCostScatter(state.analytics);
-  }
-
-  /** @description Forward boundary wheel movement from the ranking table to the page */
-  function _forwardBoundaryWheel(event) {
-    if (event.deltaY === 0 || event.ctrlKey) {
-      return;
-    }
-    const maximumScroll = (
-      elements.tableScroll.scrollHeight - elements.tableScroll.clientHeight
-    );
-    const atTop = elements.tableScroll.scrollTop <= 1;
-    const atBottom = elements.tableScroll.scrollTop >= maximumScroll - 1;
-    const movesPastBoundary = (
-      maximumScroll <= 1
-      || (event.deltaY < 0 && atTop)
-      || (event.deltaY > 0 && atBottom)
-    );
-    if (!movesPastBoundary) {
-      return;
-    }
-    const unit = event.deltaMode === WheelEvent.DOM_DELTA_LINE
-      ? 16
-      : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
-        ? window.innerHeight
-        : 1;
-    event.preventDefault();
-    window.scrollBy({ top: event.deltaY * unit });
   }
 
   /** @description Render ranking for the selected maze sizes */
@@ -1666,9 +1678,6 @@
     }
   });
 
-  elements.tableScroll.addEventListener("wheel", _forwardBoundaryWheel, {
-    passive: false,
-  });
   document.addEventListener("pointerdown", (event) => {
     for (const picker of elements.modelPickers) {
       if (picker.open && !picker.contains(event.target)) {
@@ -1702,6 +1711,24 @@
         _positionHeaderTooltip(help, button, tooltip);
       }
     }
+  });
+  // 화면 폭이 바뀌면 화면 너비에 맞춘 차트를 다시 그림
+  let chartResizeTimer = 0;
+  let chartLayoutWidth = elements.costScatter.clientWidth;
+  globalThis.addEventListener("resize", () => {
+    clearTimeout(chartResizeTimer);
+    chartResizeTimer = setTimeout(() => {
+      const width = elements.costScatter.clientWidth;
+      if (
+        !state.analytics
+        || width === chartLayoutWidth
+        || document.querySelector("[data-exporting=\"true\"]")
+      ) {
+        return;
+      }
+      chartLayoutWidth = width;
+      _renderSelectedEntryCharts();
+    }, 150);
   });
   globalThis.addEventListener("scroll", () => {
     for (const [help, button, tooltip] of headerTooltips) {
