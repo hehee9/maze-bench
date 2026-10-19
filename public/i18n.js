@@ -119,6 +119,7 @@
       "leaderboard.scoreVariableM": "성공한 명령 수",
       "leaderboard.scoreVariableR": "남은 최소 명령 수",
       "leaderboard.scoreFormulaHuman": "인간 행은 참가자별 평균 점수의 중앙값과 상위 5% 경계값입니다. 산정식은 사람 상세에서 볼 수 있습니다.",
+      "leaderboard.scoreFormulaRandom": "무작위 행은 첫 진입만 정확히 하고 이후 S/R/B/L을 균등하게 골라 벽에 부딪히거나 출구에 닿을 때까지 움직였을 때의 기대 점수입니다.",
       "leaderboard.allMazes": "전체 미로",
       "leaderboard.oneSizeMazes": "{size} 미로",
       "leaderboard.multipleSizeMazes": "{count}개 크기 미로",
@@ -133,6 +134,8 @@
       "leaderboard.humanGroup": "인간",
       "leaderboard.humanMedian": "인간 (중앙값)",
       "leaderboard.humanTopFive": "인간 (상위 5%)",
+      "leaderboard.randomGroup": "무작위",
+      "leaderboard.randomBaseline": "무작위 (기대값)",
       "leaderboard.loadFailed": "benchmark_results.json 로드 실패",
 
       "model.documentTitle": "Maze Bench 모델 상세",
@@ -377,6 +380,7 @@
       "leaderboard.scoreVariableM": "Successful command count",
       "leaderboard.scoreVariableR": "Minimum remaining command count",
       "leaderboard.scoreFormulaHuman": "Human rows show the median and top-5% boundary of per-participant average scores. See Human details for the formula.",
+      "leaderboard.scoreFormulaRandom": "The Random row shows the expected score when only the entry move is correct and each later move is chosen uniformly from S/R/B/L until hitting a wall or exiting.",
       "leaderboard.allMazes": "All mazes",
       "leaderboard.oneSizeMazes": "{size} mazes",
       "leaderboard.multipleSizeMazes": "{count} maze sizes",
@@ -391,6 +395,8 @@
       "leaderboard.humanGroup": "Human",
       "leaderboard.humanMedian": "Human (median)",
       "leaderboard.humanTopFive": "Human (top 5%)",
+      "leaderboard.randomGroup": "Random",
+      "leaderboard.randomBaseline": "Random (expected)",
       "leaderboard.loadFailed": "Failed to load benchmark_results.json",
 
       "model.documentTitle": "Maze Bench Model Details",

@@ -27,6 +27,7 @@
     "total_tokens",
   ];
   const HUMAN_RESULTS_FILE = "human_results.json";
+  const RANDOM_BASELINE_FILE = "random_baseline.json";
   const HUMAN_SCORE_FIELDS = [
     {
       id: "human-median",
@@ -279,11 +280,11 @@
     return entries;
   }
 
-  /** @description 모델과 인간 점수 행의 통합 순위 */
+  /** @description 모델과 기준선 행의 통합 순위 */
   function rankLeaderboardEntries(
     models,
     statsSelector = (model) => model,
-    humanRows = [],
+    baselineRows = [],
   ) {
     const modelEntries = rankModels(models, statsSelector).map((entry) => ({
       ...entry,
@@ -292,12 +293,12 @@
     }));
     const entries = [
       ...modelEntries,
-      ...humanRows.map((humanRow, index) => ({
-        ...humanRow,
-        type: "human",
-        key: humanRow.id,
-        processed: humanRow.stats.processed_count,
-        expected: humanRow.stats.expected_count,
+      ...baselineRows.map((baselineRow, index) => ({
+        ...baselineRow,
+        type: baselineRow.type ?? "human",
+        key: baselineRow.id,
+        processed: baselineRow.stats.processed_count,
+        expected: baselineRow.stats.expected_count,
         originalIndex: modelEntries.length + index,
         rank: null,
       })),
@@ -337,7 +338,7 @@
         return Number.isFinite(entry.rank) ? entry.rank : null;
       }
       if (key === "model") {
-        return entry.type === "human"
+        return entry.type === "human" || entry.type === "random"
           ? entry.label
           : entry.model?.name ?? entry.model?.model_id ?? _t("common.noNameModel");
       }
@@ -345,7 +346,7 @@
         return Number.isFinite(entry.score) ? entry.score : null;
       }
       if (key === "cost") {
-        return entry.type === "human"
+        return entry.type === "human" || entry.type === "random"
           ? null
           : calculateCost(entry.stats?.token_usage, entry.model?.pricing);
       }
@@ -451,13 +452,13 @@
     ).map(({ model }) => model);
   }
 
-  /** @description 모델과 인간 행에 공통 기본 차트 선택 규칙 적용 */
+  /** @description 모델과 기준선 행에 공통 기본 차트 선택 규칙 적용 */
   function selectDefaultEntries(entries, {
-    maxPerDeveloper = 3,
+    maxPerDeveloper = 2,
     maxEntries = 9,
   } = {}) {
     const rankedEntries = entries
-      .filter((entry) => entry.state === "complete")
+      .filter((entry) => entry.state === "complete" && entry.type !== "random")
       .sort((first, second) => first.rank - second.rank);
     return _selectDefaultRankedEntries(
       rankedEntries,
@@ -662,12 +663,13 @@
     });
   }
 
-  /** @description Aggregate leaderboard charts for one selected maze-size range */
+  /** @description 선택한 미로 크기 범위의 리더보드 차트 집계 */
   function aggregateLeaderboardModels(
     payload,
     requestedSizes = null,
     humanResults = null,
     tier = 1,
+    randomBaseline = null,
   ) {
     const tierId = Number(tier) === 2 ? 2 : 1;
     const tierResults = humanResults?.tiers?.[String(tierId)];
@@ -704,6 +706,9 @@
     const selectedResults = (payload.results ?? []).filter((result) => (
       selectedMazeIds.has(result.maze?.maze_id)
     ));
+    const randomRows = randomBaseline === null
+      ? []
+      : [aggregateRandomBaseline(randomBaseline, tier, mazes, sizes)];
     const resultIndex = new Map();
     for (const result of selectedResults) {
       if (!result.maze?.maze_id) {
@@ -765,9 +770,9 @@
     const entries = rankLeaderboardEntries(
       payload.models ?? [],
       (model) => modelByKey.get(modelKey(model)).stats,
-      humanRows,
+      [...humanRows, ...randomRows],
     ).map((entry) => {
-      if (entry.type === "human") {
+      if (entry.type !== "model") {
         return entry;
       }
       return {
@@ -780,7 +785,60 @@
         originalIndex: entry.originalIndex,
       };
     });
-    return { sizes, mazes, models, humanRows, entries };
+    return { sizes, mazes, models, humanRows, randomRows, entries };
+  }
+
+  /** @description 선택한 미로 목록에 맞춰 무작위 이동 기대 점수 집계 */
+  function aggregateRandomBaseline(payload, tier = 1, mazes = [], sizes = []) {
+    const tierId = Number(tier) === 2 ? 2 : 1;
+    const tierScores = payload.tiers[String(tierId)];
+    const scoresByMaze = Object.fromEntries(mazes.map((maze) => {
+      const score = tierScores[maze.maze_id];
+      return [maze.maze_id, Number.isFinite(score) ? score : null];
+    }));
+    const scoredMazes = mazes.filter((maze) => (
+      Number.isFinite(scoresByMaze[maze.maze_id])
+    ));
+    const provisionalMeanScore = _meanScore(
+      scoredMazes.map((maze) => scoresByMaze[maze.maze_id]),
+    );
+    const stats = {
+      expected_count: mazes.length,
+      processed_count: scoredMazes.length,
+      official_mean_score: (
+        mazes.length > 0 && scoredMazes.length === mazes.length
+      )
+        ? provisionalMeanScore
+        : null,
+      provisional_mean_score: provisionalMeanScore,
+    };
+    const state = aggregateState(stats);
+    return {
+      id: "random-baseline",
+      type: "random",
+      label: _t("leaderboard.randomBaseline"),
+      iconPath: "assets/developers/random.svg",
+      color: "#808080",
+      stats,
+      state,
+      score: state === "complete"
+        ? stats.official_mean_score
+        : stats.provisional_mean_score,
+      cost: null,
+      bySize: sizes.map((size) => {
+        const sizeMazes = scoredMazes.filter(
+          (maze) => mazeSize(maze) === size,
+        );
+        return {
+          size,
+          meanScore: _meanScore(
+            sizeMazes.map((maze) => scoresByMaze[maze.maze_id]),
+          ),
+        };
+      }),
+      scoresByMaze,
+      mazes,
+    };
   }
 
   /** @description 선택 크기 조합의 사전 집계 참가자 그룹 반환 */
@@ -1260,6 +1318,15 @@
     return response.json();
   }
 
+  /** @description 무작위 기준선 공개 데이터 로드 */
+  async function loadRandomBaseline() {
+    const response = await fetch(RANDOM_BASELINE_FILE, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    return response.json();
+  }
+
   const api = {
     aggregateLeaderboardModels,
     aggregateHumanBaselines,
@@ -1281,6 +1348,7 @@
     getTierConfig,
     loadBenchmarkResults,
     loadHumanResults,
+    loadRandomBaseline,
     mazeDisplayName,
     mazeRelation,
     mazeSize,

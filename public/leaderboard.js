@@ -40,6 +40,7 @@
     tier: requestedTier === "2" ? 2 : 1,
     payload: null,
     humanResults: null,
+    randomBaseline: null,
     sizes: [],
     selectedSizes: new Set(),
     selectedEntryKeys: new Set(),
@@ -275,6 +276,8 @@
   function _createRow(entry) {
     const row = document.createElement("tr");
     const isHuman = entry.type === "human";
+    const isRandomBaseline = entry.type === "random";
+    const isSyntheticBaseline = isHuman || isRandomBaseline;
     row.className = `is-${entry.state}`;
 
     const rankCell = document.createElement("td");
@@ -288,13 +291,15 @@
     const mobileRank = document.createElement("span");
     mobileRank.className = "mobile-rank";
     mobileRank.textContent = entry.rank === null ? "—" : `${entry.rank}.`;
-    const modelNameElement = document.createElement("a");
+    const modelNameElement = document.createElement(
+      isRandomBaseline ? "span" : "a",
+    );
     const modelName = _entryName(entry);
     const developer = _entryDeveloper(entry);
     modelNameElement.className = "model-link";
     if (isHuman) {
       modelNameElement.href = state.humanResults.site_url;
-    } else {
+    } else if (!isRandomBaseline) {
       modelNameElement.href = _tierUrl("model.html", {
         model: entry.model.name,
         size: _singleSelectedSize(),
@@ -341,7 +346,7 @@
 
     const costCell = document.createElement("td");
     costCell.dataset.label = _t("common.cost");
-    costCell.textContent = isHuman
+    costCell.textContent = isSyntheticBaseline
       ? "—"
       : data.formatCost(
         data.calculateCost(entry.stats?.token_usage, entry.model.pricing),
@@ -349,7 +354,7 @@
 
     const tokenCell = document.createElement("td");
     tokenCell.dataset.label = _t("common.totalTokens");
-    tokenCell.textContent = isHuman
+    tokenCell.textContent = isSyntheticBaseline
       ? "—"
       : data.formatTokens(_totalTokens(entry.stats?.token_usage));
 
@@ -384,7 +389,7 @@
 
   /** @description 차트 항목의 안정적인 선택 키 반환 */
   function _entryKey(entry) {
-    return entry.type === "human"
+    return entry.type !== "model"
       ? entry.id
       : _modelSelectionKey(entry.model);
   }
@@ -403,31 +408,38 @@
 
   /** @description 리더보드 항목의 표시 이름 반환 */
   function _entryName(entry) {
-    return entry.type === "human" ? entry.label : _modelName(entry.model);
+    return entry.type !== "model" ? entry.label : _modelName(entry.model);
   }
 
   /** @description 차트 항목의 그룹 표시 정보 반환 */
   function _entryDeveloper(entry) {
-    return entry.type === "human"
-      ? {
+    if (entry.type === "human") {
+      return {
         key: "human",
         label: _t("leaderboard.humanGroup"),
         iconPath: entry.iconPath,
         color: "#6B5CE7",
-      }
-      : data.modelDeveloper(entry.model);
+      };
+    }
+    if (entry.type === "random") {
+      return {
+        key: entry.id,
+        label: _t("leaderboard.randomGroup"),
+        iconPath: entry.iconPath,
+        color: entry.color,
+      };
+    }
+    return data.modelDeveloper(entry.model);
   }
 
   /** @description 리더보드 차트 항목의 공통 색상 반환 */
   function _entryColor(entry) {
-    return entry.type === "human"
-      ? entry.color
-      : _modelColor(entry.model);
+    return entry.type !== "model" ? entry.color : _modelColor(entry.model);
   }
 
   /** @description 차트 강조 표시용 안전 식별자 반환 */
   function _entryHighlight(entry) {
-    if (entry.type === "human") {
+    if (entry.type !== "model") {
       return entry.id;
     }
     return String(_modelIndex(entry.model));
@@ -577,6 +589,7 @@
     }
     _syncModelPickerControls();
     _renderSelectedEntryCharts();
+    _renderRanking();
   }
 
   /** @description Update one bulk control label and accessibility state */
@@ -772,6 +785,7 @@
             }
             _syncModelPickerControls();
             _renderSelectedEntryCharts();
+            _renderRanking();
           });
           const name = document.createElement("span");
           name.textContent = _entryName(entry);
@@ -1225,7 +1239,7 @@
   /** @description Render score against selected-range cost */
   function _renderCostScatter(analytics) {
     const points = _orderedAnalyticsEntries(analytics).filter((entry) => (
-      entry.type !== "human"
+      entry.type === "model"
       && state.selectedEntryKeys.has(_entryKey(entry))
       &&
       Number.isFinite(entry.score)
@@ -1453,6 +1467,7 @@
       _activeSizes(),
       state.humanResults,
       state.tier,
+      state.randomBaseline,
     );
   }
 
@@ -1496,8 +1511,13 @@
     if (!state.payload || !state.analytics) {
       return;
     }
-    const rankedEntries = state.analytics.entries.filter((entry) => (
-      entry.type === "human" || state.payload.results.length > 0
+    const eligibleEntries = state.analytics.entries.filter((entry) => (
+      entry.type === "human"
+      || entry.type === "random"
+      || state.payload.results.length > 0
+    ));
+    const rankedEntries = eligibleEntries.filter((entry) => (
+      state.selectedEntryKeys.has(_entryKey(entry))
     ));
     const entries = data.sortRankedEntries(
       rankedEntries,
@@ -1508,13 +1528,15 @@
     elements.emptyState.hidden = entries.length > 0;
     elements.emptyState.textContent = state.payload.results.length === 0
       ? _t("tier.noResults", { tier: state.tier })
-      : _t("leaderboard.noModelResults");
+      : state.selectedEntryKeys.size === 0
+        ? _t("common.noScoreData")
+        : _t("leaderboard.noModelResults");
     elements.tableScroll.scrollTop = 0;
 
-    const completeCount = rankedEntries.filter(
+    const completeCount = eligibleEntries.filter(
       (entry) => entry.state === "complete",
     ).length;
-    const partialCount = rankedEntries.filter(
+    const partialCount = eligibleEntries.filter(
       (entry) => entry.state === "partial",
     ).length;
     elements.scopeNote.textContent = _t("leaderboard.selectedSizeScope", {
@@ -1600,9 +1622,14 @@
   async function _load() {
     _setDashboardState("loading");
     try {
-      [state.payload, state.humanResults] = await Promise.all([
+      [
+        state.payload,
+        state.humanResults,
+        state.randomBaseline,
+      ] = await Promise.all([
         data.loadBenchmarkResults(state.tier),
         data.loadHumanResults(),
+        data.loadRandomBaseline(),
       ]);
       _syncTierInterface();
       _populateSizes();
