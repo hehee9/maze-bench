@@ -420423,6 +420423,240 @@
           ]
         ]
       }
+    },
+    {
+      "sequence": 3377,
+      "attempt_id": "8e0c1216-40c3-47d6-aed6-1f5d21a5c20f",
+      "maze_id": "maze_15x15_adjacent_02",
+      "tier": "1",
+      "actions": [
+        "S",
+        "L",
+        "S",
+        "S",
+        "R",
+        "S",
+        "L",
+        "R",
+        "L",
+        "S",
+        "R",
+        "L",
+        "R",
+        "S",
+        "S",
+        "S",
+        "L",
+        "R",
+        "S",
+        "S",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L"
+      ],
+      "status": "success",
+      "started_at": "2026-10-20T08:28:17.988Z",
+      "finished_at": "2026-10-20T08:29:31.777Z",
+      "scoring_result": {
+        "problem_id": "maze_15x15_adjacent_02",
+        "success": true,
+        "death": false,
+        "death_reason": null,
+        "first_invalid_action_index": null,
+        "optimal_action_count": 24,
+        "actual_action_count": 25,
+        "remaining_action_count": 0,
+        "completion_ratio": 1.0,
+        "efficiency_ratio": 0.96,
+        "score": 96.0,
+        "final_event": "GOAL_OUT",
+        "final_cell": "GOAL_OUT",
+        "final_facing": "E",
+        "actions_parsed": [
+          "S",
+          "L",
+          "S",
+          "S",
+          "R",
+          "S",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "R",
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "S",
+          "S",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L"
+        ],
+        "actions_executed": [
+          "S",
+          "L",
+          "S",
+          "S",
+          "R",
+          "S",
+          "L",
+          "R",
+          "L",
+          "S",
+          "R",
+          "L",
+          "R",
+          "S",
+          "S",
+          "S",
+          "L",
+          "R",
+          "S",
+          "S",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E0",
+          "E1",
+          "E2",
+          "E3",
+          "E15",
+          "E49",
+          "E50",
+          "E62",
+          "E63",
+          "E64",
+          "E88",
+          "E89",
+          "E99",
+          "E111",
+          "E123",
+          "E135",
+          "E136",
+          "E147",
+          "E157",
+          "E169",
+          "E170",
+          "E160",
+          "E161",
+          "E172",
+          "GOAL_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            9,
+            11
+          ],
+          [
+            9,
+            12
+          ],
+          [
+            9,
+            13
+          ],
+          [
+            9,
+            14
+          ],
+          [
+            12,
+            14
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            14,
+            13
+          ],
+          [
+            14,
+            14
+          ],
+          "GOAL_OUT"
+        ]
+      }
     }
   ]
 }
