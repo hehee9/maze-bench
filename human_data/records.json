@@ -425519,6 +425519,144 @@
           ]
         ]
       }
+    },
+    {
+      "sequence": 3434,
+      "attempt_id": "5fbcf1c2-638e-42fd-bdae-282a1402e2e6",
+      "maze_id": "maze_09x09_adjacent_01",
+      "tier": "1",
+      "actions": [
+        "S",
+        "L",
+        "R",
+        "R",
+        "R",
+        "L",
+        "L",
+        "R",
+        "R",
+        "L",
+        "R",
+        "L",
+        "L"
+      ],
+      "status": "collision",
+      "started_at": "2026-10-20T17:55:23.648Z",
+      "finished_at": "2026-10-20T17:56:49.550Z",
+      "scoring_result": {
+        "problem_id": "maze_09x09_adjacent_01",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E2 ((2, 0)): L relative to facing W means S",
+        "first_invalid_action_index": 12,
+        "optimal_action_count": 23,
+        "actual_action_count": 12,
+        "remaining_action_count": 18,
+        "completion_ratio": 0.4,
+        "efficiency_ratio": 0.7666666666666667,
+        "score": 30.666666666666668,
+        "final_event": "E2",
+        "final_cell": [
+          2,
+          0
+        ],
+        "final_facing": "W",
+        "actions_parsed": [
+          "S",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "L",
+          "L"
+        ],
+        "actions_executed": [
+          "S",
+          "L",
+          "R",
+          "R",
+          "R",
+          "L",
+          "L",
+          "R",
+          "R",
+          "L",
+          "R",
+          "L"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E6",
+          "E7",
+          "E29",
+          "E28",
+          "E15",
+          "E14",
+          "E21",
+          "E20",
+          "E13",
+          "E12",
+          "E3",
+          "E2"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            7,
+            0
+          ],
+          [
+            8,
+            0
+          ],
+          [
+            8,
+            3
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ]
+      }
     }
   ]
 }
