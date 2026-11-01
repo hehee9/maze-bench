@@ -79,6 +79,7 @@
 
       "footer.ariaLabel": "프로젝트 정보",
       "footer.githubAria": "Maze Bench GitHub 저장소 열기",
+      "footer.contactAria": "Maze Bench 연락처 메일 보내기",
       "footer.licenseAria": "Apache License 2.0 전문 보기",
       "footer.independent": "Maze Bench는 독립적으로 운영되는 오픈소스 벤치마크입니다.",
 
@@ -340,6 +341,7 @@
 
       "footer.ariaLabel": "Project information",
       "footer.githubAria": "Open the Maze Bench GitHub repository",
+      "footer.contactAria": "Email the Maze Bench maintainer",
       "footer.licenseAria": "Read the Apache License 2.0",
       "footer.independent": "Maze Bench is an independently maintained open-source benchmark.",
 
