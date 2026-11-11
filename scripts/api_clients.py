@@ -32,6 +32,7 @@ class APIClientError(RuntimeError):
 class ModelPricing:
     input_per_million: Optional[float] = None
     output_per_million: Optional[float] = None
+    cached_input_per_million: Optional[float] = None
 
     @classmethod
     def from_dict(cls, data: Any) -> "ModelPricing":
@@ -195,6 +196,7 @@ class APIResult:
     model_version: Optional[str] = None
     error_message: Optional[str] = None
     provider_metadata: Optional[Dict[str, Any]] = None
+    cached_input_tokens: Optional[int] = None
 
     def to_jsonable(self) -> Dict[str, Any]:
         return asdict(self)
@@ -658,7 +660,13 @@ def _parse_google_response(data: Dict[str, Any]) -> APIResult:
     } and not text_parts:
         raise APIClientError(f"Gemini candidate blocked: {finish_reason}")
 
-    usage = data.get("usageMetadata") or {}
+    usage_metadata = data.get("usageMetadata")
+    usage = usage_metadata or {}
+    cached_input_tokens = (
+        _coerce_nonnegative_int(usage.get("cachedContentTokenCount", 0))
+        if "usageMetadata" in data
+        else None
+    )
     reasoning_tokens = usage.get("thoughtsTokenCount")
     input_tokens, output_tokens, total_tokens = normalize_usage(
         usage.get("promptTokenCount"),
@@ -670,6 +678,7 @@ def _parse_google_response(data: Dict[str, Any]) -> APIResult:
         success=True,
         raw_response="".join(text_parts),
         input_tokens=input_tokens,
+        cached_input_tokens=cached_input_tokens,
         output_tokens=output_tokens,
         reasoning_tokens=_coerce_nonnegative_int(reasoning_tokens),
         total_tokens=total_tokens,
@@ -683,38 +692,96 @@ def _parse_google_response(data: Dict[str, Any]) -> APIResult:
     )
 
 
+def _merge_google_results(results: Sequence[APIResult]) -> APIResult:
+    def total(field_name: str) -> Optional[int]:
+        values = [getattr(result, field_name) for result in results]
+        if all(value is None for value in values):
+            return None
+        return sum(value or 0 for value in values)
+
+    final = results[-1]
+    return APIResult(
+        success=True,
+        raw_response="".join(result.raw_response for result in results),
+        input_tokens=total("input_tokens"),
+        cached_input_tokens=total("cached_input_tokens"),
+        output_tokens=total("output_tokens"),
+        reasoning_tokens=total("reasoning_tokens"),
+        total_tokens=total("total_tokens"),
+        stop_reason=final.stop_reason,
+        response_id=final.response_id,
+        model_version=final.model_version,
+        provider_metadata=final.provider_metadata,
+    )
+
+
 class GoogleClient(BaseAPIClient):
     MODEL_URL_PREFIX = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
     )
 
     def send(self, prompt: str, image_path: str | Path) -> APIResult:
-        self._rate_limit()
         body = _build_google_request(self.config, prompt, image_path)
         endpoint = (
             f"{self.MODEL_URL_PREFIX}"
             f"{quote(self.config.model_id, safe='')}:generateContent"
         )
-        response = self._post(
-            endpoint,
-            headers={
-                "x-goog-api-key": self.api_key,
-                "Content-Type": "application/json",
-            },
-            json=body,
-            timeout=(10, self.config.timeout_seconds),
-        )
-        _raise_for_status(response)
-        data = response.json()
-        if not isinstance(data, dict):
-            raise APIClientError("Gemini returned a non-object JSON response")
-        return _parse_google_response(data)
+        headers = {
+            "x-goog-api-key": self.api_key,
+            "Content-Type": "application/json",
+        }
+        results: List[APIResult] = []
+        continuation_token = None
+        while True:
+            self._rate_limit()
+            request_body = (
+                {**body, "continuationToken": continuation_token}
+                if continuation_token is not None
+                else body
+            )
+            response = self._post(
+                endpoint,
+                headers=headers,
+                json=request_body,
+                timeout=(10, self.config.timeout_seconds),
+            )
+            _raise_for_status(response)
+            data = response.json()
+            if not isinstance(data, dict):
+                raise APIClientError("Gemini returned a non-object JSON response")
+            result = _parse_google_response(data)
+            results.append(result)
+
+            candidates = data.get("candidates") or []
+            first_candidate = candidates[0] if candidates else {}
+            continuation_token = (
+                first_candidate.get("continuationToken")
+                if isinstance(first_candidate, dict)
+                else None
+            )
+            if (
+                result.stop_reason != "CONTINUATION"
+                or continuation_token is None
+                or sum(item.output_tokens or 0 for item in results)
+                >= self.config.max_output_tokens
+            ):
+                return _merge_google_results(results)
 
 
 class GoogleVertexClient(GoogleClient):
-    MODEL_URL_PREFIX = (
-        "https://aiplatform.googleapis.com/v1/publishers/google/models/"
-    )
+    def __init__(
+        self,
+        config: ModelConfig,
+        api_key: str,
+        post: Optional[PostFunction] = None,
+        *,
+        project_id: str,
+    ) -> None:
+        self.MODEL_URL_PREFIX = (
+            "https://aiplatform.googleapis.com/v1beta1/projects/"
+            f"{quote(project_id, safe='')}/locations/global/publishers/google/models/"
+        )
+        super().__init__(config, api_key, post=post)
 
 
 class AnthropicClient(BaseAPIClient):
@@ -830,13 +897,21 @@ def create_client(
     post: Optional[PostFunction] = None,
     *,
     vertex: bool = False,
+    vertex_project_id: Optional[str] = None,
 ) -> BaseAPIClient:
     if (
         vertex
         and config.provider == "google"
         and config.model_id.startswith("gemini-")
     ):
-        return GoogleVertexClient(config, api_key, post=post)
+        if not vertex_project_id:
+            raise ValueError("Vertex AI requires VERTEX_PROJECT_ID")
+        return GoogleVertexClient(
+            config,
+            api_key,
+            post=post,
+            project_id=vertex_project_id,
+        )
 
     client_classes = {
         "openai_responses": OpenAIResponsesClient,

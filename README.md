@@ -186,6 +186,7 @@ First, copy `.env.example` to `.env` and enter the required API keys. Then copy 
       "thinking_level": "HIGH",
       "pricing": {
         "input_per_million": null,
+        "cached_input_per_million": null,
         "output_per_million": null
       }
     }
@@ -195,7 +196,7 @@ First, copy `.env.example` to `.env` and enter the required API keys. Then copy 
 
 Supported `provider` values are `openai_responses`, `openai_chat`, `google`, and `anthropic`. Each `openai_chat` model may specify `base_url`, `extra_body`, and `image_url_mode`. The `google` provider sets `service_tier` to `flex`.
 
-Models with adjustable reasoning settings include the selected setting in their names, such as `medium`, `minimal`, `thinking`, or `non-thinking`. The `pricing` fields are the USD prices per **one million input or output tokens**, and `output_tokens` already includes reasoning tokens.
+Models with adjustable reasoning settings include the selected setting in their names, such as `medium`, `minimal`, `thinking`, or `non-thinking`. The `pricing` fields are the USD prices per **one million input or output tokens**, and `output_tokens` already includes reasoning tokens. `cached_input_per_million` is the optional USD price per one million cached input tokens reported by the provider (currently Gemini).
 
 ```bash
 python scripts/run_api_benchmark.py --all-models --dry-run    # Validate configuration

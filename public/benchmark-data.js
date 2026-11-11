@@ -22,6 +22,7 @@
   });
   const TOKEN_FIELDS = [
     "input_tokens",
+    "cached_input_tokens",
     "output_tokens",
     "reasoning_tokens",
     "total_tokens",
@@ -853,10 +854,11 @@
     return tierResults.aggregates.size_combinations[sizes.join("|")];
   }
 
-  /** @description Calculate USD cost without double-counting reasoning tokens */
+  /** @description Calculate USD cost with cached input priced separately, without double-counting reasoning tokens */
   function calculateCost(tokenUsage, pricing) {
     const inputRate = pricing?.input_per_million;
     const outputRate = pricing?.output_per_million;
+    const cachedInputRate = pricing?.cached_input_per_million;
     const totals = tokenUsage?.totals ?? tokenUsage;
     const missing = tokenUsage?.missing_counts ?? {};
     if (
@@ -868,6 +870,19 @@
       || Number(missing.output_tokens) > 0
     ) {
       return null;
+    }
+    const cachedInputTokens = totals.cached_input_tokens;
+    if (
+      Number.isFinite(cachedInputRate)
+      && Number.isFinite(cachedInputTokens)
+      && cachedInputTokens > 0
+    ) {
+      const cachedTokens = Math.min(cachedInputTokens, totals.input_tokens);
+      return (
+        (totals.input_tokens - cachedTokens) * inputRate
+        + cachedTokens * cachedInputRate
+        + totals.output_tokens * outputRate
+      ) / 1_000_000;
     }
     return (
       totals.input_tokens * inputRate

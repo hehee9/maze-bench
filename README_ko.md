@@ -179,6 +179,7 @@ python scripts/maze_benchmark.py score-set --manifest maze_out/maze_manifest.jso
       "thinking_level": "HIGH",
       "pricing": {
         "input_per_million": null,
+        "cached_input_per_million": null,
         "output_per_million": null
       }
     }
@@ -188,7 +189,7 @@ python scripts/maze_benchmark.py score-set --manifest maze_out/maze_manifest.jso
 
 지원하는 `provider` 값은 `openai_responses`, `openai_chat`, `google`, `anthropic`입니다. `openai_chat`은 모델별 `base_url`, `extra_body`, `image_url_mode`를 받을 수 있습니다. `google` 제공자는 `service_tier`를 `flex`로 설정합니다.
 
-추론 단계를 조절하는 모델은 API 설정을 이름에 표시합니다(`medium`, `minimal`, `thinking`, `non-thinking` 등). `pricing`은 입력·출력 토큰 **100만 개당 USD 단가**이며, `output_tokens`에는 추론 토큰이 이미 포함됩니다.
+추론 단계를 조절하는 모델은 API 설정을 이름에 표시합니다(`medium`, `minimal`, `thinking`, `non-thinking` 등). `pricing`은 입력·출력 토큰 **100만 개당 USD 단가**이며, `output_tokens`에는 추론 토큰이 이미 포함됩니다. 선택 항목인 `cached_input_per_million`은 제공자가 보고한 캐시 입력 토큰 100만 개당 USD 단가이며, 현재 Gemini 사용량에 적용됩니다.
 
 ```bash
 python scripts/run_api_benchmark.py --all-models --dry-run    # 설정 점검

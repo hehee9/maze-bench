@@ -2,8 +2,8 @@
   "schema_version": 2,
   "scoring_version": 4,
   "status": "completed",
-  "expected_result_count": 240,
-  "processed_result_count": 240,
+  "expected_result_count": 260,
+  "processed_result_count": 260,
   "models": [
     {
       "name": "Claude Fable 5.1 (medium)",
@@ -12,7 +12,8 @@
       "reasoning_label": "effort-medium",
       "pricing": {
         "input_per_million": 10.0,
-        "output_per_million": 50.0
+        "output_per_million": 50.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -27,12 +28,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 102800,
+          "cached_input_tokens": 0,
           "output_tokens": 314956,
           "reasoning_tokens": 314277,
           "total_tokens": 417756
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -53,12 +56,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 126011,
               "reasoning_tokens": 125824,
               "total_tokens": 151711
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -79,12 +84,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 81089,
               "reasoning_tokens": 80945,
               "total_tokens": 106789
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -105,12 +112,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 64205,
               "reasoning_tokens": 64026,
               "total_tokens": 89905
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -131,12 +140,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 43651,
               "reasoning_tokens": 43482,
               "total_tokens": 69351
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -152,7 +163,8 @@
       "reasoning_label": "effort-medium",
       "pricing": {
         "input_per_million": 8.0,
-        "output_per_million": 40.0
+        "output_per_million": 40.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -167,12 +179,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 102800,
+          "cached_input_tokens": 0,
           "output_tokens": 270545,
           "reasoning_tokens": 269037,
           "total_tokens": 373345
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -193,12 +207,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 42609,
               "reasoning_tokens": 42317,
               "total_tokens": 68309
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -219,12 +235,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 48604,
               "reasoning_tokens": 48267,
               "total_tokens": 74304
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -245,12 +263,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 74394,
               "reasoning_tokens": 73987,
               "total_tokens": 100094
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -271,12 +291,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 104938,
               "reasoning_tokens": 104466,
               "total_tokens": 130638
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -292,7 +314,8 @@
       "reasoning_label": "effort-medium_thinking-adaptive",
       "pricing": {
         "input_per_million": 4.0,
-        "output_per_million": 20.0
+        "output_per_million": 20.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -307,12 +330,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 102800,
+          "cached_input_tokens": 0,
           "output_tokens": 515746,
           "reasoning_tokens": 514256,
           "total_tokens": 618546
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -333,12 +358,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 69642,
               "reasoning_tokens": 69404,
               "total_tokens": 95342
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -359,12 +386,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 101765,
               "reasoning_tokens": 101412,
               "total_tokens": 127465
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -385,12 +414,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 168207,
               "reasoning_tokens": 167782,
               "total_tokens": 193907
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -411,12 +442,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 176132,
               "reasoning_tokens": 175658,
               "total_tokens": 201832
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -432,7 +465,8 @@
       "reasoning_label": "effort-medium_thinking-adaptive",
       "pricing": {
         "input_per_million": 2.0,
-        "output_per_million": 10.0
+        "output_per_million": 10.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -447,12 +481,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 102800,
+          "cached_input_tokens": 0,
           "output_tokens": 812400,
           "reasoning_tokens": 810971,
           "total_tokens": 915200
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -473,12 +509,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 119386,
               "reasoning_tokens": 119145,
               "total_tokens": 145086
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -499,12 +537,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 158656,
               "reasoning_tokens": 158331,
               "total_tokens": 184356
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -525,12 +565,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 251586,
               "reasoning_tokens": 251144,
               "total_tokens": 277286
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -551,12 +593,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25700,
+              "cached_input_tokens": 0,
               "output_tokens": 282772,
               "reasoning_tokens": 282351,
               "total_tokens": 308472
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -572,7 +616,8 @@
       "reasoning_label": "effort-high",
       "pricing": {
         "input_per_million": 0.15,
-        "output_per_million": 0.6
+        "output_per_million": 0.6,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -587,12 +632,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 25660,
+          "cached_input_tokens": 0,
           "output_tokens": 977686,
           "reasoning_tokens": 977176,
           "total_tokens": 1003346
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -613,12 +660,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 6415,
+              "cached_input_tokens": 0,
               "output_tokens": 249663,
               "reasoning_tokens": 249590,
               "total_tokens": 256078
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -639,12 +688,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 6415,
+              "cached_input_tokens": 0,
               "output_tokens": 253297,
               "reasoning_tokens": 253172,
               "total_tokens": 259712
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -665,12 +716,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 6415,
+              "cached_input_tokens": 0,
               "output_tokens": 230826,
               "reasoning_tokens": 230719,
               "total_tokens": 237241
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -691,12 +744,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 6415,
+              "cached_input_tokens": 0,
               "output_tokens": 243900,
               "reasoning_tokens": 243695,
               "total_tokens": 250315
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -712,7 +767,8 @@
       "reasoning_label": "effort-medium",
       "pricing": {
         "input_per_million": 10.0,
-        "output_per_million": 50.0
+        "output_per_million": 50.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -727,12 +783,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 103600,
+          "cached_input_tokens": 0,
           "output_tokens": 252406,
           "reasoning_tokens": 250782,
           "total_tokens": 356006
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -753,12 +811,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 36033,
               "reasoning_tokens": 35732,
               "total_tokens": 61933
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -779,12 +839,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 52490,
               "reasoning_tokens": 52139,
               "total_tokens": 78390
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -805,12 +867,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 69030,
               "reasoning_tokens": 68590,
               "total_tokens": 94930
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -831,12 +895,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 94853,
               "reasoning_tokens": 94321,
               "total_tokens": 120753
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -852,7 +918,8 @@
       "reasoning_label": "effort-medium",
       "pricing": {
         "input_per_million": 0.1,
-        "output_per_million": 0.5
+        "output_per_million": 0.5,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -867,12 +934,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 103600,
+          "cached_input_tokens": 0,
           "output_tokens": 1449094,
           "reasoning_tokens": 93806,
           "total_tokens": 1552694
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -893,12 +962,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 396092,
               "reasoning_tokens": 33884,
               "total_tokens": 421992
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -919,12 +990,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 270150,
               "reasoning_tokens": 22259,
               "total_tokens": 296050
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -945,12 +1018,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 266793,
               "reasoning_tokens": 19013,
               "total_tokens": 292693
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -971,12 +1046,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 516059,
               "reasoning_tokens": 18650,
               "total_tokens": 541959
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -992,7 +1069,8 @@
       "reasoning_label": "effort-medium",
       "pricing": {
         "input_per_million": 2.0,
-        "output_per_million": 10.0
+        "output_per_million": 10.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -1007,12 +1085,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 103600,
+          "cached_input_tokens": 0,
           "output_tokens": 210532,
           "reasoning_tokens": 209990,
           "total_tokens": 314132
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -1033,12 +1113,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 65387,
               "reasoning_tokens": 65229,
               "total_tokens": 91287
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1059,12 +1141,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 68177,
               "reasoning_tokens": 68031,
               "total_tokens": 94077
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1085,12 +1169,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 44653,
               "reasoning_tokens": 44511,
               "total_tokens": 70553
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1111,12 +1197,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 32315,
               "reasoning_tokens": 32219,
               "total_tokens": 58215
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1132,7 +1220,8 @@
       "reasoning_label": "effort-medium",
       "pricing": {
         "input_per_million": 2.0,
-        "output_per_million": 10.0
+        "output_per_million": 10.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -1147,12 +1236,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 103600,
+          "cached_input_tokens": 0,
           "output_tokens": 289776,
           "reasoning_tokens": 288428,
           "total_tokens": 393376
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -1173,12 +1264,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 39440,
               "reasoning_tokens": 39111,
               "total_tokens": 65340
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1199,12 +1292,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 51267,
               "reasoning_tokens": 50892,
               "total_tokens": 77167
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1225,12 +1320,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 79386,
               "reasoning_tokens": 79047,
               "total_tokens": 105286
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1251,12 +1348,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 119683,
               "reasoning_tokens": 119378,
               "total_tokens": 145583
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1272,7 +1371,8 @@
       "reasoning_label": "effort-medium",
       "pricing": {
         "input_per_million": 1.0,
-        "output_per_million": 5.0
+        "output_per_million": 5.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -1287,12 +1387,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 103600,
+          "cached_input_tokens": 0,
           "output_tokens": 147950,
           "reasoning_tokens": 147070,
           "total_tokens": 251550
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -1313,12 +1415,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 34389,
               "reasoning_tokens": 34088,
               "total_tokens": 60289
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1339,12 +1443,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 38004,
               "reasoning_tokens": 37756,
               "total_tokens": 63904
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1365,12 +1471,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 40061,
               "reasoning_tokens": 39814,
               "total_tokens": 65961
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1391,12 +1499,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 25900,
+              "cached_input_tokens": 0,
               "output_tokens": 35496,
               "reasoning_tokens": 35412,
               "total_tokens": 61396
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1412,27 +1522,30 @@
       "reasoning_label": "level-medium",
       "pricing": {
         "input_per_million": 2.0,
-        "output_per_million": 10.0
+        "output_per_million": 10.0,
+        "cached_input_per_million": 0.1
       },
       "expected_count": 20,
       "processed_count": 20,
-      "api_success_count": 0,
-      "api_failure_count": 20,
-      "graded_count": 0,
+      "api_success_count": 1,
+      "api_failure_count": 19,
+      "graded_count": 1,
       "processing_rate": 1.0,
-      "api_success_rate": 0.0,
-      "coverage": 0.0,
-      "provisional_mean_score": null,
+      "api_success_rate": 0.05,
+      "coverage": 0.05,
+      "provisional_mean_score": 6.8493150684931505,
       "official_mean_score": null,
       "token_usage": {
         "totals": {
-          "input_tokens": 0,
-          "output_tokens": 0,
-          "reasoning_tokens": 0,
-          "total_tokens": 0
+          "input_tokens": 1391,
+          "cached_input_tokens": 0,
+          "output_tokens": 2049,
+          "reasoning_tokens": 2018,
+          "total_tokens": 3440
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 0,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -1453,12 +1566,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 0,
+              "cached_input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1479,12 +1594,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 0,
+              "cached_input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1494,23 +1611,25 @@
         "21x21": {
           "expected_count": 5,
           "processed_count": 5,
-          "api_success_count": 0,
-          "api_failure_count": 5,
-          "graded_count": 0,
+          "api_success_count": 1,
+          "api_failure_count": 4,
+          "graded_count": 1,
           "processing_rate": 1.0,
-          "api_success_rate": 0.0,
-          "coverage": 0.0,
-          "provisional_mean_score": null,
+          "api_success_rate": 0.2,
+          "coverage": 0.2,
+          "provisional_mean_score": 6.8493150684931505,
           "official_mean_score": null,
           "token_usage": {
             "totals": {
-              "input_tokens": 0,
-              "output_tokens": 0,
-              "reasoning_tokens": 0,
-              "total_tokens": 0
+              "input_tokens": 1391,
+              "cached_input_tokens": 0,
+              "output_tokens": 2049,
+              "reasoning_tokens": 2018,
+              "total_tokens": 3440
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1531,12 +1650,165 @@
           "token_usage": {
             "totals": {
               "input_tokens": 0,
+              "cached_input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Gemini 4 Carbon (medium)",
+      "provider": "google",
+      "model_id": "gemini-4-carbon",
+      "reasoning_label": "level-medium",
+      "pricing": {
+        "input_per_million": 2.0,
+        "output_per_million": 10.0,
+        "cached_input_per_million": 0.1
+      },
+      "expected_count": 20,
+      "processed_count": 20,
+      "api_success_count": 20,
+      "api_failure_count": 0,
+      "graded_count": 20,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 11.197463957214357,
+      "official_mean_score": 11.197463957214357,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 8770950,
+          "cached_input_tokens": 3306662,
+          "output_tokens": 3233531,
+          "reasoning_tokens": 3232759,
+          "total_tokens": 12004481
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 16.710421293235463,
+          "official_mean_score": 16.710421293235463,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 2201636,
+              "cached_input_tokens": 469888,
+              "output_tokens": 833862,
+              "reasoning_tokens": 833663,
+              "total_tokens": 3035498
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 14.020537760633621,
+          "official_mean_score": 14.020537760633621,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 2036357,
+              "cached_input_tokens": 669265,
+              "output_tokens": 797010,
+              "reasoning_tokens": 796811,
+              "total_tokens": 2833367
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "21x21": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 8.564735558896684,
+          "official_mean_score": 8.564735558896684,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 2861167,
+              "cached_input_tokens": 1399920,
+              "output_tokens": 941549,
+              "reasoning_tokens": 941329,
+              "total_tokens": 3802716
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "24x24": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 5.494161216091665,
+          "official_mean_score": 5.494161216091665,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 1671790,
+              "cached_input_tokens": 767589,
+              "output_tokens": 661110,
+              "reasoning_tokens": 660956,
+              "total_tokens": 2332900
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1552,7 +1824,8 @@
       "reasoning_label": "effort-high",
       "pricing": {
         "input_per_million": 2.0,
-        "output_per_million": 10.0
+        "output_per_million": 10.0,
+        "cached_input_per_million": null
       },
       "expected_count": 20,
       "processed_count": 20,
@@ -1567,12 +1840,14 @@
       "token_usage": {
         "totals": {
           "input_tokens": 116600,
+          "cached_input_tokens": 0,
           "output_tokens": 475286,
           "reasoning_tokens": 474084,
           "total_tokens": 591886
         },
         "missing_counts": {
           "input_tokens": 0,
+          "cached_input_tokens": 20,
           "output_tokens": 0,
           "reasoning_tokens": 0,
           "total_tokens": 0
@@ -1593,12 +1868,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 29150,
+              "cached_input_tokens": 0,
               "output_tokens": 103950,
               "reasoning_tokens": 103705,
               "total_tokens": 133100
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1619,12 +1896,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 29150,
+              "cached_input_tokens": 0,
               "output_tokens": 114858,
               "reasoning_tokens": 114608,
               "total_tokens": 144008
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1645,12 +1924,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 29150,
+              "cached_input_tokens": 0,
               "output_tokens": 123213,
               "reasoning_tokens": 122839,
               "total_tokens": 152363
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1671,12 +1952,14 @@
           "token_usage": {
             "totals": {
               "input_tokens": 29150,
+              "cached_input_tokens": 0,
               "output_tokens": 133265,
               "reasoning_tokens": 132932,
               "total_tokens": 162415
             },
             "missing_counts": {
               "input_tokens": 0,
+              "cached_input_tokens": 5,
               "output_tokens": 0,
               "reasoning_tokens": 0,
               "total_tokens": 0
@@ -1705,6 +1988,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8257,
         "reasoning_tokens": 8186,
         "total_tokens": 13437
@@ -1738,6 +2022,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 9069,
         "reasoning_tokens": 8995,
         "total_tokens": 14249
@@ -1771,6 +2056,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 7301,
         "reasoning_tokens": 7250,
         "total_tokens": 12481
@@ -1804,6 +2090,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 7501,
         "reasoning_tokens": 7430,
         "total_tokens": 12681
@@ -1837,6 +2124,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 7312,
         "reasoning_tokens": 7250,
         "total_tokens": 12492
@@ -1870,6 +2158,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 11978,
         "reasoning_tokens": 11912,
         "total_tokens": 17158
@@ -1903,6 +2192,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10841,
         "reasoning_tokens": 10756,
         "total_tokens": 16021
@@ -1936,6 +2226,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8775,
         "reasoning_tokens": 8693,
         "total_tokens": 13955
@@ -1969,6 +2260,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10952,
         "reasoning_tokens": 10876,
         "total_tokens": 16132
@@ -2002,6 +2294,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8721,
         "reasoning_tokens": 8655,
         "total_tokens": 13901
@@ -2035,6 +2328,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 28368,
         "reasoning_tokens": 28291,
         "total_tokens": 33548
@@ -2068,6 +2362,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 16144,
         "reasoning_tokens": 16056,
         "total_tokens": 21324
@@ -2101,6 +2396,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 15084,
         "reasoning_tokens": 15020,
         "total_tokens": 20264
@@ -2134,6 +2430,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 9382,
         "reasoning_tokens": 9322,
         "total_tokens": 14562
@@ -2167,6 +2464,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10408,
         "reasoning_tokens": 10358,
         "total_tokens": 15588
@@ -2200,6 +2498,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 28058,
         "reasoning_tokens": 27970,
         "total_tokens": 33238
@@ -2233,6 +2532,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 27976,
         "reasoning_tokens": 27884,
         "total_tokens": 33156
@@ -2266,6 +2566,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 29078,
         "reasoning_tokens": 29006,
         "total_tokens": 34258
@@ -2299,6 +2600,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 27811,
         "reasoning_tokens": 27786,
         "total_tokens": 32991
@@ -2332,6 +2634,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6760,
         "reasoning_tokens": 6732,
         "total_tokens": 11940
@@ -2365,6 +2668,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 5661,
         "reasoning_tokens": 5604,
         "total_tokens": 10841
@@ -2398,6 +2702,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6615,
         "reasoning_tokens": 6549,
         "total_tokens": 11795
@@ -2431,6 +2736,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6552,
         "reasoning_tokens": 6499,
         "total_tokens": 11732
@@ -2464,6 +2770,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 5743,
         "reasoning_tokens": 5680,
         "total_tokens": 10923
@@ -2497,6 +2804,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 9818,
         "reasoning_tokens": 9756,
         "total_tokens": 14998
@@ -2530,6 +2838,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 7181,
         "reasoning_tokens": 7102,
         "total_tokens": 12361
@@ -2563,6 +2872,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6681,
         "reasoning_tokens": 6608,
         "total_tokens": 11861
@@ -2596,6 +2906,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 13601,
         "reasoning_tokens": 13583,
         "total_tokens": 18781
@@ -2629,6 +2940,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3860,
         "reasoning_tokens": 3843,
         "total_tokens": 9040
@@ -2662,6 +2974,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6681,
         "reasoning_tokens": 6620,
         "total_tokens": 11861
@@ -2695,6 +3008,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 5914,
         "reasoning_tokens": 5898,
         "total_tokens": 11094
@@ -2728,6 +3042,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8285,
         "reasoning_tokens": 8266,
         "total_tokens": 13465
@@ -2761,6 +3076,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 7230,
         "reasoning_tokens": 7141,
         "total_tokens": 12410
@@ -2794,6 +3110,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 7259,
         "reasoning_tokens": 7241,
         "total_tokens": 12439
@@ -2827,6 +3144,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 11373,
         "reasoning_tokens": 11268,
         "total_tokens": 16553
@@ -2860,6 +3178,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3401,
         "reasoning_tokens": 3382,
         "total_tokens": 8581
@@ -2893,6 +3212,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8788,
         "reasoning_tokens": 8773,
         "total_tokens": 13968
@@ -2926,6 +3246,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 14150,
         "reasoning_tokens": 14132,
         "total_tokens": 19330
@@ -2959,6 +3280,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 5602,
         "reasoning_tokens": 5586,
         "total_tokens": 10782
@@ -2992,6 +3314,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3555,
         "reasoning_tokens": 3539,
         "total_tokens": 8735
@@ -3025,6 +3348,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6282,
         "reasoning_tokens": 6214,
         "total_tokens": 11462
@@ -3058,6 +3382,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8861,
         "reasoning_tokens": 8804,
         "total_tokens": 14041
@@ -3091,6 +3416,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6789,
         "reasoning_tokens": 6732,
         "total_tokens": 11969
@@ -3124,6 +3450,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 7825,
         "reasoning_tokens": 7768,
         "total_tokens": 13005
@@ -3157,6 +3484,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6276,
         "reasoning_tokens": 6214,
         "total_tokens": 11456
@@ -3190,6 +3518,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10943,
         "reasoning_tokens": 10876,
         "total_tokens": 16123
@@ -3223,6 +3552,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8849,
         "reasoning_tokens": 8777,
         "total_tokens": 14029
@@ -3256,6 +3586,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 9920,
         "reasoning_tokens": 9840,
         "total_tokens": 15100
@@ -3289,6 +3620,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 11317,
         "reasoning_tokens": 11252,
         "total_tokens": 16497
@@ -3322,6 +3654,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 11461,
         "reasoning_tokens": 11394,
         "total_tokens": 16641
@@ -3355,6 +3688,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 19258,
         "reasoning_tokens": 19164,
         "total_tokens": 24438
@@ -3388,6 +3722,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 14871,
         "reasoning_tokens": 14791,
         "total_tokens": 20051
@@ -3421,6 +3756,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10894,
         "reasoning_tokens": 10817,
         "total_tokens": 16074
@@ -3454,6 +3790,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 13554,
         "reasoning_tokens": 13466,
         "total_tokens": 18734
@@ -3487,6 +3824,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10453,
         "reasoning_tokens": 10352,
         "total_tokens": 15633
@@ -3520,6 +3858,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 20810,
         "reasoning_tokens": 20718,
         "total_tokens": 25990
@@ -3553,6 +3892,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 16800,
         "reasoning_tokens": 16685,
         "total_tokens": 21980
@@ -3586,6 +3926,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 27060,
         "reasoning_tokens": 26934,
         "total_tokens": 32240
@@ -3619,6 +3960,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 16090,
         "reasoning_tokens": 16000,
         "total_tokens": 21270
@@ -3652,6 +3994,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 14093,
         "reasoning_tokens": 13984,
         "total_tokens": 19273
@@ -3685,6 +4028,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 15480,
         "reasoning_tokens": 15461,
         "total_tokens": 20660
@@ -3718,6 +4062,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6490,
         "reasoning_tokens": 6459,
         "total_tokens": 11670
@@ -3751,6 +4096,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 11347,
         "reasoning_tokens": 11313,
         "total_tokens": 16527
@@ -3784,6 +4130,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 14997,
         "reasoning_tokens": 14958,
         "total_tokens": 20177
@@ -3817,6 +4164,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 17073,
         "reasoning_tokens": 17038,
         "total_tokens": 22253
@@ -3850,6 +4198,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 17111,
         "reasoning_tokens": 17092,
         "total_tokens": 22291
@@ -3883,6 +4232,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 12461,
         "reasoning_tokens": 12430,
         "total_tokens": 17641
@@ -3916,6 +4266,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 15261,
         "reasoning_tokens": 15217,
         "total_tokens": 20441
@@ -3949,6 +4300,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 11205,
         "reasoning_tokens": 11171,
         "total_tokens": 16385
@@ -3982,6 +4334,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 12139,
         "reasoning_tokens": 12121,
         "total_tokens": 17319
@@ -4015,6 +4368,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 11293,
         "reasoning_tokens": 11262,
         "total_tokens": 16473
@@ -4048,6 +4402,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10581,
         "reasoning_tokens": 10563,
         "total_tokens": 15761
@@ -4081,6 +4436,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 9387,
         "reasoning_tokens": 9354,
         "total_tokens": 14567
@@ -4114,6 +4470,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 4959,
         "reasoning_tokens": 4923,
         "total_tokens": 10139
@@ -4147,6 +4504,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 8433,
         "reasoning_tokens": 8409,
         "total_tokens": 13613
@@ -4180,6 +4538,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 10797,
         "reasoning_tokens": 10779,
         "total_tokens": 15977
@@ -4213,6 +4572,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3125,
         "reasoning_tokens": 3106,
         "total_tokens": 8305
@@ -4246,6 +4606,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 4681,
         "reasoning_tokens": 4660,
         "total_tokens": 9861
@@ -4279,6 +4640,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3853,
         "reasoning_tokens": 3834,
         "total_tokens": 9033
@@ -4312,6 +4674,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 9859,
         "reasoning_tokens": 9840,
         "total_tokens": 15039
@@ -4345,6 +4708,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 9840,
         "total_tokens": 133180
@@ -4378,6 +4742,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 6067,
         "total_tokens": 133180
@@ -4411,6 +4776,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 5228,
         "reasoning_tokens": 5178,
         "total_tokens": 10408
@@ -4444,6 +4810,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 6864,
         "reasoning_tokens": 6845,
         "total_tokens": 12044
@@ -4477,6 +4844,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 5954,
         "total_tokens": 133180
@@ -4510,6 +4878,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 5848,
         "reasoning_tokens": 5831,
         "total_tokens": 11028
@@ -4543,6 +4912,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3863,
         "reasoning_tokens": 3818,
         "total_tokens": 9043
@@ -4576,6 +4946,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 3912,
         "total_tokens": 133180
@@ -4609,6 +4980,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 4354,
         "total_tokens": 133180
@@ -4642,6 +5014,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 4439,
         "reasoning_tokens": 4344,
         "total_tokens": 9619
@@ -4675,6 +5048,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 4448,
         "reasoning_tokens": 4392,
         "total_tokens": 9628
@@ -4708,6 +5082,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3042,
         "reasoning_tokens": 2956,
         "total_tokens": 8222
@@ -4741,6 +5116,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 3303,
         "reasoning_tokens": 3213,
         "total_tokens": 8483
@@ -4774,6 +5150,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 4310,
         "total_tokens": 133180
@@ -4807,6 +5184,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 4142,
         "total_tokens": 133180
@@ -4840,6 +5218,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 4059,
         "reasoning_tokens": 3868,
         "total_tokens": 9239
@@ -4873,6 +5252,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 3376,
         "total_tokens": 133180
@@ -4906,6 +5286,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 4142,
         "total_tokens": 133180
@@ -4939,6 +5320,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 4321,
         "total_tokens": 133180
@@ -4972,6 +5354,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5180,
+        "cached_input_tokens": null,
         "output_tokens": 128000,
         "reasoning_tokens": 2943,
         "total_tokens": 133180
@@ -5005,6 +5388,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 53610,
         "reasoning_tokens": 53600,
         "total_tokens": 54893
@@ -5038,6 +5422,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 43186,
         "reasoning_tokens": 43178,
         "total_tokens": 44469
@@ -5071,6 +5456,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 52589,
         "reasoning_tokens": 52568,
         "total_tokens": 53872
@@ -5104,6 +5490,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 46939,
         "reasoning_tokens": 46926,
         "total_tokens": 48222
@@ -5137,6 +5524,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 53339,
         "reasoning_tokens": 53318,
         "total_tokens": 54622
@@ -5170,6 +5558,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 64661,
         "reasoning_tokens": 64636,
         "total_tokens": 65944
@@ -5203,6 +5592,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 45647,
         "reasoning_tokens": 45622,
         "total_tokens": 46930
@@ -5236,6 +5626,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 50780,
         "reasoning_tokens": 50761,
         "total_tokens": 52063
@@ -5269,6 +5660,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 44542,
         "reasoning_tokens": 44512,
         "total_tokens": 45825
@@ -5302,6 +5694,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 47667,
         "reasoning_tokens": 47641,
         "total_tokens": 48950
@@ -5335,6 +5728,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 43918,
         "reasoning_tokens": 43902,
         "total_tokens": 45201
@@ -5368,6 +5762,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 50437,
         "reasoning_tokens": 50421,
         "total_tokens": 51720
@@ -5401,6 +5796,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 45536,
         "reasoning_tokens": 45514,
         "total_tokens": 46819
@@ -5434,6 +5830,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 53146,
         "reasoning_tokens": 53124,
         "total_tokens": 54429
@@ -5467,6 +5864,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 37789,
         "reasoning_tokens": 37758,
         "total_tokens": 39072
@@ -5500,6 +5898,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 53480,
         "reasoning_tokens": 53455,
         "total_tokens": 54763
@@ -5533,6 +5932,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 75946,
         "reasoning_tokens": 75904,
         "total_tokens": 77229
@@ -5566,6 +5966,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 34201,
         "reasoning_tokens": 34121,
         "total_tokens": 35484
@@ -5599,6 +6000,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 36408,
         "reasoning_tokens": 36373,
         "total_tokens": 37691
@@ -5632,6 +6034,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 1283,
+        "cached_input_tokens": null,
         "output_tokens": 43865,
         "reasoning_tokens": 43842,
         "total_tokens": 45148
@@ -5665,6 +6068,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 15102,
         "reasoning_tokens": 15075,
         "total_tokens": 20932
@@ -5698,6 +6102,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 24146,
         "reasoning_tokens": 24084,
         "total_tokens": 29976
@@ -5731,6 +6136,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 30802,
         "reasoning_tokens": 30741,
         "total_tokens": 36632
@@ -5764,6 +6170,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 25983,
         "reasoning_tokens": 25922,
         "total_tokens": 31813
@@ -5797,6 +6204,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 7917,
         "reasoning_tokens": 7883,
         "total_tokens": 13747
@@ -5830,6 +6238,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 9919,
         "reasoning_tokens": 9827,
         "total_tokens": 15749
@@ -5863,6 +6272,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 15352,
         "reasoning_tokens": 15321,
         "total_tokens": 21182
@@ -5896,6 +6306,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 32150,
         "reasoning_tokens": 32094,
         "total_tokens": 37980
@@ -5929,6 +6340,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 15368,
         "reasoning_tokens": 15318,
         "total_tokens": 21198
@@ -5962,6 +6374,7 @@
       "format_valid": false,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 42069,
         "reasoning_tokens": 42048,
         "total_tokens": 47899
@@ -5995,6 +6408,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 39173,
         "reasoning_tokens": 39100,
         "total_tokens": 45003
@@ -6028,6 +6442,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 13675,
         "reasoning_tokens": 13638,
         "total_tokens": 19505
@@ -6061,6 +6476,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 27502,
         "reasoning_tokens": 27413,
         "total_tokens": 33332
@@ -6094,6 +6510,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 20612,
         "reasoning_tokens": 20495,
         "total_tokens": 26442
@@ -6127,6 +6544,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 22251,
         "reasoning_tokens": 22193,
         "total_tokens": 28081
@@ -6160,6 +6578,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 23216,
         "reasoning_tokens": 23170,
         "total_tokens": 29046
@@ -6193,6 +6612,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 32340,
         "reasoning_tokens": 32262,
         "total_tokens": 38170
@@ -6226,6 +6646,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 31507,
         "reasoning_tokens": 31420,
         "total_tokens": 37337
@@ -6259,6 +6680,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 21015,
         "reasoning_tokens": 20940,
         "total_tokens": 26845
@@ -6292,6 +6714,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5830,
+        "cached_input_tokens": null,
         "output_tokens": 25187,
         "reasoning_tokens": 25140,
         "total_tokens": 31017
@@ -6305,6 +6728,686 @@
         "remaining_action_count": 88,
         "completion_ratio": 0.07368421052631578,
         "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S S R L L L R R R L R R L L L L R L R S R R L L R L R L S R L L L R L R R L R R L L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 499866,
+        "cached_input_tokens": 200784,
+        "output_tokens": 175173,
+        "reasoning_tokens": 175123,
+        "total_tokens": 675039
+      },
+      "score": 16.666666666666664,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 48,
+        "actual_action_count": 8,
+        "remaining_action_count": 40,
+        "completion_ratio": 0.16666666666666666,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R S R R L L R L R L L S R L R L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334635,
+        "cached_input_tokens": 34160,
+        "output_tokens": 142367,
+        "reasoning_tokens": 142341,
+        "total_tokens": 477002
+      },
+      "score": 22.677109291562832,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 49,
+        "actual_action_count": 13,
+        "remaining_action_count": 40,
+        "completion_ratio": 0.24528301886792453,
+        "efficiency_ratio": 0.9245283018867925
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R L L R R R L R L L R S L L R S R R L R L L L R R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334635,
+        "cached_input_tokens": 0,
+        "output_tokens": 147570,
+        "reasoning_tokens": 147537,
+        "total_tokens": 482205
+      },
+      "score": 7.986111111111111,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 46,
+        "actual_action_count": 4,
+        "remaining_action_count": 44,
+        "completion_ratio": 0.08333333333333333,
+        "efficiency_ratio": 0.9583333333333334
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S R L S R R L S R L L R L L L R R L R R L L L R R L S R L R R L S L R R S S L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334635,
+        "cached_input_tokens": 34160,
+        "output_tokens": 150622,
+        "reasoning_tokens": 150578,
+        "total_tokens": 485257
+      },
+      "score": 30.86507653969384,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 51,
+        "actual_action_count": 17,
+        "remaining_action_count": 36,
+        "completion_ratio": 0.32075471698113206,
+        "efficiency_ratio": 0.9622641509433962
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R S S S R L R L L R L R L L R R L L S L R R L L S R R R L R L L R L L L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 697865,
+        "cached_input_tokens": 200784,
+        "output_tokens": 218130,
+        "reasoning_tokens": 218084,
+        "total_tokens": 915995
+      },
+      "score": 5.357142857142857,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 56,
+        "actual_action_count": 3,
+        "remaining_action_count": 53,
+        "completion_ratio": 0.05357142857142857,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L S R L L R S R S S R L R S L L L R L R L L R R S S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 499866,
+        "cached_input_tokens": 34160,
+        "output_tokens": 183520,
+        "reasoning_tokens": 183487,
+        "total_tokens": 683386
+      },
+      "score": 14.6484375,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 60,
+        "actual_action_count": 10,
+        "remaining_action_count": 54,
+        "completion_ratio": 0.15625,
+        "efficiency_ratio": 0.9375
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L S S L R R L L R R S L L S R L R L L R L R L R L L R R L L R R S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 499865,
+        "cached_input_tokens": 168016,
+        "output_tokens": 196161,
+        "reasoning_tokens": 196120,
+        "total_tokens": 696026
+      },
+      "score": 5.8769513314967865,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 64,
+        "actual_action_count": 4,
+        "remaining_action_count": 62,
+        "completion_ratio": 0.06060606060606061,
+        "efficiency_ratio": 0.9696969696969697
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L S S R L R R L L L R L R R R L R R L L R S L L R S R R R L L L R L R R L L L L R S R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334635,
+        "cached_input_tokens": 166624,
+        "output_tokens": 141654,
+        "reasoning_tokens": 141604,
+        "total_tokens": 476289
+      },
+      "score": 24.193548387096776,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 62,
+        "actual_action_count": 15,
+        "remaining_action_count": 47,
+        "completion_ratio": 0.24193548387096775,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S S R S R L L L R R L S S R R L L L R R L L L R R R R L L R L S R L L R L R L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 499864,
+        "cached_input_tokens": 233552,
+        "output_tokens": 166546,
+        "reasoning_tokens": 166502,
+        "total_tokens": 666410
+      },
+      "score": 7.927976350443428,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 59,
+        "actual_action_count": 5,
+        "remaining_action_count": 56,
+        "completion_ratio": 0.08196721311475409,
+        "efficiency_ratio": 0.9672131147540983
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L L R L R R L S L R S R L R S L L R S S L S R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 202127,
+        "cached_input_tokens": 66913,
+        "output_tokens": 109129,
+        "reasoning_tokens": 109098,
+        "total_tokens": 311256
+      },
+      "score": 17.455775234131114,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 61,
+        "actual_action_count": 11,
+        "remaining_action_count": 51,
+        "completion_ratio": 0.1774193548387097,
+        "efficiency_ratio": 0.9838709677419355
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_adjacent_01",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S S L R L L R S R L L R S R S R L S S R L S R L R L S L S L R R L S S L R L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 499866,
+        "cached_input_tokens": 233552,
+        "output_tokens": 182399,
+        "reasoning_tokens": 182354,
+        "total_tokens": 682265
+      },
+      "score": 10.96875,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 78,
+        "actual_action_count": 9,
+        "remaining_action_count": 71,
+        "completion_ratio": 0.1125,
+        "efficiency_ratio": 0.975
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_adjacent_02",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S R L S L R L R S S L L R L R R L S R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334637,
+        "cached_input_tokens": 200784,
+        "output_tokens": 146631,
+        "reasoning_tokens": 146607,
+        "total_tokens": 481268
+      },
+      "score": 4.10958904109589,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 73,
+        "actual_action_count": 3,
+        "remaining_action_count": 70,
+        "completion_ratio": 0.0410958904109589,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_opposite_03",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S S L L R R R L R L R R R L S R L L L R L R R L R L R L R L L S L R R L R L R L S L R S R L L L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 499866,
+        "cached_input_tokens": 266320,
+        "output_tokens": 184011,
+        "reasoning_tokens": 183955,
+        "total_tokens": 683877
+      },
+      "score": 15.277777777777779,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 72,
+        "actual_action_count": 11,
+        "remaining_action_count": 61,
+        "completion_ratio": 0.1527777777777778,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_opposite_04",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S L R R L S R R L L S R S S L R L S L R R L L R L R S S R S L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334631,
+        "cached_input_tokens": 200784,
+        "output_tokens": 157214,
+        "reasoning_tokens": 157177,
+        "total_tokens": 491845
+      },
+      "score": 6.097560975609756,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 82,
+        "actual_action_count": 5,
+        "remaining_action_count": 77,
+        "completion_ratio": 0.06097560975609756,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_same_05",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S L R R L L S R L R L R R R L L R L L R L R R L L R R L S R R L L R S R L R L R S L R L R S S R R L L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1192167,
+        "cached_input_tokens": 498480,
+        "output_tokens": 271294,
+        "reasoning_tokens": 271236,
+        "total_tokens": 1463461
+      },
+      "score": 6.370000000000001,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 91,
+        "actual_action_count": 7,
+        "remaining_action_count": 93,
+        "completion_ratio": 0.07,
+        "efficiency_ratio": 0.91
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_adjacent_01",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S L R R R L L L R R L L R S S L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 102477,
+        "cached_input_tokens": 34160,
+        "output_tokens": 72754,
+        "reasoning_tokens": 72732,
+        "total_tokens": 175231
+      },
+      "score": 5.165289256198347,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 80,
+        "actual_action_count": 5,
+        "remaining_action_count": 83,
+        "completion_ratio": 0.056818181818181816,
+        "efficiency_ratio": 0.9090909090909091
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_adjacent_02",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S L R L R R L L L R R L S S R R L L R S R L R L L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 697871,
+        "cached_input_tokens": 498485,
+        "output_tokens": 198561,
+        "reasoning_tokens": 198530,
+        "total_tokens": 896432
+      },
+      "score": 2.1728395061728394,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 88,
+        "actual_action_count": 2,
+        "remaining_action_count": 88,
+        "completion_ratio": 0.022222222222222223,
+        "efficiency_ratio": 0.9777777777777777
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_opposite_03",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S R S S S L R S R L L R L L R R R L L L R S L R L L R R L L R R R S L L L R R L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 202172,
+        "cached_input_tokens": 34160,
+        "output_tokens": 112540,
+        "reasoning_tokens": 112494,
+        "total_tokens": 314712
+      },
+      "score": 6.105375578497686,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 98,
+        "actual_action_count": 7,
+        "remaining_action_count": 99,
+        "completion_ratio": 0.0660377358490566,
+        "efficiency_ratio": 0.9245283018867925
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_opposite_04",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S S S R L S R S L R L L S S R L L R S R R L L R R L L R R L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334635,
+        "cached_input_tokens": 200784,
+        "output_tokens": 139055,
+        "reasoning_tokens": 139020,
+        "total_tokens": 473690
+      },
+      "score": 8.211568651129092,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 85,
+        "actual_action_count": 8,
+        "remaining_action_count": 83,
+        "completion_ratio": 0.08791208791208792,
+        "efficiency_ratio": 0.9340659340659341
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Carbon (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-carbon",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_same_05",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S S R L R R L L R L R R R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 334635,
+        "cached_input_tokens": 0,
+        "output_tokens": 138200,
+        "reasoning_tokens": 138180,
+        "total_tokens": 472835
+      },
+      "score": 5.815733088460361,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 95,
+        "actual_action_count": 6,
+        "remaining_action_count": 93,
+        "completion_ratio": 0.06060606060606061,
+        "efficiency_ratio": 0.9595959595959596
       }
     },
     {
@@ -6325,6 +7428,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6350,6 +7454,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6375,6 +7480,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6400,6 +7506,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6425,6 +7532,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6450,6 +7558,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6475,6 +7584,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6500,6 +7610,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6525,6 +7636,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6550,6 +7662,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6575,6 +7688,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6583,7 +7697,7 @@
       "grading": null
     },
     {
-      "status": "api_failure",
+      "status": "success",
       "scoring_version": 4,
       "model": {
         "name": "Gemini 4 Argon (medium)",
@@ -6596,16 +7710,25 @@
         "width": 21,
         "height": 21
       },
-      "output": null,
-      "format_valid": null,
+      "output": "S R L L R S L R L R L R L R L L L R R L R R L L R R L",
+      "format_valid": true,
       "token_usage": {
-        "input_tokens": null,
-        "output_tokens": null,
-        "reasoning_tokens": null,
-        "total_tokens": null
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 2049,
+        "reasoning_tokens": 2018,
+        "total_tokens": 3440
       },
-      "score": null,
-      "grading": null
+      "score": 6.8493150684931505,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 73,
+        "actual_action_count": 5,
+        "remaining_action_count": 68,
+        "completion_ratio": 0.0684931506849315,
+        "efficiency_ratio": 1.0
+      }
     },
     {
       "status": "api_failure",
@@ -6625,6 +7748,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6650,6 +7774,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6675,6 +7800,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6700,6 +7826,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6725,6 +7852,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6750,6 +7878,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6775,6 +7904,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6800,6 +7930,7 @@
       "format_valid": null,
       "token_usage": {
         "input_tokens": null,
+        "cached_input_tokens": null,
         "output_tokens": null,
         "reasoning_tokens": null,
         "total_tokens": null
@@ -6825,6 +7956,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 9125,
         "reasoning_tokens": 9061,
         "total_tokens": 14265
@@ -6858,6 +7990,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 10251,
         "reasoning_tokens": 10196,
         "total_tokens": 15391
@@ -6891,6 +8024,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 5558,
         "reasoning_tokens": 5510,
         "total_tokens": 10698
@@ -6924,6 +8058,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 8367,
         "reasoning_tokens": 8300,
         "total_tokens": 13507
@@ -6957,6 +8092,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 9308,
         "reasoning_tokens": 9250,
         "total_tokens": 14448
@@ -6990,6 +8126,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 9189,
         "reasoning_tokens": 9126,
         "total_tokens": 14329
@@ -7023,6 +8160,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 10046,
         "reasoning_tokens": 9978,
         "total_tokens": 15186
@@ -7056,6 +8194,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 12916,
         "reasoning_tokens": 12839,
         "total_tokens": 18056
@@ -7089,6 +8228,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 7955,
         "reasoning_tokens": 7890,
         "total_tokens": 13095
@@ -7122,6 +8262,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 8498,
         "reasoning_tokens": 8434,
         "total_tokens": 13638
@@ -7155,6 +8296,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 13607,
         "reasoning_tokens": 13525,
         "total_tokens": 18747
@@ -7188,6 +8330,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 14215,
         "reasoning_tokens": 14148,
         "total_tokens": 19355
@@ -7221,6 +8364,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 14560,
         "reasoning_tokens": 14484,
         "total_tokens": 19700
@@ -7254,6 +8398,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 13674,
         "reasoning_tokens": 13590,
         "total_tokens": 18814
@@ -7287,6 +8432,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 18338,
         "reasoning_tokens": 18240,
         "total_tokens": 23478
@@ -7320,6 +8466,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 26456,
         "reasoning_tokens": 26371,
         "total_tokens": 31596
@@ -7353,6 +8500,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 19336,
         "reasoning_tokens": 19236,
         "total_tokens": 24476
@@ -7386,6 +8534,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 26212,
         "reasoning_tokens": 26116,
         "total_tokens": 31352
@@ -7419,6 +8568,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 16800,
         "reasoning_tokens": 16713,
         "total_tokens": 21940
@@ -7452,6 +8602,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 16134,
         "reasoning_tokens": 16030,
         "total_tokens": 21274
@@ -7485,6 +8636,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 24293,
         "reasoning_tokens": 24248,
         "total_tokens": 29433
@@ -7518,6 +8670,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 14339,
         "reasoning_tokens": 14290,
         "total_tokens": 19479
@@ -7551,6 +8704,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 48289,
         "reasoning_tokens": 48253,
         "total_tokens": 53429
@@ -7584,6 +8738,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 20064,
         "reasoning_tokens": 20032,
         "total_tokens": 25204
@@ -7617,6 +8772,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 19026,
         "reasoning_tokens": 19001,
         "total_tokens": 24166
@@ -7650,6 +8806,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 5305,
         "reasoning_tokens": 5285,
         "total_tokens": 10445
@@ -7683,6 +8840,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 6592,
         "reasoning_tokens": 6574,
         "total_tokens": 11732
@@ -7716,6 +8874,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 20187,
         "reasoning_tokens": 20159,
         "total_tokens": 25327
@@ -7749,6 +8908,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 24922,
         "reasoning_tokens": 24881,
         "total_tokens": 30062
@@ -7782,6 +8942,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 24083,
         "reasoning_tokens": 24046,
         "total_tokens": 29223
@@ -7815,6 +8976,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 18346,
         "reasoning_tokens": 18297,
         "total_tokens": 23486
@@ -7848,6 +9010,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 12493,
         "reasoning_tokens": 12456,
         "total_tokens": 17633
@@ -7881,6 +9044,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 8339,
         "reasoning_tokens": 8311,
         "total_tokens": 13479
@@ -7914,6 +9078,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 15703,
         "reasoning_tokens": 15655,
         "total_tokens": 20843
@@ -7947,6 +9112,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 9324,
         "reasoning_tokens": 9307,
         "total_tokens": 14464
@@ -7980,6 +9146,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 7339,
         "reasoning_tokens": 7312,
         "total_tokens": 12479
@@ -8013,6 +9180,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 16875,
         "reasoning_tokens": 16836,
         "total_tokens": 22015
@@ -8046,6 +9214,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 3263,
         "reasoning_tokens": 3235,
         "total_tokens": 8403
@@ -8079,6 +9248,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 10961,
         "reasoning_tokens": 10943,
         "total_tokens": 16101
@@ -8112,6 +9282,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 5213,
         "reasoning_tokens": 5156,
         "total_tokens": 10353
@@ -8145,6 +9316,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 7168,
         "reasoning_tokens": 7144,
         "total_tokens": 12308
@@ -8178,6 +9350,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 16269,
         "reasoning_tokens": 16206,
         "total_tokens": 21409
@@ -8211,6 +9384,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 11314,
         "reasoning_tokens": 11266,
         "total_tokens": 16454
@@ -8244,6 +9418,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 13298,
         "reasoning_tokens": 13251,
         "total_tokens": 18438
@@ -8277,6 +9452,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 21593,
         "reasoning_tokens": 21537,
         "total_tokens": 26733
@@ -8310,6 +9486,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 18653,
         "reasoning_tokens": 18584,
         "total_tokens": 23793
@@ -8343,6 +9520,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 27392,
         "reasoning_tokens": 27318,
         "total_tokens": 32532
@@ -8376,6 +9554,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 22172,
         "reasoning_tokens": 22104,
         "total_tokens": 27312
@@ -8409,6 +9588,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 18279,
         "reasoning_tokens": 18207,
         "total_tokens": 23419
@@ -8442,6 +9622,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 15269,
         "reasoning_tokens": 15199,
         "total_tokens": 20409
@@ -8475,6 +9656,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 40267,
         "reasoning_tokens": 40182,
         "total_tokens": 45407
@@ -8508,6 +9690,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 25392,
         "reasoning_tokens": 25308,
         "total_tokens": 30532
@@ -8541,6 +9724,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 31300,
         "reasoning_tokens": 31226,
         "total_tokens": 36440
@@ -8574,6 +9758,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 39933,
         "reasoning_tokens": 39849,
         "total_tokens": 45073
@@ -8607,6 +9792,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 31315,
         "reasoning_tokens": 31217,
         "total_tokens": 36455
@@ -8640,6 +9826,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 40932,
         "reasoning_tokens": 40845,
         "total_tokens": 46072
@@ -8673,6 +9860,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 35919,
         "reasoning_tokens": 35831,
         "total_tokens": 41059
@@ -8706,6 +9894,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 41295,
         "reasoning_tokens": 41193,
         "total_tokens": 46435
@@ -8739,6 +9928,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 31778,
         "reasoning_tokens": 31684,
         "total_tokens": 36918
@@ -8772,6 +9962,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 26208,
         "reasoning_tokens": 26105,
         "total_tokens": 31348
@@ -8805,6 +9996,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 23220,
         "reasoning_tokens": 23169,
         "total_tokens": 28360
@@ -8838,6 +10030,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 33181,
         "reasoning_tokens": 33130,
         "total_tokens": 38321
@@ -8871,6 +10064,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 15522,
         "reasoning_tokens": 15491,
         "total_tokens": 20662
@@ -8904,6 +10098,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 24582,
         "reasoning_tokens": 24532,
         "total_tokens": 29722
@@ -8937,6 +10132,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 22881,
         "reasoning_tokens": 22823,
         "total_tokens": 28021
@@ -8970,6 +10166,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 35637,
         "reasoning_tokens": 35570,
         "total_tokens": 40777
@@ -9003,6 +10200,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 31023,
         "reasoning_tokens": 30959,
         "total_tokens": 36163
@@ -9036,6 +10234,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 30909,
         "reasoning_tokens": 30837,
         "total_tokens": 36049
@@ -9069,6 +10268,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 35637,
         "reasoning_tokens": 35571,
         "total_tokens": 40777
@@ -9102,6 +10302,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 25450,
         "reasoning_tokens": 25394,
         "total_tokens": 30590
@@ -9135,6 +10336,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 49882,
         "reasoning_tokens": 49800,
         "total_tokens": 55022
@@ -9168,6 +10370,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 31255,
         "reasoning_tokens": 31178,
         "total_tokens": 36395
@@ -9201,6 +10404,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 43975,
         "reasoning_tokens": 43901,
         "total_tokens": 49115
@@ -9234,6 +10438,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 87270,
         "reasoning_tokens": 87154,
         "total_tokens": 92410
@@ -9267,6 +10472,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 39204,
         "reasoning_tokens": 39111,
         "total_tokens": 44344
@@ -9300,6 +10506,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 54320,
         "reasoning_tokens": 54234,
         "total_tokens": 59460
@@ -9333,6 +10540,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 58369,
         "reasoning_tokens": 58276,
         "total_tokens": 63509
@@ -9366,6 +10574,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 73364,
         "reasoning_tokens": 73258,
         "total_tokens": 78504
@@ -9399,6 +10608,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 48656,
         "reasoning_tokens": 48614,
         "total_tokens": 53796
@@ -9432,6 +10642,7 @@
       "format_valid": true,
       "token_usage": {
         "input_tokens": 5140,
+        "cached_input_tokens": null,
         "output_tokens": 48063,
         "reasoning_tokens": 47969,
         "total_tokens": 53203

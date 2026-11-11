@@ -37,6 +37,7 @@ SCHEMA_VERSION = 1
 PUBLIC_SCHEMA_VERSION = 2
 TOKEN_USAGE_FIELDS = (
     "input_tokens",
+    "cached_input_tokens",
     "output_tokens",
     "reasoning_tokens",
     "total_tokens",
@@ -326,6 +327,7 @@ def result_record(
         response_data = response.to_jsonable()
         response_data["usage"] = {
             "input_tokens": response.input_tokens,
+            "cached_input_tokens": response.cached_input_tokens,
             "output_tokens": response.output_tokens,
             "reasoning_tokens": response.reasoning_tokens,
             "total_tokens": response.total_tokens,
@@ -575,7 +577,7 @@ def read_aggregate_record(
 
 
 def sum_tokens(records: Iterable[Dict[str, Any]]) -> Dict[str, Any]:
-    fields = ("input_tokens", "output_tokens", "reasoning_tokens", "total_tokens")
+    fields = TOKEN_USAGE_FIELDS
     totals = {field: 0 for field in fields}
     missing = {field: 0 for field in fields}
     for record in records:
@@ -684,6 +686,7 @@ def public_result_record(
         "format_valid": record.get("format_valid") if request_success else None,
         "token_usage": {
             "input_tokens": usage.get("input_tokens"),
+            "cached_input_tokens": usage.get("cached_input_tokens"),
             "output_tokens": usage.get("output_tokens"),
             "reasoning_tokens": usage.get("reasoning_tokens"),
             "total_tokens": usage.get("total_tokens"),
@@ -987,11 +990,18 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         )
         for model in models
     }
+    uses_vertex_gemini = args.vertex and any(
+        model.provider == "google" and model.model_id.startswith("gemini-")
+        for model in models
+    )
+    required_envs = set(api_key_envs.values())
+    if uses_vertex_gemini:
+        required_envs.add("VERTEX_PROJECT_ID")
     missing_keys = sorted(
         {
-            api_key_env
-            for api_key_env in api_key_envs.values()
-            if not os.getenv(api_key_env)
+            required_env
+            for required_env in required_envs
+            if not os.getenv(required_env)
         }
     )
 
@@ -1039,8 +1049,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         return 1 if missing_keys else 0
 
     if missing_keys:
+        missing_prefix = (
+            "Missing required environment variables: "
+            if "VERTEX_PROJECT_ID" in missing_keys
+            else "Missing API key environment variables: "
+        )
         raise ValueError(
-            "Missing API key environment variables: " + ", ".join(missing_keys)
+            missing_prefix + ", ".join(missing_keys)
         )
 
     run_id = str(uuid.uuid4())
@@ -1100,6 +1115,13 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             model,
             os.environ[api_key_envs[model.name]],
             vertex=args.vertex,
+            vertex_project_id=(
+                os.getenv("VERTEX_PROJECT_ID")
+                if args.vertex
+                and model.provider == "google"
+                and model.model_id.startswith("gemini-")
+                else None
+            ),
         )
         for model in models
     }
