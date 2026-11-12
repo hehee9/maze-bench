@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "scoring_version": 4,
-  "status": "running",
+  "status": "completed",
   "expected_result_count": 280,
-  "processed_result_count": 275,
+  "processed_result_count": 280,
   "models": [
     {
       "name": "Claude Fable 5.1 (medium)",
@@ -1828,22 +1828,22 @@
         "cached_input_per_million": 0.0
       },
       "expected_count": 20,
-      "processed_count": 15,
-      "api_success_count": 15,
+      "processed_count": 20,
+      "api_success_count": 20,
       "api_failure_count": 0,
-      "graded_count": 15,
-      "processing_rate": 0.75,
-      "api_success_rate": 0.75,
-      "coverage": 0.75,
-      "provisional_mean_score": 9.144869618630954,
-      "official_mean_score": null,
+      "graded_count": 20,
+      "processing_rate": 1.0,
+      "api_success_rate": 1.0,
+      "coverage": 1.0,
+      "provisional_mean_score": 9.044016868249084,
+      "official_mean_score": 9.044016868249084,
       "token_usage": {
         "totals": {
-          "input_tokens": 20865,
+          "input_tokens": 228601,
           "cached_input_tokens": 0,
-          "output_tokens": 594190,
-          "reasoning_tokens": 593352,
-          "total_tokens": 615055
+          "output_tokens": 981675,
+          "reasoning_tokens": 980597,
+          "total_tokens": 1210276
         },
         "missing_counts": {
           "input_tokens": 0,
@@ -1884,22 +1884,22 @@
         },
         "18x18": {
           "expected_count": 5,
-          "processed_count": 4,
-          "api_success_count": 4,
+          "processed_count": 5,
+          "api_success_count": 5,
           "api_failure_count": 0,
-          "graded_count": 4,
-          "processing_rate": 0.8,
-          "api_success_rate": 0.8,
-          "coverage": 0.8,
-          "provisional_mean_score": 11.386728483444594,
-          "official_mean_score": null,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 12.41516791072262,
+          "official_mean_score": 12.41516791072262,
           "token_usage": {
             "totals": {
-              "input_tokens": 5564,
+              "input_tokens": 6955,
               "cached_input_tokens": 0,
-              "output_tokens": 168016,
-              "reasoning_tokens": 167883,
-              "total_tokens": 173580
+              "output_tokens": 231834,
+              "reasoning_tokens": 231659,
+              "total_tokens": 238789
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -1912,22 +1912,22 @@
         },
         "21x21": {
           "expected_count": 5,
-          "processed_count": 2,
-          "api_success_count": 2,
+          "processed_count": 5,
+          "api_success_count": 5,
           "api_failure_count": 0,
-          "graded_count": 2,
-          "processing_rate": 0.4,
-          "api_success_rate": 0.4,
-          "coverage": 0.4,
-          "provisional_mean_score": 4.660560406046027,
-          "official_mean_score": null,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 6.734730412187014,
+          "official_mean_score": 6.734730412187014,
           "token_usage": {
             "totals": {
-              "input_tokens": 2782,
+              "input_tokens": 140809,
               "cached_input_tokens": 0,
-              "output_tokens": 59112,
-              "reasoning_tokens": 59066,
-              "total_tokens": 61894
+              "output_tokens": 303218,
+              "reasoning_tokens": 303025,
+              "total_tokens": 444027
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -1940,22 +1940,22 @@
         },
         "24x24": {
           "expected_count": 5,
-          "processed_count": 4,
-          "api_success_count": 4,
+          "processed_count": 5,
+          "api_success_count": 5,
           "api_failure_count": 0,
-          "graded_count": 4,
-          "processing_rate": 0.8,
-          "api_success_rate": 0.8,
-          "coverage": 0.8,
-          "provisional_mean_score": 6.062936155364923,
-          "official_mean_score": null,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 5.415516167659875,
+          "official_mean_score": 5.415516167659875,
           "token_usage": {
             "totals": {
-              "input_tokens": 5564,
+              "input_tokens": 73882,
               "cached_input_tokens": 0,
-              "output_tokens": 197123,
-              "reasoning_tokens": 196942,
-              "total_tokens": 202687
+              "output_tokens": 276684,
+              "reasoning_tokens": 276452,
+              "total_tokens": 350566
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -8269,6 +8269,40 @@
         "reasoning_label": "level-medium"
       },
       "maze": {
+        "maze_id": "maze_t2_18x18_adjacent_01",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L L R L L R S L R R R L S L R L R S L L R R R L L S S L S L R R L S S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 63818,
+        "reasoning_tokens": 63776,
+        "total_tokens": 65209
+      },
+      "score": 16.528925619834713,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 60,
+        "actual_action_count": 12,
+        "remaining_action_count": 54,
+        "completion_ratio": 0.18181818181818182,
+        "efficiency_ratio": 0.9090909090909091
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
         "maze_id": "maze_t2_18x18_adjacent_02",
         "width": 18,
         "height": 18
@@ -8405,6 +8439,40 @@
         "reasoning_label": "level-medium"
       },
       "maze": {
+        "maze_id": "maze_t2_21x21_adjacent_01",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S S L R L L R S R L R S R L L R R L L R L R S R L L S R R L L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 68318,
+        "cached_input_tokens": 0,
+        "output_tokens": 111018,
+        "reasoning_tokens": 110981,
+        "total_tokens": 179336
+      },
+      "score": 10.96875,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 78,
+        "actual_action_count": 9,
+        "remaining_action_count": 71,
+        "completion_ratio": 0.1125,
+        "efficiency_ratio": 0.975
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
         "maze_id": "maze_t2_21x21_adjacent_02",
         "width": 21,
         "height": 21
@@ -8427,6 +8495,74 @@
         "remaining_action_count": 75,
         "completion_ratio": 0.05063291139240506,
         "efficiency_ratio": 0.9240506329113924
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_opposite_03",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S R S L S R S S R L R L L S L L R R R L R R L L R R L L L R L L R L R R R L R L R L L R L L R R L L R R L R R L R R L L S L S S R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 68318,
+        "cached_input_tokens": 0,
+        "output_tokens": 70122,
+        "reasoning_tokens": 70053,
+        "total_tokens": 138440
+      },
+      "score": 7.28622027323326,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 72,
+        "actual_action_count": 6,
+        "remaining_action_count": 71,
+        "completion_ratio": 0.07792207792207792,
+        "efficiency_ratio": 0.935064935064935
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_opposite_04",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S L R R L R S S R L R S L S L L R S R R L L R L S R L L R L R R S L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 62966,
+        "reasoning_tokens": 62925,
+        "total_tokens": 64357
+      },
+      "score": 6.097560975609756,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 82,
+        "actual_action_count": 5,
+        "remaining_action_count": 77,
+        "completion_ratio": 0.06097560975609756,
+        "efficiency_ratio": 1.0
       }
     },
     {
@@ -8529,6 +8665,40 @@
         "remaining_action_count": 84,
         "completion_ratio": 0.06666666666666667,
         "efficiency_ratio": 0.9777777777777777
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_opposite_03",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S S L R R R L R S L S S L R L S L L R R L R R L L R L R L R L L R R S L R L L L R R L R S R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 68318,
+        "cached_input_tokens": 0,
+        "output_tokens": 79561,
+        "reasoning_tokens": 79510,
+        "total_tokens": 147879
+      },
+      "score": 2.825836216839677,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 98,
+        "actual_action_count": 3,
+        "remaining_action_count": 99,
+        "completion_ratio": 0.029411764705882353,
+        "efficiency_ratio": 0.9607843137254902
       }
     },
     {
