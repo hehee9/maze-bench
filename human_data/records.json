@@ -476052,6 +476052,158 @@
           ]
         ]
       }
+    },
+    {
+      "sequence": 3875,
+      "attempt_id": "0349c000-98ef-470a-9681-758622e3b2ee",
+      "maze_id": "maze_04x04_opposite_04",
+      "tier": "1",
+      "actions": [
+        "L"
+      ],
+      "status": "collision",
+      "started_at": "2026-11-12T03:46:49.119Z",
+      "finished_at": "2026-11-12T03:46:52.065Z",
+      "scoring_result": {
+        "problem_id": "maze_04x04_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at START_OUT (START_OUT): L relative to facing W means S",
+        "first_invalid_action_index": 0,
+        "optimal_action_count": 8,
+        "actual_action_count": 0,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0,
+        "score": 0.0,
+        "final_event": "START_OUT",
+        "final_cell": "START_OUT",
+        "final_facing": "W",
+        "actions_parsed": [
+          "L"
+        ],
+        "actions_executed": [],
+        "trajectory_events": [
+          "START_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 3876,
+      "attempt_id": "ca975d87-8deb-42ee-9a7a-668b05c61850",
+      "maze_id": "maze_t2_21x21_same_05",
+      "tier": "2",
+      "actions": [
+        "S",
+        "L",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "S",
+        "L"
+      ],
+      "status": "collision",
+      "started_at": "2026-11-12T03:47:01.814Z",
+      "finished_at": "2026-11-12T03:47:24.461Z",
+      "scoring_result": {
+        "problem_id": "maze_t2_21x21_same_05",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E10 ((14, 0)): L relative to facing E means N",
+        "first_invalid_action_index": 9,
+        "optimal_action_count": 91,
+        "actual_action_count": 9,
+        "remaining_action_count": 92,
+        "completion_ratio": 0.0891089108910891,
+        "efficiency_ratio": 0.900990099009901,
+        "score": 8.028624644642681,
+        "final_event": "E10",
+        "final_cell": [
+          14,
+          0
+        ],
+        "final_facing": "E",
+        "actions_parsed": [
+          "S",
+          "L",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "S",
+          "L"
+        ],
+        "actions_executed": [
+          "S",
+          "L",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "S"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E8",
+          "E9",
+          "E8",
+          "E9",
+          "E8",
+          "E9",
+          "E8",
+          "E9",
+          "E10"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            11,
+            0
+          ],
+          [
+            13,
+            0
+          ],
+          [
+            11,
+            0
+          ],
+          [
+            13,
+            0
+          ],
+          [
+            11,
+            0
+          ],
+          [
+            13,
+            0
+          ],
+          [
+            11,
+            0
+          ],
+          [
+            13,
+            0
+          ],
+          [
+            14,
+            0
+          ]
+        ]
+      }
     }
   ]
 }
