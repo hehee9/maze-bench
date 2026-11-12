@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "scoring_version": 4,
-  "status": "completed",
-  "expected_result_count": 260,
-  "processed_result_count": 260,
+  "status": "running",
+  "expected_result_count": 280,
+  "processed_result_count": 275,
   "models": [
     {
       "name": "Claude Fable 5.1 (medium)",
@@ -1805,6 +1805,157 @@
               "output_tokens": 661110,
               "reasoning_tokens": 660956,
               "total_tokens": 2332900
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Gemini 4 Hydrogen (medium)",
+      "provider": "google",
+      "model_id": "gemini-4-hydrogen",
+      "reasoning_label": "level-medium",
+      "pricing": {
+        "input_per_million": 0.0,
+        "output_per_million": 0.0,
+        "cached_input_per_million": 0.0
+      },
+      "expected_count": 20,
+      "processed_count": 15,
+      "api_success_count": 15,
+      "api_failure_count": 0,
+      "graded_count": 15,
+      "processing_rate": 0.75,
+      "api_success_rate": 0.75,
+      "coverage": 0.75,
+      "provisional_mean_score": 9.144869618630954,
+      "official_mean_score": null,
+      "token_usage": {
+        "totals": {
+          "input_tokens": 20865,
+          "cached_input_tokens": 0,
+          "output_tokens": 594190,
+          "reasoning_tokens": 593352,
+          "total_tokens": 615055
+        },
+        "missing_counts": {
+          "input_tokens": 0,
+          "cached_input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "by_maze_size": {
+        "15x15": {
+          "expected_count": 5,
+          "processed_count": 5,
+          "api_success_count": 5,
+          "api_failure_count": 0,
+          "graded_count": 5,
+          "processing_rate": 1.0,
+          "api_success_rate": 1.0,
+          "coverage": 1.0,
+          "provisional_mean_score": 11.610652982426833,
+          "official_mean_score": 11.610652982426833,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 6955,
+              "cached_input_tokens": 0,
+              "output_tokens": 169939,
+              "reasoning_tokens": 169461,
+              "total_tokens": 176894
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "18x18": {
+          "expected_count": 5,
+          "processed_count": 4,
+          "api_success_count": 4,
+          "api_failure_count": 0,
+          "graded_count": 4,
+          "processing_rate": 0.8,
+          "api_success_rate": 0.8,
+          "coverage": 0.8,
+          "provisional_mean_score": 11.386728483444594,
+          "official_mean_score": null,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 5564,
+              "cached_input_tokens": 0,
+              "output_tokens": 168016,
+              "reasoning_tokens": 167883,
+              "total_tokens": 173580
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "21x21": {
+          "expected_count": 5,
+          "processed_count": 2,
+          "api_success_count": 2,
+          "api_failure_count": 0,
+          "graded_count": 2,
+          "processing_rate": 0.4,
+          "api_success_rate": 0.4,
+          "coverage": 0.4,
+          "provisional_mean_score": 4.660560406046027,
+          "official_mean_score": null,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 2782,
+              "cached_input_tokens": 0,
+              "output_tokens": 59112,
+              "reasoning_tokens": 59066,
+              "total_tokens": 61894
+            },
+            "missing_counts": {
+              "input_tokens": 0,
+              "cached_input_tokens": 0,
+              "output_tokens": 0,
+              "reasoning_tokens": 0,
+              "total_tokens": 0
+            }
+          }
+        },
+        "24x24": {
+          "expected_count": 5,
+          "processed_count": 4,
+          "api_success_count": 4,
+          "api_failure_count": 0,
+          "graded_count": 4,
+          "processing_rate": 0.8,
+          "api_success_rate": 0.8,
+          "coverage": 0.8,
+          "provisional_mean_score": 6.062936155364923,
+          "official_mean_score": null,
+          "token_usage": {
+            "totals": {
+              "input_tokens": 5564,
+              "cached_input_tokens": 0,
+              "output_tokens": 197123,
+              "reasoning_tokens": 196942,
+              "total_tokens": 202687
             },
             "missing_counts": {
               "input_tokens": 0,
@@ -7937,6 +8088,516 @@
       },
       "score": null,
       "grading": null
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_adjacent_01",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S S R L L L R S R S L S R R L L R L R L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 39116,
+        "reasoning_tokens": 39088,
+        "total_tokens": 40507
+      },
+      "score": 21.399176954732507,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 48,
+        "actual_action_count": 13,
+        "remaining_action_count": 41,
+        "completion_ratio": 0.24074074074074073,
+        "efficiency_ratio": 0.8888888888888888
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_adjacent_02",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L R S R R L L L R S S S S S S L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 24893,
+        "reasoning_tokens": 24869,
+        "total_tokens": 26284
+      },
+      "score": 16.3265306122449,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 49,
+        "actual_action_count": 8,
+        "remaining_action_count": 41,
+        "completion_ratio": 0.16326530612244897,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_opposite_03",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S S R L L R R L L S S S S R R R L S S L R L L L R S R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 49829,
+        "reasoning_tokens": 49796,
+        "total_tokens": 51220
+      },
+      "score": 13.043478260869565,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 46,
+        "actual_action_count": 6,
+        "remaining_action_count": 40,
+        "completion_ratio": 0.13043478260869565,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_opposite_04",
+        "width": 15,
+        "height": 15
+      },
+      "output": "This task is not possible because the maze has no valid path from the starting point (blue arrow) to the destination (red arrow).\n\nSpecifically, the region reachable from the blue arrow is completely enclosed by a solid, unbroken barrier of walls with no openings to the rest of the maze:\n- **Top & Left:** The outer walls from the left edge `(0, 0)` to the entrance `(7, 0)`, and from `(8, 0)` to `(10, 0)`, along with the left outer wall down to `(0, 5)`.\n- **Bottom-Left:** The horizontal wall at `y = 5` from `x = 0` to `x = 2`, the vertical wall at `x = 2` from `y = 5` to `y = 6`, the horizontal wall at `y = 6` from `x = 2` to `x = 4`, and the vertical wall at `x = 4` from `y = 6` up to `y = 5`.\n- **Bottom-Center:** The horizontal wall at `y = 5` running continuously from `x = 4` to `x = 9`.\n- **Right:** The vertical wall at `x = 9` going up from `y = 5` to `y = 3`, the horizontal wall at `y = 3` from `x = 9` to `x = 10`, and the vertical wall at `x = 10` going up from `y = 3` to the top outer wall at `y = 0`.\n\nBecause every possible route from the blue arrow is trapped inside this closed loop of walls, no command sequence can reach the red arrow.",
+      "format_valid": false,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 43642,
+        "reasoning_tokens": 43267,
+        "total_tokens": 45033
+      },
+      "score": 0.0,
+      "grading": {
+        "success": false,
+        "death": false,
+        "optimal_action_count": 51,
+        "actual_action_count": 0,
+        "remaining_action_count": 51,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_15x15_same_05",
+        "width": 15,
+        "height": 15
+      },
+      "output": "S L S R S L S S L L S R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 12459,
+        "reasoning_tokens": 12441,
+        "total_tokens": 13850
+      },
+      "score": 7.2840790842872005,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 56,
+        "actual_action_count": 5,
+        "remaining_action_count": 57,
+        "completion_ratio": 0.08064516129032258,
+        "efficiency_ratio": 0.9032258064516129
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_adjacent_02",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R L R L L R S L S L S R S S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 26056,
+        "reasoning_tokens": 26037,
+        "total_tokens": 27447
+      },
+      "score": 9.688581314878892,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 64,
+        "actual_action_count": 7,
+        "remaining_action_count": 61,
+        "completion_ratio": 0.10294117647058823,
+        "efficiency_ratio": 0.9411764705882353
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_opposite_03",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L S S R L R L L R R R R L L S S S S L L S R L R L R S R R L R L L R R S S L S L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 56097,
+        "reasoning_tokens": 56051,
+        "total_tokens": 57488
+      },
+      "score": 11.29032258064516,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 62,
+        "actual_action_count": 7,
+        "remaining_action_count": 55,
+        "completion_ratio": 0.11290322580645161,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_opposite_04",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S R R L L R L R R L L R L S L R S R L S L R R L S R L L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 43293,
+        "reasoning_tokens": 43259,
+        "total_tokens": 44684
+      },
+      "score": 16.883454734651405,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 59,
+        "actual_action_count": 11,
+        "remaining_action_count": 51,
+        "completion_ratio": 0.1774193548387097,
+        "efficiency_ratio": 0.9516129032258065
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_18x18_same_05",
+        "width": 18,
+        "height": 18
+      },
+      "output": "S L L R S S L R R L R S S L L L S S R S R R L S S L R L L R",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 42570,
+        "reasoning_tokens": 42536,
+        "total_tokens": 43961
+      },
+      "score": 7.684555303602922,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 61,
+        "actual_action_count": 5,
+        "remaining_action_count": 58,
+        "completion_ratio": 0.07936507936507936,
+        "efficiency_ratio": 0.9682539682539683
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_adjacent_02",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S L R L S R L L R R S R L L R L R L R S L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 31874,
+        "reasoning_tokens": 31849,
+        "total_tokens": 33265
+      },
+      "score": 4.678737381829835,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 73,
+        "actual_action_count": 4,
+        "remaining_action_count": 75,
+        "completion_ratio": 0.05063291139240506,
+        "efficiency_ratio": 0.9240506329113924
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_21x21_same_05",
+        "width": 21,
+        "height": 21
+      },
+      "output": "S L R R L S R S S R R S L S L R S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 27238,
+        "reasoning_tokens": 27217,
+        "total_tokens": 28629
+      },
+      "score": 4.6423834302622184,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 91,
+        "actual_action_count": 5,
+        "remaining_action_count": 94,
+        "completion_ratio": 0.050505050505050504,
+        "efficiency_ratio": 0.9191919191919192
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_adjacent_01",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S R L R S L R R L L S L R L R L S R R L R L L R L R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 46716,
+        "reasoning_tokens": 46685,
+        "total_tokens": 48107
+      },
+      "score": 3.75,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 80,
+        "actual_action_count": 3,
+        "remaining_action_count": 77,
+        "completion_ratio": 0.0375,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_adjacent_02",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S S L R R S L L L R L R L R R R L R L L R S S L R L L R R L S R L R L L R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 50878,
+        "reasoning_tokens": 50835,
+        "total_tokens": 52269
+      },
+      "score": 6.518518518518518,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 88,
+        "actual_action_count": 6,
+        "remaining_action_count": 84,
+        "completion_ratio": 0.06666666666666667,
+        "efficiency_ratio": 0.9777777777777777
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_opposite_04",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S S S R S S L L R R L L R R L R L L R L R R L R L L R R L L R L R L R L R R S L S",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 45532,
+        "reasoning_tokens": 45487,
+        "total_tokens": 46923
+      },
+      "score": 4.705882352941177,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 85,
+        "actual_action_count": 4,
+        "remaining_action_count": 81,
+        "completion_ratio": 0.047058823529411764,
+        "efficiency_ratio": 1.0
+      }
+    },
+    {
+      "status": "success",
+      "scoring_version": 4,
+      "model": {
+        "name": "Gemini 4 Hydrogen (medium)",
+        "provider": "google",
+        "model_id": "gemini-4-hydrogen",
+        "reasoning_label": "level-medium"
+      },
+      "maze": {
+        "maze_id": "maze_t2_24x24_same_05",
+        "width": 24,
+        "height": 24
+      },
+      "output": "S L R L L R R R L R L L L R R S R L L L R R L R R L R L R R L L L R R R R L L R L R L L L R R S R S S S L L R R R L",
+      "format_valid": true,
+      "token_usage": {
+        "input_tokens": 1391,
+        "cached_input_tokens": 0,
+        "output_tokens": 53997,
+        "reasoning_tokens": 53935,
+        "total_tokens": 55388
+      },
+      "score": 9.27734375,
+      "grading": {
+        "success": false,
+        "death": true,
+        "optimal_action_count": 95,
+        "actual_action_count": 9,
+        "remaining_action_count": 87,
+        "completion_ratio": 0.09375,
+        "efficiency_ratio": 0.9895833333333334
+      }
     },
     {
       "status": "success",
