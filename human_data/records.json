@@ -480794,6 +480794,102 @@
           ]
         ]
       }
+    },
+    {
+      "sequence": 3953,
+      "attempt_id": "401c9451-0366-480b-870e-858ef7798411",
+      "maze_id": "maze_04x04_opposite_04",
+      "tier": "1",
+      "actions": [
+        "L"
+      ],
+      "status": "collision",
+      "started_at": "2026-11-15T08:07:11.934Z",
+      "finished_at": "2026-11-15T08:07:15.405Z",
+      "scoring_result": {
+        "problem_id": "maze_04x04_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at START_OUT (START_OUT): L relative to facing W means S",
+        "first_invalid_action_index": 0,
+        "optimal_action_count": 8,
+        "actual_action_count": 0,
+        "remaining_action_count": 8,
+        "completion_ratio": 0.0,
+        "efficiency_ratio": 1.0,
+        "score": 0.0,
+        "final_event": "START_OUT",
+        "final_cell": "START_OUT",
+        "final_facing": "W",
+        "actions_parsed": [
+          "L"
+        ],
+        "actions_executed": [],
+        "trajectory_events": [
+          "START_OUT"
+        ],
+        "trajectory_cells": [
+          "START_OUT"
+        ]
+      }
+    },
+    {
+      "sequence": 3954,
+      "attempt_id": "9df118f2-10dd-4327-951b-68a24397d3d7",
+      "maze_id": "maze_t2_15x15_opposite_04",
+      "tier": "2",
+      "actions": [
+        "S",
+        "R",
+        "S"
+      ],
+      "status": "collision",
+      "started_at": "2026-11-15T08:07:18.898Z",
+      "finished_at": "2026-11-15T08:07:25.708Z",
+      "scoring_result": {
+        "problem_id": "maze_t2_15x15_opposite_04",
+        "success": false,
+        "death": true,
+        "death_reason": "collision at E6 ((6, 0)): S relative to facing W means W",
+        "first_invalid_action_index": 2,
+        "optimal_action_count": 51,
+        "actual_action_count": 2,
+        "remaining_action_count": 49,
+        "completion_ratio": 0.0392156862745098,
+        "efficiency_ratio": 1.0,
+        "score": 3.9215686274509802,
+        "final_event": "E6",
+        "final_cell": [
+          6,
+          0
+        ],
+        "final_facing": "W",
+        "actions_parsed": [
+          "S",
+          "R",
+          "S"
+        ],
+        "actions_executed": [
+          "S",
+          "R"
+        ],
+        "trajectory_events": [
+          "START_OUT",
+          "E7",
+          "E6"
+        ],
+        "trajectory_cells": [
+          "START_OUT",
+          [
+            7,
+            0
+          ],
+          [
+            6,
+            0
+          ]
+        ]
+      }
     }
   ]
 }
