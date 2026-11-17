@@ -2,17 +2,17 @@
   "schema_version": 2,
   "scoring_version": 4,
   "site_url": "https://play-maze-bench.hehee9.chatgpt.site",
-  "updated_at": "2026-11-12T04:25:17Z",
+  "updated_at": "2026-11-15T08:24:02Z",
   "model": {
     "version": "participant-joint-beta-gamma-bounded-v1",
     "catalog_id": "catalog-9c11b007456847a4946a69e28b179de28eaef730377df09baf9bfba1eb7bbb28",
-    "cutoff": "2026-11-12T04:22:44.457Z",
+    "cutoff": "2026-11-15T08:22:34.097Z",
     "imputations": 2000
   },
   "tiers": {
     "1": {
-      "participant_count": 638,
-      "attempt_count": 2665,
+      "participant_count": 656,
+      "attempt_count": 2727,
       "aggregates": {
         "size_combinations": {
           "4x4": {
@@ -24,10 +24,10 @@
               "maze_04x04_opposite_04",
               "maze_04x04_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 64.67751159460423,
-            "p05_score": 28.19323840547478,
-            "p95_score": 95.23681121777177
+            "participant_count": 656,
+            "median_score": 63.85974961078434,
+            "p05_score": 27.55421251178026,
+            "p95_score": 94.79915031455893
           },
           "6x6": {
             "status": "ready",
@@ -38,10 +38,10 @@
               "maze_06x06_opposite_04",
               "maze_06x06_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 62.74744234642339,
-            "p05_score": 27.98503370196958,
-            "p95_score": 92.78601618919217
+            "participant_count": 656,
+            "median_score": 62.40446410894802,
+            "p05_score": 27.49379506040452,
+            "p95_score": 92.64347612648844
           },
           "9x9": {
             "status": "ready",
@@ -52,10 +52,10 @@
               "maze_09x09_opposite_04",
               "maze_09x09_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 51.155163705784005,
-            "p05_score": 17.834043778323238,
-            "p95_score": 85.97328106405607
+            "participant_count": 656,
+            "median_score": 50.83498207605052,
+            "p05_score": 17.49917824754077,
+            "p95_score": 85.80633606674618
           },
           "12x12": {
             "status": "ready",
@@ -66,10 +66,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 45.75925601730719,
-            "p05_score": 15.020382707180639,
-            "p95_score": 81.00933571441573
+            "participant_count": 656,
+            "median_score": 44.98674646661913,
+            "p05_score": 14.56173627351943,
+            "p95_score": 80.46698978727045
           },
           "15x15": {
             "status": "ready",
@@ -80,10 +80,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 38.28184375584789,
-            "p05_score": 10.490498460496335,
-            "p95_score": 74.09424951236561
+            "participant_count": 656,
+            "median_score": 37.79345281238371,
+            "p05_score": 10.231688425683464,
+            "p95_score": 73.75856872182334
           },
           "18x18": {
             "status": "ready",
@@ -94,10 +94,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 44.61056198958027,
-            "p05_score": 12.575671015219937,
-            "p95_score": 80.9511316522511
+            "participant_count": 656,
+            "median_score": 43.90131094791026,
+            "p05_score": 12.010717721475705,
+            "p95_score": 80.5640054746781
           },
           "4x4|6x6": {
             "status": "ready",
@@ -113,10 +113,10 @@
               "maze_06x06_opposite_04",
               "maze_06x06_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 63.33375665054032,
-            "p05_score": 33.28313001656757,
-            "p95_score": 90.07922610649683
+            "participant_count": 656,
+            "median_score": 62.821799097931034,
+            "p05_score": 32.69758397888081,
+            "p95_score": 89.85111053179283
           },
           "4x4|9x9": {
             "status": "ready",
@@ -132,10 +132,10 @@
               "maze_09x09_opposite_04",
               "maze_09x09_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 57.71739973323423,
-            "p05_score": 28.128955445625785,
-            "p95_score": 86.25525323772003
+            "participant_count": 656,
+            "median_score": 57.158261000335955,
+            "p05_score": 27.6157334787795,
+            "p95_score": 85.93357342840868
           },
           "4x4|12x12": {
             "status": "ready",
@@ -151,10 +151,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 55.183387209222005,
-            "p05_score": 26.4111758662129,
-            "p95_score": 83.21804658231221
+            "participant_count": 656,
+            "median_score": 54.42983267637095,
+            "p05_score": 25.773060778303183,
+            "p95_score": 82.76161794285453
           },
           "4x4|15x15": {
             "status": "ready",
@@ -170,10 +170,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 51.47493783051536,
-            "p05_score": 23.772939569977364,
-            "p95_score": 79.99283788004219
+            "participant_count": 656,
+            "median_score": 50.83985928940038,
+            "p05_score": 23.296466233071918,
+            "p95_score": 79.62479766041464
           },
           "4x4|18x18": {
             "status": "ready",
@@ -189,10 +189,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 54.41705793329132,
-            "p05_score": 25.17700203281833,
-            "p95_score": 83.43786889890491
+            "participant_count": 656,
+            "median_score": 53.71210009645795,
+            "p05_score": 24.51489843116454,
+            "p95_score": 83.04576116415666
           },
           "6x6|9x9": {
             "status": "ready",
@@ -208,10 +208,10 @@
               "maze_09x09_opposite_04",
               "maze_09x09_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 56.87868793183181,
-            "p05_score": 27.887644990602855,
-            "p95_score": 85.29360554594388
+            "participant_count": 656,
+            "median_score": 56.530998445057236,
+            "p05_score": 27.434638840695104,
+            "p95_score": 85.17408362388274
           },
           "6x6|12x12": {
             "status": "ready",
@@ -227,10 +227,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 54.11999126143686,
-            "p05_score": 26.27386190440343,
-            "p95_score": 82.67009451910533
+            "participant_count": 656,
+            "median_score": 53.6132707132049,
+            "p05_score": 25.762896851560157,
+            "p95_score": 82.27119549888151
           },
           "6x6|15x15": {
             "status": "ready",
@@ -246,10 +246,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 50.43593359249007,
-            "p05_score": 23.60011701042244,
-            "p95_score": 79.05184820324865
+            "participant_count": 656,
+            "median_score": 50.056056728717756,
+            "p05_score": 23.161115016612136,
+            "p95_score": 78.84983040757261
           },
           "6x6|18x18": {
             "status": "ready",
@@ -265,10 +265,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 53.42961806211054,
-            "p05_score": 25.07457410015271,
-            "p95_score": 83.39975530952343
+            "participant_count": 656,
+            "median_score": 52.93749527399586,
+            "p05_score": 24.493246897166124,
+            "p95_score": 83.1278925323163
           },
           "9x9|12x12": {
             "status": "ready",
@@ -284,10 +284,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 48.55621987447173,
-            "p05_score": 21.18408646787544,
-            "p95_score": 78.7170459416569
+            "participant_count": 656,
+            "median_score": 48.02899268630056,
+            "p05_score": 20.719754320801968,
+            "p95_score": 78.35123467954982
           },
           "9x9|15x15": {
             "status": "ready",
@@ -303,10 +303,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 44.84877421192514,
-            "p05_score": 18.458305728235313,
-            "p95_score": 75.20027277909836
+            "participant_count": 656,
+            "median_score": 44.44692946744427,
+            "p05_score": 18.08091186026336,
+            "p95_score": 74.93594774095769
           },
           "9x9|18x18": {
             "status": "ready",
@@ -322,10 +322,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 47.850305281000516,
-            "p05_score": 19.86987025546291,
-            "p95_score": 79.30692362794312
+            "participant_count": 656,
+            "median_score": 47.35522452586019,
+            "p05_score": 19.366185230214487,
+            "p95_score": 79.04122555639799
           },
           "12x12|15x15": {
             "status": "ready",
@@ -341,10 +341,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 42.18384724881,
-            "p05_score": 16.88977120545,
-            "p95_score": 72.66993547684169
+            "participant_count": 656,
+            "median_score": 41.56579827526246,
+            "p05_score": 16.464197523731134,
+            "p95_score": 72.17217134748063
           },
           "12x12|18x18": {
             "status": "ready",
@@ -360,10 +360,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 45.13771152993108,
-            "p05_score": 18.35919748728735,
-            "p95_score": 77.02290934582764
+            "participant_count": 656,
+            "median_score": 44.46493447437699,
+            "p05_score": 17.7604438139236,
+            "p95_score": 76.48996474075638
           },
           "15x15|18x18": {
             "status": "ready",
@@ -379,10 +379,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 41.435908294332606,
-            "p05_score": 15.686947278606125,
-            "p95_score": 73.46839547431009
+            "participant_count": 656,
+            "median_score": 40.8668556319277,
+            "p05_score": 15.19897445174232,
+            "p95_score": 73.08098818638277
           },
           "4x4|6x6|9x9": {
             "status": "ready",
@@ -403,10 +403,10 @@
               "maze_09x09_opposite_04",
               "maze_09x09_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 59.23217411414471,
-            "p05_score": 31.68391632357851,
-            "p95_score": 85.7087941120076
+            "participant_count": 656,
+            "median_score": 58.77028707140411,
+            "p05_score": 31.15804247951023,
+            "p95_score": 85.44313477022675
           },
           "4x4|6x6|12x12": {
             "status": "ready",
@@ -427,10 +427,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 57.45567824009789,
-            "p05_score": 30.488164455526597,
-            "p95_score": 83.78100292713093
+            "participant_count": 656,
+            "median_score": 56.861817092041456,
+            "p05_score": 29.910093511186723,
+            "p95_score": 83.41254447414534
           },
           "4x4|6x6|15x15": {
             "status": "ready",
@@ -451,10 +451,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 54.94881245660703,
-            "p05_score": 28.688246118527037,
-            "p95_score": 81.48985079919277
+            "participant_count": 656,
+            "median_score": 54.46884409349911,
+            "p05_score": 28.173481476816455,
+            "p95_score": 81.24020943243062
           },
           "4x4|6x6|18x18": {
             "status": "ready",
@@ -475,10 +475,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 56.947123873613926,
-            "p05_score": 29.702808327369137,
-            "p95_score": 84.02670062150275
+            "participant_count": 656,
+            "median_score": 56.4044484870302,
+            "p05_score": 29.086378882108665,
+            "p95_score": 83.73904826382163
           },
           "4x4|9x9|12x12": {
             "status": "ready",
@@ -499,10 +499,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 53.72189445111227,
-            "p05_score": 27.091510947590262,
-            "p95_score": 80.97443230096293
+            "participant_count": 656,
+            "median_score": 53.10388576171738,
+            "p05_score": 26.505723665086556,
+            "p95_score": 80.65736829834722
           },
           "4x4|9x9|15x15": {
             "status": "ready",
@@ -523,10 +523,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 51.25704809778938,
-            "p05_score": 25.224383284994214,
-            "p95_score": 79.04525658139703
+            "participant_count": 656,
+            "median_score": 50.74038151874505,
+            "p05_score": 24.758737527170428,
+            "p95_score": 78.71931859520936
           },
           "4x4|9x9|18x18": {
             "status": "ready",
@@ -547,10 +547,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 53.243665141097104,
-            "p05_score": 26.17797778402328,
-            "p95_score": 81.41229307652846
+            "participant_count": 656,
+            "median_score": 52.65835613299958,
+            "p05_score": 25.592747401364555,
+            "p95_score": 81.08137406723829
           },
           "4x4|12x12|15x15": {
             "status": "ready",
@@ -571,10 +571,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 49.508195209856964,
-            "p05_score": 24.028280046510375,
-            "p95_score": 76.94259034352991
+            "participant_count": 656,
+            "median_score": 48.83847424678302,
+            "p05_score": 23.53103249651983,
+            "p95_score": 76.46974993084945
           },
           "4x4|12x12|18x18": {
             "status": "ready",
@@ -595,10 +595,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 51.54140163504967,
-            "p05_score": 25.091842043905068,
-            "p95_score": 80.11469908887547
+            "participant_count": 656,
+            "median_score": 50.82787748327614,
+            "p05_score": 24.43650312470654,
+            "p95_score": 79.67433060353214
           },
           "4x4|15x15|18x18": {
             "status": "ready",
@@ -619,10 +619,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 49.04044513298903,
-            "p05_score": 23.263673280322696,
-            "p95_score": 77.34189856336837
+            "participant_count": 656,
+            "median_score": 48.41834724316506,
+            "p05_score": 22.714230782493086,
+            "p95_score": 76.91458469976749
           },
           "6x6|9x9|12x12": {
             "status": "ready",
@@ -643,10 +643,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 53.12014217161545,
-            "p05_score": 26.89184917590625,
-            "p95_score": 80.50119335473502
+            "participant_count": 656,
+            "median_score": 52.656939389178675,
+            "p05_score": 26.40699614261399,
+            "p95_score": 80.17953149598931
           },
           "6x6|9x9|15x15": {
             "status": "ready",
@@ -667,10 +667,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 50.61823901118965,
-            "p05_score": 25.06378815122762,
-            "p95_score": 78.34225126385516
+            "participant_count": 656,
+            "median_score": 50.25917515902507,
+            "p05_score": 24.637594322302558,
+            "p95_score": 78.13934514318693
           },
           "6x6|9x9|18x18": {
             "status": "ready",
@@ -691,10 +691,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 52.63090817677878,
-            "p05_score": 26.093774184252712,
-            "p95_score": 81.10362803377762
+            "participant_count": 656,
+            "median_score": 52.187598041762435,
+            "p05_score": 25.574686458495947,
+            "p95_score": 80.87954061726163
           },
           "6x6|12x12|15x15": {
             "status": "ready",
@@ -715,10 +715,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 48.88731444179746,
-            "p05_score": 23.924353281500533,
-            "p95_score": 76.7422381607559
+            "participant_count": 656,
+            "median_score": 48.39075797834971,
+            "p05_score": 23.479275280542097,
+            "p95_score": 76.3716108679104
           },
           "6x6|12x12|18x18": {
             "status": "ready",
@@ -739,10 +739,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 50.790668646385214,
-            "p05_score": 24.965048511380814,
-            "p95_score": 79.62191440621022
+            "participant_count": 656,
+            "median_score": 50.228791817197816,
+            "p05_score": 24.383410499365073,
+            "p95_score": 79.24176666378243
           },
           "6x6|15x15|18x18": {
             "status": "ready",
@@ -763,10 +763,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 48.35251127475838,
-            "p05_score": 23.17631227208062,
-            "p95_score": 77.5343128709686
+            "participant_count": 656,
+            "median_score": 47.88180900483581,
+            "p05_score": 22.61863254259051,
+            "p95_score": 77.2817140338111
           },
           "9x9|12x12|15x15": {
             "status": "ready",
@@ -787,10 +787,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 45.12821084232908,
-            "p05_score": 20.482986043742823,
-            "p95_score": 73.92909539516629
+            "participant_count": 656,
+            "median_score": 44.62042038699042,
+            "p05_score": 20.056491757744507,
+            "p95_score": 73.57231773943026
           },
           "9x9|12x12|18x18": {
             "status": "ready",
@@ -811,10 +811,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 47.14850004208582,
-            "p05_score": 21.578649257256217,
-            "p95_score": 76.51852633890812
+            "participant_count": 656,
+            "median_score": 46.57277742315504,
+            "p05_score": 21.026479329187126,
+            "p95_score": 76.17040736070103
           },
           "9x9|15x15|18x18": {
             "status": "ready",
@@ -835,10 +835,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 44.68138777753976,
-            "p05_score": 19.67397093526364,
-            "p95_score": 75.12274012786673
+            "participant_count": 656,
+            "median_score": 44.18188133603344,
+            "p05_score": 19.19733903979598,
+            "p95_score": 74.81027293025969
           },
           "12x12|15x15|18x18": {
             "status": "ready",
@@ -859,10 +859,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 42.87185572411782,
-            "p05_score": 18.596709443219424,
-            "p95_score": 72.80053086053009
+            "participant_count": 656,
+            "median_score": 42.2550985246498,
+            "p05_score": 18.07317280242377,
+            "p95_score": 72.31706181697098
           },
           "4x4|6x6|9x9|12x12": {
             "status": "ready",
@@ -888,10 +888,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 55.886234388642265,
-            "p05_score": 30.008877682763227,
-            "p95_score": 82.03360285318905
+            "participant_count": 656,
+            "median_score": 55.34565033131599,
+            "p05_score": 29.45140813885199,
+            "p95_score": 81.78296609991219
           },
           "4x4|6x6|9x9|15x15": {
             "status": "ready",
@@ -917,10 +917,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 53.99774176715112,
-            "p05_score": 28.63005721105521,
-            "p95_score": 80.27721172597532
+            "participant_count": 656,
+            "median_score": 53.53921136222871,
+            "p05_score": 28.138093289579906,
+            "p95_score": 80.05406633920137
           },
           "4x4|6x6|9x9|18x18": {
             "status": "ready",
@@ -946,10 +946,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 55.48399738823623,
-            "p05_score": 29.398621169928486,
-            "p95_score": 82.28677828095611
+            "participant_count": 656,
+            "median_score": 54.97191708097293,
+            "p05_score": 28.827796853826197,
+            "p95_score": 81.96958476150033
           },
           "4x4|6x6|12x12|15x15": {
             "status": "ready",
@@ -975,10 +975,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 52.65598063204282,
-            "p05_score": 27.720508061865257,
-            "p95_score": 78.75521682251843
+            "participant_count": 656,
+            "median_score": 52.091173642344565,
+            "p05_score": 27.210577919566365,
+            "p95_score": 78.41810500166315
           },
           "4x4|6x6|12x12|18x18": {
             "status": "ready",
@@ -1004,10 +1004,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 54.15552513784927,
-            "p05_score": 28.528647826777146,
-            "p95_score": 81.23594008729987
+            "participant_count": 656,
+            "median_score": 53.562530507380906,
+            "p05_score": 27.88594371511988,
+            "p95_score": 80.85878888628537
           },
           "4x4|6x6|15x15|18x18": {
             "status": "ready",
@@ -1033,10 +1033,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 52.29246165052551,
-            "p05_score": 27.154552598719338,
-            "p95_score": 79.32461732750666
+            "participant_count": 656,
+            "median_score": 51.76489620669841,
+            "p05_score": 26.587669288989904,
+            "p95_score": 78.99668248442165
           },
           "4x4|9x9|12x12|15x15": {
             "status": "ready",
@@ -1062,10 +1062,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 49.91751780588058,
-            "p05_score": 25.1398887091892,
-            "p95_score": 76.8207877160181
+            "participant_count": 656,
+            "median_score": 49.33165014694799,
+            "p05_score": 24.63337588587762,
+            "p95_score": 76.48649755227576
           },
           "4x4|9x9|12x12|18x18": {
             "status": "ready",
@@ -1091,10 +1091,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 51.37711583429458,
-            "p05_score": 25.956723164269544,
-            "p95_score": 79.17005920034394
+            "participant_count": 656,
+            "median_score": 50.75103814934002,
+            "p05_score": 25.333912363621888,
+            "p95_score": 78.82621503399771
           },
           "4x4|9x9|15x15|18x18": {
             "status": "ready",
@@ -1120,10 +1120,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 49.50691570912421,
-            "p05_score": 24.51449436420659,
-            "p95_score": 77.40591662655426
+            "participant_count": 656,
+            "median_score": 48.94412237713276,
+            "p05_score": 23.982301886602972,
+            "p95_score": 77.07857323806299
           },
           "4x4|12x12|15x15|18x18": {
             "status": "ready",
@@ -1149,10 +1149,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 48.20919829090503,
-            "p05_score": 23.66649039830481,
-            "p95_score": 76.32771919752865
+            "participant_count": 656,
+            "median_score": 47.56909110900483,
+            "p05_score": 23.093057390573833,
+            "p95_score": 75.91609454603318
           },
           "6x6|9x9|12x12|15x15": {
             "status": "ready",
@@ -1178,10 +1178,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 49.405915020920794,
-            "p05_score": 25.000892464311583,
-            "p95_score": 76.58284583836723
+            "participant_count": 656,
+            "median_score": 48.954091355016196,
+            "p05_score": 24.56323181383751,
+            "p95_score": 76.27776577199263
           },
           "6x6|9x9|12x12|18x18": {
             "status": "ready",
@@ -1207,10 +1207,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 50.891792630903026,
-            "p05_score": 25.812443064410175,
-            "p95_score": 78.41667106270889
+            "participant_count": 656,
+            "median_score": 50.38422449086319,
+            "p05_score": 25.264840121219812,
+            "p95_score": 78.14433329004268
           },
           "6x6|9x9|15x15|18x18": {
             "status": "ready",
@@ -1236,10 +1236,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 49.058557128542525,
-            "p05_score": 24.42897528101805,
-            "p95_score": 77.38214421334837
+            "participant_count": 656,
+            "median_score": 48.61527229473085,
+            "p05_score": 23.92862009243912,
+            "p95_score": 77.13600983111402
           },
           "6x6|12x12|15x15|18x18": {
             "status": "ready",
@@ -1265,10 +1265,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 47.67039746470216,
-            "p05_score": 23.568651192686325,
-            "p95_score": 75.66793997923244
+            "participant_count": 656,
+            "median_score": 47.13854580459129,
+            "p05_score": 23.03966160081512,
+            "p95_score": 75.31681692221474
           },
           "9x9|12x12|15x15|18x18": {
             "status": "ready",
@@ -1294,10 +1294,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 44.94357690173898,
-            "p05_score": 20.98665179201564,
-            "p95_score": 73.99406034313776
+            "participant_count": 656,
+            "median_score": 44.412077032285886,
+            "p05_score": 20.483639175877478,
+            "p95_score": 73.6136922798296
           },
           "4x4|6x6|9x9|12x12|15x15": {
             "status": "ready",
@@ -1328,10 +1328,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 52.33561350390618,
-            "p05_score": 27.88662517141147,
-            "p95_score": 78.37793561174237
+            "participant_count": 656,
+            "median_score": 51.84847317849073,
+            "p05_score": 27.39084276379336,
+            "p95_score": 78.08778010063403
           },
           "4x4|6x6|9x9|12x12|18x18": {
             "status": "ready",
@@ -1362,10 +1362,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 53.528304227551644,
-            "p05_score": 28.53414767235072,
-            "p95_score": 80.28779898136065
+            "participant_count": 656,
+            "median_score": 52.97237261050666,
+            "p05_score": 27.942435222701697,
+            "p95_score": 79.97322390940164
           },
           "4x4|6x6|9x9|15x15|18x18": {
             "status": "ready",
@@ -1396,10 +1396,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 52.05352538994098,
-            "p05_score": 27.4331949701514,
-            "p95_score": 79.01424775549395
+            "participant_count": 656,
+            "median_score": 51.55026112975095,
+            "p05_score": 26.883042245183432,
+            "p95_score": 78.74975801695119
           },
           "4x4|6x6|12x12|15x15|18x18": {
             "status": "ready",
@@ -1430,10 +1430,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 50.95969543422063,
-            "p05_score": 26.693778867454725,
-            "p95_score": 77.95763739440943
+            "participant_count": 656,
+            "median_score": 50.40628388979067,
+            "p05_score": 26.119597314590575,
+            "p95_score": 77.6168322769955
           },
           "4x4|9x9|12x12|15x15|18x18": {
             "status": "ready",
@@ -1464,10 +1464,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 48.763285930876876,
-            "p05_score": 24.63527046357603,
-            "p95_score": 76.41078393097227
+            "participant_count": 656,
+            "median_score": 48.184740504312686,
+            "p05_score": 24.07634817857013,
+            "p95_score": 76.05338967225995
           },
           "6x6|9x9|12x12|15x15|18x18": {
             "status": "ready",
@@ -1498,10 +1498,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 48.361952268246355,
-            "p05_score": 24.52389446660045,
-            "p95_score": 76.05564615251198
+            "participant_count": 656,
+            "median_score": 47.87638565482857,
+            "p05_score": 24.027242605802353,
+            "p95_score": 75.72575761338469
           },
           "4x4|6x6|9x9|12x12|15x15|18x18": {
             "status": "ready",
@@ -1537,10 +1537,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 50.9990363101332,
-            "p05_score": 27.022476408255205,
-            "p95_score": 77.72966466649048
+            "participant_count": 656,
+            "median_score": 50.46687926455985,
+            "p05_score": 26.464710052385907,
+            "p95_score": 77.43686242322653
           }
         },
         "by_size": {
@@ -1553,10 +1553,10 @@
               "maze_04x04_opposite_04",
               "maze_04x04_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 64.67751159460423,
-            "p05_score": 28.19323840547478,
-            "p95_score": 95.23681121777177
+            "participant_count": 656,
+            "median_score": 63.85974961078434,
+            "p05_score": 27.55421251178026,
+            "p95_score": 94.79915031455893
           },
           "6x6": {
             "status": "ready",
@@ -1567,10 +1567,10 @@
               "maze_06x06_opposite_04",
               "maze_06x06_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 62.74744234642339,
-            "p05_score": 27.98503370196958,
-            "p95_score": 92.78601618919217
+            "participant_count": 656,
+            "median_score": 62.40446410894802,
+            "p05_score": 27.49379506040452,
+            "p95_score": 92.64347612648844
           },
           "9x9": {
             "status": "ready",
@@ -1581,10 +1581,10 @@
               "maze_09x09_opposite_04",
               "maze_09x09_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 51.155163705784005,
-            "p05_score": 17.834043778323238,
-            "p95_score": 85.97328106405607
+            "participant_count": 656,
+            "median_score": 50.83498207605052,
+            "p05_score": 17.49917824754077,
+            "p95_score": 85.80633606674618
           },
           "12x12": {
             "status": "ready",
@@ -1595,10 +1595,10 @@
               "maze_12x12_opposite_04",
               "maze_12x12_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 45.75925601730719,
-            "p05_score": 15.020382707180639,
-            "p95_score": 81.00933571441573
+            "participant_count": 656,
+            "median_score": 44.98674646661913,
+            "p05_score": 14.56173627351943,
+            "p95_score": 80.46698978727045
           },
           "15x15": {
             "status": "ready",
@@ -1609,10 +1609,10 @@
               "maze_15x15_opposite_04",
               "maze_15x15_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 38.28184375584789,
-            "p05_score": 10.490498460496335,
-            "p95_score": 74.09424951236561
+            "participant_count": 656,
+            "median_score": 37.79345281238371,
+            "p05_score": 10.231688425683464,
+            "p95_score": 73.75856872182334
           },
           "18x18": {
             "status": "ready",
@@ -1623,10 +1623,10 @@
               "maze_18x18_opposite_04",
               "maze_18x18_same_05"
             ],
-            "participant_count": 638,
-            "median_score": 44.61056198958027,
-            "p05_score": 12.575671015219937,
-            "p95_score": 80.9511316522511
+            "participant_count": 656,
+            "median_score": 43.90131094791026,
+            "p05_score": 12.010717721475705,
+            "p95_score": 80.5640054746781
           }
         },
         "by_size_relation": {
@@ -1637,9 +1637,9 @@
                 "maze_04x04_adjacent_01",
                 "maze_04x04_adjacent_02"
               ],
-              "participant_count": 638,
-              "median_score": 66.4543790322165,
-              "p05_score": 12.732026725970183,
+              "participant_count": 656,
+              "median_score": 66.01510103568559,
+              "p05_score": 12.372279509691507,
               "p95_score": 100.0
             },
             "opposite": {
@@ -1648,9 +1648,9 @@
                 "maze_04x04_opposite_03",
                 "maze_04x04_opposite_04"
               ],
-              "participant_count": 638,
-              "median_score": 64.12742652785927,
-              "p05_score": 13.247564397402966,
+              "participant_count": 656,
+              "median_score": 63.24231423517674,
+              "p05_score": 12.92657847662461,
               "p95_score": 100.0
             },
             "same": {
@@ -1658,9 +1658,9 @@
               "maze_ids": [
                 "maze_04x04_same_05"
               ],
-              "participant_count": 638,
-              "median_score": 66.90472680256454,
-              "p05_score": 12.490632034409751,
+              "participant_count": 656,
+              "median_score": 65.3972890628411,
+              "p05_score": 12.487690417333251,
               "p95_score": 100.0
             }
           },
@@ -1671,9 +1671,9 @@
                 "maze_06x06_adjacent_01",
                 "maze_06x06_adjacent_02"
               ],
-              "participant_count": 638,
-              "median_score": 62.4725728549339,
-              "p05_score": 11.836576704218432,
+              "participant_count": 656,
+              "median_score": 62.52825376969386,
+              "p05_score": 11.556664990911832,
               "p95_score": 100.0
             },
             "opposite": {
@@ -1682,9 +1682,9 @@
                 "maze_06x06_opposite_03",
                 "maze_06x06_opposite_04"
               ],
-              "participant_count": 638,
-              "median_score": 62.98989589087066,
-              "p05_score": 13.379796051667197,
+              "participant_count": 656,
+              "median_score": 62.13489020178552,
+              "p05_score": 12.517251916647517,
               "p95_score": 100.0
             },
             "same": {
@@ -1692,9 +1692,9 @@
               "maze_ids": [
                 "maze_06x06_same_05"
               ],
-              "participant_count": 638,
-              "median_score": 63.11846969431841,
-              "p05_score": 15.903914737662328,
+              "participant_count": 656,
+              "median_score": 62.938577788855845,
+              "p05_score": 15.928765799680528,
               "p95_score": 100.0
             }
           },
@@ -1705,10 +1705,10 @@
                 "maze_09x09_adjacent_01",
                 "maze_09x09_adjacent_02"
               ],
-              "participant_count": 638,
-              "median_score": 47.65876383263593,
-              "p05_score": 6.498054689630224,
-              "p95_score": 94.64502224162665
+              "participant_count": 656,
+              "median_score": 47.00939877351646,
+              "p05_score": 6.313066400169127,
+              "p95_score": 94.30428962840988
             },
             "opposite": {
               "status": "ready",
@@ -1716,19 +1716,19 @@
                 "maze_09x09_opposite_03",
                 "maze_09x09_opposite_04"
               ],
-              "participant_count": 638,
-              "median_score": 50.52417279113773,
-              "p05_score": 7.246559169331847,
-              "p95_score": 99.99744402794073
+              "participant_count": 656,
+              "median_score": 50.245322285316234,
+              "p05_score": 6.850955684663365,
+              "p95_score": 99.99656656843858
             },
             "same": {
               "status": "ready",
               "maze_ids": [
                 "maze_09x09_same_05"
               ],
-              "participant_count": 638,
-              "median_score": 66.90508926736541,
-              "p05_score": 0.032461825602854245,
+              "participant_count": 656,
+              "median_score": 67.53986709742533,
+              "p05_score": 0.06363977809130748,
               "p95_score": 100.0
             }
           },
@@ -1739,10 +1739,10 @@
                 "maze_12x12_adjacent_01",
                 "maze_12x12_adjacent_02"
               ],
-              "participant_count": 638,
-              "median_score": 36.66249898914826,
-              "p05_score": 2.8450673290170325,
-              "p95_score": 86.22460122313461
+              "participant_count": 656,
+              "median_score": 35.42652722682386,
+              "p05_score": 2.5349961721253256,
+              "p95_score": 85.54247016068908
             },
             "opposite": {
               "status": "ready",
@@ -1750,9 +1750,9 @@
                 "maze_12x12_opposite_03",
                 "maze_12x12_opposite_04"
               ],
-              "participant_count": 638,
-              "median_score": 59.719949081771965,
-              "p05_score": 14.022888266459562,
+              "participant_count": 656,
+              "median_score": 59.298420261047916,
+              "p05_score": 13.89955530205671,
               "p95_score": 100.0
             },
             "same": {
@@ -1760,9 +1760,9 @@
               "maze_ids": [
                 "maze_12x12_same_05"
               ],
-              "participant_count": 638,
-              "median_score": 26.544725208913285,
-              "p05_score": 3.4465907115513537e-06,
+              "participant_count": 656,
+              "median_score": 25.922724561480653,
+              "p05_score": 1.5398855873651784e-05,
               "p95_score": 100.0
             }
           },
@@ -1773,10 +1773,10 @@
                 "maze_15x15_adjacent_01",
                 "maze_15x15_adjacent_02"
               ],
-              "participant_count": 638,
-              "median_score": 35.19267289462187,
-              "p05_score": 2.9212121492573595,
-              "p95_score": 83.05020207281399
+              "participant_count": 656,
+              "median_score": 34.59545297974628,
+              "p05_score": 2.811391030544751,
+              "p95_score": 82.62058936214554
             },
             "opposite": {
               "status": "ready",
@@ -1784,18 +1784,18 @@
                 "maze_15x15_opposite_03",
                 "maze_15x15_opposite_04"
               ],
-              "participant_count": 638,
-              "median_score": 36.648159213121964,
-              "p05_score": 4.8555940821757915,
-              "p95_score": 84.23147186218209
+              "participant_count": 656,
+              "median_score": 36.112149998832535,
+              "p05_score": 4.587674354858262,
+              "p95_score": 83.90566945119822
             },
             "same": {
               "status": "ready",
               "maze_ids": [
                 "maze_15x15_same_05"
               ],
-              "participant_count": 638,
-              "median_score": 31.612316204253627,
+              "participant_count": 656,
+              "median_score": 31.14832955623768,
               "p05_score": 0.0,
               "p95_score": 100.0
             }
@@ -1807,9 +1807,9 @@
                 "maze_18x18_adjacent_01",
                 "maze_18x18_adjacent_02"
               ],
-              "participant_count": 638,
-              "median_score": 50.81538188489086,
-              "p05_score": 4.537736890713948,
+              "participant_count": 656,
+              "median_score": 50.385165047823875,
+              "p05_score": 3.9258465165934306,
               "p95_score": 100.0
             },
             "opposite": {
@@ -1818,19 +1818,19 @@
                 "maze_18x18_opposite_03",
                 "maze_18x18_opposite_04"
               ],
-              "participant_count": 638,
-              "median_score": 39.5455142042952,
-              "p05_score": 3.4198762145898436,
-              "p95_score": 86.75326856100124
+              "participant_count": 656,
+              "median_score": 38.60547797222393,
+              "p05_score": 2.6834687210683494,
+              "p95_score": 86.32909117838282
             },
             "same": {
               "status": "ready",
               "maze_ids": [
                 "maze_18x18_same_05"
               ],
-              "participant_count": 638,
-              "median_score": 35.277660701273035,
-              "p05_score": 0.01608576155371466,
+              "participant_count": 656,
+              "median_score": 34.80868746829837,
+              "p05_score": 0.00941997016259768,
               "p95_score": 100.0
             }
           }
@@ -1841,8 +1841,8 @@
           "maze_id": "maze_04x04_adjacent_01",
           "width": 4,
           "height": 4,
-          "attempt_count": 138,
-          "mean_score": 44.95810192031724,
+          "attempt_count": 141,
+          "mean_score": 44.175233056185434,
           "median_score": 33.33333333333333,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1851,8 +1851,8 @@
           "maze_id": "maze_04x04_adjacent_02",
           "width": 4,
           "height": 4,
-          "attempt_count": 133,
-          "mean_score": 46.27734514858575,
+          "attempt_count": 136,
+          "mean_score": 45.92318802521009,
           "median_score": 33.33333333333333,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1861,8 +1861,8 @@
           "maze_id": "maze_04x04_opposite_03",
           "width": 4,
           "height": 4,
-          "attempt_count": 128,
-          "mean_score": 41.57986111111111,
+          "attempt_count": 130,
+          "mean_score": 41.452991452991455,
           "median_score": 33.33333333333333,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1871,9 +1871,9 @@
           "maze_id": "maze_04x04_opposite_04",
           "width": 4,
           "height": 4,
-          "attempt_count": 124,
-          "mean_score": 47.926256693520344,
-          "median_score": 39.50617283950617,
+          "attempt_count": 133,
+          "mean_score": 46.4387656390716,
+          "median_score": 37.5,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -1881,8 +1881,8 @@
           "maze_id": "maze_04x04_same_05",
           "width": 4,
           "height": 4,
-          "attempt_count": 119,
-          "mean_score": 45.31317218245323,
+          "attempt_count": 124,
+          "mean_score": 44.49409265896721,
           "median_score": 37.5,
           "p05_score": 12.5,
           "p95_score": 100.0
@@ -1891,9 +1891,9 @@
           "maze_id": "maze_06x06_adjacent_01",
           "width": 6,
           "height": 6,
-          "attempt_count": 106,
-          "mean_score": 31.303306917240157,
-          "median_score": 16.424242424242426,
+          "attempt_count": 107,
+          "mean_score": 31.94533208623791,
+          "median_score": 18.181818181818183,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -1901,8 +1901,8 @@
           "maze_id": "maze_06x06_adjacent_02",
           "width": 6,
           "height": 6,
-          "attempt_count": 106,
-          "mean_score": 57.04716981132076,
+          "attempt_count": 112,
+          "mean_score": 56.47767857142857,
           "median_score": 59.25,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1911,8 +1911,8 @@
           "maze_id": "maze_06x06_opposite_03",
           "width": 6,
           "height": 6,
-          "attempt_count": 98,
-          "mean_score": 49.49685220689726,
+          "attempt_count": 101,
+          "mean_score": 48.13665967709943,
           "median_score": 37.1900826446281,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1921,9 +1921,9 @@
           "maze_id": "maze_06x06_opposite_04",
           "width": 6,
           "height": 6,
-          "attempt_count": 106,
-          "mean_score": 39.44975972987956,
-          "median_score": 25.0,
+          "attempt_count": 108,
+          "mean_score": 38.945965993385194,
+          "median_score": 24.74489795918367,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -1931,8 +1931,8 @@
           "maze_id": "maze_06x06_same_05",
           "width": 6,
           "height": 6,
-          "attempt_count": 112,
-          "mean_score": 43.219124554583736,
+          "attempt_count": 114,
+          "mean_score": 43.28106973783665,
           "median_score": 37.5,
           "p05_score": 16.0,
           "p95_score": 100.0
@@ -1941,9 +1941,9 @@
           "maze_id": "maze_09x09_adjacent_01",
           "width": 9,
           "height": 9,
-          "attempt_count": 105,
-          "mean_score": 31.356611270126848,
-          "median_score": 18.400000000000002,
+          "attempt_count": 106,
+          "mean_score": 31.060794182672822,
+          "median_score": 17.705917159763317,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -1951,8 +1951,8 @@
           "maze_id": "maze_09x09_adjacent_02",
           "width": 9,
           "height": 9,
-          "attempt_count": 77,
-          "mean_score": 37.49783777781146,
+          "attempt_count": 78,
+          "mean_score": 37.14530139604465,
           "median_score": 20.0,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1961,8 +1961,8 @@
           "maze_id": "maze_09x09_opposite_03",
           "width": 9,
           "height": 9,
-          "attempt_count": 83,
-          "mean_score": 48.373936885106566,
+          "attempt_count": 85,
+          "mean_score": 47.814770723104054,
           "median_score": 28.57142857142857,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1971,9 +1971,9 @@
           "maze_id": "maze_09x09_opposite_04",
           "width": 9,
           "height": 9,
-          "attempt_count": 78,
-          "mean_score": 29.358965241890008,
-          "median_score": 17.333333333333332,
+          "attempt_count": 79,
+          "mean_score": 28.987332770473678,
+          "median_score": 16.666666666666664,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -1981,8 +1981,8 @@
           "maze_id": "maze_09x09_same_05",
           "width": 9,
           "height": 9,
-          "attempt_count": 82,
-          "mean_score": 44.39155498180639,
+          "attempt_count": 85,
+          "mean_score": 44.55028441382106,
           "median_score": 26.666666666666668,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -1991,9 +1991,9 @@
           "maze_id": "maze_12x12_adjacent_01",
           "width": 12,
           "height": 12,
-          "attempt_count": 79,
-          "mean_score": 26.310705023215046,
-          "median_score": 8.428720083246619,
+          "attempt_count": 80,
+          "mean_score": 26.07441380301745,
+          "median_score": 7.918063745327013,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -2001,9 +2001,9 @@
           "maze_id": "maze_12x12_adjacent_02",
           "width": 12,
           "height": 12,
-          "attempt_count": 83,
-          "mean_score": 31.81933534811622,
-          "median_score": 11.11111111111111,
+          "attempt_count": 88,
+          "mean_score": 30.13768119323588,
+          "median_score": 5.555555555555555,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -2011,28 +2011,28 @@
           "maze_id": "maze_12x12_opposite_03",
           "width": 12,
           "height": 12,
-          "attempt_count": 72,
-          "mean_score": 46.86624451586573,
+          "attempt_count": 73,
+          "mean_score": 46.376448167855386,
           "median_score": 18.0,
-          "p05_score": 7.450000000000001,
+          "p05_score": 7.622222222222222,
           "p95_score": 100.0
         },
         {
           "maze_id": "maze_12x12_opposite_04",
           "width": 12,
           "height": 12,
-          "attempt_count": 80,
-          "mean_score": 40.60753866615242,
+          "attempt_count": 82,
+          "mean_score": 40.28513257402404,
           "median_score": 27.0,
-          "p05_score": 0.0,
+          "p05_score": 0.2777777777777768,
           "p95_score": 100.0
         },
         {
           "maze_id": "maze_12x12_same_05",
           "width": 12,
           "height": 12,
-          "attempt_count": 84,
-          "mean_score": 23.92426113313963,
+          "attempt_count": 86,
+          "mean_score": 23.639200796710025,
           "median_score": 11.666666666666668,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -2041,18 +2041,18 @@
           "maze_id": "maze_15x15_adjacent_01",
           "width": 15,
           "height": 15,
-          "attempt_count": 68,
-          "mean_score": 31.970485000814868,
-          "median_score": 11.616858237547893,
+          "attempt_count": 69,
+          "mean_score": 31.507144638484217,
+          "median_score": 10.344827586206897,
           "p05_score": 0.0,
-          "p95_score": 97.74193548387096
+          "p95_score": 97.41935483870964
         },
         {
           "maze_id": "maze_15x15_adjacent_02",
           "width": 15,
           "height": 15,
-          "attempt_count": 76,
-          "mean_score": 27.971634448865558,
+          "attempt_count": 78,
+          "mean_score": 27.631683351886096,
           "median_score": 17.751479289940832,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -2071,11 +2071,11 @@
           "maze_id": "maze_15x15_opposite_04",
           "width": 15,
           "height": 15,
-          "attempt_count": 81,
-          "mean_score": 28.296031897961324,
+          "attempt_count": 82,
+          "mean_score": 27.950958338230087,
           "median_score": 10.650887573964498,
           "p05_score": 0.0,
-          "p95_score": 96.0
+          "p95_score": 95.81538461538463
         },
         {
           "maze_id": "maze_15x15_same_05",
@@ -2101,9 +2101,9 @@
           "maze_id": "maze_18x18_adjacent_02",
           "width": 18,
           "height": 18,
-          "attempt_count": 62,
-          "mean_score": 47.50937527170418,
-          "median_score": 23.814024664686286,
+          "attempt_count": 63,
+          "mean_score": 46.75525820389935,
+          "median_score": 23.809523809523807,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -2111,8 +2111,8 @@
           "maze_id": "maze_18x18_opposite_03",
           "width": 18,
           "height": 18,
-          "attempt_count": 66,
-          "mean_score": 39.96251018484758,
+          "attempt_count": 67,
+          "mean_score": 39.36605480895433,
           "median_score": 23.809523809523807,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -2121,11 +2121,11 @@
           "maze_id": "maze_18x18_opposite_04",
           "width": 18,
           "height": 18,
-          "attempt_count": 54,
-          "mean_score": 35.81054606380788,
-          "median_score": 16.573388203017835,
+          "attempt_count": 55,
+          "mean_score": 35.1594452262841,
+          "median_score": 16.0,
           "p05_score": 0.0,
-          "p95_score": 97.49999999999999
+          "p95_score": 97.3076923076923
         },
         {
           "maze_id": "maze_18x18_same_05",
@@ -2140,8 +2140,8 @@
       ]
     },
     "2": {
-      "participant_count": 366,
-      "attempt_count": 1211,
+      "participant_count": 375,
+      "attempt_count": 1227,
       "aggregates": {
         "size_combinations": {
           "15x15": {
@@ -2153,10 +2153,10 @@
               "maze_t2_15x15_opposite_04",
               "maze_t2_15x15_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 34.368970516721895,
-            "p05_score": 6.78480235496762,
-            "p95_score": 74.7526006482328
+            "participant_count": 375,
+            "median_score": 33.716551311910386,
+            "p05_score": 6.49666994684889,
+            "p95_score": 74.24900292000045
           },
           "18x18": {
             "status": "ready",
@@ -2167,10 +2167,10 @@
               "maze_t2_18x18_opposite_04",
               "maze_t2_18x18_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 24.610759757231932,
-            "p05_score": 3.6504744430678424,
-            "p95_score": 63.48841148415091
+            "participant_count": 375,
+            "median_score": 24.213799825328408,
+            "p05_score": 3.5183030460257507,
+            "p95_score": 62.88172689406319
           },
           "21x21": {
             "status": "ready",
@@ -2181,10 +2181,10 @@
               "maze_t2_21x21_opposite_04",
               "maze_t2_21x21_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 23.80393112444732,
-            "p05_score": 2.7640636683460595,
-            "p95_score": 61.10748737903671
+            "participant_count": 375,
+            "median_score": 23.493544945058726,
+            "p05_score": 2.6895504941694113,
+            "p95_score": 60.64424415318826
           },
           "24x24": {
             "status": "ready",
@@ -2195,10 +2195,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 23.9825901494955,
-            "p05_score": 3.63683338553326,
-            "p95_score": 62.52310265507086
+            "participant_count": 375,
+            "median_score": 23.531458448712737,
+            "p05_score": 3.435445751013672,
+            "p95_score": 61.9187981468098
           },
           "15x15|18x18": {
             "status": "ready",
@@ -2214,10 +2214,10 @@
               "maze_t2_18x18_opposite_04",
               "maze_t2_18x18_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 29.791942457125867,
-            "p05_score": 8.715370557504666,
-            "p95_score": 65.65994339514481
+            "participant_count": 375,
+            "median_score": 29.230911190642747,
+            "p05_score": 8.417323932208635,
+            "p95_score": 65.12067310420235
           },
           "15x15|21x21": {
             "status": "ready",
@@ -2233,10 +2233,10 @@
               "maze_t2_21x21_opposite_04",
               "maze_t2_21x21_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 29.1265839029952,
-            "p05_score": 8.194608469979789,
-            "p95_score": 63.368413676098925
+            "participant_count": 375,
+            "median_score": 28.65098976519786,
+            "p05_score": 7.891306962611174,
+            "p95_score": 62.86937654314141
           },
           "15x15|24x24": {
             "status": "ready",
@@ -2252,10 +2252,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 29.405486053075805,
-            "p05_score": 8.65091655531432,
-            "p95_score": 65.96983333044433
+            "participant_count": 375,
+            "median_score": 28.898631725236164,
+            "p05_score": 8.309086648224675,
+            "p95_score": 65.22091706996035
           },
           "18x18|21x21": {
             "status": "ready",
@@ -2271,10 +2271,10 @@
               "maze_t2_21x21_opposite_04",
               "maze_t2_21x21_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 24.464870670684213,
-            "p05_score": 5.937942433072096,
-            "p95_score": 58.216450151821604
+            "participant_count": 375,
+            "median_score": 24.11402982898966,
+            "p05_score": 5.792780639479624,
+            "p95_score": 57.72625502592528
           },
           "18x18|24x24": {
             "status": "ready",
@@ -2290,10 +2290,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 24.490847061401993,
-            "p05_score": 6.442209393011917,
-            "p95_score": 59.650787959747014
+            "participant_count": 375,
+            "median_score": 24.090900373465434,
+            "p05_score": 6.2452594335875276,
+            "p95_score": 59.10624484691632
           },
           "21x21|24x24": {
             "status": "ready",
@@ -2309,10 +2309,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 24.082187660594805,
-            "p05_score": 5.893905764250027,
-            "p95_score": 58.53908656589085
+            "participant_count": 375,
+            "median_score": 23.699841970250162,
+            "p05_score": 5.734504764052565,
+            "p95_score": 58.0633022380894
           },
           "15x15|18x18|21x21": {
             "status": "ready",
@@ -2333,10 +2333,10 @@
               "maze_t2_21x21_opposite_04",
               "maze_t2_21x21_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 27.814249560297736,
-            "p05_score": 9.094597499259931,
-            "p95_score": 60.6668119282458
+            "participant_count": 375,
+            "median_score": 27.37858533639117,
+            "p05_score": 8.83356012459362,
+            "p95_score": 60.231302475602575
           },
           "15x15|18x18|24x24": {
             "status": "ready",
@@ -2357,10 +2357,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 27.978754291165327,
-            "p05_score": 9.358538339457109,
-            "p95_score": 63.00423191028645
+            "participant_count": 375,
+            "median_score": 27.50360026385803,
+            "p05_score": 9.073096778676081,
+            "p95_score": 62.448476006183256
           },
           "15x15|21x21|24x24": {
             "status": "ready",
@@ -2381,10 +2381,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 27.583862147552786,
-            "p05_score": 9.011549683782329,
-            "p95_score": 62.15600197187578
+            "participant_count": 375,
+            "median_score": 27.109586739893214,
+            "p05_score": 8.752052985821202,
+            "p95_score": 61.67551106310215
           },
           "18x18|21x21|24x24": {
             "status": "ready",
@@ -2405,10 +2405,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 24.387944224756172,
-            "p05_score": 7.304130593675082,
-            "p95_score": 56.99210675501283
+            "participant_count": 375,
+            "median_score": 24.021025596041767,
+            "p05_score": 7.111310847833914,
+            "p95_score": 56.61635464644164
           },
           "15x15|18x18|21x21|24x24": {
             "status": "ready",
@@ -2434,10 +2434,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 26.934199830169025,
-            "p05_score": 9.40049186102525,
-            "p95_score": 60.487739023120426
+            "participant_count": 375,
+            "median_score": 26.48592995607074,
+            "p05_score": 9.162913161693062,
+            "p95_score": 60.05927100981498
           }
         },
         "by_size": {
@@ -2450,10 +2450,10 @@
               "maze_t2_15x15_opposite_04",
               "maze_t2_15x15_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 34.368970516721895,
-            "p05_score": 6.78480235496762,
-            "p95_score": 74.7526006482328
+            "participant_count": 375,
+            "median_score": 33.716551311910386,
+            "p05_score": 6.49666994684889,
+            "p95_score": 74.24900292000045
           },
           "18x18": {
             "status": "ready",
@@ -2464,10 +2464,10 @@
               "maze_t2_18x18_opposite_04",
               "maze_t2_18x18_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 24.610759757231932,
-            "p05_score": 3.6504744430678424,
-            "p95_score": 63.48841148415091
+            "participant_count": 375,
+            "median_score": 24.213799825328408,
+            "p05_score": 3.5183030460257507,
+            "p95_score": 62.88172689406319
           },
           "21x21": {
             "status": "ready",
@@ -2478,10 +2478,10 @@
               "maze_t2_21x21_opposite_04",
               "maze_t2_21x21_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 23.80393112444732,
-            "p05_score": 2.7640636683460595,
-            "p95_score": 61.10748737903671
+            "participant_count": 375,
+            "median_score": 23.493544945058726,
+            "p05_score": 2.6895504941694113,
+            "p95_score": 60.64424415318826
           },
           "24x24": {
             "status": "ready",
@@ -2492,10 +2492,10 @@
               "maze_t2_24x24_opposite_04",
               "maze_t2_24x24_same_05"
             ],
-            "participant_count": 366,
-            "median_score": 23.9825901494955,
-            "p05_score": 3.63683338553326,
-            "p95_score": 62.52310265507086
+            "participant_count": 375,
+            "median_score": 23.531458448712737,
+            "p05_score": 3.435445751013672,
+            "p95_score": 61.9187981468098
           }
         },
         "by_size_relation": {
@@ -2506,10 +2506,10 @@
                 "maze_t2_15x15_adjacent_01",
                 "maze_t2_15x15_adjacent_02"
               ],
-              "participant_count": 366,
-              "median_score": 28.36243177255262,
-              "p05_score": 0.6530911568265525,
-              "p95_score": 88.16249120937893
+              "participant_count": 375,
+              "median_score": 27.780924760974578,
+              "p05_score": 0.5728670695033611,
+              "p95_score": 87.33099681331352
             },
             "opposite": {
               "status": "ready",
@@ -2517,18 +2517,18 @@
                 "maze_t2_15x15_opposite_03",
                 "maze_t2_15x15_opposite_04"
               ],
-              "participant_count": 366,
-              "median_score": 37.973325836710146,
-              "p05_score": 2.351523045941359,
-              "p95_score": 89.82626251436086
+              "participant_count": 375,
+              "median_score": 37.03000345707789,
+              "p05_score": 2.211136926310887,
+              "p95_score": 89.22696282860281
             },
             "same": {
               "status": "ready",
               "maze_ids": [
                 "maze_t2_15x15_same_05"
               ],
-              "participant_count": 366,
-              "median_score": 18.58573976025851,
+              "participant_count": 375,
+              "median_score": 17.297068824592266,
               "p05_score": 0.0,
               "p95_score": 100.0
             }
@@ -2540,10 +2540,10 @@
                 "maze_t2_18x18_adjacent_01",
                 "maze_t2_18x18_adjacent_02"
               ],
-              "participant_count": 366,
-              "median_score": 21.952416418416586,
-              "p05_score": 0.41883333290463937,
-              "p95_score": 71.56785123309758
+              "participant_count": 375,
+              "median_score": 21.675238956507446,
+              "p05_score": 0.4050357431605171,
+              "p95_score": 70.8896973523588
             },
             "opposite": {
               "status": "ready",
@@ -2551,20 +2551,20 @@
                 "maze_t2_18x18_opposite_03",
                 "maze_t2_18x18_opposite_04"
               ],
-              "participant_count": 366,
-              "median_score": 22.188684585005085,
-              "p05_score": 0.07856694679139764,
-              "p95_score": 82.0704598200706
+              "participant_count": 375,
+              "median_score": 21.565091153517045,
+              "p05_score": 0.05430773937974434,
+              "p95_score": 81.1981898871262
             },
             "same": {
               "status": "ready",
               "maze_ids": [
                 "maze_t2_18x18_same_05"
               ],
-              "participant_count": 366,
-              "median_score": 14.887808764663832,
+              "participant_count": 375,
+              "median_score": 14.491637828515262,
               "p05_score": 0.0,
-              "p95_score": 87.39950288743204
+              "p95_score": 86.84477040830104
             }
           },
           "21x21": {
@@ -2574,10 +2574,10 @@
                 "maze_t2_21x21_adjacent_01",
                 "maze_t2_21x21_adjacent_02"
               ],
-              "participant_count": 366,
-              "median_score": 18.766317660544793,
-              "p05_score": 0.011755367487260401,
-              "p95_score": 66.28612867821528
+              "participant_count": 375,
+              "median_score": 18.31533280335408,
+              "p05_score": 0.00933940149806695,
+              "p95_score": 65.79856110402608
             },
             "opposite": {
               "status": "ready",
@@ -2585,18 +2585,18 @@
                 "maze_t2_21x21_opposite_03",
                 "maze_t2_21x21_opposite_04"
               ],
-              "participant_count": 366,
-              "median_score": 19.79822726668482,
-              "p05_score": 0.018814075262311585,
-              "p95_score": 69.58613472486368
+              "participant_count": 375,
+              "median_score": 19.53655846118908,
+              "p05_score": 0.020279218561066226,
+              "p95_score": 69.25532649997878
             },
             "same": {
               "status": "ready",
               "maze_ids": [
                 "maze_t2_21x21_same_05"
               ],
-              "participant_count": 366,
-              "median_score": 19.48323611685738,
+              "participant_count": 375,
+              "median_score": 18.975534692265025,
               "p05_score": 0.0,
               "p95_score": 100.0
             }
@@ -2608,10 +2608,10 @@
                 "maze_t2_24x24_adjacent_01",
                 "maze_t2_24x24_adjacent_02"
               ],
-              "participant_count": 366,
-              "median_score": 23.813339988200575,
-              "p05_score": 0.21260202466358596,
-              "p95_score": 75.22137146460446
+              "participant_count": 375,
+              "median_score": 23.29673529674888,
+              "p05_score": 0.16398079865924736,
+              "p95_score": 74.59500185819205
             },
             "opposite": {
               "status": "ready",
@@ -2619,20 +2619,20 @@
                 "maze_t2_24x24_opposite_03",
                 "maze_t2_24x24_opposite_04"
               ],
-              "participant_count": 366,
-              "median_score": 19.243914973963165,
-              "p05_score": 0.004127400193662131,
-              "p95_score": 69.64812643329145
+              "participant_count": 375,
+              "median_score": 18.9352234185837,
+              "p05_score": 0.0030347945103436492,
+              "p95_score": 69.1655191962169
             },
             "same": {
               "status": "ready",
               "maze_ids": [
                 "maze_t2_24x24_same_05"
               ],
-              "participant_count": 366,
-              "median_score": 20.346313435617148,
+              "participant_count": 375,
+              "median_score": 19.15563049418037,
               "p05_score": 0.0,
-              "p95_score": 87.24898634153826
+              "p95_score": 86.73852563457966
             }
           }
         }
@@ -2642,9 +2642,9 @@
           "maze_id": "maze_t2_15x15_adjacent_01",
           "width": 15,
           "height": 15,
-          "attempt_count": 77,
-          "mean_score": 25.53059893465417,
-          "median_score": 8.333333333333332,
+          "attempt_count": 79,
+          "mean_score": 24.96336858187811,
+          "median_score": 7.100591715976332,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -2672,9 +2672,9 @@
           "maze_id": "maze_t2_15x15_opposite_04",
           "width": 15,
           "height": 15,
-          "attempt_count": 69,
-          "mean_score": 35.86619598283756,
-          "median_score": 16.899408284023668,
+          "attempt_count": 72,
+          "mean_score": 34.48070361209297,
+          "median_score": 15.320400252440933,
           "p05_score": 0.0,
           "p95_score": 100.0
         },
@@ -2682,8 +2682,8 @@
           "maze_id": "maze_t2_15x15_same_05",
           "width": 15,
           "height": 15,
-          "attempt_count": 74,
-          "mean_score": 25.019220193236723,
+          "attempt_count": 77,
+          "mean_score": 24.09082756975255,
           "median_score": 7.2840790842872005,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -2692,9 +2692,9 @@
           "maze_id": "maze_t2_18x18_adjacent_01",
           "width": 18,
           "height": 18,
-          "attempt_count": 66,
-          "mean_score": 20.997856507179375,
-          "median_score": 7.794340779958678,
+          "attempt_count": 67,
+          "mean_score": 20.83370939513192,
+          "median_score": 8.264462809917356,
           "p05_score": 0.0,
           "p95_score": 90.9090909090909
         },
@@ -2712,8 +2712,8 @@
           "maze_id": "maze_t2_18x18_opposite_03",
           "width": 18,
           "height": 18,
-          "attempt_count": 62,
-          "mean_score": 22.524249335186987,
+          "attempt_count": 63,
+          "mean_score": 22.166721567961797,
           "median_score": 5.363321799307958,
           "p05_score": 0.0,
           "p95_score": 100.0
@@ -2742,31 +2742,31 @@
           "maze_id": "maze_t2_21x21_adjacent_01",
           "width": 21,
           "height": 21,
-          "attempt_count": 61,
-          "mean_score": 20.273697658617372,
+          "attempt_count": 62,
+          "mean_score": 19.946702535091287,
           "median_score": 3.8461538461538463,
           "p05_score": 0.0,
-          "p95_score": 100.0
+          "p95_score": 99.58823529411761
         },
         {
           "maze_id": "maze_t2_21x21_adjacent_02",
           "width": 21,
           "height": 21,
-          "attempt_count": 54,
-          "mean_score": 20.905636703075746,
-          "median_score": 9.58904109589041,
+          "attempt_count": 55,
+          "mean_score": 20.62668287838472,
+          "median_score": 8.21917808219178,
           "p05_score": 0.0,
-          "p95_score": 72.92981893927242
+          "p95_score": 71.70165037654216
         },
         {
           "maze_id": "maze_t2_21x21_opposite_03",
           "width": 21,
           "height": 21,
-          "attempt_count": 60,
-          "mean_score": 25.20277127798797,
-          "median_score": 4.512073424411087,
+          "attempt_count": 61,
+          "mean_score": 24.8973839080091,
+          "median_score": 4.8574801821555065,
           "p05_score": 0.0,
-          "p95_score": 98.6986301369863
+          "p95_score": 98.63013698630137
         },
         {
           "maze_id": "maze_t2_21x21_opposite_04",
@@ -2792,11 +2792,11 @@
           "maze_id": "maze_t2_24x24_adjacent_01",
           "width": 24,
           "height": 24,
-          "attempt_count": 56,
-          "mean_score": 26.549917116842092,
+          "attempt_count": 58,
+          "mean_score": 25.839546240710703,
           "median_score": 8.458894466072795,
           "p05_score": 0.0,
-          "p95_score": 96.98051465119738
+          "p95_score": 96.74252565818831
         },
         {
           "maze_id": "maze_t2_24x24_adjacent_02",
@@ -2832,11 +2832,11 @@
           "maze_id": "maze_t2_24x24_same_05",
           "width": 24,
           "height": 24,
-          "attempt_count": 42,
-          "mean_score": 33.28161580552322,
+          "attempt_count": 43,
+          "mean_score": 32.50762474027849,
           "median_score": 10.88088296543107,
           "p05_score": 0.0,
-          "p95_score": 94.90686274509802
+          "p95_score": 94.81372549019608
         }
       ]
     }
